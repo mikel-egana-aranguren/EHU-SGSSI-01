@@ -133,7 +133,12 @@
 
     <section class="slide">
         <h2>Introducción</h2>
-        <p><a href="https://archiveprogram.github.com/arctic-vault/">GitHub Arctic Code Vault</a>(<a href="https://github.com/mikel-egana-aranguren">¡Mi código también!</a>)</p>
+        <p> <iframe width="560" height="315" src="https://www.youtube.com/embed/8dhp_20j0Ys" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+    </section>
+
+    <section class="slide">
+        <h2>Introducción</h2>
+        <p><a href="https://archiveprogram.github.com/arctic-vault/">GitHub Arctic Code Vault</a> (<a href="https://github.com/mikel-egana-aranguren">¡Mi código también!</a>)</p>
         <p><iframe width="560" height="315" src="https://www.youtube.com/embed/fzI9FNjXQ0o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
     </section>
 
@@ -157,29 +162,215 @@
 
     <section class="slide">
         <h2>Normativa</h2>
-        <p>ISO 27002:2013 estándar para seguridad de la información
-            Apartado 12.3 → Information Backup
-            Establece qué hay que definir:
-            Qué copiar
-            Dónde copiarlo
-            Cada cuánto copiarlo
-            Mecanismos de recuperación
-            …
-            Equivalente nacional: UNE 71501
+        <p>ISO 27002:2013 estándar para seguridad de la información:
+            <ul>
+            <li>Apartado 12.3: Information Backup</li>
+            <li>Qué copiar</li>
+            <li>Dónde copiarlo</li>
+            <li>Cada cuánto copiarlo</li>
+            <li>Mecanismos de recuperación</li>
+            <li>Equivalente nacional: UNE 71501</li>
+        </ul>
         </p>
     </section>
 
     <section class="slide">
-        <h2>Planificacion de las copias</h2>
+        <h2>Planificación de las copias</h2>
         <p>Regla 3/2/1:
-            Por los menos 3 copias de un registro
-            2 copias en diferentes soportes, uno de ellos offline https://www.xataka.com/pro/larga-vida-a-cintas-almacenamiento-ibm-fujifilm-consiguen-almacenar-580-tb-solo-cartucho-cinta)
-            1 copia en otro sitio</p>
+            <ul>
+            <li>Por los menos 3 copias de un registro.</li>
+            <li>2 copias en diferentes soportes, uno de ellos <a href="https://www.xataka.com/pro/larga-vida-a-cintas-almacenamiento-ibm-fujifilm-consiguen-almacenar-580-tb-solo-cartucho-cinta">offline</a>.</li>
+            <li>1 copia en otro sitio.</li>
+        </ul>
+        </p>
     </section>
 
+    <section class="slide">
+        <h2>Planificación de las copias</h2>
+        <p>Versiones: simplemente sincronizar archivos no vale, ya que no impide la corrupción.</p>
+        <p>De-duplicación: ahorrar espacio.</p>
+        <p>Encriptar.</p>
+        <p>"Append-only"</p>
+    </section>
 
+    <section class="slide">
+        <h2>Planificación de las copias</h2>
+        <p>Plan de Prevención:
+            <ul>
+                <li>Decidir qué copiar</li>
+                <li>Diseñar el plan de copias</li>
+                <li>Implantarlo (Dispositivos, pruebas, ...)</li>
+        </ul>
+        </p>
+        <p>Plan de recuperación:
+            <ul>
+                <li>Diseñar el proceso de recuperación</li>
+                <li>Implantarlo</li>
+            </ul>
+        </p>
+    </section>
 
-    
+    <section class="slide">
+        <h2>Planificación de las copias</h2>
+        <p>¿Qué copiar?
+            <ul>
+                <li>¿Cómo de rápido debemos ser capaces de recuperar el sistema?</li>
+                <li>¿Existen distintas prioridades entre los datos?</li>
+                <li>¿Qué datos son los más valiosos</li>
+                <li>¿De qué recursos disponemos?</li>
+                <li>En general, aquello que es único / cambia rápidamente</li>
+        </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Tipos de copias</h2>
+        <p>Dia-cero:
+            <ul>
+                <li>Copiar todo antes de empezar a usar el sistema</li>
+                <li>Para recuperar el sistema al punto de partida</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Tipos de copias</h2>
+        <p>Completa:
+            <ul>
+                <li>Se realiza una copia de todos los datos</li>
+                <li>Información duplicada</li>
+                <li>Adecuada cuando hay muchas modificaciones</li>
+                <li>Poco adecuada cuando la cantidad de información es muy grande</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Tipos de copias</h2>
+        <p>Incremental:
+            <ul>
+                <li>Se realiza una copia de todos los datos modificados desde la última copia completa o incremental</li>
+                <li>Puede ser muy rápida</li>
+                <li>Optimiza el espacio</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Tipos de copias</h2>
+        <p>Diferencial:
+            <ul>
+                <li>Se realiza una copia de todos los datos modificados desde la última copia completa</li>
+                <li>Necesita menos espacio que una copia completa, pero más que una incremental</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Restauración de copias</h2>
+        <ul>
+            <li>Copia dia-cero: restaurar la copia</li>
+            <li>Copia completa: restaurar la copia</li>
+            <li>Copia incremental: 
+                <ul>
+                    <li>Restaurar la última copia completa</li>
+                    <li>Restaurar una a una, siguiendo el orden todas las copias incrementales</li>
+                </ul>
+            </li>
+            <li>Copia diferencial:
+                <ul>
+                    <li>Restaurar la última copia completa</li>
+                    <li>Restaurar la última copia diferencial</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Restauración de copias (Completa)</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/completa.png" alt="Completa" width="60%"></p>
+        <p style="text-align:left;font-size:30%;"><a href="http://www.expertosensistemas.com/estrategias-de-copias-de-seguridad-iii/">http://www.expertosensistemas.com/estrategias-de-copias-de-seguridad-iii/</a></p>
+    </section>
+
+    <section class="slide">
+        <h2>Restauración de copias (Incremental)</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/incremental.png" alt="incremental" width="60%"></p>
+        <p style="text-align:left;font-size:30%;"><a href="http://www.expertosensistemas.com/estrategias-de-copias-de-seguridad-iii/">http://www.expertosensistemas.com/estrategias-de-copias-de-seguridad-iii/</a></p>
+    </section>
+
+    <section class="slide">
+        <h2>Restauración de copias (Diferencial)</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/diferencial.png" alt="diferencial" width="60%"></p>
+        <p style="text-align:left;font-size:30%;"><a href="http://www.expertosensistemas.com/estrategias-de-copias-de-seguridad-iii/">http://www.expertosensistemas.com/estrategias-de-copias-de-seguridad-iii/</a></p>
+    </section>
+
+    <section class="slide">
+        <h2>Frecuencia de copias</h2>
+        <p>Teniendo en cuenta:
+        <ul>
+            <li>Valor de la información</li>
+            <li>Coste de no disponer de cierta información</li>
+            <li>Cantidad de información</li>
+            <li>Cantidad de cambios</li>
+            <li>Coste de realizar las copias</li>
+            <li>Para cada caso, se planifica un ciclo de copias</li>
+        </ul>
+        Se planifica un ciclo de copias
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Frecuencia de copias (Ciclos)</h2>
+        <p>Ejemplo ciclo semanal:
+            <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/ciclo.png" alt="diferencial" width="60%"></p>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Protección de copias</h2>
+        <p>Las copias también pueden sufrir ataques</p>
+        <p>Plan de protección:
+        <ul>
+            <li>Acceso al soporte</li>
+            <li>Dispoinibilidad</li>
+            <li>Protección</li>
+            <li>Teimpo de vida del soporte</li>
+        </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Comprobación de copias</h2>
+        <p>Hay que comprobar que las copias se realizan correctamente</p>
+        <p>De manera periódica hacer una prueba de restauración del sistema</p>
+    </section>
+
+    <section class="slide">
+        <h2>Software</h2>
+        <p>Ventajas de usar Software (I):
+            <ul>
+                <li>Mayor rapidez</li>
+                <li>Facilidad de manejo</li>
+                <li>Compresión de datos</li>
+                <li>Programación de las copias</li>
+                <li>Posibilidad de centralizar las copias</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Software</h2>
+        <p>Ventajas de usar Software (II):
+            <ul>
+                <li>Posibilidad de realizar copias remotas</li>
+                <li>Comprobación de la integridad</li>
+                <li>Protección con contraseña</li>
+                <li>Cifrado de la información</li>
+                <li>Gestión de juegos de copias</li>
+                <li>Generación de informes y etiquetas</li>
+            </ul>
+        </p>
+    </section>
 
     <!-- FOOTER -->
 
