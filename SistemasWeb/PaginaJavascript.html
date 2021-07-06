@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>Ejemplo p&aacute;gina web SGSSI con CSS</title>
+<link rel="stylesheet" type="text/css" href="ficherodeestilos.css">
+<script type="text/javascript" >
+
+function comprobardatos() {
+    var edad= document.formulario.edad.value;
+        if (edad < 18) {
+            window.alert ("Lo siento. Debes ser mayor de edad"); 
+        }
+        else{
+            document.formulario.submit();
+        }
+}
+
+
+</script>
+</head>
+<body>
+<form name="formulario">
+Introduce tu edad (debes ser mayor de 18)<input type="text" name="edad"><br>
+Campo1<input type="text" name="edad1"><br>
+Campo2<input type="text" name="edad2"><br>
+Campo3<input type="text" name="eda3"><br>
+Campo4<input type="text" name="eda4"><br>
+Campo5<input type="text" name="eda5"><br>
+Campo6<input type="text" name="edad6"><br>
+
+
+<input type="button" value="Enviar de tipo button" onclick="comprobardatos()">
+
+<input type="submit" value="Enviar de tipo submit">
+</form>
+</body>
+</html>
