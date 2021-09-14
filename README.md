@@ -15,5 +15,4 @@ Temario:
 7. Informática forense
 8. Leyes
 
-[![DOI](https://zenodo.org/badge/368886477.svg)](https://zenodo.org/badge/latestdoi/368886477)
-
+[![DOI](https://zenodo.org/badge/334955028.svg)](https://zenodo.org/badge/latestdoi/334955028)
