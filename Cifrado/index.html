@@ -41,6 +41,7 @@
         <h2>Indice</h2>
         <ul>
             <li>Introducción</li>
+            <li>Criptosistemas de clave privada</li>
         </ul>
     </section>
 
@@ -61,13 +62,6 @@
         <h2>Introducción</h2>
         <p>Esteganografía: <b>ocultar</b> la información</p>
         <p>Criptografía: <b>cifrar</b> la información</p>
-        <p>Asegura
-            <ul>
-                <li>Confidencialidad (Cifrado)</li>
-                <li>Integridad (Algoritmos resumen)</li>
-                <li>Autenticidad (Certificados digitales)</li>
-            </ul>
-        </p>
     </section>
 
     <section class="slide">
@@ -87,7 +81,7 @@
             <ul>
                 <li>Sin conocer la clave</li>
                 <li>Obteniendo la clave a partir de uno o varios mensajes encriptados</li>
-                <li>El algoritmo es público (<a href="https://es.wikipedia.org/wiki/Principios_de_Kerckhoffs">Principio de Kerckhoffs (1883)</a>).</li>
+                <li>El algoritmo es público - <a href="https://es.wikipedia.org/wiki/Principios_de_Kerckhoffs">Principio de Kerckhoffs (1883)</a>.</li>
             </ul>
         </p>
         <p>Criptología: Criptografía + Criptoanálisis</p>
@@ -124,6 +118,56 @@
                 </li>
             </ul>
         </p>
+    </section>
+
+    <section class="slide">
+        <h2>Criptosistemas de clave privada</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/clave_privada.png" alt="criptosistema clave privada" width="40%"></p>
+        
+    </section>
+
+    <section class="slide">
+        <h2>Criptosistemas de clave privada</h2>
+        <p>Claves débiles
+            <ul>
+                <li>Pueden presentarse según las características de cada algoritmo</li>
+                <li>Claves cuyo comportamiento no es el deseado
+                    <ul>
+                        <li>E<sub>K</sub>(M)=M</li>
+                        <li>E<sub>K</sub>(E<sub>K</sub>(M))=M</li>
+                        <li>D<sub>K2</sub>(E<sub>K1</sub>(M))=M</li>
+                    </ul>
+                </li>
+            </ul>
+        </p>
+        
+    </section>
+
+    <section class="slide">
+        <h2>Esteganografía</h2>
+        <p>Consiste en ocultar información de forma que no sea “visible” para quien no sepa la clave</p>
+        <p>Sin saber la clave, puede parecer que no hay información oculta</p>
+        <p>Es la técnica precursora de la criptografía</p>   
+    </section>
+
+    <section class="slide">
+        <h2>Esteganografía</h2>
+        <p>Histaiaeo (gobernador de Mileto) buscaba aliados para sublevarse contra el rey persa Dario I</p>
+        <p>Necesitaba enviar mensajes que nadie detectara
+            <ul>
+                <li>Rapaba el pelo a los mensajeros</li>
+                <li>Les grababa el mensaje en la cabeza</li>
+                <li>Esperaba a que les creciera el pelo, y los mandaba al destino</li>
+                <li>En el destino les volvían a rapar la cabeza y leían el mensaje</li>
+            </ul>
+        </p>   
+    </section>
+
+    <section class="slide">
+        <h2>Esteganografía</h2>
+        <p>Usando una plantilla</p>
+        <p>La clave es la forma de extraer la información
+</p>   
     </section>
 
     <!-- FOOTER -->
