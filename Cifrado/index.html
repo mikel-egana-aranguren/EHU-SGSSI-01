@@ -166,9 +166,172 @@
     <section class="slide">
         <h2>Esteganografía</h2>
         <p>Usando una plantilla</p>
-        <p>La clave es la forma de extraer la información
-</p>   
+        <p>La clave es la forma de extraer la información</p>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/esteganografia.png" alt="Esteganografía" width="40%"></p>   
     </section>
+
+    <section class="slide">
+        <h2>Esteganografía</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/esteganografia-2.png" alt="Esteganografía" width="40%"></p>   
+    </section>
+
+    <section class="slide">
+        <h2>Esteganografía</h2>
+        <p>Seleccionando unos caracteres determinados</p>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/esteganografia-asirios.png" alt="Esteganografía" width="40%"></p>   
+        <p>Clave: primera letra de cada palabra no monosílaba </p>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/esteganografia-asirios-2.png" alt="Esteganografía" width="40%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Esteganografía</h2>
+        <p>Ocultación de información en archivos multimedia (normalmente imágenes)</p>
+        <p>En formato BMP cada pixel en RGB son 3 bytes</p>  
+        <p>LSB (Less Significatn Byte): Modificar el último bit de cada byte es inapreciable</p>   
+    </section>
+
+    <section class="slide">
+        <h2>Esteganografía</h2>
+        <p>Por ejemplo, para ocultar texto, insertamos el código ASCII del carácter deseado</p>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/LSB.png" alt="Esteganografía" width="40%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Métodos de encriptación</h2>
+        <p>Objetivos
+            <ul>
+                <li>Convertir el mensaje en ininteligible</li>
+                <li>Recuperar la información cifrada</li>
+                <li>Implementación lo más sencilla posible</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Métodos de encriptación</h2>
+        <p>Técnicas básicas en criptografía clásica
+            <ul>
+                <li>Transposición (los caracteres originales simplemente cambian de posición)</li>
+                <li>Sustitución (los caracteres originales se sustituyen por otros)</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Métodos de Escitalo de Esparta</h2>
+        <p>Enrollar una tira de papel en un bastón y escribir el mensaje</p>
+        <p>Desenrollar el papel y enviarlo al destino</p>
+    </section>
+
+    <section class="slide">
+        <h2>Métodos de Escitalo de Esparta</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/escitalo-1.png" alt="Escitalo" width="60%"></p>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/escitalo-2.png" alt="Escitalo" width="60%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Métodos de Escitalo de Esparta</h2>
+        <p>Se necesita un bastón exactamente igual para descifrar el mensaje</p>
+        <p>Enrollar la tira de papel alrededor del bastón y leer el mensaje</p>
+        <p>La clave de este sistema es el diámetro del bastón</p>
+    </section>
+
+    <section class="slide">
+        <h2>Métodos de Escitalo 2.0</h2>
+        <p>Distribuir el mensaje en columnas</p>
+        <p>La clave viene determinada por la cantidad y orden de
+            las columnas</p>
+    </section>
+
+    <section class="slide">
+        <h2>Métodos de Escitalo 2.0</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/escitalo-3.png" alt="Escitalo" width="60%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Métodos de Escitalo 2.0</h2>
+        <p>Criptoanálisis
+            <ul>
+                <li>Basado en combinatoria</li>
+                <li>Calcular el tamaño de los bloques</li>
+                <li>Combinar los bloques en distinto orden hasta encontrar alguno con sentido</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Método de Atbash (Espejo)</h2>
+        <p>Cifrado monoalfabético</p>
+        <p>Técnica proveniente del alfabeto hebreo</p>
+        <p>Consiste en sustituir cada carácter, por su "contrario"</p>
+    </section>
+
+    <section class="slide">
+        <h2>Método de Atbash (Espejo)</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/cesar.png" alt="Cesar" width="60%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Método César</h2>
+        <p>Cifrado monoalfabético</p>
+        <p>Empleado por Julio César</p>
+        <p>Consiste en sumar 3 a la posición de cada letra en el alfabeto</p>
+    </section>
+
+    <section class="slide">
+        <h2>Método César</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/cesar" alt="Cesar" width="60%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Método Afín</h2>
+        <p>Cifrado monoalfabético</p>
+        <p>Generalización método César</p>
+        <p>E(<sub>a;b</sub>)(M) = (aM + b) mod N</p>
+        <p>N es el número de caracteres del alfabeto</p>
+        <p>César es una transformación afín con E(1,3)</p>
+    </section>
+
+    <section class="slide">
+        <h2>Método Diccionario</h2>
+        <p>Cifrado monoalfabético</p>
+        <p>Generar la tabla de correspondencias de manera "manual"</p>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/diccionario.png" alt="Diccionario" width="60%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Método Polybius</h2>
+        <p>Cifrado monoalfabético</p>
+        <p>Pueden ser caracteres o dígitos</p>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/polybius.png" alt="Polybius" width="60%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Métodos de Sustitución monoalfabéticos</h2>
+        <p>Criptoanálisis basado en estadística</p>
+        <p>Método establecido por Al-Kindi en el siglo 9</p>
+        <p>Un carácter "original" siempre se sustituye por el mismo carácter/es</p>
+        <p>Se sabe cuales son los caracteres más frecuentes en cada idioma</p>
+        <p>Se sabe las palabras de dos/tres/cuatro caracteres (bigramas, trigramas y tetragramas) más frecuentes en cada idioma</p>
+    </section>
+
+    <section class="slide">
+        <h2>Métodos de Sustitución monoalfabéticos</h2>
+        <p>Se va "probando" y deduciendo</p>
+        <p>Cuanto más largo es el texto cifrado, mejor</p>
+        <p>Hay que saber el idioma del texto original</p>
+    </section>
+
+    <section class="slide">
+        <h2>Métodos de Sustitución monoalfabéticos</h2>
+        <p>Porcentaje de aparición de caracteres en castellano</p>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/Fecuencias.png" alt="Frecuencias" width="20%"></p>
+        <p>Ejemplo de <a href="http://www.epsilones.com/paginas/laboratorio/laboratorio-014-descifradoifrecuencias.html">descifrado por análisis de frecuencias</a></p>
+    </section>
+
+    
+
+
 
     <!-- FOOTER -->
 
