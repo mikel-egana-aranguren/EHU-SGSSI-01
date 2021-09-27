@@ -392,8 +392,8 @@
             <p><iframe width="400" height="250" src="https://www.youtube.com/embed/V4V2bpZlqx8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
     </section>
 
-    <!-- <section class="slide">
-        <h2>Metodos de sustitucion polialfabeticos</h2>
+    <section class="slide">
+        <h2>Métodos de sustitución polialfabéticos</h2>
 
         <p>Criptoanálisis
             <ul>
@@ -407,7 +407,7 @@
     </section>
 
     <section class="slide">
-        <h2>Metodos de cifrado de flujo</h2>
+        <h2>Métodos de cifrado de flujo</h2>
 
         <p>En vez de cifrar un mensaje, cifran bit a bit</p>
         <p>Usado para comunicaciones en tiempo real (No se puede esperar a tener el mensaje completo para
@@ -416,12 +416,267 @@
             “pseudoaleatorio” que genera el flujo de clave</p>
             <p>La operación XOR entre el bit a cifrar y el flujo de
                 clave, genera el criptograma</p>
-    </section> -->
+    </section>
 
+    <section class="slide">
+        <h2>Métodos de cifrado de flujo</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/cifrado-flujo.png" alt="Frecuencias" width="60%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Método de Vernam</h2>
+        <p>Realiza el XOR entre el texto y una clave aleatoria de
+            la misma longitud</p>
+            <p>El generador es realmente aleatorio</p>
+        <p>La clave (el flujo de clave) es lo denominado "libreta
+            de un solo uso":
+            <ul>
+                <li>Sólo se usa una vez</li>
+                <li>Hay que enviársela al receptor del mensaje</li>
+                <li>Está demostrado matemáticamente que es irrompible</li>
+            </ul>
+        </p>
+        <!-- <p>No es práctico</p> -->
+    </section>
+
+    <section class="slide">
+        <h2>Otros métodos de cifrado de flujo</h2>
+        <p>Basados en el método de Vernam</p>
+        <p>Usar claves pseudoaleatorias generadas a partir de
+            una semilla y un algoritmo de generación</p>
+            <p>Con la semilla y el algoritmo de generación se podría
+                reconstruir la clave pseudoaleatoria (Depende del número de
+                posibles semillas distintas)</p>
+
+    </section>
+
+    <section class="slide">
+        <h2>Otros métodos de cifrado de flujo</h2>
+        <p>No son matemáticamente irrompibles</p>
+        <p>Ejemplos:
+            <ul>
+                <li>RC4 (ARC4) usado en TLS/SSL , WEP y WPA entre otros (Roto)</li>
+                <li>A5/1 (y distintas versiones) usado en comunicaciones
+                    GSM (A5/1 y A5/2 rotos)</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Métodos de cifrado por bloques</h2>
+        <p>partir el mensaje original en bloques de
+            tamaño fijo: 
+            <ul>
+                <li>Si el tamaño es suficientemente pequeño, puede
+                    considerarse cifrado de flujo</li>
+                <li>Existen algoritmos de rellenado para aquellos casos en
+                    los que el tamaño del mensaje no sea múltiplo del
+                    tamaño del bloque</li>    
+            </ul>
+        </p>
+
+    </section>
+
+    <section class="slide">
+        <h2>Métodos de cifrado por bloques</h2>
+    <p>Cada bloque de mensaje original genera un bloque de
+        mensaje cifrado</p>
+        <p>Se pueden añadir iteraciones, permutaciones y
+            operaciones entre los distintos bloques</p>
+        </section>
+
+        <section class="slide">
+            <h2>Métodos de cifrado por bloques</h2>
+            <p>
+                DES (Data Encryption Standard) - 1975: 
+                <ul>
+                    <li>Bloques de 64 bits</li>
+                    <li>Clave de 56 bits ( longitud real 64 bits )</li>
+                    <li>16 rondas</li>
+                    <li>Se puede romper en menos de 24 horas</li>
+                </ul>
+            </p>
+        </section>
+
+        <section class="slide">
+            <h2>Métodos de cifrado por bloques</h2>
+            <p>Triple DES - 1998: Basado en realizar 3 ejecuciones de DES (Cifrar –
+Descifrar - Cifrar):
+                <ul>
+                    <li>Usar 2 claves ( E k<sub>1</sub> ( D k<sub>2</sub> ( E k<sub>1</sub> )))</li>
+                    <li>Usar 3 claves ( E k<sub>1</sub> ( D k<sub>2</sub> ( E k<sub>3</sub> )))</li>
+                    <li>Usado extensamente (tarjetas de crédito)</li>
+</ul>
+</p>
+        </section>
+
+        <section class="slide">
+            <h2>Métodos de cifrado por bloques</h2>
+            <p>IDEA - 1991:
+                <ul>
+                    <li>Bloques de 64 bits</li>
+                    <li>Clave 128 bits</li>
+                    <li>8 rondas y media</li>
+                    <li>Está considerado seguro (excepto algunas claves
+                        débiles)</li>
+                    <li>Su uso no está extendido por estar patentado</li>
+                </ul>
+            </p>
+
+        </section>
+
+        <section class="slide">
+            <h2>Métodos de cifrado por bloques</h2>
+            <p>KASUMI (A5/3) – 2000:
+                <ul>
+                    <li>Bloques de 64 bits</li>
+                    <li>Clave de 128 bits</li>
+                    <li>8 rondas</li>
+                    <li>Usado en las redes 3G (con alguna variación)</li>
+                    <li>El original se puede <a href="https://www.engadget.com/2010/01/15/3g-gsm-encryption-cracked-in-less-
+                        than-two-hours/">romper fácilmente</a> (probado en
+                2010)</li>
+                </ul>
+            </p>
+        </section>
+
+        <section class="slide">
+            <h2>Métodos de cifrado por bloques</h2>
+            <p>AES (Advanced Encryption Standard) - 2001:
+                <ul>
+                    <li>Muy usado en todo tipo de comunicaciones y transacciones</li>
+                    <li>Bloques de 128 bits</li>
+                    <li>Claves de 128, 192 ó 256 bits</li>
+                    <li>8 rondas (claves de 128) , 12 rondas(claves de 192), 14
+rondas (claves de 256)</li>
+                </ul>
+            </p>
+
+        </section>
+
+        <section class="slide">
+            <h2>Métodos de cifrado por bloques</h2>
+            <p>Redes 4G:
+                <ul>
+                    <li>Usa pares de algoritmos (si uno comprometido, el otro sigue protegiendo)</li>
+                    <li>Sufijo EEA para algoritmos que aseguren la Confidencialidad</li>
+                    <li>Sufijo EIA para algoritmos que aseguren la Integridad</li>
+                </ul>
+</p>
+        </section>
+
+        <section class="slide">
+            <h2>Ataques por fuerza bruta</h2>
+            <p>Siempre encuentra la solución</p>
+            <p>Consiste en probar todas las claves posibles</p>
+            <p>Hay que conocer el algoritmo de cifrado y el espacio
+                de claves</p>
+            <p>No siempre es posible por su coste temporal</p>
+        </section>
+
+        <section class="slide">
+            <h2>Ataques por fuerza bruta</h2>
+            <p>Espacio de claves:
+                <ul>
+                    <li>56 bits: 2 56 posibilidades</li>
+                    <li>128 bits: 2 128 posibilidades</li>
+                    <li>256 bits: 2 256 posibilidades</li>
+                </ul>
+            </p>
+        </section>
+
+        <section class="slide">
+            <h2>Ataques por fuerza bruta</h2>
+            <p>Tiempo que se tardaría con un superordenador:
+                <ul>
+                    <li>56 bits: 0,04 segundos</li>
+                    <li>128 bits: 7.193.522.047 milenios (año arriba, año
+                        abajo)</li>
+                    <li>256 bits: ...</li>
+                </ul>
+            </p>
+        </section>
+
+        <section class="slide">
+            <h2>Ataques por fuerza bruta</h2>
+            <p>Se puede hacer un ataque por fuerza menos bruta y
+                más "inteligente":
+                <ul>
+                    <li>Usando un diccionario</li>
+                    <li>Usando datos del dueño de la clave</li>
+                    <li>...</li>
+                </ul>
+            </p>
+        </section>
+
+        <section class="slide">
+            <h2>Algoritmos de resumen</h2>
+            <p>Funciones de dispersión (one-way hash)</p>
+            <p>Generan un criptograma de un determinado tamaño que representa todo el contenido original (Si cambia lo más mínimo, el resumen criptográfico es distinto)</p>
+            <p>No tienen inversa</p>
+            <p>No se puede descifrar</p>
+        </section>
+
+        <section class="slide">
+            <h2>Algoritmos de resumen</h2>
+            <p>Utilidad:
+                <ul>
+                    <li>Certificar la integridad de la información</li>
+                    <li>Almacenar claves</li>
+                    <li>Implementar la firma digital</li>
+                </ul>
+            </p>
+        </section>
+
+        <section class="slide">
+            <h2>Algoritmos de resumen</h2>
+            <p>Certificar la integridad de la información</p>
+            <p>http://ftp.mozilla.org/pub/mozilla.org/xulrunner/releases/2.0/MD5SUMS</p>
+            <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/md5-mozilla.png" alt="criptosistema clave privada" width="60%"></p>
+            
+        </section>
+
+        <section class="slide">
+            <h2>Algoritmos de resumen</h2>
+            <p>Almacenar claves</p>
+        </section>
+
+        <section class="slide">
+            <h2>Algoritmos de resumen</h2>
+            <p>
+            </p>
+        </section>
+
+        <section class="slide">
+            <h2>Algoritmos de resumen</h2>
+            <p>
+            </p>
+        </section>
+
+        <section class="slide">
+            <h2>Algoritmos de resumen</h2>
+            <p>
+            </p>
+        </section>
+
+        <section class="slide">
+            <h2>Algoritmos de resumen</h2>
+            <p>
+            </p>
+        </section>
+
+        <section class="slide">
+            <h2>Algoritmos de resumen</h2>
+            <p>
+            </p>
+        </section>
+
+        <section class="slide">
+            <h2>Algoritmos de resumen</h2>
+            <p>
+            </p>
+        </section>
     
-
-
-
     <!-- FOOTER -->
 
     <footer class="badge">
