@@ -639,41 +639,68 @@ rondas (claves de 256)</li>
         <section class="slide">
             <h2>Algoritmos de resumen</h2>
             <p>Almacenar claves</p>
+            <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/hash-clave.png" alt="criptosistema clave privada" width="60%"></p>
         </section>
 
         <section class="slide">
             <h2>Algoritmos de resumen</h2>
-            <p>
+            <p>Identificación</p>
+            <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/hash-clave-identificacion.png" alt="criptosistema clave privada" width="60%"></p>
+        </section>
+
+        <section class="slide">
+            <h2>Algoritmos de resumen</h2>
+            <p>Problemas
+                <ul>
+                    <li>Todo el mundo con la misma clave tiene el mismo hash</li>
+                    <li>Se pueden precalcular los hash de todo el espacio de claves</li>
+                </ul>
+            </p>
+            <p>Solución: usar "sal" (Salt), o semilla</p>
+            <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/hash-clave-identificacion-sal.png" alt="criptosistema clave privada" width="60%"></p>
+        </section>
+
+        <section class="slide">
+            <h2>Algoritmos de resumen</h2>
+            <p>Identificación con sal</p>
+            <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/hash-clave-identificacion-sal-intro.png" alt="criptosistema clave privada" width="60%"></p>
+        </section>
+
+        <section class="slide">
+            <h2>Algoritmos de resumen</h2>
+            <p>Ventajas del uso de sal
+                <ul>
+                    <li>La misma clave tiene una codificación distinta cada vez</li>
+                    <li>Dificulta los ataques por fuerza bruta</li>
+                </ul>
+            </p>
+            <p>Si roban la BBDD con las claves y la sal, no aporta
+                nada</p>
+        </section>
+
+        <section class="slide">
+            <h2>Algoritmos de resumen</h2>
+            <p>Funciones de dispersión más usadas
+                <ul>
+                    <li>MD5</li>
+                    <li>SHA-1</li>
+                </ul>
+            </p>
+            <p>Problemas
+                <ul>
+                    <li>Colisiones: dos textos distintos que generen el mismo resumen</li>
+                    <li>Ataques que debilitan el algoritmo</li>
+                </ul>
             </p>
         </section>
 
         <section class="slide">
             <h2>Algoritmos de resumen</h2>
-            <p>
-            </p>
-        </section>
-
-        <section class="slide">
-            <h2>Algoritmos de resumen</h2>
-            <p>
-            </p>
-        </section>
-
-        <section class="slide">
-            <h2>Algoritmos de resumen</h2>
-            <p>
-            </p>
-        </section>
-
-        <section class="slide">
-            <h2>Algoritmos de resumen</h2>
-            <p>
-            </p>
-        </section>
-
-        <section class="slide">
-            <h2>Algoritmos de resumen</h2>
-            <p>
+            <p>Soluciones
+                <ul>
+                    <li>Usar otros algoritmos que generan resúmenes criptográficos más largos</li>
+                    <li>SHA-224, SHA-256, SHA-384, SHA-512, ...</li>
+                </ul>
             </p>
         </section>
     
