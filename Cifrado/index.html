@@ -916,6 +916,51 @@ rondas (claves de 256)</li>
                 clave pública del otro y con su clave privada</p>
             <p>Andoni intercepta los mensajes, los lee, modifica y
                 los encripta con su clave privada</p>
+                <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/AndoniIkerMirenManInTheMiddleDetalles.png" alt="criptosistema clave privada" width="40%"></p>
+        </section>
+
+        <section class="slide">
+            <h2>Criptografía de clave pública</h2>
+            <p>Iker y Miren creen que están comunicándose de
+                manera segura</p>
+            <p>Andoni está enterándose de todo y modificándolo a su
+                antojo</p>    
+            <p>Formas de evitarlo:
+                <ul>
+                    <li>Paso de claves en canales "seguros"</li>
+                    <li>Uso de una autoridad que certifique que una clave
+                        pública pertenece a quien dice: Autoridad de Certificación (AC)</li>
+                </ul>
+            </p>
+
+        </section>
+
+        <section class="slide">
+            <h2>Criptografía de clave pública</h2>
+            <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/AC.png" alt="criptosistema clave privada" width="40%"></p>
+
+        </section>
+
+        <section class="slide">
+            <h2>Cifrado híbrido</h2>
+            <p>Los sistemas de clave secreta son mucho más rápidos
+                que los de clave pública</p>
+            <p>Muchas veces se usa una combinación: El sistema de
+                    clave pública se usa para compartir una clave secreta
+                    S que sólo se usa una vez</p>
+            <p>El sistema de clave secreta usa S para cifrar el
+                mensaje</p>
+
+        </section>
+
+        <section class="slide">
+            <h2>Cifrado híbrido</h2>
+            <p>Miren genera una clave secreta S y cifra su mensaje
+                usándola: cm = e1 (m,S)</p>
+            <p>Miren cifra S usando la clave pública de Iker
+                cs = e2 ( S , I<sub>pública</sub> )</p>
+            <p>Miren manda [ cm, cs ] a Iker</p>
+
         </section>
     
     <!-- FOOTER -->
