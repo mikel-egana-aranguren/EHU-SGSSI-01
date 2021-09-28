@@ -765,7 +765,141 @@ rondas (claves de 256)</li>
 
         </section>
 
-        
+        <section class="slide">
+            <h2>Criptografía de clave pública</h2>
+            <p>Usa algoritmos de clave asimétrica: la clave que cifra no es la que descifra
+            </p>
+            <p>USa dos claves por usuario:
+                <ul>
+                    <li>La clave pública que conoce todo el mundo</li>
+                    <li>La clave privada que sólo conoce el usuario</li>
+                </ul>
+            </p>
+            <p>Lo que una clave cifra sólo lo puede descifrar la otra</p>
+
+        </section>
+
+        <section class="slide">
+            <h2>Criptografía de clave pública</h2>
+            <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/clave_publica.png" alt="criptosistema clave privada" width="40%"></p>
+
+        </section>
+
+        <section class="slide">
+            <h2>Criptografía de clave pública</h2>
+            <ul>
+                <li>Iker tiene su clave privada I<sub>privada</sub> y todos tienen la clave
+                    pública de Iker, I<sub>pública</sub></li>
+                <li>Miren cifra su mensaje m usando la clave pública de
+                    Iker: c = e ( m , I<sub>pública</sub> )</li>
+                <li>Miren manda el criptograma c a Iker</li>
+                <li>Iker recibe c</li>
+                <li>Iker descifra c usando su clave privada I privada: m = d ( c , I<sub>privada</sub> )</li>
+                <li>Confidencialidad. Sólo Iker puede descifrar el mensaje</li>
+            </ul>
+        </section>
+
+        <section class="slide">
+            <h2>Criptografía de clave pública</h2>
+            <p>Ventajas:
+                <ul>
+                    <li>Sólo el destinatario puede leer el mensaje</li>
+                    <li>Sólo hay que almacenar una clave</li>
+                    <li>Cualquiera puede usar la clave pública para enviar un
+                        mensaje confidencial a Iker</li>
+                    <li>No son necesarios canales seguros para comunicar la
+                        clave pública</li>
+                </ul>
+            </p>
+        </section>
+
+        <section class="slide">
+            <h2>Criptografía de clave pública</h2>
+            <p>Problemas:
+                <ul>
+                    <li>La clave privada debe mantenerse privada</li>
+                    <li>Debería ser (prácticamente) imposible sacar la clave
+                        privada a partir de la clave pública</li>
+                    <li>Cifrado y descifrado son más lentos que en los sistemas
+                        de clave secreta</li>
+                    <li>Miren debe estar segura de que está usando la clave
+                        pública de Iker</li>
+                    <li>Debe ser fácil obtener las claves públicas</li>
+                </ul>
+            </p>
+        </section>
+
+        <section class="slide">
+            <h2>Criptografía de clave pública</h2>
+            <p>Cada usuario genera su par (clave pública, clave
+                privada) y publica la clave pública en un servidor de
+                claves: Key Certification Authority o Key Distribution Center
+                (KDC)</p>
+
+        </section>
+
+        <section class="slide">
+            <h2>Criptografía de clave pública</h2>
+            <p>Más problemas:
+                <ul>
+                    <li>¿Cómo sabe Iker si el mensaje es realmente de Miren?</li>
+                    <li>Cuando Iker conteste ¿Cómo sabe Miren que el mensaje
+                        es realmente de Iker?</li>
+                </ul>
+            </p>
+        </section>
+
+        <section class="slide">
+            <h2>Criptografía de clave pública</h2>
+            <ul>
+                <li>Si Iker lo cifra con su clave privada lo puede descifrar
+                    cualquiera (I<sub>pública</sub> la conoce todo el mundo)</li>
+                <li>Solución:
+                    <ul>
+                        <li>Iker cifra el mensaje con su clave privada: C1 = e ( m, I<sub>privada</sub> )</li>
+                        <li>Luego lo vuelve a cifrar con la clave pública de Miren: C2 = e ( C1 , M <sub>pública</sub> ) </li>
+                        
+                    </ul>
+                </li>
+            </ul>
+            
+
+        </section>
+
+        <section class="slide">
+            <h2>Criptografía de clave pública</h2>
+            <ul>
+                <li>Sólo Miren puede desencriptarlo con su clave privada:
+                    <ul>
+                        <li>Confidencialidad: Sólo Miren puede descifrar el mensaje: C1 = d ( C2 , M<sub>privada</sub> )</li>
+                        <li>Autenticidad y No Repudio: Sólo Iker ha podido enviar el mensaje: m = d ( C1, I<sub>pública</sub> )</li>
+                    </ul>
+                </li>
+            </ul>
+
+        </section>
+
+        <section class="slide">
+            <h2>Criptografía de clave pública</h2>
+            <p>¿Qué ocurre si se interpone alguien en las
+                comunicaciones?</p>
+            <p>Ataque Man in the middle:
+                <ul>
+                    <li>Un intermediario recibe todos los mensajes sin que las
+                        otras partes se enteren
+                    </li>
+                    <li>Se necesita interceptar todas las comunicaciones entre
+                        las dos partes.</li>
+                </ul>
+            </p>
+
+        </section>
+
+        <section class="slide">
+            <h2>Criptografía de clave pública</h2>
+            
+
+        </section>
     
     <!-- FOOTER -->
 
