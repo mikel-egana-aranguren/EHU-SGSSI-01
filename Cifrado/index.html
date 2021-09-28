@@ -412,8 +412,14 @@
         <p>En vez de cifrar un mensaje, cifran bit a bit</p>
         <p>Usado para comunicaciones en tiempo real (No se puede esperar a tener el mensaje completo para
             cifrarlo y transmitirlo)</p>
+
+    </section>
+
+    <section class="slide">
+        <h2>Métodos de cifrado de flujo</h2>
+
         <p>A partir de la clave, se usa un generador
-            “pseudoaleatorio” que genera el flujo de clave</p>
+            "pseudoaleatorio" que genera el flujo de clave</p>
             <p>La operación XOR entre el bit a cifrar y el flujo de
                 clave, genera el criptograma</p>
     </section>
@@ -464,7 +470,7 @@
 
     <section class="slide">
         <h2>Métodos de cifrado por bloques</h2>
-        <p>partir el mensaje original en bloques de
+        <p>Partir el mensaje original en bloques de
             tamaño fijo: 
             <ul>
                 <li>Si el tamaño es suficientemente pequeño, puede
@@ -505,7 +511,7 @@ Descifrar - Cifrar):
                 <ul>
                     <li>Usar 2 claves ( E k<sub>1</sub> ( D k<sub>2</sub> ( E k<sub>1</sub> )))</li>
                     <li>Usar 3 claves ( E k<sub>1</sub> ( D k<sub>2</sub> ( E k<sub>3</sub> )))</li>
-                    <li>Usado extensamente (tarjetas de crédito)</li>
+                    <li>Usado extensamente en comercio (tarjetas de crédito)</li>
 </ul>
 </p>
         </section>
@@ -547,7 +553,7 @@ Descifrar - Cifrar):
                     <li>Muy usado en todo tipo de comunicaciones y transacciones</li>
                     <li>Bloques de 128 bits</li>
                     <li>Claves de 128, 192 ó 256 bits</li>
-                    <li>8 rondas (claves de 128) , 12 rondas(claves de 192), 14
+                    <li>8 rondas (claves de 128) , 12 rondas (claves de 192), 14
 rondas (claves de 256)</li>
                 </ul>
             </p>
@@ -578,9 +584,9 @@ rondas (claves de 256)</li>
             <h2>Ataques por fuerza bruta</h2>
             <p>Espacio de claves:
                 <ul>
-                    <li>56 bits: 2 56 posibilidades</li>
-                    <li>128 bits: 2 128 posibilidades</li>
-                    <li>256 bits: 2 256 posibilidades</li>
+                    <li>56 bits: 2<sup>56</sup> posibilidades</li>
+                    <li>128 bits: 2<sup>128</sup> posibilidades</li>
+                    <li>256 bits: 2<sup>256</sup> posibilidades</li>
                 </ul>
             </p>
         </section>
@@ -656,6 +662,11 @@ rondas (claves de 256)</li>
                     <li>Se pueden precalcular los hash de todo el espacio de claves</li>
                 </ul>
             </p>
+        </section>
+
+        <section class="slide">
+            <h2>Algoritmos de resumen</h2>
+
             <p>Solución: usar "sal" (Salt), o semilla</p>
             <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/hash-clave-identificacion-sal.png" alt="criptosistema clave privada" width="60%"></p>
         </section>
@@ -686,16 +697,16 @@ rondas (claves de 256)</li>
                     <li>SHA-1</li>
                 </ul>
             </p>
+        </section>
+
+        <section class="slide">
+            <h2>Algoritmos de resumen</h2>
             <p>Problemas
                 <ul>
                     <li>Colisiones: dos textos distintos que generen el mismo resumen</li>
                     <li>Ataques que debilitan el algoritmo</li>
                 </ul>
             </p>
-        </section>
-
-        <section class="slide">
-            <h2>Algoritmos de resumen</h2>
             <p>Soluciones
                 <ul>
                     <li>Usar otros algoritmos que generan resúmenes criptográficos más largos</li>
@@ -703,6 +714,58 @@ rondas (claves de 256)</li>
                 </ul>
             </p>
         </section>
+
+        <section class="slide">
+            <h2>Contraseñas en S.O.</h2>
+            <p>Linux:
+                <ul>
+                    <li>Ubicación: etc/shadow</li>
+                    <li>Obtención: sudo cat /etc/shadow</li>
+                    <li>Formato: user:$Algoritmousado$sal$ResumenCriptográfico:A:B:C:D:E:F:</li>
+                </ul>
+
+            </p>
+
+        </section>
+
+        <section class="slide">
+            <h2>Contraseñas en S.O.</h2>
+            <p>Formato Linux:
+                <ul>
+                    <li>Algoritmousado: 1: MD5; 2: Blowfish; 3: NT; 5: SHA-256; 6: SHA-512</li>
+                    <li>Sal: Cadena aleatoria para derivar las claves</li>
+                </ul> 
+            </p>
+        </section>
+
+        <section class="slide">
+            <h2>Contraseñas en S.O.</h2>
+            <p>Formato Linux:
+                <ul>
+                    <li>A: número de días sin cambiar la clave (desde 01/01/1970)</li>
+                    <li>B: número de días hasta poder cambiar la clave</li>
+                    <li>C: número máximo de días que se puede estar sin cambiar la clave</li>
+
+                </ul> 
+            
+                
+            </p>
+
+        </section>
+
+        <section class="slide">
+            <h2>Contraseñas en S.O.</h2>
+            <p>Formato Linux:
+                <ul>
+                <li>D: número de días de antelación con el que hay que avisar al usuario de que tiene que cambiar la clave</li>
+                <li>E: número de días desde que caduque la contraseña hasta que se desactive la cuenta</li>
+                <li>F: número de días hasta que la cuenta se desactive (desde 01/01/1970)</li>
+                </ul>
+            </p>
+
+        </section>
+
+        
     
     <!-- FOOTER -->
 
