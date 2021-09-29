@@ -426,7 +426,7 @@
 
     <section class="slide">
         <h2>Métodos de cifrado de flujo</h2>
-        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/cifrado-flujo.png" alt="Frecuencias" width="60%"></p>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/cifrado-flujo.png" alt="Frecuencias" width="80%"></p>
     </section>
 
     <section class="slide">
@@ -509,8 +509,8 @@
             <p>Triple DES - 1998: Basado en realizar 3 ejecuciones de DES (Cifrar –
 Descifrar - Cifrar):
                 <ul>
-                    <li>Usar 2 claves ( E k<sub>1</sub> ( D k<sub>2</sub> ( E k<sub>1</sub> )))</li>
-                    <li>Usar 3 claves ( E k<sub>1</sub> ( D k<sub>2</sub> ( E k<sub>3</sub> )))</li>
+                    <li>Usar 2 claves: ( E k<sub>1</sub> ( D k<sub>2</sub> ( E k<sub>1</sub> )))</li>
+                    <li>Usar 3 claves: ( E k<sub>1</sub> ( D k<sub>2</sub> ( E k<sub>3</sub> )))</li>
                     <li>Usado extensamente en comercio (tarjetas de crédito)</li>
 </ul>
 </p>
@@ -539,8 +539,7 @@ Descifrar - Cifrar):
                     <li>Clave de 128 bits</li>
                     <li>8 rondas</li>
                     <li>Usado en las redes 3G (con alguna variación)</li>
-                    <li>El original se puede <a href="https://www.engadget.com/2010/01/15/3g-gsm-encryption-cracked-in-less-
-                        than-two-hours/">romper fácilmente</a> (probado en
+                    <li>El original se puede <a href="https://www.engadget.com/2010/01/15/3g-gsm-encryption-cracked-in-less-than-two-hours/">romper fácilmente</a> (probado en
                 2010)</li>
                 </ul>
             </p>
@@ -769,7 +768,7 @@ rondas (claves de 256)</li>
             <h2>Criptografía de clave pública</h2>
             <p>Usa algoritmos de clave asimétrica: la clave que cifra no es la que descifra
             </p>
-            <p>USa dos claves por usuario:
+            <p>Usa dos claves por usuario:
                 <ul>
                     <li>La clave pública que conoce todo el mundo</li>
                     <li>La clave privada que sólo conoce el usuario</li>
@@ -889,7 +888,7 @@ rondas (claves de 256)</li>
                         otras partes se enteren
                     </li>
                     <li>Se necesita interceptar todas las comunicaciones entre
-                        las dos partes.</li>
+                        las dos partes</li>
                 </ul>
             </p>
 
@@ -916,7 +915,14 @@ rondas (claves de 256)</li>
                 clave pública del otro y con su clave privada</p>
             <p>Andoni intercepta los mensajes, los lee, modifica y
                 los encripta con su clave privada</p>
-                <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/AndoniIkerMirenManInTheMiddleDetalles.png" alt="criptosistema clave privada" width="40%"></p>
+                
+        </section>
+
+
+        <section class="slide">
+            <h2>Criptografía de clave pública</h2>
+
+            <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/AndoniIkerMirenManInTheMiddleDetalles.png" alt="criptosistema clave privada" width="60%"></p>
         </section>
 
         <section class="slide">
@@ -937,7 +943,7 @@ rondas (claves de 256)</li>
 
         <section class="slide">
             <h2>Criptografía de clave pública</h2>
-            <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/AC.png" alt="criptosistema clave privada" width="40%"></p>
+            <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/AC.png" alt="criptosistema clave privada" width="60%"></p>
 
         </section>
 
@@ -972,7 +978,7 @@ rondas (claves de 256)</li>
         <section class="slide">
             <h2>Cifrado híbrido</h2>
             <p>Iker recibe [ cm , cs ]</p>
-            <p>Iker descifra S usando su clave privada I<sub>privada</sub>: d2 ( cs , I<sub><privada/sub> ) = S</p>
+            <p>Iker descifra S usando su clave privada I<sub>privada</sub>: d2 ( cs , I<sub>privada</sub> ) = S</p>
             <p>Iker descifra m usando S: d1 ( cm , S ) = m</p>
         </section>
 
@@ -997,7 +1003,6 @@ rondas (claves de 256)</li>
             <p>Sólo el usuario legítimo puede firmar su documento</p>
             <p>Nadie podrá falsificar una firma</p>
             <p>Cualquiera puede verificar una firma digital</p>
-            <p>Una copia de una firma digital es igual a la original (Esto no es cierto para la firma escrita convencional)</p>
         </section>
 
         <section class="slide">
@@ -1013,9 +1018,7 @@ rondas (claves de 256)</li>
         <section class="slide">
             <h2>Firma digital</h2>
             <p>Miren obtiene un resumen criptográfico del mensaje: RC = hash (m)</p>
-            <p>Miren cifra el resumen criptográfico con su clave
-                Dependerá de si quiere
-                privada (Dependera de si quiere Confidencialidad): Firma = e ( RC, M<sub>privada</sub> )</p>
+            <p>Miren cifra el resumen criptográfico con su clave: Firma = e ( RC, M<sub>privada</sub> )</p>
             <p>Miren envía el mensaje (cifrado o sin cifrar) y su Firma</p>
         </section>
 
@@ -1034,7 +1037,7 @@ rondas (claves de 256)</li>
 
         <section class="slide">
             <h2>Firma digital</h2>
-            <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/FirmaMiren.png" alt="criptosistema clave privada" width="40%"></p>
+            <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/FirmaIker.png" alt="criptosistema clave privada" width="40%"></p>
         </section>
 
         <section class="slide">
@@ -1043,7 +1046,7 @@ rondas (claves de 256)</li>
                 Integridad y No Repudio</p>
             <p>Puede hacerlo usando:
                 <ul>
-                    <li>Un sistema de criptografía asimétrica.</li>
+                    <li>Un sistema de criptografía asimétrica</li>
                     <li>Un sistema de criptografía híbrido</li>
                 </ul>
             </p>
@@ -1058,36 +1061,41 @@ rondas (claves de 256)</li>
                         M<sub>privada</sub> )</li>
                 </ul>
             </p>
-            <p>Un sistema de criptografía híbrido. Enviaría a Iker:
-                <ul>
-                    <li>Criptograma del mensaje cifrado con la clave de sesión</li>
-                    <li>Criptograma con la clave de sesión cifrada con I<sub>pública</sub></li>
-                    <li>Su Firma digital (el resumen criptográfico cifrado con M<sub>privada</sub> )</li>
-                </ul>
-            </p>
+
         </section>
 
         <section class="slide">
-            <h2>Algoritmos de clave publica</h2>
+            <h2>Firma digital</h2>
+        <p>Un sistema de criptografía híbrido. Enviaría a Iker:
+            <ul>
+                <li>Criptograma del mensaje cifrado con la clave de sesión</li>
+                <li>Criptograma con la clave de sesión cifrada con I<sub>pública</sub></li>
+                <li>Su Firma digital (el resumen criptográfico cifrado con M<sub>privada</sub>)</li>
+            </ul>
+        </p>
+    </section>
+
+        <section class="slide">
+            <h2>Algoritmos de clave pública</h2>
             <p>Diffie-Hellman - 1976</p>
             <p>RSA - 1977</p>
             <p>ElGamal - 1984</p>
             <p>DSA - 1991</p>
-            <p>Curvas elipticas - 1985</p>
+            <p>Curvas elípticas - 1985</p>
         </section>
 
         <section class="slide">
-            <h2>Algoritmos de clave publica</h2>
-            Diffie-helamn, Curvas elipticas https://www.youtube.com/watch?v=yDXiDOJgxmg&t=72s
+            <h2>Algoritmos de clave pública</h2>
+            <p><iframe width="560" height="315" src="https://www.youtube.com/embed/yDXiDOJgxmg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
         </section>
 
         <section class="slide">
-            <h2>Algoritmos de clave publica</h2>
-            RSA https://www.youtube.com/watch?v=M7kEpw1tn50
+            <h2>Algoritmos de clave pública</h2>
+            <p><iframe width="560" height="315" src="https://www.youtube.com/embed/M7kEpw1tn50" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
         </section>
 
         <section class="slide">
-            <h2>Algoritmos de clave publica</h2>
+            <h2>Algoritmos de clave pública</h2>
             <p>DNI electrónico (DNIe 3.0):
                 <ul>
                     <li>RSA</li>
@@ -1095,6 +1103,10 @@ rondas (claves de 256)</li>
                     <li>TripleDES / AES</li>
                 </ul>
             </p>
+        </section>
+
+        <section class="slide">
+            <h2>Algoritmos de clave pública</h2>
         <p>PGP:
             <ul>
                 <li>RSA / DSA</li>
@@ -1104,7 +1116,7 @@ rondas (claves de 256)</li>
         </section>
 
         <section class="slide">
-            <h2>Algoritmos de clave publica</h2>
+            <h2>Algoritmos de clave pública</h2>
             <p>SSH:
                 <ul>
                     <li>RSA / DSA</li>
@@ -1146,8 +1158,8 @@ rondas (claves de 256)</li>
         </section>
 
         <section class="slide">
-            <h2>Confianza de firmas</h2>
-            <p>Niveles de confianza:
+            <h2>Niveles de confianza</h2>
+
                 <ul>
                     <li>Desconocido: no nos fiamos de nada que firme ese
                         usuario (por desconocimiento)</li>
@@ -1157,7 +1169,7 @@ rondas (claves de 256)</li>
                         usuarios con confianza marginal</li>
                     <li>Absoluto: nos fiamos de todo lo firmado por ese usuario</li>
                 </ul>
-            </p>
+            
         </section>
 
         <section class="slide">
@@ -1205,12 +1217,12 @@ rondas (claves de 256)</li>
             <h2>Certificados digitales</h2>
             <p>Jerarquía de certificación (RFC 1422)
             </p>
-            <p>Internet Policy Registration Authority (IPRA); Policy Certification Authorities (PCA); Certification Authorities (CA): Verisign, Thawte, GeoTrust, RapidSSL, DigiCertSSL</p>
+            <p>Internet Policy Registration Authority (IPRA) >> Policy Certification Authorities (PCA) >> Certification Authorities (CA): Verisign, Thawte, GeoTrust, RapidSSL, DigiCertSSL</p>
         </section>
 
         <section class="slide">
-            <h2>Certificados digitales</h2>
-            <p>Un AC debe:
+            <h2>Un AC debe</h2>
+            
                 <ul>
                     <li>Mantener una base de datos de nombres distinguidos
                         (ND) y de ACs subordinadas</li>
@@ -1222,15 +1234,15 @@ rondas (claves de 256)</li>
                             <li>Violación de la seguridad de la AC</li>
                         </ul>
                     </li>
-                    <li>Lista de revocación de certificados (CRL, Certification
-                        Revocation List) (Ejemplo: <a href="https://www.geotrust.com/resources/repository/crls/">GeoTrust</a>)</li>
+                    <li>CRL, Certification
+                        Revocation List: ejemplo <a href="https://www.geotrust.com/resources/repository/crls/">GeoTrust</a></li>
                 </ul>
-            </p>
+            
         </section>
 
         <section class="slide">
-            <h2>Certificados digitales</h2>
-            <p>Un AC debe:
+            <h2>Un AC debe</h2>
+            
                 <ul>
                     <li>El protocolo OCSP (Online Certificate Status Protocol RFC 2560) permite validar el estado de un
 certificado digital de manera online</li>
@@ -1238,7 +1250,7 @@ certificado digital de manera online</li>
                     <li>Ventaja: su actualización constante</li>
                     <li>Desventaja: necesidad de conexión para la comprobación</li>
                 </ul>
-            </p>
+            
         </section>
 
         <section class="slide">
@@ -1273,7 +1285,6 @@ certificado digital de manera online</li>
                     <li>Nombre del emisor</li>
                     <li>Periodo de validez</li>
                     <li>Nombre del sujeto</li>
-                    <li>Información clave pública del sujeto</li>
                 </ul>
             </p>
         </section>
