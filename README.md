@@ -9,6 +9,7 @@ Temario:
 1. [Introducción](Introduccion/index.html)
 2. [Backups](Backups/index.html)
 3. [Cifrado](Cifrado/index.html)
-4. [Malware](Malware/index.html)
+4. [Bitcoin](Bitcoin/index.html)
+5. [Malware](Malware/index.html)
 
 [![DOI](https://zenodo.org/badge/334955028.svg)](https://zenodo.org/badge/latestdoi/334955028)
