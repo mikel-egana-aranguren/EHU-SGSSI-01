@@ -129,6 +129,215 @@
         </ul>
     </section>
 
+    <section class="slide">
+        <h2>Ejemplo de no repudio</h2>
+        Sistema de cifrado de whatsapp<br>
+        Doble click al recibir, en azul leído<br>
+        No podemos negar haberlo enviado<br>
+        No pueden negar que lo han recibido<br>
+    </section>
+
+    <section class="slide">
+        <h2>Riesgos y protección de las redes</h2>
+        Disponibilidad: Asegura que la información/recursos van a estar disponibles (van a poder ser accedidos/consultados/usados) cuando sea necesario<br>
+    </section>
+
+    <section class="slide">
+        <h2>Riesgos y protección de las redes</h2>
+        Anonimato: Oculta la identidad de la persona que usa un determinado servicio<br><br>
+        Imprescindible en algunos servicios: encuestas, voto electronico, algunas transacciones economicas
+    </section>
+
+    <section class="slide">
+        <h2>Ataques mas comunes</h2>
+        Sobre autenticacion: interceptacion, suplantacion<br>
+        Sobre información: revelación, reenvio, manipulación, repudio<br>
+        Sobre servicios: denegación, apropiación<br>
+    </section>
+
+
+    <section class="slide">
+        <h2>¿Cómo proteger las redes?</h2>
+        Seguridad Perimetral:
+        <ul>
+        <li>Usar una arquitectura y elementos de red que provean de seguridad al perímetro de una red frente a otra</li>
+        <li>Normalmente se estará hablando de una red interna e Internet</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Mecanismos de seguridad más usados</h2>
+        Seguridad Perimetral:
+        <ul>
+            <li>Cortafuegos</li>
+            <li>Servicios de Detección y Prevención de Intrusos</li>
+            <li>Pasarelas antivirus y antispam</li>
+            <li>Redes Virtuales Privadas </li>       
+            <li>Proxys</li>
+            <li>UTM</li>
+            <li>Honeypots</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Ejemplo de arquitectura sin seguridad</h2>
+        No se filtra el tráfico<br>
+        Publicación de servicios internos (BD)<br>
+        No se verifica malware o SPAM<br>
+        Cliente remoto accede directamente a los servicios<br>
+    </section>
+
+    <section class="slide">
+        <h2>Ejemplo de arquitectura sin seguridad</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/arquitectura-sin-seguridad.png" alt="Arquitectura sin seguridad" width="30%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Firewall</h2>
+        Elemento de red  (Hardware o software) donde se define la política de accesos, permitiendo o denegando el tráfico según se definan sus reglas<br>
+        Dos filosofías distintas de uso:
+        <ul>
+            <li>Política restrictiva (lista blanca): se deniega todo menos lo que se acepta explícitamente.</li>
+            <li>Política permisiva (lista negra): se acepta todo menos lo que se deniega explícitamente.</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Firewall: ¿Contra qué protege?</h2>
+        Contra accesos no autenticados del exterior<br>
+        Contra tráfico no autorizado desde el exterior<br>
+        Permite salida autorizada desde el interior<br>
+        Proporciona un único punto para implantar una política de seguridad y auditoría<br>
+    </section>
+
+    <section class="slide">
+        <h2>Ejemplo de arquitectura sin seguridad</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/cortafuegos.png" alt="Arquitectura cortafuegos" width="30%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Firewall: ¿Contra qué no protege?</h2>
+        Contra accesos externos que no pasen por el cortafuegos<br>
+        Contra ataques desde el interior<br>
+        Contra virus, troyanos, SPAM<br>
+        Contra salida de información por otro medio (USBs, correo electrónico, etc.)
+    </section>
+
+    <section class="slide">
+        <h2>Tipos Firewall</h2>
+        De nivel de pasarela: filtra aplicaciones concretas como FTP o Telnet <br>
+        De capa de red: filtra en función de la IP de origen/destino y del puerto origen/destino <br>
+        De capa de aplicación: filtra en función del protocolo de la comunicación <br> 
+        Personal: instalado en la propia máquina filtra las conexiones entrantes y salientes de la máquina <br>
+    </section>
+
+    <section class="slide">
+        <h2>Firewall ejemplo config</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/tabla-firewall.png" alt="Arquitectura cortafuegos" width="30%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Zona Desmilitarizada (DMZ, DeMilitarized Zone)</h2>
+        Zona entre la intranet y la Internet donde se ubican los servicios públicos (correo, ftp, etc.) que quedan más expuestos a los problemas de seguridad<br>
+        Se crea mediante el uso de uno o dos cortafuegos que limita el acceso entre las distintas redes<br>
+        Desde la zona desmilitarizada no se puede acceder directamente a la intranet<br>
+
+    </section>
+
+    <section class="slide">
+        <h2>DMZ</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/OsaOKS7Q-cE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    </section>
+
+    <section class="slide">
+        <h2>DMZ</h2>
+
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/dmz.png" alt="DMZ" width="30%"></p>
+
+    </section>
+
+    <section class="slide">
+        <h2>Sistemas de Detección y Prevención de Intrusos (IDS/IPS)</h2>
+        Detecta accesos no autorizados / usos indebidos en la red o en una máquina<br>
+        Los IDS avisan al administrador (reactivos)<br>
+        Los IPS los bloquean para que no tengan efecto (proactivos)<br>
+
+    </section>
+
+    <section class="slide">
+        <h2>Tipos IDS/IPS</h2>
+        HIDPS (Host IDPS): se instala en la máquina y detecta cambios en el sistema operativo y en las aplicaciones<br>
+        NIDPS (Network IDPS): monitoriza el tráfico de la red local<br>
+        WIDPS (Wi-Fi IDPS): monitoriza el tráfico inalámbrico<br>
+        NBA (Network Behaviour Analysis): examina el comportamiento del tráfico de la red<br>
+    </section>
+
+    <section class="slide">
+        <h2>Funcionamiento de un IDS/IPS</h2>
+        Heurística: analiza comportamientos "extraños" y cuando los detecta da la alarma
+        Firmas: detecta patrones de ataques conocidos (Problema ante ataques nuevos)
+    </section>
+
+    <section class="slide">
+        <h2>IDS/IPS</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/dmz.png" alt="DMZ" width="30%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Pasarelas antivirus y antispam</h2>
+        <p>Analizan el tráfico y filtran los contenidos maliciosos hacia la red interna</p>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/pasarela.png" alt="DMZ" width="30%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Redes Virtuales Privadas (VPN)</h2>
+        Red que usa una infraestructura no segura (Internet) para acceder de manera segura a una red interna<br>
+        Usadas para la conexión remota a la red interna<br>
+        https://www.ehu.eus/es/web/ikt-tic/vpn
+        Permite:<br>
+        <ul>
+            <li>Autenticación y autorización mediante la gestión de usuarios, roles y permisos</li>
+            <li>Integridad con el uso de funciones hash</li>
+            <li>Confidencialidad puesto que la información viaja cifrada mediante algún algoritmo de encriptación</li>
+            <li>No repudio porque los datos se transmiten firmados</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Proxy</h2>
+        Programa o dispositivo que realiza las tareas de intermediario<br>
+        El cliente hace las peticiones al proxy que se encarga de gestionarlas<br>
+        El uso de un proxy proporciona mayor seguridad durante la navegación porque el servidor desconoce quién se ha conectado realmente<br>
+        Aísla a los clientes del mundo exterior<br>
+    </section>
+
+    <section class="slide">
+        <h2>Gestión Unificada de Amenazas (UTM)</h2>
+        Dispositivo que aúna múltiples aspectos relacionados con la seguridad de las comunicaciones:
+
+        Cortafuegos
+IDS / IPS
+Pasarela antimalware/antispam
+VPN
+    </section>
+
+    <section class="slide">
+        <h2>Honeypots</h2>
+
+        Sistema configurado para recibir ataques y estudiar nuevas técnicas
+También se usan para recoger muestras de virus y spam
+Deben estar especialmente controlados y ajenos a cualquier red interna
+
+    </section>
+
+    <section class="slide">
+        <h2>Honeypots</h2>
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/FihkG72z7MQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    </section>
+
     
 
     <!-- FOOTER -->
