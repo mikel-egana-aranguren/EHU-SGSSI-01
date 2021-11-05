@@ -42,8 +42,7 @@
             <li>Definiciones</li>
             <li>Riesgos y protecciones en las redes</li>
             <li>Ejemplos</li>
-            <li>Redes Wi-Fi</li>
-            <li>Ataques más comunes en redes</li>
+            <li>Ataques más comunes</li>
         </ul>
     </section>
 
@@ -105,7 +104,6 @@
             <li>Anonimato</li>
         </ul>
     </section>
-
 
     <section class="slide">
         <h2>Riesgos y protección de las redes</h2>
@@ -344,7 +342,72 @@
 
     </section>
 
-    
+    <section class="slide">
+        <h2>Ejemplo arquitectura con seguridad</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/EjemploArquitecturaSeguridad.png" alt="Ejemplo Arquitectura Seguridad" width="70%"></p>
+
+
+    </section>
+
+    <section class="slide">
+        <h2>Ejemplo arquitectura con seguridad</h2>
+        Instalación de cortafuegos:
+        <ul>
+            <li>DMZ y Red Interna</li>
+            <li>Política restrictiva</li>
+        </ul>
+        Instalación de antispam y antivirus<br>
+        Instalación de NIDS en las tres interfaces<br>
+    </section>
+
+    <section class="slide">
+        <h2>Ejemplo arquitectura con seguridad</h2>
+        Segmentación:
+        <ul>
+            <li>Público: Web, pasarela antispam/antivirus</li>
+            <li>Privado: Base de datos, servidor de correo</li>
+        </ul>
+        Los clientes remotos usan VPN<br>
+    </section>
+
+    <section class="slide">
+        <h2>Ataques más comunes</h2>
+        Sniffing: Interceptación de la información que viaja por la red <br><br>
+        Man in the middle: No sólo se intercepta la información, también se puede insertar y modificar a voluntad 
+    </section>
+
+    <section class="slide">
+        <h2>Ataques más comunes</h2>
+        Hijacking: Robo de conexiones a un usuario autentificado en el sistema <br><br>
+        <ul>
+            <li>IP Hijacking</li>
+            <li>Session hijacking</li>
+            <li>DNS Hijacking</li>
+            <li>...</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Ataques más comunes</h2>
+        Spoofing (Suplantación) <br><br>
+        <ul>
+            <li>IP Spoofing</li>
+            <li>MAC Spoofing</li>
+            <li>DNS Spoofing</li>
+            <li>...</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Ataques más comunes</h2>
+        Denegación de Servicio (DoS): Se "satura" el hardware o software hasta que deja de responder <br><br>
+        Ataque Distribuido de Denegación de Servicio (DDoS):
+        <ul>
+            <li>Se realiza desde varias máquinas</li>
+            <li>Una de ellas ejerce de master y coordina a las demás</li>
+        </ul>
+        <a href="https://therecord.media/gitlab-servers-are-being-exploited-in-ddos-attacks-in-excess-of-1-tbps/">GitLab servers are being exploited in DDoS attacks in excess of 1 Tbps</a>
+    </section>
 
     <!-- FOOTER -->
 
