@@ -53,10 +53,284 @@
 
     </section>
 
-    <section class="slide">
-        <h2>A1 - Caso real</h2>
+        <section class="slide">
+            <h2>A1 - Inyección</h2>
+            <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/injection.png" alt="Ejemplo Arquitectura Seguridad" width="70%"></p>
+            <a href="https://securityboulevard.com/2019/06/sql-injection-attacks-so-old-but-still-so-relevant-heres-why-charts/">SQL Injection Attacks: So Old, but Still So Relevant. Here’s Why (Charts)</a>
+    
+        </section>
 
-    </section>
+        <section class="slide">
+            <h2>A1 - Inyección</h2>
+        ¿Como evitarla?
+        <ul>
+            <li>Validación de las entradas evitando caracteres "peligrosos"</li>
+            <li>No usar cuentas con privilegios de administrador</li>
+            <li>No proporcionar mayor información de la necesaria (evitar la
+                información de los errores hacia el usuario)</li>
+            <li>No construir las sentencias SQL directamente con los valores
+                recogidos, usar sentencias parametrizadas</li>
+        </ul>
+    
+        </section>
+
+        <section class="slide">
+            <h2>A1 - Inyección</h2>
+        ¿Como evitarla? Filtrar los datos
+        <ul>
+            <li>Si tenemos en nuestro formulario el campo username, y sabemos
+                que los usuarios sólo pueden estar compuestos por letras y
+                números, no se deben permitir caracteres como " ' " o " = "</li>
+            <li>Si se trata del campo e-mail, podemos utilizar expresiones
+                regulares para validarlo, como
+                preg_match('/^.+@.+\..{2,3}$/',$_POST['email'])</li>
+        </ul>
+    
+        </section>
+
+
+        <section class="slide">
+            <h2>A1 - Inyección</h2>
+        ¿Como evitarla? Filtrar los datos
+        <ul>
+            <li>Usar funciones que escapan caracteres especiales de una
+                cadena para su uso en una sentencia SQL:
+                mysql_real_escape_string() coloca barras invertidas antes de los
+                siguientes caracteres: \x00, \n, \r, \, ', " y \x1a</li>
+            <li>addslashes(), (la directiva de PHP magic_quotes_gpc está activada
+                por defecto, y ejecuta la función addslashes() en todos los datos GET,
+                POST, y COOKIE).</li>
+        </ul>
+    
+        </section>
+
+
+        <section class="slide">
+            <h2>A2 - Pérdida de autenticación</h2>
+            Aprovecharse de una sesión establecida por un usuario legítimo <br>
+            Si se usan identificadores de sesión visibles se puede copiar y usarlo a posteriori<br>
+            Si se almacena el identificador de sesión en una cookie, se puede acceder a él
+            <ul>
+                <li>A través de un ataque XSS (ver vulnerabilidad A7)</li>
+                <li>A través de una escucha en la red</li>
+            </ul>
+        </section>
+
+        <section class="slide">
+            <h2>A2 - Pérdida de autenticación</h2>
+            Si la sesión no se cierra se puede acceder a la misma url cuando el usuario legítimo haya abandonado su máquina<br/>
+        </section>
+
+        <section class="slide">
+            <h2>A2 - Pérdida de autenticación</h2>
+            Posibles causas
+            <ul>
+                <li>Uso de passwords sencillos y conocidos (1234, admin, etc.)</li>
+                <li>Uso de preguntas de seguridad sencillas o poco configurables</li>
+                <li>Las contraseñas no se encriptan con un algoritmo seguro</li>
+                <li>Se muestra la contraseña en la url</li>
+                <li>Incorrecta gestión de las sesiones</li>
+            </ul>
+        </section>
+
+        <section class="slide">
+            <h2>A2 - Pérdida de autenticación</h2>
+            Problemas de las cookies
+            <ul>
+                <li>Si almacenan los datos de la sesión de manera permanente,
+                    cualquiera puede acceder a ellos</li>
+                <li>Con un lenguaje de script se puede acceder al fichero y a sus
+                    valores mientras se navega por el sitio web</li>
+                <li>Si los datos de la cookie se envían sin cifrar, cualquiera puede
+                        escucharlos por la red</li>
+            </ul>
+        </section>
+
+        <section class="slide">
+            <h2>A2 - Pérdida de autenticación</h2>
+            ¿Cómo evitarla?
+            <ul>
+                <li>Cerrar la sesión cuando el usuario se desloguea</li>
+                <li>Cerrar la sesión cuando el usuario pasa cierto tiempo sin hacer nada (timeout)</li>
+                <li>Para evitar el acceso mediante lenguajes de Script, usar el atributo <b>httponly</b></li>
+            </ul>
+        </section>
+
+        <section class="slide">
+            <h2>A2 - Pérdida de autenticación</h2>
+            <a href="https://haveibeenpwned.com/">';--have i been pwned?</a>
+    
+        </section>
+
+        <section class="slide">
+            <h2>A3 - Exposición de datos sensibles</h2>
+            No tomar medidas de protección para aquellos datos que se consideren sensibles en la aplicación
+            <ul>
+                <li>Almacenamiento de datos sensibles sin cifrar</li>
+                <li>Transmisión de datos sensibles sin cifrar</li>
+                <li>Uso de algoritmos de cifrado débiles</li>
+            </ul>
+        </section>
+
+        <section class="slide">
+            <h2>A3 - Exposición de datos sensibles</h2>
+            ¿Cómo evitarla?
+            <ul>
+                <li>Almacenando cifrada la información sensible</li>
+                <li>Asegurando que la información sensible se envíe a través de protocolos seguros</li>
+                <li>Usando algoritmos de cifrado robustos</li>
+            </ul>
+        </section>
+
+        <section class="slide">
+            <h2>A4 - Entidades XML externas </h2>
+            Aprovecharse de vulnerabilidades en los procesadores de XML que incluyen muchos servicios web<br>
+            <ul>
+                <li>Subiendo ficheros XML con código embebido</li>
+                <li>Haciendo uso de las dependencias de los ficheros XML</li>
+            </ul>
+        </section>
+
+        <section class="slide">
+            <h2>A4 - Entidades XML externas </h2>
+            ¿Cómo evitarla?
+            <ul>
+                <li>Evitar el uso del formato XML (Usar JSON)</li>
+                <li>Validar todo fichero XML antes de procesarlo</li>
+                <li>Actualizar los procesadores de XML para evitar vulnerabilidades conocidas</li>
+                <li>Limitar los orígenes desde los que se pueden enviar ficheros XML</li>
+            </ul>
+        </section>
+
+        <section class="slide">
+            <h2>A5 - Rotura de control de acceso </h2>
+            Acceder sin autentificación o con una autentificación no adecuada a objetos<br><br>
+            <b>www.sitio.com/consultar_datos.php?dni=45</b> (Sólo el usuario con DNI= 45 debería poder ver sus datos. No es suficiente con saber si el usuario que quiere acceder está logueado, hay que saber si es el de DNI=45)
+        </section>
+
+        <section class="slide">
+            <h2>A5 - Rotura de control de acceso </h2>
+            ¿Cómo evitarla?
+            <ul>
+                <li>Usando sesiones o cookies</li>
+            </ul>
+        </section>
+
+        <section class="slide">
+            <h2>A6 - Configuración de seguridad incorrecta </h2>
+            No tener una buena configuración de la aplicación por desconocimiento/despiste/dejadez
+            <ul>
+                <li>¿Se mantienen las cuentas/servicios que se crean por defecto?</li>
+                <li>¿Están habilitadas funcionalidades que no deberían?</li>
+                <li>¿Se trabaja con usuarios con permisos de administrador?</li>
+                <li>¿Se trabaja con software sin actualizar?</li>
+                <li>¿Se permite el uso de malas contraseñas?</li>
+            </ul>
+        </section>
+
+        <section class="slide">
+            <h2>A6 - Configuración de seguridad incorrecta </h2>
+            ¿Cómo evitarla?
+            <ul>
+                <li>Eliminar aquellas cuentas de servicios que no se usen</li>
+                <li>Modificar las contraseñas que traen por defecto muchos
+                    programas</li>
+                <li>Deshabilitar puertos/servicios que no se usen</li>
+                <li>Actualizar las aplicaciones</li>
+                <li>Obligar a los usuarios a usar contraseñas "seguras"</li>
+            </ul>
+        </section>
+
+        <section class="slide">
+            <h2>A6 - Configuración de seguridad incorrecta </h2>
+            ¿Cómo evitarla?
+            <ul>
+                <li>Definir usuarios específicos para cada aplicación con los
+                    permisos correspondientes a esa aplicación (En MySQL, no usar el usuario root para las conexiones. Crear uno o varios usuarios para
+                    la aplicación con los permisos que correspondan sólo sobre las tablas que correspondan)</li>
+            </ul>
+        </section>
+
+        <section class="slide">
+            <h2>A7 - Secuencia de comandos en sitios cruzados (XSS) </h2>
+            Ejecutar código en lenguaje Script que pueda introducir el propio usuario <br>
+            El método más sencillo, a través de campos de formularios <br>
+            Puede ser persistentes si se almacena el script en una base de datos:
+            <ul>
+                <li>Se introduce como un campo que se almacena</li>
+                <li>Se ejecuta cada vez que se muestra el valor de ese campo</li>
+            </ul>
+        </section>
+
+        <section class="slide">
+            <h2>A7 - Secuencia de comandos en sitios cruzados (XSS) </h2>
+            ¿Cómo evitarla?
+            <ul>
+                <li>Limpiando (escapando) el texto que introduzca el usuario
+                    eliminando los caracteres “peligrosos”</li>
+                <li>Limpiando los valores que obtengamos de la URL eliminando los
+                    caracteres “peligrosos”</li>
+                <li>Existen funciones que realizan el trabajo de escapado
+                    devolviendo un texto “limpio”</li>
+            </ul>
+        </section>
+
+        <section class="slide">
+            <h2>A8 - Deserialización insegura </h2>
+            Aprovecharse del proceso de desempaquetado de datos introduciendo datos falsos /maliciosos <br><br>
+            Cuando los datos vienen en formatos que los procesan para construir objetos a partir de ellos se pueden introducir datos que generen objetos no deseados 
+        </section>
+
+        <section class="slide">
+            <h2>A8 - Deserialización insegura </h2>
+            ¿Cómo evitarla?
+            <ul>
+                <li>Usando formatos que sólo admitan datos en tipos de datos primitivos (string, int, etc.), por ejemplo JSON</li>
+                <li>Desempaquetando sólo datos que vengan firmados</li>
+                <li>Deserializando únicamente los datos que vengan de orígenes fiables</li>
+                <li>Ejecutando el proceso de deserialización de manera externa al resto de la aplicación y en un entorno controlado</li>
+            </ul>
+        </section>
+
+        <section class="slide">
+            <h2>A9 - Uso de componentes con vulerabilidades conocidas </h2>
+            ¿Cómo evitarla?
+            <ul>
+                <li>Estando al día de la publicación de vulnerabilidades</li>
+                <li>Aplicando los parches correspondientes en cuanto salgan</li>
+                <li>Buscando alternativas que no presenten vulnerabilidades</li>
+            </ul>
+        </section>
+
+        <section class="slide">
+            <h2>A10 - Logueo y monitorización insuficientes </h2>
+            No registrar los intentos de acceso tanto si tienen éxito como si no<br>
+            La información de los intentos de acceso puede ser muy valiosa
+            <ul>
+                <li>Para detectar conductas sospechosas (empleados accediendo al
+                    sistema cuando no deben)</li>
+                <li>Para detectar ataques (múltiples intentos fallidos con el mismo
+                    usuario)</li>
+                <li>En algunos casos es obligatorio almacenar esta información
+                    debido a la LOPD</li>
+            </ul>
+        </section>
+
+        <section class="slide">
+            <h2>A10 - Logueo y monitorización insuficientes </h2>
+            ¿Cómo se soluciona?
+            <ul>
+                <li>Almacenando la información referente a las conexiones exitosas
+                    y a las fallidas</li>
+                <li>Analizando la información sobre las conexiones</li>
+                <li>Bloqueando al usuario si tiene X intentos fallidos consecutivos</li>
+            </ul>
+        </section>
+
+
+
+        
+
 
     
     <!-- FOOTER -->
