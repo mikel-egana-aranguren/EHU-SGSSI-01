@@ -14,5 +14,6 @@ Temario:
 6. [Seguridad física](SistemasGestionSeguridadInformacion/index.html)
 7. [Seguridad redes](SeguridadRedes/index.html)
 8. [Seguridad Web](SeguridadWeb/index.html)
+9. [Informatica Forense](InformaticaForense/index.html)
 
 [![DOI](https://zenodo.org/badge/334955028.svg)](https://zenodo.org/badge/latestdoi/334955028)

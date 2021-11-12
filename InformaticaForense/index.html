@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Informatica forense</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../ShowerTemplate/shower/themes/ribbon/styles/styles.css">
+    <style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<body class="shower list">
+    <header class="caption">
+        <h1>Informatica forense</h1>
+        <p>Mikel Egaña Aranguren</p>
+    </header>
+
+    <section class="slide" id="cover">
+        <h2>Informatica forense</h2>
+        <p>Mikel Egaña Aranguren</p>
+        <p><a href="https://mikel-egana-aranguren.github.io/">mikel-egana-aranguren.github.io</a></p>
+        <p><a href="mailto:mikel.egana@ehu.eus">mikel.egana@ehu.eus</a></p>
+        <img src="../ShowerTemplate/pictures/ehu.png" alt="UPV/EHU ingenieros San Mames" height="25%" border="1px solid #555">
+    </section>
+
+    <section class="slide">
+        <h2>Informatica forense</h2>
+        <p><a href="https://doi.org/10.5281/zenodo.4302267">https://doi.org/10.5281/zenodo.4302267</a></p>
+        <p><a href="https://github.com/mikel-egana-aranguren/EHU-SGSSI-01">https://github.com/mikel-egana-aranguren/EHU-SGSSI-01</a></p>
+        <img src="../ShowerTemplate/pictures/by.png" alt="Creative Commons BY" height="10%">
+    </section>
+
+    <section class="slide">
+        <h2>Indice</h2>
+        <ul>
+            <li>Que es la informatica forense?</li>
+            <li>El proceso
+                <ol>
+                    <li>Identificacion</li>
+                    <li>Conservacion</li>
+                    <li>Analisis</li>
+                    <li>Conservacion</li>
+                </ol>
+            </li>
+            <li>Generacion de evidencias digitales</li>
+        </ul>
+    </section>
+    <section class="slide">
+        <h2>Que es la informatica forense?</h2>
+        Disciplina criminalística<br><br>
+        Investigar sistemas informáticos para obtener y procesar información (evidencias digitales):
+        <ul>
+            <li>Con validez jurídica</li>
+            <li>Para la simple investigación privada (accesos no autorizados, sospechas de robos de información, etc.)</li>
+        </ul>
+
+    </section>
+
+    <section class="slide">
+        <h2>Que es la informatica forense?</h2>
+        Trata de responder:
+        <ul>
+            <li>Que?</li>
+            <li>Quien?</li>
+            <li>Como?</li>
+            <li>Cuando?</li>
+            <li>Por que?</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Que es la informatica forense?</h2>
+        Es utilizada por:
+        <ul>
+            <li>Agentes de la ley</li>
+            <li>Compañías de seguros</li>
+            <li>Compañías privadas</li>
+            <li>Personas particulares</li>
+            <li>...</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Que es la informatica forense?</h2>
+        Consiste en:
+        <ul>
+            <li>Extraer información de un sistema</li>
+            <li>Recuperar información cifrada / eliminada / dañada</li>
+            <li>Monitorizar el comportamiento de un sistema</li>
+            <li>Detectar incumplimientos de las políticas de la empresa</li>
+            <li>...</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Que es la informatica forense?</h2>
+        Principio de intercambio de Locard:
+        <ul>
+            <li>"Siempre que dos objetos entran en contacto transfieren parte
+                del material que incorporan al otro objeto"</li>
+            <li>Todas las acciones dejan un rastro</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Que es la informatica forense?</h2>
+        Principio de incertidumbre de Heisenberg:
+        <ul>
+            <li>"El mero hecho de medir el estado de un sistema lo altera"</li>
+            <li>No se puede obtener información de un sistema sin modificar el
+                sistema</li>
+                <li>Deberemos tratar de obtener la mayor cantidad de información
+                    posible minimizando las alteraciones y su impacto</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Que es la informatica forense?</h2>
+        La validez jurídica de una evidencia digital la decide el
+juez<br>
+Todo documento, log, máquina, etc. ha podido ser
+manipulado/accedido por terceros<br>
+¿Un documento con una firma electrónica reconocida tiene
+validez jurídica? En principio si ... <br>
+... ¿Y si el acusado alega que le robaron el certificado (la tarjeta) ?
+¿Hay denuncia? ¿Se solicitó la revocación del certificado
+inmediatamente?<br>
+    </section>
+
+    <section class="slide">
+        <h2>Que es la informatica forense?</h2>
+        Para que las evidencias digitales tengan validez juridica seguir procesos que aseguren:
+        <ul>
+            <li>Se ha respetado la ley para obtenerlas</li>
+            <li>Que la información es exactamente la que se recogió</li>
+            <li>Que durante su análisis no se ha modificado /creado /
+                eliminado nada</li>
+            <li>El análisis realizado tiene que poder ser reproducible</li>
+        </ul>
+    </section>
+
+    
+
+
+
+        
+
+
+    
+    <!-- FOOTER -->
+
+    <footer class="badge">
+        <a href="https://github.com/mikel-egana-aranguren/EHU-SGSSI-01">Fork me on GitHub</a>
+    </footer>
+
+    <div class="progress"></div>
+
+    <script src="../ShowerTemplate/shower/shower.js"></script>
+    <!-- Copyright © 3000 Yours Truly, Famous Inc. -->
+
+</body>
+</html>
