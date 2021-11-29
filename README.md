@@ -2,7 +2,7 @@
 
 Clases de la asignatura Sistemas de Gestión de Seguridad de Sistemas de la Información (SGSSI) de tercero del [Grado en Ingeniería Informática de Gestión y Sistemas de Información](https://www.ehu.eus/es/grado-ingenieria-informatica-de-gestion-y-sistemas-de-informacion-bizkaia).
 
-Hay dos temas que no son de la asignatura en sentido estricto, [Redacción](Redacción/Redacción.pdf) y [SistemasWeb](SistemasWeb/SistemasWeb.pdf).
+Hay dos temas que no son de la asignatura en sentido estricto, [Redacción](Redacción/Redacción.pdf) y [SistemasWeb](SistemasWeb/SistemasWeb.pdf), y dos conferencias invitadas.
 
 Temario:
 
@@ -17,5 +17,7 @@ Temario:
 9. [Informatica Forense](InformaticaForense/index.html)
 10. [Factor humano](FactorHumano/index.html)
 11. [Deep web](DeepWeb/index.html)
+12. Conferencia Carlos Tomas Moro (Enigmedia)
+13. Conferencia Ignacio Vidal (Goldman Sachs)
 
 [![DOI](https://zenodo.org/badge/334955028.svg)](https://zenodo.org/badge/latestdoi/334955028)
