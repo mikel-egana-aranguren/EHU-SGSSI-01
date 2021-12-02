@@ -6,3 +6,6 @@ SeguridadFisica
 SeguridadRedes
 SeguridadWeb
 Informatica forense
+Ingenieria Social
+Deep Web
+Ponencias
