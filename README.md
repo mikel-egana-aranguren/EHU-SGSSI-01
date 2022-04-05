@@ -4,6 +4,6 @@ Clases de la asignatura Sistemas de Gestión de Seguridad de Sistemas de la Info
 
 * [Introducción](Introduccion/index.html)
 * Bloque I: Cifrado
-  * Historia del cifrado
+  * [Introducción e historia del cifrado](Cifrado_intro_historia/index.html)
 
 [![DOI](https://zenodo.org/badge/334955028.svg)](https://zenodo.org/badge/latestdoi/334955028)
