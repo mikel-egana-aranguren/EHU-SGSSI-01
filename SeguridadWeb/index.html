@@ -39,9 +39,6 @@
     <section class="slide">
         <h2>Pen-testing</h2>
         Penetration testing: intentar penetrar en un sistema utilizando las mismas herramientas que un potencial atacante, para descubrir vulnerabilidades  y arreglarlas<br><br>
-
-        White hat hacker Black hat hackers > crackers
-
     </section>
 
 
@@ -55,6 +52,33 @@
     <h2>Principales vulnerabilidades en Sistemas Web</h2>
     <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/owasp-top-10.png" alt="OWASP Top 10 2017 2021" width="70%"></p>
     </section>
+
+
+    <section class="slide">
+        <h2>A01:2021 - Rotura de control de acceso (Broken Access control)</h2>
+        <a href="https://owasp.org/Top10/A01_2021-Broken_Access_Control/">https://owasp.org/Top10/A01_2021-Broken_Access_Control/</a>
+        <ul>
+            <li>CWE-200: Exposure of Sensitive Information to an Unauthorized Actor</li>
+            <li>CWE-201: Insertion of Sensitive Information Into Sent Data</li>
+            <li>CWE-352: Cross-Site Request Forgery</li>
+            <li>...</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>A01:2021 - Rotura de control de acceso (Broken Access control)</h2>
+        <p>El control de acceso obliga al usuario a actuar solo dentro de los limites establecidos por los permisos definidos</p>
+        <p>Fallar en el control de acceso resulta en consecuencias graves</p>
+    </section>
+
+    <section class="slide">
+        <h2>A01:2021 - Rotura de control de acceso (Broken Access control)</h2>
+        <p>Violacion del principio de "denegación por defecto": el acceso solo debería ser garantizado a ciertas capacidades, roles, o usuarios, pero está al alcance de cualquiera</p>
+        <p>GAUR con pantallazo: el primero que entre puede cambiar las guias docentes, aunque no sean el coordinador de la asignatura</p>
+        <p>Burlar el control de acceso mediatne parametors en la URL o las peticiones APIs</p>
+    </section>
+
+
 
     <!-- <section class="slide">
         <h2>A1 - Inyección</h2>
@@ -215,19 +239,9 @@
             </ul>
         </section>
 
-        <section class="slide">
-            <h2>A5 - Rotura de control de acceso </h2>
-            Acceder sin autentificación o con una autentificación no adecuada a objetos<br><br>
-            <b>www.sitio.com/consultar_datos.php?dni=45</b> (Sólo el usuario con DNI= 45 debería poder ver sus datos. No es suficiente con saber si el usuario que quiere acceder está logueado, hay que saber si es el de DNI=45)
-        </section>
 
-        <section class="slide">
-            <h2>A5 - Rotura de control de acceso </h2>
-            ¿Cómo evitarla?
-            <ul>
-                <li>Usando sesiones o cookies</li>
-            </ul>
-        </section>
+
+
 
         <section class="slide">
             <h2>A6 - Configuración de seguridad incorrecta </h2>

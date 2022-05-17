@@ -1,22 +1,22 @@
 # GUIA DOCENTE
 
-## DESCRIPCIÓN Y CONTEXTUALIZACIÓN DE LA ASIGNATURA (CASTELLANO)  
+## DESCRIPCIÓN Y CONTEXTUALIZACIÓN DE LA ASIGNATURA (EUSKERA)  
 
 Los Sistemas de Información, entre los cuales podemos incluir los equipos informáticos, las redes y los soportes de datos, son los encargados de trabajar con la información sensible de cualquier organización. Estos Sistemas de Información se ven amenazados por riesgos y amenazas que pueden tener distintos orígenes. Podemos encontrar riesgos físicos como los daños causados por una catástrofe natural, o por un acceso no autorizado a la información; y riesgos lógicos generados por un ataque informático como un virus, ataques de denegación de servicios, etc.
 
 En esta asignatura se estudiarán los distintos riesgos a los que se puede ver sometida la información y los sistemas que la contienen, para conocerlos en profundidad y de este modo poder llegar a controlarlos y minimizar su impacto.
 
-## COMPETENCIAS / RESULTADOS DE APRENDIZAJE DE LA ASIGNATURA (CASTELLANO)  
+## COMPETENCIAS / RESULTADOS DE APRENDIZAJE DE LA ASIGNATURA (EUSKERA)  
 
-* Conocer los principales conceptos relacionados con el Análisis y Gestión de Riesgos.
-* Conocer los estándares más importantes relacionados con la Gestión de la Seguridad de Sistemas de Información.
-* Conocer los aspectos clave de la planificación e implantación de políticas y medidas de seguridad informática.
-* Conocer las interrelaciones de los métodos y técnicas del campo de la seguridad informática en los planos ético, legal y organizativo.
-* Conocer y ser capaz de aplicar técnicas específicas relacionadas con herramientas de back-up, cifrado de información, seguridad de contraseñas, antivirus, registros, auditorías y seguridad física.
-* Realizar análisis de riesgos básicos y proponer medidas adecuadas a la realidad organizativa considerando aspectos de eficacia y coste.
-* Conocer lo sustancial del marco legal que regula el desempeño profesional (LOPD, LSSI y Ley de firma electrónica) y ser capaz de integrar este conocimiento en el análisis de riesgos y en la propuesta de salvaguardas.
+Capacidad para integrar soluciones de tecnologías de la información y comunicaciones y procesos empresariales para satisfacer las necesidades de información de las organizaciones, permitiéndoles alcanzar sus objetivos de forma efectiva y eficiente, dándoles así ventajas competitivas.
 
-## CONTENIDOS TEORICO-PRACTICOS (CASTELLANO)  
+Capacidad para determinar los requisitos de los sistemas de información y comunicación de una organización atendiendo a aspectos de seguridad y cumplimiento de la normativa y la legislación vigente.
+
+Capacidad para participar activamente en la especificación, diseño, implementación y mantenimiento de los sistemas de información y comunicación.
+
+Capacidad para comprender y aplicar los principios de la evaluación de riesgos y aplicarlos correctamente en la elaboración y ejecución de planes de actuación.
+
+## CONTENIDOS TEORICO-PRACTICOS (EUSKERA)  
 
 TEMA 1.- Introducción
 En este tema se analizarán los riesgos de seguridad a los que se enfrenta una organización y se estudiará la forma de evaluar y estimar el impacto que dichos riesgos pueden tener.
@@ -44,7 +44,7 @@ TEMA 7.- Backups
 Las copias de seguridad aseguran la completitud de la información y su usabilidad en caso de pérdida de la información original. En este tema se estudiarán distintas formas y sistemas de realizar copias de seguridad.
 
 TEMA 8.- Seguridad física
-De nada sirve tener un sistema de información protegido contra todo tipo de riesgos de lógicos, si cualquiera puede acceder físicamente a él y manipularlo. La seguridad física de los sistemas de información y de los datos es imprescindible.
+De nada sirve tener un sistema de información protegido contra todo tipo de riesgos lógicos, si cualquiera puede acceder físicamente a él y manipularlo. La seguridad física de los sistemas de información y de los datos es imprescindible.
 
 TEMA 9.- Seguridad en redes
 La información pocas veces está aislada en una máquina sin conexión a ninguna red. La toma de medidas de seguridad para la protección de las redes de comunicación es un paso imprescindible para asegurar la información.
@@ -63,17 +63,19 @@ TEMA 12.- Malware
 TEMA 13.- Legislación
 En el campo de la seguridad informática es imprescindible conocer la legislación vigente en dicho área. En este tema se analizarán las leyes más importantes que se encuentren en vigor y sus efectos sobre los sistemas de información.
 
-TEMA 14.- Auditorías
+TEMA 14.- Informática forense
+En este tema se estudiarán los procedimientos para la autopsia de un equipo informático.
 
-TEMA 15.- Charlas de expertos de la industria (A definir)
+TEMA 15.- Charlas (A definir)
+Charlas sobre Bitcoin, Pentest, etc. por expertos de la industria
 
-## METODOLOGIA (CASTELLANO)
+## METODOLOGIA (EUSKERA)
 
-Las clases magistrales (M) se emplearán principalmente para la exposición de los conceptos teóricos asociados a la seguridad informática y a la resolución de dudas que planteen los alumnos. Sin embargo, en algunas clases magistrales y en algunas de Prácticas de Ordenador (PO) se reforzarán dichos conceptos mediante la resolución de ejercicios, bien individualmente o en grupos reducidos. Se recomienda el uso del ordenador portátil en clase, especialmente con un sistema operativo GNU/Linux.
+Las clases magistrales (M) se emplearán principalmente para la exposición de los conceptos teóricos asociados a la seguridad informática y a la resolución de dudas que planteen los alumnos. Sin embargo, en algunas clases magistrales y en algunas de Prácticas de Ordenador (PO) se reforzarán dichos conceptos mediante la resolución de ejercicios, bien individualmente o en grupos reducidos. Se recomienda el uso del ordenador portátil en clase, especialmente con un sisoperativo GNU/Linux.
 
 Las clases de tipo PO que no se utilicen para la resolución de ejercicios, se emplearán para aplicar la metodología activa de Aprendizaje Basado en Problemas. Cada cierto tiempo se les proporcionará a los alumnos una serie de ejercicios que podrán trabajar de manera individual o grupal.
 
-En caso de confinamiento, las clases y tutorías se realizarán de modo telemático. El sistema de evaluación se mantendrá adaptando las pruebas para su realización online.
+En caso de confinamiento, las clases y tutorías se realizarán de modo telemático. El sisde evaluación se mantendrá adaptando las pruebas para su realización online.
 
 ## TIPOS DE DOCENCIA
 
@@ -91,12 +93,12 @@ En caso de confinamiento, las clases y tutorías se realizarán de modo telemát
 * Realizacion de prácticas 30
 * TRABAJOS EN EQUIPO (RESOLUCIÓN DE PROBLEMAS, DISEÑO DE PROYECTOS) 40
 
-## CONVOCATORIA ORDINARIA: ORIENTACIONES Y RENUNCIA (CASTELLANO)
+## CONVOCATORIA ORDINARIA: ORIENTACIONES Y RENUNCIA (EUSKERA)
 
-En la convocatoria ordinaria, por defecto, el alumnado está acogido al sistema de evaluación continua, aunque existe la opción de acogerse a la evaluación final indicándolo por email.
-En el sistema de evaluación continua la evaluación se dividirá en tres partes cada una de ellas con un examen teórico y otro práctico cuyas calificaciones harán media para calcular la nota de esa parte. Cada examen tratará sobre la materia vista en clase y los informes de laboratorio realizados hasta esa fecha y desde el examen anterior.
+En la convocatoria ordinaria, por defecto, el alumnado está acogido al sisde evaluación continua, aunque existe la opción de acogerse a la evaluación final indicándolo por email.
+En el sisde evaluación continua la evaluación se dividirá en tres partes, cada una de ellas con un examen teórico y otro práctico, cuyas calificaciones harán media. Cada examen tratará sobre la materia vista en clase y los informes de laboratorio realizados hasta esa fecha y desde el examen anterior.
 Además, a lo largo del cuatrimestre se realizarán una serie de trabajos que influirán en la calificación final de la asignatura en distinta medida.
-En el sistema de evaluación final habrá un único examen teórico y otro práctico que se corresponderán con todo el temario de la asignatura. La calificación final de la asignatura se calculará mediante la media aritmética de ambos exámenes.
+En el sisde evaluación final habrá un único examen teórico y otro práctico que se corresponderán con todo el temario de la asignatura. La calificación final de la asignatura se calculará mediante la media aritmética de ambos exámenes.
 
 EVALUACIÓN DE TRABAJOS:
 La detección de un plagio en cualquier parte de un trabajo supondrá una nota de 0 en dicho trabajo.
@@ -109,64 +111,61 @@ En el caso de los exámenes se aplicará el artículo 46.2 de la normativa vigen
 RENUNCIA A LA CONVOCATORIA:
 Para renunciar a la convocatoria y figurar como “No Presentado” en el modo de evaluación continua, hay que solicitarlo por email en los plazos establecidos. En el modo de evaluación final, es suficiente con no presentarse al examen final.
 
-## CONVOCATORIA EXTRAORDINARIA: ORIENTACIONES (CASTELLANO)  
+## CONVOCATORIA EXTRAORDINARIA: ORIENTACIONES (EUSKERA)  
 
-El alumnado que no superen la asignatura en su convocatoria ordinaria, tendrá que realizar un examen teórico y otro práctico en la convocatoria extraordinaria sobre el temario completo de la asignatura.
-El alumnado que hubiera seguido el sistema de evaluación continua tendrá la posibilidad de indicar en el propio examen si desea que la calificación final de la asignatura se calcule usando únicamente las calificaciones de los exámenes o si quiere que se tenga en cuenta la nota de los trabajos realizados a lo largo del cuatrimestre.
+El alumnado que no superen la asignatura en su convocatoria ordinaria tendrá que realizar un examen teórico y otro práctico en la convocatoria extraordinaria sobre el temario completo de la asignatura.
+El alumnado que hubiera seguido el sisde evaluación continua tendrá la posibilidad de indicar en el propio examen si desea que la calificación final de la asignatura se calcule usando únicamente las calificaciones de los exámenes o si quiere que se tenga en cuenta la nota de los trabajos realizados a lo largo del cuatrimestre.
 
 RENUNCIA A LA CONVOCATORIA:
 En caso de no realizar el examen teórico o el práctico se obtendrá una valoración de "No Presentado".
 
-## MATERIALES DE USO OBLIGATORIO (CASTELLANO)  
+## MATERIALES DE USO OBLIGATORIO (EUSKERA)  
 
 Notas de clase, material de soporte a la docencia en aula y laboratorios.
 
+## BIBLIOGRAFIA (EUSKERA)  
 
-
-
-
-
-
-
-
-
-## BIBLIOGRAFIA (CASTELLANO)  
-
-### Bibliografía Básica (CASTELLANO)  
+### Bibliografía Básica (EUSKERA)  
 
 Enciclopedia de la Seguridad Informática 2ª edición, Álvaro Gómez Vieites, RAMA 2011
 
-### Bibliografía de profundización (CASTELLANO)  
+### Bibliografía de profundización (EUSKERA)  
 
-The governance of privacy. C.J. Bennett y C.D. Raab, Massachussets Institute of Technology Press 2006 
-Beyond Fear. B. Schneier, Beyond Fear : Thinking Sensibly About Security in an Uncertain World; 2006; Springer
-Nuevo Reglamento de Protección de Datos de caracter personal. Emilio del Perso y otros; 2008, Díaz de Satos, 
+The governance of privacy. C.J. Bennett y C.D. Raab, Massachussets Institute of Technology Press 2006
+Beyond Fear. B. Schneier, Beyond Fear: Thinking Sensibly About Security in an Uncertain World; 2006; Springer
+Vigilancia permanente. Edward Snowden. Planeta, 2019
+Social Engineering: The Science of Human Hacking. Christopher Hadnagy, Wiley 2018
+El pequeño libro rojo del activista en la red. Marta Peirano, Roca 2015
+Grokking Bitcoin. Kalle Rosenbaum, Manning 2019
 
-### Revistas (CASTELLANO)  
+### Revistas (EUSKERA)  
 
 Auditoría + Seguridad informática
 IEEE Security & Privacy
 
-### Direcciones de Internet de interés (CASTELLANO)
+### Direcciones de Internet de interés (EUSKERA)
 
-Agencia Española de Protección de Datos (Accedido el 31/03/2017)
+Blog de Bruce Schneier sobre seguridad (Accedido el 12/05/2022)
+https://www.schneier.com/
+
+Agencia Española de Protección de Datos (Accedido el 12/05/2022)
 http://www.agpd.es
 
-Red temática de criptografía y seguridad de la información (Accedido el 31/03/2017)
+Red temática de criptografía y seguridad de la información (Accedido el 12/05/2022)
 http://www.criptored.upm.es
 
-Equipo de seguridad de rediris (Accedido el 31/03/2017)
+Equipo de seguridad de rediris (Accedido el 12/05/2022)
 http://www.rediris.es/cert/
 
-Instituto nacional de ciberseguridad (Accedido el 31/03/2017)
+Instituto nacional de ciberseguridad (Accedido el 12/05/2022)
 https://www.incibe.es/
 
-Blog sobre seguridad (Accedido el 31/03/2017)
+Blog sobre seguridad (Accedido el 12/05/2022)
 https://krebsonsecurity.com
 
-Malware scanner (Accedido el 31/03/2017)
-https://www.virustotal.com/es/
+Malware scanner (Accedido el 12/05/2022)
+https://www.virustotal.com
 
-## OBSERVACIONES (CASTELLANO)  
+## OBSERVACIONES (EUSKERA)  
 
 Si un trabajo es calificado con un 0 por razones de plagio, la asignatura será suspendida en su convocatoria ordinaria.
