@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Algoritmos resumen</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../ShowerTemplate/shower/themes/ribbon/styles/styles.css">
+    <style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<body class="shower list">
+    <header class="caption">
+        <h1>Algoritmos resumen</h1>
+        <p>Mikel Egaña Aranguren</p>
+    </header>
+
+    <section class="slide" id="cover">
+        <h2>Algoritmos resumen</h2>
+        <p>Mikel Egaña Aranguren</p>
+        <p><a href="https://mikel-egana-aranguren.github.io/">mikel-egana-aranguren.github.io</a></p>
+        <p><a href="mailto:mikel.egana@ehu.eus">mikel.egana@ehu.eus</a></p>
+        <img src="../ShowerTemplate/pictures/ehu.png" alt="UPV/EHU ingenieros San Mames" height="25%" border="1px solid #555">
+    </section>
+
+    <section class="slide">
+        <h2>Algoritmos resumen</h2>
+        <p><a href="https://doi.org/10.5281/zenodo.4302267">https://doi.org/10.5281/zenodo.4302267</a></p>
+        <p><a href="https://github.com/mikel-egana-aranguren/EHU-SGSSI-01">https://github.com/mikel-egana-aranguren/EHU-SGSSI-01</a></p>
+        <img src="../ShowerTemplate/pictures/by.png" alt="Creative Commons BY" height="10%">
+    </section>
+
+        <section class="slide">
+            <h2>Algoritmos de resumen</h2>
+            <p>Funciones de dispersión (one-way hash)</p>
+            <p>Generan un criptograma de un determinado tamaño que representa todo el contenido original (Si cambia lo más mínimo, el resumen criptográfico es distinto)</p>
+            <p>No tienen inversa</p>
+            <p>No se puede descifrar</p>
+        </section>
+
+        <section class="slide">
+            <h2>Algoritmos de resumen</h2>
+            <p>Utilidad:
+                <ul>
+                    <li>Certificar la integridad de la información</li>
+                    <li>Almacenar claves</li>
+                    <li>Implementar la firma digital</li>
+                </ul>
+            </p>
+        </section>
+
+        <section class="slide">
+            <h2>Algoritmos de resumen</h2>
+            <p>Certificar la integridad de la información</p>
+            <p>http://ftp.mozilla.org/pub/mozilla.org/xulrunner/releases/2.0/MD5SUMS</p>
+            <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/md5-mozilla.png" alt="criptosistema clave privada" width="60%"></p>
+            
+        </section>
+
+        <section class="slide">
+            <h2>Algoritmos de resumen</h2>
+            <p>Almacenar claves</p>
+            <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/hash-clave.png" alt="criptosistema clave privada" width="60%"></p>
+        </section>
+
+        <section class="slide">
+            <h2>Algoritmos de resumen</h2>
+            <p>Identificación</p>
+            <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/hash-clave-identificacion.png" alt="criptosistema clave privada" width="60%"></p>
+        </section>
+
+        <section class="slide">
+            <h2>Algoritmos de resumen</h2>
+            <p>Problemas
+                <ul>
+                    <li>Todo el mundo con la misma clave tiene el mismo hash</li>
+                    <li>Se pueden precalcular los hash de todo el espacio de claves</li>
+                </ul>
+            </p>
+        </section>
+
+        <section class="slide">
+            <h2>Algoritmos de resumen</h2>
+
+            <p>Solución: usar "sal" (Salt), o semilla</p>
+            <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/hash-clave-identificacion-sal.png" alt="criptosistema clave privada" width="60%"></p>
+        </section>
+
+        <section class="slide">
+            <h2>Algoritmos de resumen</h2>
+            <p>Identificación con sal</p>
+            <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/hash-clave-identificacion-sal-intro.png" alt="criptosistema clave privada" width="60%"></p>
+        </section>
+
+        <section class="slide">
+            <h2>Algoritmos de resumen</h2>
+            <p>Ventajas del uso de sal
+                <ul>
+                    <li>La misma clave tiene una codificación distinta cada vez</li>
+                    <li>Dificulta los ataques por fuerza bruta</li>
+                </ul>
+            </p>
+            <p>Si roban la BBDD con las claves y la sal, no aporta
+                nada</p>
+        </section>
+
+        <section class="slide">
+            <h2>Algoritmos de resumen</h2>
+            <p>Funciones de dispersión más usadas
+                <ul>
+                    <li>MD5</li>
+                    <li>SHA-1</li>
+                </ul>
+            </p>
+        </section>
+
+        <section class="slide">
+            <h2>Algoritmos de resumen</h2>
+            <p>Problemas
+                <ul>
+                    <li>Colisiones: dos textos distintos que generen el mismo resumen</li>
+                    <li>Ataques que debilitan el algoritmo</li>
+                </ul>
+            </p>
+            <p>Soluciones
+                <ul>
+                    <li>Usar otros algoritmos que generan resúmenes criptográficos más largos</li>
+                    <li>SHA-224, SHA-256, SHA-384, SHA-512, ...</li>
+                </ul>
+            </p>
+        </section>
+
+        <section class="slide">
+            <h2>Contraseñas en S.O.</h2>
+            <p>Linux:
+                <ul>
+                    <li>Ubicación: /etc/shadow</li>
+                    <li>Obtención: sudo cat /etc/shadow</li>
+                    <li>Formato: user:$Algoritmousado$sal$ResumenCriptográfico:A:B:C:D:E:F:</li>
+                </ul>
+
+            </p>
+
+        </section>
+
+        <section class="slide">
+            <h2>Contraseñas en S.O.</h2>
+            <p>Formato Linux:
+                <ul>
+                    <li>Algoritmousado: 1: MD5; 2: Blowfish; 3: NT; 5: SHA-256; 6: SHA-512</li>
+                    <li>Sal: Cadena aleatoria para derivar las claves</li>
+                </ul> 
+            </p>
+        </section>
+
+        <section class="slide">
+            <h2>Contraseñas en S.O.</h2>
+            <p>Formato Linux:
+                <ul>
+                    <li>A: número de días sin cambiar la clave (desde 01/01/1970)</li>
+                    <li>B: número de días hasta poder cambiar la clave</li>
+                    <li>C: número máximo de días que se puede estar sin cambiar la clave</li>
+
+                </ul> 
+            
+                
+            </p>
+
+        </section>
+
+        <section class="slide">
+            <h2>Contraseñas en S.O.</h2>
+            <p>Formato Linux:
+                <ul>
+                <li>D: número de días de antelación con el que hay que avisar al usuario de que tiene que cambiar la clave</li>
+                <li>E: número de días desde que caduque la contraseña hasta que se desactive la cuenta</li>
+                <li>F: número de días hasta que la cuenta se desactive (desde 01/01/1970)</li>
+                </ul>
+            </p>
+
+        </section>
+
+        
+        
+        <p><iframe width="560" height="315" src="https://www.youtube.com/embed/uiiaAJ3c6dM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+
+    
+    <!-- FOOTER -->
+
+    <footer class="badge">
+        <a href="https://github.com/mikel-egana-aranguren/EHU-SGSSI-01">Fork me on GitHub</a>
+    </footer>
+
+    <div class="progress"></div>
+
+    <script src="../ShowerTemplate/shower/shower.js"></script>
+    <!-- Copyright © 3000 Yours Truly, Famous Inc. -->
+
+</body>
+</html>

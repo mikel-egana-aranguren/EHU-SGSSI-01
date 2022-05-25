@@ -1,0 +1,595 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cifrado asimétrico</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../ShowerTemplate/shower/themes/ribbon/styles/styles.css">
+    <style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<body class="shower list">
+    <header class="caption">
+        <h1>Cifrado asimétrico</h1>
+        <p>Mikel Egaña Aranguren</p>
+    </header>
+
+    <section class="slide" id="cover">
+        <h2>Cifrado asimétrico</h2>
+        <p>Mikel Egaña Aranguren</p>
+        <p><a href="https://mikel-egana-aranguren.github.io/">mikel-egana-aranguren.github.io</a></p>
+        <p><a href="mailto:mikel.egana@ehu.eus">mikel.egana@ehu.eus</a></p>
+        <img src="../ShowerTemplate/pictures/ehu.png" alt="UPV/EHU ingenieros San Mames" height="25%" border="1px solid #555">
+    </section>
+
+    <section class="slide">
+        <h2>Cifrado asimétrico</h2>
+        <p><a href="https://doi.org/10.5281/zenodo.4302267">https://doi.org/10.5281/zenodo.4302267</a></p>
+        <p><a href="https://github.com/mikel-egana-aranguren/EHU-SGSSI-01">https://github.com/mikel-egana-aranguren/EHU-SGSSI-01</a></p>
+        <img src="../ShowerTemplate/pictures/by.png" alt="Creative Commons BY" height="10%">
+    </section>
+
+    <section class="slide">
+        <h2>Criptografía de clave pública</h2>
+        <p>Usa algoritmos de clave asimétrica: la clave que cifra no es la que descifra
+        </p>
+        <p>Usa dos claves por usuario:
+            <ul>
+                <li>La clave pública que conoce todo el mundo</li>
+                <li>La clave privada que sólo conoce el usuario</li>
+            </ul>
+        </p>
+        <p>Lo que una clave cifra sólo lo puede descifrar la otra</p>
+
+    </section>
+
+    <section class="slide">
+        <h2>Criptografía de clave pública</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/clave_publica.png" alt="criptosistema clave privada" width="40%"></p>
+
+    </section>
+
+    <section class="slide">
+        <h2>Criptografía de clave pública</h2>
+        <ul>
+            <li>Iker tiene su clave privada I<sub>privada</sub> y todos tienen la clave
+                pública de Iker, I<sub>pública</sub></li>
+            <li>Miren cifra su mensaje m usando la clave pública de
+                Iker: c = e ( m , I<sub>pública</sub> )</li>
+            <li>Miren manda el criptograma c a Iker</li>
+            <li>Iker recibe c</li>
+            <li>Iker descifra c usando su clave privada I privada: m = d ( c , I<sub>privada</sub> )</li>
+            <li>Confidencialidad. Sólo Iker puede descifrar el mensaje</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Criptografía de clave pública</h2>
+        <p>Ventajas:
+            <ul>
+                <li>Sólo el destinatario puede leer el mensaje</li>
+                <li>Sólo hay que almacenar una clave</li>
+                <li>Cualquiera puede usar la clave pública para enviar un
+                    mensaje confidencial a Iker</li>
+                <li>No son necesarios canales seguros para comunicar la
+                    clave pública</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Criptografía de clave pública</h2>
+        <p>Problemas:
+            <ul>
+                <li>La clave privada debe mantenerse privada</li>
+                <li>Debería ser (prácticamente) imposible sacar la clave
+                    privada a partir de la clave pública</li>
+                <li>Cifrado y descifrado son más lentos que en los sistemas
+                    de clave secreta</li>
+                <li>Miren debe estar segura de que está usando la clave
+                    pública de Iker</li>
+                <li>Debe ser fácil obtener las claves públicas</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Criptografía de clave pública</h2>
+        <p>Cada usuario genera su par (clave pública, clave
+            privada) y publica la clave pública en un servidor de
+            claves: Key Certification Authority o Key Distribution Center
+            (KDC)</p>
+
+    </section>
+
+    <section class="slide">
+        <h2>Criptografía de clave pública</h2>
+        <p>Más problemas:
+            <ul>
+                <li>¿Cómo sabe Iker si el mensaje es realmente de Miren?</li>
+                <li>Cuando Iker conteste ¿Cómo sabe Miren que el mensaje
+                    es realmente de Iker?</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Criptografía de clave pública</h2>
+        <ul>
+            <li>Si Iker lo cifra con su clave privada lo puede descifrar
+                cualquiera (I<sub>pública</sub> la conoce todo el mundo)</li>
+            <li>Solución:
+                <ul>
+                    <li>Iker cifra el mensaje con su clave privada: C1 = e ( m, I<sub>privada</sub> )</li>
+                    <li>Luego lo vuelve a cifrar con la clave pública de Miren: C2 = e ( C1 , M <sub>pública</sub> ) </li>
+                    
+                </ul>
+            </li>
+        </ul>
+        
+
+    </section>
+
+    <section class="slide">
+        <h2>Criptografía de clave pública</h2>
+        <ul>
+            <li>Sólo Miren puede desencriptarlo con su clave privada:
+                <ul>
+                    <li>Confidencialidad: Sólo Miren puede descifrar el mensaje: C1 = d ( C2 , M<sub>privada</sub> )</li>
+                    <li>Autenticidad y No Repudio: Sólo Iker ha podido enviar el mensaje: m = d ( C1, I<sub>pública</sub> )</li>
+                </ul>
+            </li>
+        </ul>
+
+    </section>
+
+    <section class="slide">
+        <h2>Criptografía de clave pública</h2>
+        <p>¿Qué ocurre si se interpone alguien en las
+            comunicaciones?</p>
+        <p>Ataque Man in the middle:
+            <ul>
+                <li>Un intermediario recibe todos los mensajes sin que las
+                    otras partes se enteren
+                </li>
+                <li>Se necesita interceptar todas las comunicaciones entre
+                    las dos partes</li>
+            </ul>
+        </p>
+
+    </section>
+
+    <section class="slide">
+        <h2>Criptografía de clave pública</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/AndoniIkerMiren.png" alt="criptosistema clave privada" width="40%"></p>
+
+    </section>
+
+    <section class="slide">
+        <h2>Criptografía de clave pública</h2>
+        <p>Cuando Iker y Miren quieren comenzar a comunicarse
+            de manera secreta, se intercambian las respectivas
+            claves públicas</p>
+        <p>Andoni las intercepta y las intercambia por la suya</p>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/AndoniIkerMirenManInTheMiddle.png" alt="criptosistema clave privada" width="40%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Criptografía de clave pública</h2>
+        <p>Iker y Miren cifran sus mensajes con la que CREEN la
+            clave pública del otro y con su clave privada</p>
+        <p>Andoni intercepta los mensajes, los lee, modifica y
+            los encripta con su clave privada</p>
+            
+    </section>
+
+
+    <section class="slide">
+        <h2>Criptografía de clave pública</h2>
+
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/AndoniIkerMirenManInTheMiddleDetalles.png" alt="criptosistema clave privada" width="60%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Criptografía de clave pública</h2>
+        <p>Iker y Miren creen que están comunicándose de
+            manera segura</p>
+        <p>Andoni está enterándose de todo y modificándolo a su
+            antojo</p>    
+        <p>Formas de evitarlo:
+            <ul>
+                <li>Paso de claves en canales "seguros"</li>
+                <li>Uso de una autoridad que certifique que una clave
+                    pública pertenece a quien dice: Autoridad de Certificación (AC)</li>
+            </ul>
+        </p>
+
+    </section>
+
+    <section class="slide">
+        <h2>Criptografía de clave pública</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/AC.png" alt="criptosistema clave privada" width="60%"></p>
+
+    </section>
+
+    <section class="slide">
+        <h2>Cifrado híbrido</h2>
+        <p>Los sistemas de clave secreta son mucho más rápidos
+            que los de clave pública</p>
+        <p>Muchas veces se usa una combinación: El sistema de
+                clave pública se usa para compartir una clave secreta
+                S que sólo se usa una vez</p>
+        <p>El sistema de clave secreta usa S para cifrar el
+            mensaje</p>
+
+    </section>
+
+    <section class="slide">
+        <h2>Cifrado híbrido</h2>
+        <p>Miren genera una clave secreta S y cifra su mensaje
+            usándola: cm = e1 (m,S)</p>
+        <p>Miren cifra S usando la clave pública de Iker
+            cs = e2 ( S , I<sub>pública</sub> )</p>
+        <p>Miren manda [ cm, cs ] a Iker</p>
+
+    </section>
+
+    <section class="slide">
+        <h2>Cifrado híbrido</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/CifradoHibrido.png" alt="criptosistema clave privada" width="40%"></p>
+
+    </section>
+
+    <section class="slide">
+        <h2>Cifrado híbrido</h2>
+        <p>Iker recibe [ cm , cs ]</p>
+        <p>Iker descifra S usando su clave privada I<sub>privada</sub>: d2 ( cs , I<sub>privada</sub> ) = S</p>
+        <p>Iker descifra m usando S: d1 ( cm , S ) = m</p>
+    </section>
+
+    <section class="slide">
+        <h2>Cifrado híbrido</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/CifradoHibridoRecibir.png" alt="criptosistema clave privada" width="40%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Firma digital</h2>
+        <p>Miren le manda un mensaje a Iker usando un sistema
+            de clave pública</p>
+        <p>Nadie puede leer el mensaje de Miren a Iker pero
+            cualquiera podría haberlo mandado</p>
+        <p>¿Cómo sabe Iker que se lo ha mandado Miren o que
+            nadie lo ha modificado?</p>
+        <p>Solución: Miren firma sus mensajes</p>
+    </section>
+
+    <section class="slide">
+        <h2>Firma digital</h2>
+        <p>Sólo el usuario legítimo puede firmar su documento</p>
+        <p>Nadie podrá falsificar una firma</p>
+        <p>Cualquiera puede verificar una firma digital</p>
+    </section>
+
+    <section class="slide">
+        <h2>Firma digital</h2>
+        <p>No se puede reutilizar una firma</p>
+        <p>No se puede modificar una firma</p>
+        <p>No se puede negar haber firmado un documento</p>
+        <p>No se puede alterar un documento después de haberlo
+            firmado</p>
+        <p>Logramos Autenticidad, Integridad y No repudio</p>
+    </section>
+
+    <section class="slide">
+        <h2>Firma digital</h2>
+        <p>Miren obtiene un resumen criptográfico del mensaje: RC = hash (m)</p>
+        <p>Miren cifra el resumen criptográfico con su clave: Firma = e ( RC, M<sub>privada</sub> )</p>
+        <p>Miren envía el mensaje (cifrado o sin cifrar) y su Firma</p>
+    </section>
+
+    <section class="slide">
+        <h2>Firma digital</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/FirmaMiren.png" alt="criptosistema clave privada" width="40%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Firma digital</h2>
+        <p>Iker desencripta la Firma usando la clave pública de Miren: RC = ( Firma, M<sub>pública</sub>)</p>
+        <p>Iker obtiene el resumen criptográfico del mensaje: RC’ = hash (m)</p>
+        <p>Iker compara RC’ con RC para asegurarse que no ha sido modificado</p>
+        <p></p>
+    </section>
+
+    <section class="slide">
+        <h2>Firma digital</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/FirmaIker.png" alt="criptosistema clave privada" width="40%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Firma digital</h2>
+        <p>Si además de firmarlo, Miren encripta su mensaje sólo Iker podrá leerlo: Se logra Confidencialidad, Autenticidad,
+            Integridad y No Repudio</p>
+        <p>Puede hacerlo usando:
+            <ul>
+                <li>Un sistema de criptografía asimétrica</li>
+                <li>Un sistema de criptografía híbrido</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Firma digital</h2>
+        <p>Un sistema de criptografía asimétrica. Enviaría a Iker:
+            <ul>
+                <li>Criptograma del mensaje cifrado con M<sub>privada</sub> y con I<sub>pública</sub></li>
+                <li>Su Firma digital (el resumen criptográfico cifrado con
+                    M<sub>privada</sub> )</li>
+            </ul>
+        </p>
+
+    </section>
+
+    <section class="slide">
+        <h2>Firma digital</h2>
+    <p>Un sistema de criptografía híbrido. Enviaría a Iker:
+        <ul>
+            <li>Criptograma del mensaje cifrado con la clave de sesión</li>
+            <li>Criptograma con la clave de sesión cifrada con I<sub>pública</sub></li>
+            <li>Su Firma digital (el resumen criptográfico cifrado con M<sub>privada</sub>)</li>
+        </ul>
+    </p>
+</section>
+
+    <section class="slide">
+        <h2>Algoritmos de clave pública</h2>
+        <p>Diffie-Hellman - 1976</p>
+        <p>RSA - 1977</p>
+        <p>ElGamal - 1984</p>
+        <p>DSA - 1991</p>
+        <p>Curvas elípticas - 1985</p>
+    </section>
+
+    <section class="slide">
+        <h2>Algoritmos de clave pública</h2>
+        <p><iframe width="560" height="315" src="https://www.youtube.com/embed/yDXiDOJgxmg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+    </section>
+
+    <section class="slide">
+        <h2>Algoritmos de clave pública</h2>
+        <p><iframe width="560" height="315" src="https://www.youtube.com/embed/M7kEpw1tn50" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+    </section>
+
+    <section class="slide">
+        <h2>Algoritmos de clave pública</h2>
+        <p>DNI electrónico (DNIe 3.0):
+            <ul>
+                <li>RSA</li>
+                <li>SHA-1 / SHA-256</li>
+                <li>TripleDES / AES</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Algoritmos de clave pública</h2>
+    <p>PGP:
+        <ul>
+            <li>RSA / DSA</li>
+            <li>IDEA / TripleDES</li>
+        </ul>
+    </p>
+    </section>
+
+    <section class="slide">
+        <h2>Algoritmos de clave pública</h2>
+        <p>SSH:
+            <ul>
+                <li>RSA / DSA</li>
+
+            </ul>
+        </p>
+    <p>SSL / TLS:
+        <ul>
+            <li>RSA / DSA / Diffie-Hellman</li>
+            <li>IDEA / DES / TripleDES /AES</li>
+        </ul>
+    </p>
+    </section>
+
+    <section class="slide">
+        <h2>Confianza de firmas</h2>
+        <p>Aunque utilicemos firmas digitales:
+            <ul>
+                <li>¿Cómo sabemos que la firma es de quien dice ser?</li>
+                <li>¿Cómo nos asegura una autoridad de certificación que
+                    una firma es de quien dice ser?</li>
+                <li>¿No podemos fiarnos de una firma que no esté avalada
+                    por una autoridad de certificación?</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Confianza de firmas</h2>
+
+            <ul>
+                <li>Se usa en PGP, GnuPG y similares</li>
+                <li>Un usuario certifica (firmando con su clave privada)
+                    que la clave pública de otro usuario es de confianza</li>
+                <li>La confianza se propaga según la confianza que
+                    demos a los usuarios que firmen las claves</li>
+            </ul>
+        
+    </section>
+
+    <section class="slide">
+        <h2>Niveles de confianza</h2>
+
+            <ul>
+                <li>Desconocido: no nos fiamos de nada que firme ese
+                    usuario (por desconocimiento)</li>
+                <li>Ninguno: no nos fiamos de nada que firme ese usuario
+                    (porque sabemos que lo hace mal)</li>
+                <li>Marginal: nos fiamos de las claves firmadas por dos
+                    usuarios con confianza marginal</li>
+                <li>Absoluto: nos fiamos de todo lo firmado por ese usuario</li>
+            </ul>
+        
+    </section>
+
+    <section class="slide">
+        <h2>Certificados digitales</h2>
+            <ul>
+                <li>Un certificado digital consiste en que una entidad “de
+                    confianza” firme mediante su clave privada, la clave
+                    pública de un usuario</li>
+                <li>Sirve para certificar que el usuario es quien dice ser</li>
+                <li>Depende de la confianza en la entidad que lo certifica</li>
+            </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Certificados digitales</h2>
+            <ul>
+                <li>Siguen el estándar X.509</li>
+                <li>Validez != Confianza
+                    <ul>
+                        <li>Validez: cumple los requisitos de una firma (caducidad,
+                            etc.)</li>
+                        <li>Confianza: nos podemos fiar de esa firma</li>
+                    </ul>
+                </li>
+                <li>Una firma puede ser válida, pero no de confianza</li>
+                <li>Una firma de confianza que no sea válida no tiene
+                    sentido</li>
+            </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Certificados digitales</h2>
+        <p>Una autoridad de certificación (AC) certifica la validez
+            de una firma
+            <ul>
+                <li>Prestadores de Servicios de Certificación (PSC): Ley de Firma Electrónica (Ley 59/2003, LFE), Ley de Acceso Electrónico de los Ciudadanos a los Servicios Públicos (Ley 11/2007, LAESCP)</li>
+                <li>Los PSCs deben proporcionar un método de consulta de
+                    la vigencia de sus certificados: Sólo las Administraciones Públicas tienen la obligación de
+                    que sea gratuito</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Certificados digitales</h2>
+        <p>Jerarquía de certificación (RFC 1422)
+        </p>
+        <p>Internet Policy Registration Authority (IPRA) >> Policy Certification Authorities (PCA) >> Certification Authorities (CA): Verisign, Thawte, GeoTrust, RapidSSL, DigiCertSSL</p>
+    </section>
+
+    <section class="slide">
+        <h2>Un AC debe</h2>
+        
+            <ul>
+                <li>Mantener una base de datos de nombres distinguidos
+                    (ND) y de ACs subordinadas</li>
+                <li>Permitir la revocación de certificados:
+                    <ul>
+                        <li>Clave privada del usuario comprometida</li>
+                        <li>AC ha emitido un certificado a quien no debía</li>
+                        <li>El usuario cambia de AC</li>
+                        <li>Violación de la seguridad de la AC</li>
+                    </ul>
+                </li>
+                <li>CRL, Certification
+                    Revocation List: ejemplo <a href="https://www.geotrust.com/resources/repository/crls/">GeoTrust</a></li>
+            </ul>
+        
+    </section>
+
+    <section class="slide">
+        <h2>Un AC debe</h2>
+        
+            <ul>
+                <li>El protocolo OCSP (Online Certificate Status Protocol RFC 2560) permite validar el estado de un
+certificado digital de manera online</li>
+                <li>Es más eficiente que la verificación mediante Listas de Revocación de Certificados (CRL)</li>
+                <li>Ventaja: su actualización constante</li>
+                <li>Desventaja: necesidad de conexión para la comprobación</li>
+            </ul>
+        
+    </section>
+
+    <section class="slide">
+        <h2>Certificados digitales</h2>
+        <p>Cada AC que proporciona el servicio, mantiene un
+            servidor OCSP
+        </p>
+        <p>Este servicio responde a las aplicaciones cliente que
+            remitan una petición estandarizada y sepan
+            interpretar la respuesta</p>
+    </section>
+
+    <section class="slide">
+        <h2>Certificados digitales</h2>
+        <p>Tipos de certificados de clave pública:
+            <ul>
+                <li>Certificado de autoridad</li>
+                <li>Certificado de servidor</li>
+                <li>Certificado personal</li>
+                <li>Certificado de productor de software</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Certificados digitales</h2>
+        <p>Componentes de un certificado:
+            <ul>
+                <li>Versión</li>
+                <li>Número de serie</li>
+                <li>Identificador del algoritmo de firmado</li>
+                <li>Nombre del emisor</li>
+                <li>Periodo de validez</li>
+                <li>Nombre del sujeto</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Certificados digitales</h2>
+        <p>Con un certificado digital conseguimos:
+            <ul>
+                <li>Confidencialidad al poder encriptar la información</li>
+                <li>Integridad al poder realizar hash de la información y
+                    poder firmarla</li>
+                <li>Autenticidad al venir firmada la información</li>
+                <li>No repudio al firmar la información</li>
+            </ul>
+        </p>
+    </section>
+    
+    
+   
+
+
+    
+    <!-- FOOTER -->
+
+    <footer class="badge">
+        <a href="https://github.com/mikel-egana-aranguren/EHU-SGSSI-01">Fork me on GitHub</a>
+    </footer>
+
+    <div class="progress"></div>
+
+    <script src="../ShowerTemplate/shower/shower.js"></script>
+    <!-- Copyright © 3000 Yours Truly, Famous Inc. -->
+
+</body>
+</html>
