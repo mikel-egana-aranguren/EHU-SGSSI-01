@@ -1,12 +1,12 @@
 # GUIA DOCENTE
 
-## DESCRIPCIÓN Y CONTEXTUALIZACIÓN DE LA ASIGNATURA (EUSKERA)  
+## DESCRIPCIÓN Y CONTEXTUALIZACIÓN DE LA ASIGNATURA  (CASTELLANO)  
 
 Los Sistemas de Información, entre los cuales podemos incluir los equipos informáticos, las redes y los soportes de datos, son los encargados de trabajar con la información sensible de cualquier organización. Estos Sistemas de Información se ven amenazados por riesgos y amenazas que pueden tener distintos orígenes. Podemos encontrar riesgos físicos como los daños causados por una catástrofe natural, o por un acceso no autorizado a la información; y riesgos lógicos generados por un ataque informático como un virus, ataques de denegación de servicios, etc.
 
 En esta asignatura se estudiarán los distintos riesgos a los que se puede ver sometida la información y los sistemas que la contienen, para conocerlos en profundidad y de este modo poder llegar a controlarlos y minimizar su impacto.
 
-## COMPETENCIAS / RESULTADOS DE APRENDIZAJE DE LA ASIGNATURA (EUSKERA)  
+## COMPETENCIAS / RESULTADOS DE APRENDIZAJE DE LA ASIGNATURA  (CASTELLANO)  
 
 Capacidad para integrar soluciones de tecnologías de la información y comunicaciones y procesos empresariales para satisfacer las necesidades de información de las organizaciones, permitiéndoles alcanzar sus objetivos de forma efectiva y eficiente, dándoles así ventajas competitivas.
 
@@ -16,7 +16,7 @@ Capacidad para participar activamente en la especificación, diseño, implementa
 
 Capacidad para comprender y aplicar los principios de la evaluación de riesgos y aplicarlos correctamente en la elaboración y ejecución de planes de actuación.
 
-## CONTENIDOS TEORICO-PRACTICOS (EUSKERA)  
+## CONTENIDOS TEORICO-PRACTICOS  (CASTELLANO)  
 
 TEMA 1.- Introducción
 En este tema se analizarán los riesgos de seguridad a los que se enfrenta una organización y se estudiará la forma de evaluar y estimar el impacto que dichos riesgos pueden tener.
@@ -69,13 +69,11 @@ En este tema se estudiarán los procedimientos para la autopsia de un equipo inf
 TEMA 15.- Charlas (A definir)
 Charlas sobre Bitcoin, Pentest, etc. por expertos de la industria
 
-## METODOLOGIA (EUSKERA)
+## METODOLOGIA  (CASTELLANO)
 
-Las clases magistrales (M) se emplearán principalmente para la exposición de los conceptos teóricos asociados a la seguridad informática y a la resolución de dudas que planteen los alumnos. Sin embargo, en algunas clases magistrales y en algunas de Prácticas de Ordenador (PO) se reforzarán dichos conceptos mediante la resolución de ejercicios, bien individualmente o en grupos reducidos. Se recomienda el uso del ordenador portátil en clase, especialmente con un sisoperativo GNU/Linux.
+Las clases magistrales (M) se emplearán principalmente para la exposición de los conceptos teóricos asociados a la seguridad informática y a la resolución de dudas que planteen los alumnos. Sin embargo, en algunas clases magistrales y en algunas de Prácticas de Ordenador (PO) se reforzarán dichos conceptos mediante la resolución de ejercicios, bien individualmente o en grupos reducidos. Se recomienda el uso del ordenador portátil en clase, especialmente con un sistema operativo GNU/Linux.
 
 Las clases de tipo PO que no se utilicen para la resolución de ejercicios, se emplearán para aplicar la metodología activa de Aprendizaje Basado en Problemas. Cada cierto tiempo se les proporcionará a los alumnos una serie de ejercicios que podrán trabajar de manera individual o grupal.
-
-En caso de confinamiento, las clases y tutorías se realizarán de modo telemático. El sisde evaluación se mantendrá adaptando las pruebas para su realización online.
 
 ## TIPOS DE DOCENCIA
 
@@ -93,10 +91,10 @@ En caso de confinamiento, las clases y tutorías se realizarán de modo telemát
 * Realizacion de prácticas 30
 * TRABAJOS EN EQUIPO (RESOLUCIÓN DE PROBLEMAS, DISEÑO DE PROYECTOS) 40
 
-## CONVOCATORIA ORDINARIA: ORIENTACIONES Y RENUNCIA (EUSKERA)
+## CONVOCATORIA ORDINARIA: ORIENTACIONES Y RENUNCIA  (CASTELLANO)
 
-En la convocatoria ordinaria, por defecto, el alumnado está acogido al sisde evaluación continua, aunque existe la opción de acogerse a la evaluación final indicándolo por email.
-En el sisde evaluación continua la evaluación se dividirá en tres partes, cada una de ellas con un examen teórico y otro práctico, cuyas calificaciones harán media. Cada examen tratará sobre la materia vista en clase y los informes de laboratorio realizados hasta esa fecha y desde el examen anterior.
+En la convocatoria ordinaria, por defecto, el alumnado está acogido al sisde evaluación continua, aunque existe la opción de acogerse a la evaluación final indicándolo por email antes de la novena semana.
+En el sistema evaluación continua la evaluación se dividirá en tres partes, cada una de ellas con un examen teórico y otro práctico, cuyas calificaciones harán media. Cada examen tratará sobre la materia vista en clase y los informes de laboratorio realizados hasta esa fecha y desde el examen anterior.
 Además, a lo largo del cuatrimestre se realizarán una serie de trabajos que influirán en la calificación final de la asignatura en distinta medida.
 En el sisde evaluación final habrá un único examen teórico y otro práctico que se corresponderán con todo el temario de la asignatura. La calificación final de la asignatura se calculará mediante la media aritmética de ambos exámenes.
 
@@ -106,12 +104,12 @@ Los trabajos tienen que estar escritos correctamente, por lo que en el momento q
 
 CASOS DE COPIA:
 Si se detecta una copia entre trabajos de dos grupos distintos, ambos trabajos serán evaluados con 0.
-En el caso de los exámenes se aplicará el artículo 46.2 de la normativa vigente referente a la evaluación del alumnado.
+En el caso de los exámenes se aplicará el artículo 11.3 de la Normativa reguladora de la Evaluación del Alumnado en las titulaciones oficiales de Grado.
 
 RENUNCIA A LA CONVOCATORIA:
 Para renunciar a la convocatoria y figurar como “No Presentado” en el modo de evaluación continua, hay que solicitarlo por email en los plazos establecidos. En el modo de evaluación final, es suficiente con no presentarse al examen final.
 
-## CONVOCATORIA EXTRAORDINARIA: ORIENTACIONES (EUSKERA)  
+## CONVOCATORIA EXTRAORDINARIA: ORIENTACIONES  (CASTELLANO)  
 
 El alumnado que no superen la asignatura en su convocatoria ordinaria tendrá que realizar un examen teórico y otro práctico en la convocatoria extraordinaria sobre el temario completo de la asignatura.
 El alumnado que hubiera seguido el sisde evaluación continua tendrá la posibilidad de indicar en el propio examen si desea que la calificación final de la asignatura se calcule usando únicamente las calificaciones de los exámenes o si quiere que se tenga en cuenta la nota de los trabajos realizados a lo largo del cuatrimestre.
@@ -119,17 +117,17 @@ El alumnado que hubiera seguido el sisde evaluación continua tendrá la posibil
 RENUNCIA A LA CONVOCATORIA:
 En caso de no realizar el examen teórico o el práctico se obtendrá una valoración de "No Presentado".
 
-## MATERIALES DE USO OBLIGATORIO (EUSKERA)  
+## MATERIALES DE USO OBLIGATORIO  (CASTELLANO)  
 
 Notas de clase, material de soporte a la docencia en aula y laboratorios.
 
-## BIBLIOGRAFIA (EUSKERA)  
+## BIBLIOGRAFIA  (CASTELLANO)  
 
-### Bibliografía Básica (EUSKERA)  
+### Bibliografía Básica  (CASTELLANO)  
 
 Enciclopedia de la Seguridad Informática 2ª edición, Álvaro Gómez Vieites, RAMA 2011
 
-### Bibliografía de profundización (EUSKERA)  
+### Bibliografía de profundización  (CASTELLANO)  
 
 The governance of privacy. C.J. Bennett y C.D. Raab, Massachussets Institute of Technology Press 2006
 Beyond Fear. B. Schneier, Beyond Fear: Thinking Sensibly About Security in an Uncertain World; 2006; Springer
@@ -138,12 +136,12 @@ Social Engineering: The Science of Human Hacking. Christopher Hadnagy, Wiley 201
 El pequeño libro rojo del activista en la red. Marta Peirano, Roca 2015
 Grokking Bitcoin. Kalle Rosenbaum, Manning 2019
 
-### Revistas (EUSKERA)  
+### Revistas  (CASTELLANO)  
 
 Auditoría + Seguridad informática
 IEEE Security & Privacy
 
-### Direcciones de Internet de interés (EUSKERA)
+### Direcciones de Internet de interés  (CASTELLANO)
 
 Blog de Bruce Schneier sobre seguridad (Accedido el 12/05/2022)
 https://www.schneier.com/
@@ -166,6 +164,6 @@ https://krebsonsecurity.com
 Malware scanner (Accedido el 12/05/2022)
 https://www.virustotal.com
 
-## OBSERVACIONES (EUSKERA)  
+## OBSERVACIONES  (CASTELLANO)  
 
 Si un trabajo es calificado con un 0 por razones de plagio, la asignatura será suspendida en su convocatoria ordinaria.
