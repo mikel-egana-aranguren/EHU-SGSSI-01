@@ -39,7 +39,8 @@
 
     <section class="slide">
         <h2>Esteganografía</h2>
-        <p>Consiste en ocultar información de forma que no sea “visible” para quien no sepa la clave</p>
+        <p>"steganos": oculto; "graphos": escritura</p>
+        <p>Ocultar información de forma que no sea “visible” para quien no sepa la clave</p>
         <p>Sin saber la clave, puede parecer que no hay información oculta</p>
         <p>Es la técnica precursora de la criptografía</p>   
     </section>
@@ -54,6 +55,13 @@
                 <li>Esperaba a que les creciera el pelo, y los mandaba al destino</li>
                 <li>En el destino les volvían a rapar la cabeza y leían el mensaje</li>
             </ul>
+        </p>   
+    </section>
+
+    <section class="slide">
+        <h2>Esteganografía</h2>
+        <p>Segunda Guerra Mundial</p>
+        <p>Los alemanes utilizaban micro puntos para ocultar información en textos, haciéndolos pasar por signos de puntuación
         </p>   
     </section>
 
@@ -78,38 +86,48 @@
     </section>
 
     <section class="slide">
-        <h2>Esteganografía</h2>
+        <h2>Esteganografía moderna</h2>
+        <p>Insertar información sensible dentro del <b>fichero contenedor</b></p>
+        <p>
+            <ul>
+                <li>Sustitución de bits</li>
+                <li>Inserción de bits al final, después de la marca EOF (End Of File)</li>
+                <li>Creación fichero contenedor "ad-hoc" partiendo de información a ocultar</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Sustitución de bits</h2>
         <p>Ocultación de información en archivos multimedia (normalmente imágenes)</p>
         <p>En formato BMP cada pixel en RGB son 3 bytes</p>  
         <p>LSB (Less Significant Bit): Modificar el último bit de cada byte es inapreciable</p>   
     </section>
 
     <section class="slide">
-        <h2>Esteganografía</h2>
+        <h2>Sustitución de bits</h2>
         <p>Por ejemplo, para ocultar texto, insertamos el código ASCII del carácter deseado</p>
         <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/LSB.png" alt="Esteganografía" width="40%"></p>
     </section>
 
+    <section class="slide">
+        <h2>Esteganografía moderna</h2>
+        <ul>
+            <li>Normalmente mediante programas que usan contraseñas</li>
+            <li>¿Como mejorar la robustez del sistema?</li>
+            <li class="next">Cifrar la información antes de introducirla (Criptografía + esteganografía)</li>
+        </ul>
+    </section>
 
+    <section class="slide">
+        <h2>Esteganografía moderna: problemas</h2>
+        <ul>
+            <li>Si el fichero contenedor es manipulado se puede perder la información (ej. JPEG --> BMP --> JPEG)</li>
+            <li>No garantiza Autenticidad ni Integridad (Pero si Confidencialidad)</li>
 
+        </ul>
+    </section>
 
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-    
-
-    
     <!-- FOOTER -->
 
     <footer class="badge">
