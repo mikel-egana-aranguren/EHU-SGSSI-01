@@ -53,7 +53,6 @@
     <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/owasp-top-10.png" alt="OWASP Top 10 2017 2021" width="70%"></p>
     </section>
 
-
     <section class="slide">
         <h2>A01:2021 - Rotura de control de acceso (Broken Access control)</h2>
         <a href="https://owasp.org/Top10/A01_2021-Broken_Access_Control/">https://owasp.org/Top10/A01_2021-Broken_Access_Control/</a>
@@ -82,6 +81,10 @@
         <p>Burlar el control de acceso mediante parametros URL o las peticiones APIs</p>
         <p>Acceder a una cuenta personal e incluso modificar los datos con el identificador del usuario</p>
         <p>Acceso API sin control para los metodos HTTP POST, PUT, y DELETE</p>
+    </section>
+
+    <section class="slide">
+        <h2>A01:2021 - Broken Access control - vulnerabilidades</h2>
         <p><b>Elevación de privilegio:</b> acutar como administrador estando logeado como usuario</p>
         <p>Replaying o modificación de JSON Web Token (JWT) para elevar privilegios</p>
         <p>Mala configuración de CORS permite acceso API desde origenes no autorizados</p>
@@ -89,12 +92,47 @@
 
     <section class="slide">
         <h2>A01:2021 - Broken Access control - prevención</h2>
-        <p>Burlar el control de acceso mediante parametros URL o las peticiones APIs</p>
-        <p>Acceder a una cuenta personal e incluso modificar los datos con el identificador del usuario</p>
-        <p>Acceso API sin control para los metodos HTTP POST, PUT, y DELETE</p>
-        <p><b>Elevación de privilegio:</b> acutar como administrador estando logeado como usuario</p>
-        <p>Replaying o modificación de JSON Web Token (JWT) para elevar privilegios</p>
-        <p>Mala configuración de CORS permite acceso API desde origenes no autorizados</p>
+        <p>Denegación por defecto para todos los recursos, excepto públicos</p>
+        <p>Implementar mecanismos de acceso de control una sola vez y extenderlos a toda la aplicación, minimizando el uso de CORS</p>
+        <p>No permitir listado de directorios y asegurarse de que no hay archivos de metadatos (ej. git) ni de backups en el nivel root de la aplicación</p>
+    </section>
+
+    <section class="slide">
+        <h2>A01:2021 - Broken Access control - prevención</h2>
+        <p>Logear todos los intentos de entrada, alertar a los administradores cuando sea necesario (ej. muchos accesos fallidos)</p>
+        <p>Limitar la tasa de peticiones de API para evitar ataques mediante programas</p>
+    </section>
+
+    <section class="slide">
+        <h2>A01:2021 - Broken Access control - prevención</h2>
+        <p>Identificadores de sesión:
+            <ul>
+                <li>De servidor (stateful): invalidar al deslogearse</li>
+                <li>Stateless JWT tokens: muy poca vida</li>
+                <li>Para JWT de tiempo más largo, seguir el protocolo <a href="https://oauth.net/">OAuth</a> de cara a revocar el acceso</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>A01:2021 - Broken Access control - ejemplo</h2>
+        <p>Llamada a SQL para obtener información de cuenta, con datos sin verificar:</p>
+        <pre>
+            <code>pstmt.setString(1, request.getParameter("acct"));</code>
+            <code>ResultSet results = pstmt.executeQuery( );</code>
+        </pre>
+        <p>El atacante solo tiene que usar la URL <b>https://example.com/app/accountInfo?acct=notmyacct</b></p>
+    </section>
+
+    <section class="slide">
+        <h2>A02:2021 - Fallos criptográficos (https://owasp.org/Top10/A02_2021-Cryptographic_Failures/)</h2>
+        <a href="https://owasp.org/Top10/A02_2021-Cryptographic_Failures/">https://owasp.org/Top10/A02_2021-Cryptographic_Failures/</a>
+        <ul>
+            <li>CWE-259: Use of Hard-coded Password</li>
+            <li>CWE-327: Broken or Risky Crypto Algorithm</li>
+            <li>CWE-331 Insufficient Entropy</li>
+            <li>...</li>
+        </ul>
     </section>
 
 
