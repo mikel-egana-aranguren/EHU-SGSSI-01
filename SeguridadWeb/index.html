@@ -67,15 +67,34 @@
 
     <section class="slide">
         <h2>A01:2021 - Rotura de control de acceso (Broken Access control)</h2>
-        <p>El control de acceso obliga al usuario a actuar solo dentro de los limites establecidos por los permisos definidos</p>
+        <p>El control de acceso obliga al usuario a actuar solo dentro de los límites establecidos por los permisos definidos</p>
         <p>Fallar en el control de acceso resulta en consecuencias graves</p>
     </section>
 
     <section class="slide">
-        <h2>A01:2021 - Rotura de control de acceso (Broken Access control)</h2>
-        <p>Violacion del principio de "denegación por defecto": el acceso solo debería ser garantizado a ciertas capacidades, roles, o usuarios, pero está al alcance de cualquiera</p>
-        <p>GAUR con pantallazo: el primero que entre puede cambiar las guias docentes, aunque no sean el coordinador de la asignatura</p>
-        <p>Burlar el control de acceso mediatne parametors en la URL o las peticiones APIs</p>
+        <h2>A01:2021 - Broken Access control - vulnerabilidades</h2>
+        <p>Violación del principio de "denegación por defecto": el acceso solo debería ser garantizado a ciertas capacidades, roles, o usuarios, pero está al alcance de cualquiera</p>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/GAUR-guias-docentes-rotura-control-acceso.png" alt="En el mantenimiento de las guias docentes de GAUR el primer profesor que acceda a la guia, aunque no tenga permisos, se queda con la guia y la puede modificar si quiere" title="En el mantenimiento de las guias docentes de GAUR el primer profesor que acceda a la guia, aunque no tenga permisos, se queda con la guia y la puede modificar si quiere" width="70%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>A01:2021 - Broken Access control - vulnerabilidades</h2>
+        <p>Burlar el control de acceso mediante parametros URL o las peticiones APIs</p>
+        <p>Acceder a una cuenta personal e incluso modificar los datos con el identificador del usuario</p>
+        <p>Acceso API sin control para los metodos HTTP POST, PUT, y DELETE</p>
+        <p><b>Elevación de privilegio:</b> acutar como administrador estando logeado como usuario</p>
+        <p>Replaying o modificación de JSON Web Token (JWT) para elevar privilegios</p>
+        <p>Mala configuración de CORS permite acceso API desde origenes no autorizados</p>
+    </section>
+
+    <section class="slide">
+        <h2>A01:2021 - Broken Access control - prevención</h2>
+        <p>Burlar el control de acceso mediante parametros URL o las peticiones APIs</p>
+        <p>Acceder a una cuenta personal e incluso modificar los datos con el identificador del usuario</p>
+        <p>Acceso API sin control para los metodos HTTP POST, PUT, y DELETE</p>
+        <p><b>Elevación de privilegio:</b> acutar como administrador estando logeado como usuario</p>
+        <p>Replaying o modificación de JSON Web Token (JWT) para elevar privilegios</p>
+        <p>Mala configuración de CORS permite acceso API desde origenes no autorizados</p>
     </section>
 
 
