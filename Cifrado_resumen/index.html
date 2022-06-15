@@ -37,85 +37,97 @@
         <img src="../ShowerTemplate/pictures/by.png" alt="Creative Commons BY" height="10%">
     </section>
 
+    <section class="slide">
+        <h2>Algoritmos resumen</h2>
+        <p>Algoritmos de digestión (Message Digestion)</p>
+        <p>Generan un criptograma que representa el contenido original:
+            <ul>
+                <li>De <b>tamaño constante</b>, independientemente del contenido original</li>
+                <li>Representa <b>todo el contenido original</b></li>
+                <li>Si el contenido cambia lo más minimo, el criptograma <b>cambia completamente</b></li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Algoritmos resumen</h2>
+        <p>Funciones de dispersión:
+            <ul>
+                <li>No tienen inversa: no se puede obtener el contenido desde el criptograma</li>
+                <li>No se puede descifrar, ya que no cifra (resume)</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Algoritmos de resumen</h2>
+        <p>Utilidad:
+            <ul>
+                <li>Certificar la integridad de la información</li>
+                <li>Almacenar claves</li>
+                <li>Implementar la firma digital</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Certificar la integridad de la información</h2>
+        <p>http://ftp.mozilla.org/pub/mozilla.org/xulrunner/releases/2.0/MD5SUMS</p>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/md5-mozilla.png" alt="MD5SUMS mozilla" width="60%"></p>
+        <p>¿Cómo verificar la integridad?</p>
+    </section>
+
+    <section class="slide">
+        <h2>Certificar la integridad de la información</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/hash-integridad.png" alt="Hash integridad" width="60%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Almacenar claves</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/hash-clave.png" alt="Hash clave" width="60%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Almacenar claves: Identificación</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/hash-clave-identificacion.png" alt="Hash clave identificacion" width="60%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Almacenar claves: problemas</h2>
+        <p>Todo el mundo con la misma clave tiene el mismo hash</p>
+        <p>Se pueden precalcular los hash de todo el espacio de claves</p>
+    </section>
+
+    <section class="slide">
+        <h2>Almacenar claves: problemas</h2>
+        <p>Solución: usar "sal" (Salt), o semilla</p>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/hash-clave-identificacion-sal.png" alt="Hash clave identificacion sal" width="60%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Almacenar claves: problemas</h2>
+        <p>Identificación con sal</p>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/hash-clave-identificacion-sal-intro.png" alt="Hash clave identificacion sal" width="60%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Almacenar claves: problemas</h2>
+        <p>Ventajas del uso de sal
+            <ul>
+                <li>La misma clave tiene una codificación distinta cada vez</li>
+                <li>Dificulta los ataques por fuerza bruta</li>
+            </ul>
+        </p>
+        <p>Si roban la BBDD con las claves y la sal, no aporta nada</p>
+    </section>
+
+
+
+
+
         <section class="slide">
-            <h2>Algoritmos de resumen</h2>
-            <p>Funciones de dispersión (one-way hash)</p>
-            <p>Generan un criptograma de un determinado tamaño que representa todo el contenido original (Si cambia lo más mínimo, el resumen criptográfico es distinto)</p>
-            <p>No tienen inversa</p>
-            <p>No se puede descifrar</p>
-
-            pag 37, 39 de grokking bitcoin
-        </section>
-
-        <section class="slide">
-            <h2>Algoritmos de resumen</h2>
-            <p>Utilidad:
-                <ul>
-                    <li>Certificar la integridad de la información</li>
-                    <li>Almacenar claves</li>
-                    <li>Implementar la firma digital</li>
-                </ul>
-            </p>
-        </section>
-
-        <section class="slide">
-            <h2>Algoritmos de resumen</h2>
-            <p>Certificar la integridad de la información</p>
-            <p>http://ftp.mozilla.org/pub/mozilla.org/xulrunner/releases/2.0/MD5SUMS</p>
-            <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/md5-mozilla.png" alt="criptosistema clave privada" width="60%"></p>
-            
-        </section>
-
-        <section class="slide">
-            <h2>Algoritmos de resumen</h2>
-            <p>Almacenar claves</p>
-            <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/hash-clave.png" alt="criptosistema clave privada" width="60%"></p>
-        </section>
-
-        <section class="slide">
-            <h2>Algoritmos de resumen</h2>
-            <p>Identificación</p>
-            <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/hash-clave-identificacion.png" alt="criptosistema clave privada" width="60%"></p>
-        </section>
-
-        <section class="slide">
-            <h2>Algoritmos de resumen</h2>
-            <p>Problemas
-                <ul>
-                    <li>Todo el mundo con la misma clave tiene el mismo hash</li>
-                    <li>Se pueden precalcular los hash de todo el espacio de claves</li>
-                </ul>
-            </p>
-        </section>
-
-        <section class="slide">
-            <h2>Algoritmos de resumen</h2>
-
-            <p>Solución: usar "sal" (Salt), o semilla</p>
-            <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/hash-clave-identificacion-sal.png" alt="criptosistema clave privada" width="60%"></p>
-        </section>
-
-        <section class="slide">
-            <h2>Algoritmos de resumen</h2>
-            <p>Identificación con sal</p>
-            <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/hash-clave-identificacion-sal-intro.png" alt="criptosistema clave privada" width="60%"></p>
-        </section>
-
-        <section class="slide">
-            <h2>Algoritmos de resumen</h2>
-            <p>Ventajas del uso de sal
-                <ul>
-                    <li>La misma clave tiene una codificación distinta cada vez</li>
-                    <li>Dificulta los ataques por fuerza bruta</li>
-                </ul>
-            </p>
-            <p>Si roban la BBDD con las claves y la sal, no aporta
-                nada</p>
-        </section>
-
-        <section class="slide">
-            <h2>Algoritmos de resumen</h2>
-            <p>Funciones de dispersión más usadas
+            <h2>Algoritmos resumen</h2>
+            <p>Funciones de dispersión más usadas REALLY??????
                 <ul>
                     <li>MD5</li>
                     <li>SHA-1</li>
@@ -123,8 +135,16 @@
             </p>
         </section>
 
-        <section class="slide">
-            <h2>Algoritmos de resumen</h2>
+
+
+
+
+
+
+
+
+    <section class="slide">
+        <h2>Algoritmos resumen</h2>
             <p>Problemas
                 <ul>
                     <li>Colisiones: dos textos distintos que generen el mismo resumen</li>
@@ -137,61 +157,50 @@
                     <li>SHA-224, SHA-256, SHA-384, SHA-512, ...</li>
                 </ul>
             </p>
-        </section>
+    </section>
 
-        <section class="slide">
-            <h2>Contraseñas en S.O.</h2>
-            <p>Linux:
-                <ul>
-                    <li>Ubicación: /etc/shadow</li>
-                    <li>Obtención: sudo cat /etc/shadow</li>
-                    <li>Formato: user:$Algoritmousado$sal$ResumenCriptográfico:A:B:C:D:E:F:</li>
-                </ul>
+    <section class="slide">
+        <h2>Contraseñas en S.O.</h2>
+        <p>Linux:
+            <ul>
+                <li>Ubicación: /etc/shadow</li>
+                <li>Obtención: sudo cat /etc/shadow</li>
+                <li>Formato: user:$Algoritmousado$sal$ResumenCriptográfico:A:B:C:D:E:F:</li>
+            </ul>
+        </p>
+    </section>
 
-            </p>
+    <section class="slide">
+        <h2>Contraseñas en S.O.</h2>
+        <p>Formato Linux:
+            <ul>
+                <li>Algoritmousado: 1: MD5; 2: Blowfish; 3: NT; 5: SHA-256; 6: SHA-512</li>
+                <li>Sal: Cadena aleatoria para derivar las claves</li>
+            </ul> 
+        </p>
+    </section>
 
-        </section>
+    <section class="slide">
+        <h2>Contraseñas en S.O.</h2>
+        <p>Formato Linux:
+            <ul>
+                <li>A: número de días sin cambiar la clave (desde 01/01/1970)</li>
+                <li>B: número de días hasta poder cambiar la clave</li>
+                <li>C: número máximo de días que se puede estar sin cambiar la clave</li>
+            </ul> 
+        </p>
+    </section>
 
-        <section class="slide">
-            <h2>Contraseñas en S.O.</h2>
-            <p>Formato Linux:
-                <ul>
-                    <li>Algoritmousado: 1: MD5; 2: Blowfish; 3: NT; 5: SHA-256; 6: SHA-512</li>
-                    <li>Sal: Cadena aleatoria para derivar las claves</li>
-                </ul> 
-            </p>
-        </section>
-
-        <section class="slide">
-            <h2>Contraseñas en S.O.</h2>
-            <p>Formato Linux:
-                <ul>
-                    <li>A: número de días sin cambiar la clave (desde 01/01/1970)</li>
-                    <li>B: número de días hasta poder cambiar la clave</li>
-                    <li>C: número máximo de días que se puede estar sin cambiar la clave</li>
-
-                </ul> 
-            
-                
-            </p>
-
-        </section>
-
-        <section class="slide">
-            <h2>Contraseñas en S.O.</h2>
-            <p>Formato Linux:
-                <ul>
+    <section class="slide">
+        <h2>Contraseñas en S.O.</h2>
+        <p>Formato Linux:
+            <ul>
                 <li>D: número de días de antelación con el que hay que avisar al usuario de que tiene que cambiar la clave</li>
                 <li>E: número de días desde que caduque la contraseña hasta que se desactive la cuenta</li>
                 <li>F: número de días hasta que la cuenta se desactive (desde 01/01/1970)</li>
-                </ul>
-            </p>
-
-        </section>
-
-        
-        
-        <p><iframe width="560" height="315" src="https://www.youtube.com/embed/uiiaAJ3c6dM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+            </ul>
+        </p>
+    </section>
 
     
     <!-- FOOTER -->
