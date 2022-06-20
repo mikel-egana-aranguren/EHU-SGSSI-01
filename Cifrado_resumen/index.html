@@ -43,7 +43,7 @@
             <ul>
                 <li>De <b>tamaño constante</b>, independientemente del contenido original</li>
                 <li>Representa <b>todo el contenido original</b></li>
-                <li>Si el contenido cambia lo más minimo, el criptograma <b>cambia completamente</b></li>
+                <li>Si el contenido cambia lo más minimo <b>cambia completamente</b></li>
                 <li>Para el mismo contenido, siempre genera el <b>mismo</b></li>
             </ul>
         </p>
@@ -70,7 +70,7 @@
 
     <section class="slide">
         <h2>Certificar la integridad de la información</h2>
-        <p>http://ftp.mozilla.org/pub/mozilla.org/xulrunner/releases/2.0/MD5SUMS</p>
+        <p><a href="http://ftp.mozilla.org/pub/mozilla.org/xulrunner/releases/2.0/MD5SUMS">http://ftp.mozilla.org/pub/mozilla.org/xulrunner/releases/2.0/MD5SUMS</a></p>
         <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/md5-mozilla.png" alt="MD5SUMS mozilla" width="60%"></p>
         <p>¿Cómo verificar la integridad?</p>
     </section>
@@ -92,20 +92,20 @@
 
     <section class="slide">
         <h2>Almacenar contraseñas: problemas</h2>
-        <p>Todo el mundo con la misma clave tiene el mismo hash</p>
-        <p>Se pueden precalcular los hash de todo el espacio de claves</p>
+        <p>Todo el mundo con la misma contraseña tiene el mismo hash</p>
+        <p>Se pueden precalcular los hashes de todo el espacio de contraseñas</p>
     </section>
 
     <section class="slide">
         <h2>Almacenar contraseñas: problemas</h2>
         <p>Solución: usar "sal" (Salt), o semilla</p>
-        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/hash-clave-identificacion-sal.png" alt="Hash clave identificacion sal" width="80%"></p>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/hash-clave-identificacion-semilla.png" alt="Hash clave identificacion sal" width="80%"></p>
     </section>
 
     <section class="slide">
         <h2>Almacenar contraseñas: problemas</h2>
         <p>Identificación con sal</p>
-        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/hash-clave-identificacion-sal-intro.png" alt="Hash clave identificacion sal" width="80%"></p>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/hash-clave-identificacion-sal.png" alt="Hash clave identificacion sal" width="80%"></p>
     </section>
 
     <section class="slide">
@@ -176,96 +176,37 @@
     </section>
 
     <section class="slide">
-        <h2>Algoritmos resumen más conocidos: SHA-1 3</h2>
-        <p></p>
+        <h2>Algoritmos resumen más conocidos: SHA-3</h2>
+        <p>SHA-0..2 estaban basados en MD5, SHA-3 no</p>
+        <p>224...512 bits</p>
+        <p>Open SSL, Ethereum, ...</p>
     </section>
 
     <section class="slide">
-        <h2>Algoritmos resumen más conocidos: RIPEMD-160</h2>
-        <p></p>
+        <h2>Algoritmos resumen más conocidos: RIPEMD</h2>
+        <p>128, 160, 256, 320 bits</p>
+        <p><a href="../Bitcoin/index.html">Bitcoin</a> usa RIPEMD-160</p>
     </section>
 
     <section class="slide">
-        <h2>Algoritmos resumen más conocidos: Whirlpool</h2>
-        <p></p>
-    </section>
-
-    <section class="slide">
-        <h2>Algoritmos resumen más conocidos: MD5</h2>
-        <p></p>
-    </section>
-
-    <section class="slide">
-        <h2>Algoritmos resumen más conocidos: BLAKE3</h2>
-        <p></p>
-    </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <section class="slide">
-            <h2>Algoritmos resumen</h2>
-
-
-            /home/mikel/EHU-LSI/Docencia/2021-2022/SGSSI/CAST-SGSSI/Entregas/Entrega2-TemaLibre/20210_363_GIIGSI30_26025_01-Entrega Trabajo 2 - Tema libre-4188441/JON ANDER LÓPEZ DE AHUMADA ZALBIDE_5976705_assignsubmission_file_/Entrega_2.pdf
-
-            https://en.wikipedia.org/wiki/MD5#Security
-            
-            pag 37, 39 de grokking bitcoin
-
-            https://en.wikipedia.org/wiki/Collision_attack
-        
-            https://en.wikipedia.org/wiki/Preimage_attack
-        
-            https://en.wikipedia.org/wiki/Rainbow_table
-        </section>
-
-
-
-
-
-
-
-
-
-    <section class="slide">
-        <h2>Algoritmos resumen</h2>
-            <p>Problemas
+        <h2>Algoritmos resumen: problemas</h2>
                 <ul>
                     <li>Colisiones: dos textos distintos que generen el mismo resumen</li>
                     <li>Ataques que debilitan el algoritmo</li>
                 </ul>
-            </p>
-            <p>Soluciones
-                <ul>
-                    <li>Usar otros algoritmos que generan resúmenes criptográficos más largos</li>
-                    <li>SHA-224, SHA-256, SHA-384, SHA-512, ...</li>
-                </ul>
-            </p>
+            
     </section>
 
-    
+    <section class="slide">
+        <h2>Algoritmos resumen: soluciones</h2>
 
-    
+                <ul>
+                    <li>Usar otros algoritmos que generan resúmenes criptográficos más largos</li>
+                    <li>Nuevos algoritmos</li>
+                </ul>
+            
+    </section>
+
     <!-- FOOTER -->
 
     <footer class="badge">
