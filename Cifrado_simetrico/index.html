@@ -44,13 +44,17 @@
 
     <section class="slide">
         <h2>Criptosistemas de clave privada</h2>
-        <p>Objetivos
+        <p><b>Cifrado en flujo:</b> cifrar un flujo continuo de bits</p>
+        <p><b>Cifrado en bloque:</b> dividir el mensaje en bloques del mismo tamaño y aplicar el algoritmo a cada uno</p>  
+    </section>
+
+    <section class="slide">
+        <h2>Criptosistemas de clave privada: Objetivos</h2>
             <ul>
                 <li>Convertir el mensaje en ininteligible</li>
                 <li>Recuperar la información cifrada</li>
                 <li>Implementación lo más sencilla posible</li>
             </ul>
-        </p>
     </section>
 
     <section class="slide">
@@ -279,7 +283,11 @@
         <h2>Método de Vernam</h2>
         <p>Realiza el <a href="https://es.wikipedia.org/wiki/Cifrado_XOR"> cifrado XOR</a> entre el texto y una clave aleatoria de
             la misma longitud</p>
-            <p>El generador es realmente aleatorio</p>
+        <p>El generador es realmente aleatorio</p>
+    </section>
+
+    <section class="slide">
+        <h2>Método de Vernam</h2>
         <p>La clave (el flujo de clave) es lo denominado "libreta
             de un solo uso":
             <ul>
@@ -288,7 +296,7 @@
                 <li>Está demostrado matemáticamente que es irrompible</li>
             </ul>
         </p>
-        <!-- <p>No es práctico</p> -->
+        <p>No es práctico</p>
     </section>
 
     <section class="slide">
@@ -344,7 +352,6 @@
                     <li>AES</li>
                     <li>IDEA</li>
                     <li>KASUMI</li>
-                    <li>Blowfish?</li>
                 </ul>
         </section>
 
@@ -379,97 +386,49 @@
             <p style="text-align:left;font-size:30%;"><a href="https://commons.wikimedia.org/wiki/File:DES-key-schedule.png">https://commons.wikimedia.org/wiki/File:DES-key-schedule.png</a></p>
         </section>
 
-
-
-
-
-
-
-
-        
         <section class="slide">
             <h2>Triple DES</h2>
-
             <ul>
                 <li>Concebido como sucesor de DES, pero en desuso</li>
                 <li>Todavía se usa en tarjetas de crédito</li>
-
-
+                <li>Basado en realizar 3 ejecuciones de DES (Cifrar –
+                    Descifrar - Cifrar)</li>
+                <li>Bloques de 64 bits</li>
+                <li>Claves de 168 bits (3*56), clave efectiva 112 bits</li>
             </ul>
-            mejora de DES
-
-            <p>Triple DES - 1998: Basado en realizar 3 ejecuciones de DES (Cifrar –
-Descifrar - Cifrar):
-                <ul>
-                    <li>Usar 2 claves: ( E k<sub>1</sub> ( D k<sub>2</sub> ( E k<sub>1</sub> )))</li>
-                    <li>Usar 3 claves: ( E k<sub>1</sub> ( D k<sub>2</sub> ( E k<sub>3</sub> )))</li>
-                    <li>Usado extensamente en comercio (tarjetas de crédito)</li>
-</ul>
-</p>
         </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         <section class="slide">
             <h2>AES (Advanced Encryption Standard)</h2>
-
-            Sustituto de (Triple) DES
-            <p> - 2001:
-                <ul>
-                    <li>Muy usado en todo tipo de comunicaciones y transacciones</li>
-                    <li>Bloques de 128 bits</li>
-                    <li>Claves de 128, 192 ó 256 bits</li>
-                    <li>8 rondas (claves de 128) , 12 rondas (claves de 192), 14
+            <ul>
+                <li>Rijndael</li>
+                <li>Estandarizado por el Instituto Nacional de Normas y Tecnología (NIST), EEUU</li>
+                <li>Sustituto de (Triple) DES</li>
+                <li>Muy usado en todo tipo de comunicaciones y transacciones</li>
+                <li>Bloques de 128 bits</li>
+                <li>Claves de 128, 192 ó 256 bits</li>
+                <li>8 rondas (claves de 128) , 12 rondas (claves de 192), 14
 rondas (claves de 256)</li>
-                </ul>
-            </p>
+            
+            </ul>
         </section>
 
-
-
-
-
-
-
-
-
-
-
-
         <section class="slide">
-            <h2>Métodos de cifrado por bloques</h2>
-            <p>IDEA - 1991:
+            <h2>IDEA (International Data Encryption Algorithm)</h2>
                 <ul>
                     <li>Bloques de 64 bits</li>
                     <li>Clave 128 bits</li>
                     <li>8 rondas y media</li>
                     <li>Está considerado seguro (excepto algunas claves
                         débiles)</li>
-                    <li>Su uso no está extendido por estar patentado</li>
+                    <li>Incluído en OpenPGP</li>
                 </ul>
-            </p>
-
         </section>
 
         <section class="slide">
-            <h2>Métodos de cifrado por bloques</h2>
-            <p>KASUMI (A5/3) – 2000:
+            <h2>KASUMI (A5/3)</h2>
+
                 <ul>
                     <li>Bloques de 64 bits</li>
                     <li>Clave de 128 bits</li>
@@ -478,20 +437,7 @@ rondas (claves de 256)</li>
                     <li>El original se puede <a href="https://www.engadget.com/2010/01/15/3g-gsm-encryption-cracked-in-less-than-two-hours/">romper fácilmente</a> (probado en
                 2010)</li>
                 </ul>
-            </p>
-        </section>
 
-
-
-        <section class="slide">
-            <h2>Métodos de cifrado por bloques</h2>
-            <p>Redes 4G:
-                <ul>
-                    <li>Usa pares de algoritmos (si uno comprometido, el otro sigue protegiendo)</li>
-                    <li>Sufijo EEA para algoritmos que aseguren la Confidencialidad</li>
-                    <li>Sufijo EIA para algoritmos que aseguren la Integridad</li>
-                </ul>
-</p>
         </section>
 
         <section class="slide">
@@ -551,15 +497,7 @@ rondas (claves de 256)</li>
                 </li>
             </ul>
         </section>
-
-        
-        
-        <!-- <p><iframe width="560" height="315" src="https://www.youtube.com/embed/uiiaAJ3c6dM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p> -->
-
-
-
-
-    
+  
     <!-- FOOTER -->
 
     <footer class="badge">
