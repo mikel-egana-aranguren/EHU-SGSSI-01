@@ -39,28 +39,25 @@
 
     <section class="slide">
         <h2>Criptografía de clave pública</h2>
-        <p>Usa algoritmos de clave asimétrica: la clave que cifra no es la que descifra
-        </p>
-        <p>Usa dos claves por usuario:
+        <p>A principios de los 70 surgen los sistemas criptográficos asimétricos como solución al problema de compartir la clave en sistemas simétricos</p>
+        <p>Usa algoritmos de clave asimétrica: la clave que cifra no es la que descifra</p>
+    </section>
+
+    <section class="slide">
+        <h2>Criptografía de clave pública</h2>
+        <p>Dos claves por usuario:
             <ul>
                 <li>La clave pública que conoce todo el mundo</li>
                 <li>La clave privada que sólo conoce el usuario</li>
             </ul>
         </p>
+        <p>Están relacionadas matemáticamente</p>
         <p>Lo que una clave cifra sólo lo puede descifrar la otra</p>
-
     </section>
 
     <section class="slide">
         <h2>Criptografía de clave pública</h2>
-        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/clave_publica.png" alt="criptosistema clave privada" width="40%"></p>
-
-    </section>
-
-    <section class="slide">
-        <h2>Criptografía de clave pública</h2>
-        <p>Public key derivation
-        </p>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/clave_publica.png" alt="criptosistema clave publica" width="40%"></p>
 
     </section>
 
@@ -74,8 +71,13 @@
             <li>Miren manda el criptograma c a Iker</li>
             <li>Iker recibe c</li>
             <li>Iker descifra c usando su clave privada I privada: m = d ( c , I<sub>privada</sub> )</li>
-            <li>Confidencialidad. Sólo Iker puede descifrar el mensaje</li>
+            <li><b>Confidencialidad</b>. Sólo Iker puede descifrar el mensaje</li>
         </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Criptografía de clave pública</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/clave_publica_basic.png" alt="criptosistema clave publica basico" width="70%"></p>
     </section>
 
     <section class="slide">
@@ -270,9 +272,9 @@
 
     <section class="slide">
         <h2>Algoritmos de clave pública</h2>
-        <p>Diffie-Hellman - 1976</p>
-        <p>RSA - 1977</p>
-        <p>ElGamal - 1984</p>
+        <p>Diffie-Hellman - 1976: exponenciación modular</p>
+        <p>RSA - 1977: factorización de números primos grandes </p>
+        <p>ElGamal - 1984: cálculo de logartimos discretos</p>
         <p>DSA - 1991</p>
         <p>Curvas elípticas - 1985</p>
     </section>
@@ -325,136 +327,6 @@
     </section>
 
 
-    <section class="slide">
-        <h2>Firma digital</h2>
-        <p>Miren le manda un mensaje a Iker usando un sistema
-            de clave pública</p>
-        <p>Nadie puede leer el mensaje de Miren a Iker pero
-            cualquiera podría haberlo mandado</p>
-        <p>¿Cómo sabe Iker que se lo ha mandado Miren o que
-            nadie lo ha modificado?</p>
-        <p>Solución: Miren firma sus mensajes</p>
-    </section>
-
-    <section class="slide">
-        <h2>Firma digital</h2>
-        <p>Sólo el usuario legítimo puede firmar su documento</p>
-        <p>Nadie podrá falsificar una firma</p>
-        <p>Cualquiera puede verificar una firma digital</p>
-    </section>
-
-    <section class="slide">
-        <h2>Firma digital</h2>
-        <p>No se puede reutilizar una firma</p>
-        <p>No se puede modificar una firma</p>
-        <p>No se puede negar haber firmado un documento</p>
-        <p>No se puede alterar un documento después de haberlo
-            firmado</p>
-        <p>Logramos Autenticidad, Integridad y No repudio</p>
-    </section>
-
-    <section class="slide">
-        <h2>Firma digital</h2>
-        <p>Miren obtiene un resumen criptográfico del mensaje: RC = hash (m)</p>
-        <p>Miren cifra el resumen criptográfico con su clave: Firma = e ( RC, M<sub>privada</sub> )</p>
-        <p>Miren envía el mensaje (cifrado o sin cifrar) y su Firma</p>
-    </section>
-
-    <section class="slide">
-        <h2>Firma digital</h2>
-        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/FirmaMiren.png" alt="criptosistema clave privada" width="40%"></p>
-    </section>
-
-    <section class="slide">
-        <h2>Firma digital</h2>
-        <p>Iker desencripta la Firma usando la clave pública de Miren: RC = ( Firma, M<sub>pública</sub>)</p>
-        <p>Iker obtiene el resumen criptográfico del mensaje: RC’ = hash (m)</p>
-        <p>Iker compara RC’ con RC para asegurarse que no ha sido modificado</p>
-        <p></p>
-    </section>
-
-    <section class="slide">
-        <h2>Firma digital</h2>
-        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/FirmaIker.png" alt="criptosistema clave privada" width="40%"></p>
-    </section>
-
-    <section class="slide">
-        <h2>Firma digital</h2>
-        <p>Si además de firmarlo, Miren encripta su mensaje sólo Iker podrá leerlo: Se logra Confidencialidad, Autenticidad,
-            Integridad y No Repudio</p>
-        <p>Puede hacerlo usando:
-            <ul>
-                <li>Un sistema de criptografía asimétrica</li>
-                <li>Un sistema de criptografía híbrido</li>
-            </ul>
-        </p>
-    </section>
-
-    <section class="slide">
-        <h2>Firma digital</h2>
-        <p>Un sistema de criptografía asimétrica. Enviaría a Iker:
-            <ul>
-                <li>Criptograma del mensaje cifrado con M<sub>privada</sub> y con I<sub>pública</sub></li>
-                <li>Su Firma digital (el resumen criptográfico cifrado con
-                    M<sub>privada</sub> )</li>
-            </ul>
-        </p>
-
-    </section>
-
-    <section class="slide">
-        <h2>Firma digital</h2>
-    <p>Un sistema de criptografía híbrido. Enviaría a Iker:
-        <ul>
-            <li>Criptograma del mensaje cifrado con la clave de sesión</li>
-            <li>Criptograma con la clave de sesión cifrada con I<sub>pública</sub></li>
-            <li>Su Firma digital (el resumen criptográfico cifrado con M<sub>privada</sub>)</li>
-        </ul>
-    </p>
-</section>
-
-    
-
-    <section class="slide">
-        <h2>Confianza de firmas</h2>
-        <p>Aunque utilicemos firmas digitales:
-            <ul>
-                <li>¿Cómo sabemos que la firma es de quien dice ser?</li>
-                <li>¿Cómo nos asegura una autoridad de certificación que
-                    una firma es de quien dice ser?</li>
-                <li>¿No podemos fiarnos de una firma que no esté avalada
-                    por una autoridad de certificación?</li>
-            </ul>
-        </p>
-    </section>
-
-    <section class="slide">
-        <h2>Confianza de firmas</h2>
-
-            <ul>
-                <li>Se usa en PGP, GnuPG y similares</li>
-                <li>Un usuario certifica (firmando con su clave privada)
-                    que la clave pública de otro usuario es de confianza</li>
-                <li>La confianza se propaga según la confianza que
-                    demos a los usuarios que firmen las claves</li>
-            </ul>
-        
-    </section>
-
-    <section class="slide">
-        <h2>Niveles de confianza (Mapear a GPG???!!!!)</h2>
-
-            <ul>
-                <li>Desconocido: no nos fiamos de nada que firme ese
-                    usuario (por desconocimiento)</li>
-                <li>Ninguno: no nos fiamos de nada que firme ese usuario
-                    (porque sabemos que lo hace mal)</li>
-                <li>Marginal: nos fiamos de las claves firmadas por dos
-                    usuarios con confianza marginal</li>
-                <li>Absoluto: nos fiamos de todo lo firmado por ese usuario</li>
-            </ul>
-        
-    </section>
     
     <!-- FOOTER -->
 
