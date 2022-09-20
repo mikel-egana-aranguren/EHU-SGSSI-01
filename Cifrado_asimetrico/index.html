@@ -99,7 +99,7 @@
         <p>Problemas:
             <ul>
                 <li>La clave privada debe mantenerse privada</li>
-                <li>Debería ser (prácticamente) imposible sacar la clave
+                <li>Debería ser (prácticamente) imposible deducir la clave
                     privada a partir de la clave pública</li>
                 <li>Cifrado y descifrado son más lentos que en los sistemas
                     de clave secreta</li>
@@ -134,7 +134,7 @@
         <h2>Criptografía de clave pública</h2>
         <ul>
             <li>Si Iker lo cifra con su clave privada lo puede descifrar
-                cualquiera (I<sub>pública</sub> la conoce todo el mundo)</li>
+                cualquiera (Todo el mundo conoce I<sub>pública</sub>)</li>
             <li>Solución:
                 <ul>
                     <li>Iker cifra el mensaje con su clave privada: C1 = e ( m, I<sub>privada</sub> )</li>
@@ -152,12 +152,16 @@
         <ul>
             <li>Sólo Miren puede desencriptarlo con su clave privada:
                 <ul>
-                    <li>Confidencialidad: Sólo Miren puede descifrar el mensaje: C1 = d ( C2 , M<sub>privada</sub> )</li>
-                    <li>Autenticidad y No Repudio: Sólo Iker ha podido enviar el mensaje: m = d ( C1, I<sub>pública</sub> )</li>
+                    <li><b>Confidencialidad</b>: Sólo Miren puede descifrar el mensaje: C1 = d ( C2 , M<sub>privada</sub> )</li>
+                    <li><b>Autenticidad</b> y <b>No Repudio</b>: Sólo Iker ha podido enviar el mensaje: m = d ( C1, I<sub>pública</sub> )</li>
                 </ul>
             </li>
         </ul>
+    </section>
 
+    <section class="slide">
+        <h2>Criptografía de clave pública</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/clave_publica_basic_2.png" alt="criptosistema clave publica basico 2" width="70%"></p>
     </section>
 
     <section class="slide">
@@ -178,7 +182,7 @@
 
     <section class="slide">
         <h2>Criptografía de clave pública</h2>
-        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/AndoniIkerMiren.png" alt="criptosistema clave privada" width="40%"></p>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/AndoniIkerMiren.png" alt="criptosistema clave publica" width="40%"></p>
 
     </section>
 
@@ -269,29 +273,70 @@
         <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/CifradoHibridoRecibir.png" alt="criptosistema clave privada" width="40%"></p>
     </section>
 
-
     <section class="slide">
         <h2>Algoritmos de clave pública</h2>
-        <p>Diffie-Hellman - 1976: exponenciación modular</p>
-        <p>RSA - 1977: factorización de números primos grandes </p>
-        <p>ElGamal - 1984: cálculo de logartimos discretos</p>
-        <p>DSA - 1991</p>
-        <p>Curvas elípticas - 1985</p>
+        <p>Diffie-Hellman</p>
+        <p>RSA</p>
+        <p>ElGamal</p>
+        <p>DSA</p>
+        <p>Curvas elípticas</p>
     </section>
 
     <section class="slide">
-        <h2>Algoritmos de clave pública</h2>
-        <p><iframe width="560" height="315" src="https://www.youtube.com/embed/yDXiDOJgxmg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+        <h2>Diffie-Hellman</h2>
+        <p> - 1976: exponenciación modular</p>
+        <p>Intercambio de claves, sistemas hibridos</p>
+
+
     </section>
 
     <section class="slide">
-        <h2>Algoritmos de clave pública</h2>
+        <h2>RSA</h2>
+
+
+        <p> - 1977: factorización de números primos grandes </p>
+
+    </section>
+
+
+    <section class="slide">
+        <h2>RSA</h2>
         <p><iframe width="560" height="315" src="https://www.youtube.com/embed/M7kEpw1tn50" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
     </section>
 
     <section class="slide">
+        <h2>ElGamal</h2>
+
+
+        <p> - 1984: cálculo de logartimos discretos</p>
+
+    </section>
+
+    <section class="slide">
+        <h2>DSA</h2>
+
+
+        <p> - 1991</p>
+    </section>
+
+    <section class="slide">
+        <h2>Curvas elípticas</h2>
+
+
+
+        <p> - 1985</p>
+    </section>
+    
+    
+    <section class="slide">
+        <h2>Curvas elípticas</h2>
+        <p><iframe width="560" height="315" src="https://www.youtube.com/embed/yDXiDOJgxmg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+    </section>
+
+
+    <section class="slide">
         <h2>Algoritmos de clave pública</h2>
-        <p>DNI electrónico (DNIe 3.0):
+        <p>DNI electrónico (DNIe 3.0) COGER DEL LIBRO!!!!:
             <ul>
                 <li>RSA</li>
                 <li>SHA-1 / SHA-256</li>
