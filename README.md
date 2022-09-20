@@ -9,10 +9,10 @@ Clases de la asignatura Sistemas de Gestión de Seguridad de Sistemas de la Info
   * [Algoritmos resumen](Cifrado_resumen/index.html)
   * [Cifrado simétrico](Cifrado_simetrico/index.html)
   * [Cifrado asimétrico](Cifrado_asimetrico/index.html)
-  * Aplicaciones: firma, comunicaciones seguras
-  * Aplicaciones: [Certificados](Certificados/index.html)
-  * Aplicaciones: [Bitcoin](Bitcoin/index.html)
-  * Aplicaciones: Wifi, DID, end to end encryption en redes sociales, voto electronico (podemos), OAuth...
+  * Aplicaciones: [Firma digital](Cifrado_firma/index.html)
+  * Aplicaciones: [Certificados](Cifrado_certificados/index.html)
+  * Aplicaciones: [Comunicaciones seguras](Cifrado_comunicaciones/index.html)
+  * Aplicaciones: [Bitcoin](Cifrado_Bitcoin/index.html)
 * Bloque II: Sistemas
   * [Backups](Backups/index.html)
   * [Seguridad en Sistemas Web](SeguridadWeb/index.html)

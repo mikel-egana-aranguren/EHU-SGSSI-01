@@ -267,6 +267,64 @@
         <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/CifradoHibridoRecibir.png" alt="criptosistema clave privada" width="40%"></p>
     </section>
 
+
+    <section class="slide">
+        <h2>Algoritmos de clave pública</h2>
+        <p>Diffie-Hellman - 1976</p>
+        <p>RSA - 1977</p>
+        <p>ElGamal - 1984</p>
+        <p>DSA - 1991</p>
+        <p>Curvas elípticas - 1985</p>
+    </section>
+
+    <section class="slide">
+        <h2>Algoritmos de clave pública</h2>
+        <p><iframe width="560" height="315" src="https://www.youtube.com/embed/yDXiDOJgxmg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+    </section>
+
+    <section class="slide">
+        <h2>Algoritmos de clave pública</h2>
+        <p><iframe width="560" height="315" src="https://www.youtube.com/embed/M7kEpw1tn50" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+    </section>
+
+    <section class="slide">
+        <h2>Algoritmos de clave pública</h2>
+        <p>DNI electrónico (DNIe 3.0):
+            <ul>
+                <li>RSA</li>
+                <li>SHA-1 / SHA-256</li>
+                <li>TripleDES / AES</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Algoritmos de clave pública</h2>
+    <p>PGP:
+        <ul>
+            <li>RSA / DSA</li>
+            <li>IDEA / TripleDES</li>
+        </ul>
+    </p>
+    </section>
+
+    <section class="slide">
+        <h2>Algoritmos de clave pública</h2>
+        <p>SSH:
+            <ul>
+                <li>RSA / DSA</li>
+
+            </ul>
+        </p>
+    <p>SSL / TLS:
+        <ul>
+            <li>RSA / DSA / Diffie-Hellman</li>
+            <li>IDEA / DES / TripleDES /AES</li>
+        </ul>
+    </p>
+    </section>
+
+
     <section class="slide">
         <h2>Firma digital</h2>
         <p>Miren le manda un mensaje a Iker usando un sistema
@@ -355,61 +413,7 @@
     </p>
 </section>
 
-    <section class="slide">
-        <h2>Algoritmos de clave pública</h2>
-        <p>Diffie-Hellman - 1976</p>
-        <p>RSA - 1977</p>
-        <p>ElGamal - 1984</p>
-        <p>DSA - 1991</p>
-        <p>Curvas elípticas - 1985</p>
-    </section>
-
-    <section class="slide">
-        <h2>Algoritmos de clave pública</h2>
-        <p><iframe width="560" height="315" src="https://www.youtube.com/embed/yDXiDOJgxmg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
-    </section>
-
-    <section class="slide">
-        <h2>Algoritmos de clave pública</h2>
-        <p><iframe width="560" height="315" src="https://www.youtube.com/embed/M7kEpw1tn50" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
-    </section>
-
-    <section class="slide">
-        <h2>Algoritmos de clave pública</h2>
-        <p>DNI electrónico (DNIe 3.0):
-            <ul>
-                <li>RSA</li>
-                <li>SHA-1 / SHA-256</li>
-                <li>TripleDES / AES</li>
-            </ul>
-        </p>
-    </section>
-
-    <section class="slide">
-        <h2>Algoritmos de clave pública</h2>
-    <p>PGP:
-        <ul>
-            <li>RSA / DSA</li>
-            <li>IDEA / TripleDES</li>
-        </ul>
-    </p>
-    </section>
-
-    <section class="slide">
-        <h2>Algoritmos de clave pública</h2>
-        <p>SSH:
-            <ul>
-                <li>RSA / DSA</li>
-
-            </ul>
-        </p>
-    <p>SSL / TLS:
-        <ul>
-            <li>RSA / DSA / Diffie-Hellman</li>
-            <li>IDEA / DES / TripleDES /AES</li>
-        </ul>
-    </p>
-    </section>
+    
 
     <section class="slide">
         <h2>Confianza de firmas</h2>
@@ -438,7 +442,7 @@
     </section>
 
     <section class="slide">
-        <h2>Niveles de confianza</h2>
+        <h2>Niveles de confianza (Mapear a GPG???!!!!)</h2>
 
             <ul>
                 <li>Desconocido: no nos fiamos de nada que firme ese
@@ -451,141 +455,6 @@
             </ul>
         
     </section>
-
-    <section class="slide">
-        <h2>Certificados digitales</h2>
-            <ul>
-                <li>Un certificado digital consiste en que una entidad “de
-                    confianza” firme mediante su clave privada, la clave
-                    pública de un usuario</li>
-                <li>Sirve para certificar que el usuario es quien dice ser</li>
-                <li>Depende de la confianza en la entidad que lo certifica</li>
-            </ul>
-    </section>
-
-    <section class="slide">
-        <h2>Certificados digitales</h2>
-            <ul>
-                <li>Siguen el estándar X.509</li>
-                <li>Validez != Confianza
-                    <ul>
-                        <li>Validez: cumple los requisitos de una firma (caducidad,
-                            etc.)</li>
-                        <li>Confianza: nos podemos fiar de esa firma</li>
-                    </ul>
-                </li>
-                <li>Una firma puede ser válida, pero no de confianza</li>
-                <li>Una firma de confianza que no sea válida no tiene
-                    sentido</li>
-            </ul>
-    </section>
-
-    <section class="slide">
-        <h2>Certificados digitales</h2>
-        <p>Una autoridad de certificación (AC) certifica la validez
-            de una firma
-            <ul>
-                <li>Prestadores de Servicios de Certificación (PSC): Ley de Firma Electrónica (Ley 59/2003, LFE), Ley de Acceso Electrónico de los Ciudadanos a los Servicios Públicos (Ley 11/2007, LAESCP)</li>
-                <li>Los PSCs deben proporcionar un método de consulta de
-                    la vigencia de sus certificados: Sólo las Administraciones Públicas tienen la obligación de
-                    que sea gratuito</li>
-            </ul>
-        </p>
-    </section>
-
-    <section class="slide">
-        <h2>Certificados digitales</h2>
-        <p>Jerarquía de certificación (RFC 1422)
-        </p>
-        <p>Internet Policy Registration Authority (IPRA) >> Policy Certification Authorities (PCA) >> Certification Authorities (CA): Verisign, Thawte, GeoTrust, RapidSSL, DigiCertSSL</p>
-    </section>
-
-    <section class="slide">
-        <h2>Un AC debe</h2>
-        
-            <ul>
-                <li>Mantener una base de datos de nombres distinguidos
-                    (ND) y de ACs subordinadas</li>
-                <li>Permitir la revocación de certificados:
-                    <ul>
-                        <li>Clave privada del usuario comprometida</li>
-                        <li>AC ha emitido un certificado a quien no debía</li>
-                        <li>El usuario cambia de AC</li>
-                        <li>Violación de la seguridad de la AC</li>
-                    </ul>
-                </li>
-                <li>CRL, Certification
-                    Revocation List: ejemplo <a href="https://www.geotrust.com/resources/repository/crls/">GeoTrust</a></li>
-            </ul>
-        
-    </section>
-
-    <section class="slide">
-        <h2>Un AC debe</h2>
-        
-            <ul>
-                <li>El protocolo OCSP (Online Certificate Status Protocol RFC 2560) permite validar el estado de un
-certificado digital de manera online</li>
-                <li>Es más eficiente que la verificación mediante Listas de Revocación de Certificados (CRL)</li>
-                <li>Ventaja: su actualización constante</li>
-                <li>Desventaja: necesidad de conexión para la comprobación</li>
-            </ul>
-        
-    </section>
-
-    <section class="slide">
-        <h2>Certificados digitales</h2>
-        <p>Cada AC que proporciona el servicio, mantiene un
-            servidor OCSP
-        </p>
-        <p>Este servicio responde a las aplicaciones cliente que
-            remitan una petición estandarizada y sepan
-            interpretar la respuesta</p>
-    </section>
-
-    <section class="slide">
-        <h2>Certificados digitales</h2>
-        <p>Tipos de certificados de clave pública:
-            <ul>
-                <li>Certificado de autoridad</li>
-                <li>Certificado de servidor</li>
-                <li>Certificado personal</li>
-                <li>Certificado de productor de software</li>
-            </ul>
-        </p>
-    </section>
-
-    <section class="slide">
-        <h2>Certificados digitales</h2>
-        <p>Componentes de un certificado:
-            <ul>
-                <li>Versión</li>
-                <li>Número de serie</li>
-                <li>Identificador del algoritmo de firmado</li>
-                <li>Nombre del emisor</li>
-                <li>Periodo de validez</li>
-                <li>Nombre del sujeto</li>
-            </ul>
-        </p>
-    </section>
-
-    <section class="slide">
-        <h2>Certificados digitales</h2>
-        <p>Con un certificado digital conseguimos:
-            <ul>
-                <li>Confidencialidad al poder encriptar la información</li>
-                <li>Integridad al poder realizar hash de la información y
-                    poder firmarla</li>
-                <li>Autenticidad al venir firmada la información</li>
-                <li>No repudio al firmar la información</li>
-            </ul>
-        </p>
-    </section>
-    
-    
-   
-
-
     
     <!-- FOOTER -->
 
