@@ -287,18 +287,25 @@
     <section class="slide">
         <h2>Diffie-Hellman</h2>
         <ul>
-            <li>1976</li>
-            <li>Intercambio de claves, sistemas hibridos</li>
+            <li>1976 - primer sistema de clave pública</li>
+            <li>No se usa para cifrar</li>
+            <li>Usando claves públicas establece una clave privada compartida que luego puede usarse como clave simétrica</li>
+            <li>Basado en el problema del logaritmo discreto</li>
         </ul>
+    </section>
 
-
+    <section class="slide">
+        <h2>Diffie-Hellman</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/DiffieHellmanAliceBob.png" alt="Diffie Hellman Alice Bob" width="20%"></p>
+        <p style="text-align:left;font-size:30%;"><a href="https://www.garykessler.net/library/crypto.html#dhmath">https://www.garykessler.net/library/crypto.html#dhmath</a></p>
     </section>
 
     <section class="slide">
         <h2>RSA</h2>
-
-
-        <p> - 1977: factorización de números primos grandes </p>
+        <p>1977 - Rivest–Shamir–Adleman</p>
+        <p>A diferencia de Diffie-Hellman, válido para cifrar, descifrar, y firmar, pero debido a su lentitud sobre todo usado en sistemas híbridos</p>
+        <p>RSA security: Verisign (Dominios, Infraestructura de Clave Pública, SSL, ...)</p>
+        <p>Factorización del producto de números primos</p>
 
     </section>
 
@@ -310,36 +317,33 @@
 
     <section class="slide">
         <h2>ElGamal</h2>
-
-
-        <li>1984</li>
-        Basado en Diffie-Hellman
+        <li>1984 - Taher Elgamal </li>
+        <li>Basado en Diffie-Hellman pero también se puede usar para cifrar, descifrear y firmar</li>
     </section>
 
     <section class="slide">
         <h2>DSA</h2>
-
-
-        <p> - 1991</p>
+        <p>1991 - Digital Signature Algorithm</p>
+        <p>Estándar de EEUU para firmas digitales (<a href="https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.186-4.pdf">FIPS 186-4</a>)</p>
+        <p>Sólo para firmas</p>
     </section>
 
     <section class="slide">
-        <h2>Curvas elípticas</h2>
-
-
-
-        <p> - 1985</p>
+        <h2>Curva elíptica</h2>
+        <p>1985</p>
+        <p>Mismo nivel de seguridad que RSA con claves más cortas</p>
+        <p>Elliptic Curve Diffie–Hellman (ECDH)</p>
+        <p>Elliptic Curve Digital Signature Algorithm (ECDSA)</p>
     </section>
     
     
     <section class="slide">
-        <h2>Curvas elípticas</h2>
+        <h2>Curva elíptica</h2>
         <p><iframe width="560" height="315" src="https://www.youtube.com/embed/yDXiDOJgxmg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
     </section>
 
     <section class="slide">
-        <h2>Algoritmos de clave pública</h2>
-
+        <h2>Algoritmos de clave pública: usos</h2>
             <ul>
                 <li>DNI electrónico</li>
                 <li>PGP</li>
@@ -350,14 +354,11 @@
     </section>
 
     <section class="slide">
-        <h2>DNI electrónico (DNIe 3.0) COGER DEL LIBRO!!!!</h2>
-        
+        <h2>DNI electrónico</h2>
             <ul>
                 <li>RSA</li>
-                <li>SHA-1 / SHA-256</li>
-                <li>TripleDES / AES</li>
+                <li>SHA-256</li>
             </ul>
-        
     </section>
 
     <section class="slide">
