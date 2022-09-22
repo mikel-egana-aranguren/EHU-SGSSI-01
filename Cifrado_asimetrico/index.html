@@ -81,65 +81,47 @@
     </section>
 
     <section class="slide">
-        <h2>Criptografía de clave pública</h2>
-        <p>Ventajas:
+        <h2>Criptografía de clave pública: Ventajas</h2>
             <ul>
                 <li>Sólo el destinatario puede leer el mensaje</li>
                 <li>Sólo hay que almacenar una clave</li>
-                <li>Cualquiera puede usar la clave pública para enviar un
-                    mensaje confidencial a Iker</li>
-                <li>No son necesarios canales seguros para comunicar la
-                    clave pública</li>
+                <li>Cualquiera puede usar la clave pública para enviar un mensaje confidencial a Iker</li>
+                <li>No son necesarios canales seguros para comunicar la clave pública</li>
             </ul>
-        </p>
     </section>
 
     <section class="slide">
-        <h2>Criptografía de clave pública</h2>
-        <p>Problemas:
+        <h2>Criptografía de clave pública: Problemas</h2>
             <ul>
                 <li>La clave privada debe mantenerse privada</li>
-                <li>Debería ser (prácticamente) imposible deducir la clave
-                    privada a partir de la clave pública</li>
-                <li>Cifrado y descifrado son más lentos que en los sistemas
-                    de clave secreta</li>
-                <li>Miren debe estar segura de que está usando la clave
-                    pública de Iker</li>
+                <li>Debería ser (prácticamente) imposible deducir la clave privada a partir de la clave pública</li>
+                <li>Cifrado y descifrado son más lentos que en los sistemas de clave secreta</li>
+                <li>Miren debe estar segura de que está usando la clave pública de Iker</li>
                 <li>Debe ser fácil obtener las claves públicas</li>
             </ul>
-        </p>
     </section>
 
     <section class="slide">
         <h2>Criptografía de clave pública</h2>
-        <p>Cada usuario genera su par (clave pública, clave
-            privada) y publica la clave pública en un servidor de
-            claves: Key Certification Authority o Key Distribution Center
-            (KDC)</p>
-
+        <p>Cada usuario genera su par (clave pública, clave privada) y publica la clave pública en un servidor de claves: Key Certification Authority o Key Distribution Center (KDC)</p>
     </section>
 
     <section class="slide">
-        <h2>Criptografía de clave pública</h2>
-        <p>Más problemas:
+        <h2>Criptografía de clave pública: Más problemas</h2>
             <ul>
                 <li>¿Cómo sabe Iker si el mensaje es realmente de Miren?</li>
-                <li>Cuando Iker conteste ¿Cómo sabe Miren que el mensaje
-                    es realmente de Iker?</li>
+                <li>Cuando Iker conteste ¿Cómo sabe Miren que el mensaje es realmente de Iker?</li>
             </ul>
-        </p>
     </section>
 
     <section class="slide">
         <h2>Criptografía de clave pública</h2>
         <ul>
-            <li>Si Iker lo cifra con su clave privada lo puede descifrar
-                cualquiera (Todo el mundo conoce I<sub>pública</sub>)</li>
+            <li>Si Iker lo cifra con su clave privada lo puede descifrar cualquiera (Todo el mundo conoce I<sub>pública</sub>)</li>
             <li>Solución:
                 <ul>
                     <li>Iker cifra el mensaje con su clave privada: C1 = e ( m, I<sub>privada</sub> )</li>
                     <li>Luego lo vuelve a cifrar con la clave pública de Miren: C2 = e ( C1 , M <sub>pública</sub> ) </li>
-                    
                 </ul>
             </li>
         </ul>
@@ -166,8 +148,7 @@
 
     <section class="slide">
         <h2>Criptografía de clave pública</h2>
-        <p>¿Qué ocurre si se interpone alguien en las
-            comunicaciones?</p>
+        <p>¿Qué ocurre si se interpone alguien en las comunicaciones?</p>
         <p>Ataque Man in the middle:
             <ul>
                 <li>Un intermediario recibe todos los mensajes sin que las
@@ -188,43 +169,33 @@
 
     <section class="slide">
         <h2>Criptografía de clave pública</h2>
-        <p>Cuando Iker y Miren quieren comenzar a comunicarse
-            de manera secreta, se intercambian las respectivas
-            claves públicas</p>
+        <p>Cuando Iker y Miren quieren comenzar a comunicarse de manera secreta, se intercambian las respectivas claves públicas</p>
         <p>Andoni las intercepta y las intercambia por la suya</p>
         <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/AndoniIkerMirenManInTheMiddle.png" alt="criptosistema clave privada" width="40%"></p>
     </section>
 
     <section class="slide">
         <h2>Criptografía de clave pública</h2>
-        <p>Iker y Miren cifran sus mensajes con la que CREEN la
-            clave pública del otro y con su clave privada</p>
-        <p>Andoni intercepta los mensajes, los lee, modifica y
-            los encripta con su clave privada</p>
-            
+        <p>Iker y Miren cifran sus mensajes con la que CREEN la clave pública del otro y con su clave privada</p>
+        <p>Andoni intercepta los mensajes, los lee, modifica y los encripta con su clave privada</p>
     </section>
 
 
     <section class="slide">
         <h2>Criptografía de clave pública</h2>
-
         <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/AndoniIkerMirenManInTheMiddleDetalles.png" alt="criptosistema clave privada" width="60%"></p>
     </section>
 
     <section class="slide">
         <h2>Criptografía de clave pública</h2>
-        <p>Iker y Miren creen que están comunicándose de
-            manera segura</p>
-        <p>Andoni está enterándose de todo y modificándolo a su
-            antojo</p>    
+        <p>Iker y Miren creen que están comunicándose de manera segura</p>
+        <p>Andoni está enterándose de todo y modificándolo a su antojo</p>    
         <p>Formas de evitarlo:
             <ul>
                 <li>Paso de claves en canales "seguros"</li>
-                <li>Uso de una autoridad que certifique que una clave
-                    pública pertenece a quien dice: Autoridad de Certificación (AC)</li>
+                <li>Uso de una autoridad que certifique que una clave pública pertenece a quien dice: Autoridad de Certificación (AC)</li>
             </ul>
         </p>
-
     </section>
 
     <section class="slide">
@@ -235,30 +206,21 @@
 
     <section class="slide">
         <h2>Cifrado híbrido</h2>
-        <p>Los sistemas de clave secreta son mucho más rápidos
-            que los de clave pública</p>
-        <p>Muchas veces se usa una combinación: El sistema de
-                clave pública se usa para compartir una clave secreta
-                S que sólo se usa una vez</p>
-        <p>El sistema de clave secreta usa S para cifrar el
-            mensaje</p>
-
+        <p>Los sistemas de clave secreta son mucho más rápidos que los de clave pública</p>
+        <p>Muchas veces se usa una combinación: El sistema de clave pública se usa para compartir una clave secreta S que sólo se usa una vez</p>
+        <p>El sistema de clave secreta usa S para cifrar el mensaje</p>
     </section>
 
     <section class="slide">
         <h2>Cifrado híbrido</h2>
-        <p>Miren genera una clave secreta S y cifra su mensaje
-            usándola: cm = e1 (m,S)</p>
-        <p>Miren cifra S usando la clave pública de Iker
-            cs = e2 ( S , I<sub>pública</sub> )</p>
+        <p>Miren genera una clave secreta S y cifra su mensaje usándola: cm = e1 (m,S)</p>
+        <p>Miren cifra S usando la clave pública de Iker cs = e2 ( S , I<sub>pública</sub> )</p>
         <p>Miren manda [ cm, cs ] a Iker</p>
-
     </section>
 
     <section class="slide">
         <h2>Cifrado híbrido</h2>
         <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/CifradoHibrido.png" alt="criptosistema clave privada" width="40%"></p>
-
     </section>
 
     <section class="slide">
@@ -306,7 +268,6 @@
         <p>A diferencia de Diffie-Hellman, válido para cifrar, descifrar, y firmar, pero debido a su lentitud sobre todo usado en sistemas híbridos</p>
         <p>RSA security: Verisign (Dominios, Infraestructura de Clave Pública, SSL, ...)</p>
         <p>Factorización del producto de números primos</p>
-
     </section>
 
 
