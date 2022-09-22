@@ -32,12 +32,9 @@
 
     <section class="slide">
         <h2>Firma digital</h2>
-        <p>Miren le manda un mensaje a Iker usando un sistema
-            de clave pública</p>
-        <p>Nadie puede leer el mensaje de Miren a Iker pero
-            cualquiera podría haberlo mandado</p>
-        <p>¿Cómo sabe Iker que se lo ha mandado Miren o que
-            nadie lo ha modificado?</p>
+        <p>Miren le manda un mensaje a Iker usando un sistema de clave pública</p>
+        <p>Nadie puede leer el mensaje de Miren a Iker pero cualquiera podría haberlo mandado</p>
+        <p>¿Cómo sabe Iker que se lo ha mandado Miren o que nadie lo ha modificado?</p>
         <p>Solución: Miren firma sus mensajes</p>
     </section>
 
@@ -53,15 +50,14 @@
         <p>No se puede reutilizar una firma</p>
         <p>No se puede modificar una firma</p>
         <p>No se puede negar haber firmado un documento</p>
-        <p>No se puede alterar un documento después de haberlo
-            firmado</p>
-        <p>Logramos Autenticidad, Integridad y No repudio</p>
+        <p>No se puede alterar un documento después de haberlo firmado</p>
+        <p>Logramos <b>Autenticidad</b>, <b>Integridad</b> y <b>No repudio</b></p>
     </section>
 
     <section class="slide">
         <h2>Firma digital</h2>
         <p>Miren obtiene un resumen criptográfico del mensaje: RC = hash (m)</p>
-        <p>Miren cifra el resumen criptográfico con su clave: Firma = e ( RC, M<sub>privada</sub> )</p>
+        <p>Miren cifra el resumen criptográfico con su clave privada: Firma = e ( RC, M<sub>privada</sub> )</p>
         <p>Miren envía el mensaje (cifrado o sin cifrar) y su Firma</p>
     </section>
 
@@ -74,8 +70,7 @@
         <h2>Firma digital</h2>
         <p>Iker desencripta la Firma usando la clave pública de Miren: RC = ( Firma, M<sub>pública</sub>)</p>
         <p>Iker obtiene el resumen criptográfico del mensaje: RC’ = hash (m)</p>
-        <p>Iker compara RC’ con RC para asegurarse que no ha sido modificado</p>
-        <p></p>
+        <p>Iker compara RC’ con m para asegurarse que no ha sido modificado</p>
     </section>
 
     <section class="slide">
@@ -85,8 +80,7 @@
 
     <section class="slide">
         <h2>Firma digital</h2>
-        <p>Si además de firmarlo, Miren encripta su mensaje sólo Iker podrá leerlo: Se logra Confidencialidad, Autenticidad,
-            Integridad y No Repudio</p>
+        <p>Si además de firmarlo, Miren encripta su mensaje sólo Iker podrá leerlo: Se logra <b>Confidencialidad</b>, <b>Autenticidad</b>, <b>Integridad</b> y <b>No Repudio</b></p>
         <p>Puede hacerlo usando:
             <ul>
                 <li>Un sistema de criptografía asimétrica</li>
@@ -135,7 +129,7 @@
 
     <section class="slide">
         <h2>Confianza de firmas</h2>
-
+        https://en.wikipedia.org/wiki/Public_key_infrastructure web of trust
             <ul>
                 <li>Se usa en PGP, GnuPG y similares</li>
                 <li>Un usuario certifica (firmando con su clave privada)
