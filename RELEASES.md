@@ -2,6 +2,8 @@
 
 ## 2022-2023
 
+* Introducccion, introduccion al cifrado, esteganografia, algoritmos resumen, cifrado simetrico
+
 ## 2021-2022 (Rama congelada)
 
 * Cifrado completo (ahora si)
