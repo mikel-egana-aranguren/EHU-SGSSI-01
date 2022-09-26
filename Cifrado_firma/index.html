@@ -94,8 +94,7 @@
         <p>Un sistema de criptografía asimétrica. Enviaría a Iker:
             <ul>
                 <li>Criptograma del mensaje cifrado con M<sub>privada</sub> y con I<sub>pública</sub></li>
-                <li>Su Firma digital (el resumen criptográfico cifrado con
-                    M<sub>privada</sub> )</li>
+                <li>Su Firma digital (el resumen criptográfico cifrado con M<sub>privada</sub> )</li>
             </ul>
         </p>
 
@@ -110,39 +109,36 @@
             <li>Su Firma digital (el resumen criptográfico cifrado con M<sub>privada</sub>)</li>
         </ul>
     </p>
-</section>
-
-    
+    </section>
 
     <section class="slide">
         <h2>Confianza de firmas</h2>
         <p>Aunque utilicemos firmas digitales:
             <ul>
                 <li>¿Cómo sabemos que la firma es de quien dice ser?</li>
-                <li>¿Cómo nos asegura una autoridad de certificación que
-                    una firma es de quien dice ser?</li>
-                <li>¿No podemos fiarnos de una firma que no esté avalada
-                    por una autoridad de certificación?</li>
+                <li>¿Cómo nos asegura una autoridad de certificación que una firma es de quien dice ser?</li>
+                <li>¿No podemos fiarnos de una firma que no esté avalada por una autoridad de certificación?</li>
             </ul>
         </p>
     </section>
 
     <section class="slide">
-        <h2>Confianza de firmas</h2>
-        https://en.wikipedia.org/wiki/Public_key_infrastructure web of trust
+        <h2>Confianza de firmas (Web of trust)</h2>
             <ul>
                 <li>Se usa en PGP, GnuPG y similares</li>
-                <li>Un usuario certifica (firmando con su clave privada)
-                    que la clave pública de otro usuario es de confianza</li>
-                <li>La confianza se propaga según la confianza que
-                    demos a los usuarios que firmen las claves</li>
-            </ul>
-        
+                <li>Un usuario certifica (firmando con su clave privada) que la clave pública de otro usuario es de confianza</li>
+                <li>La confianza se propaga según la confianza que demos a los usuarios que firmen las claves</li>
+            </ul>    
     </section>
 
     <section class="slide">
-        <h2>Niveles de confianza (Mapear a GPG???!!!!)</h2>
+        <h2>Web of trust</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/Web_of_Trust-en.svg" alt="Web of trust" width="80%"></p>
+        <p style="text-align:left;font-size:30%;"><a href="https://commons.wikimedia.org/wiki/File:Web_of_Trust-en.svg">https://commons.wikimedia.org/wiki/File:Web_of_Trust-en.svg</a></p>
+    </section>
 
+    <section class="slide">
+        <h2>Niveles de confianza</h2>
             <ul>
                 <li>Desconocido: no nos fiamos de nada que firme ese
                     usuario (por desconocimiento)</li>

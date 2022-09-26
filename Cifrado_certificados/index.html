@@ -38,15 +38,70 @@
     </section>
 
     <section class="slide">
+        <h2>Public Key Infraestructure (PKI)</h2>
+            <ul>
+                <li>Infraestructura que permite enlazar entidades/personas con sus claves publicas</li>
+                <li>Web of Trust: PKI sin autoridad central, cualquiera puede certificar</li>
+                <li>Certificados: PKI con autoridad central, solo los CA pueden certificar</li>
+            </ul>
+    </section>
+
+    <section class="slide">
         <h2>Certificados digitales</h2>
             <ul>
-                <li>Un certificado digital consiste en que una entidad “de
-                    confianza” firme mediante su clave privada, la clave
-                    pública de un usuario</li>
-                <li>Sirve para certificar que el usuario es quien dice ser</li>
+                <li>Una entidad certifica que el usuario es quien dice ser</li>
                 <li>Depende de la confianza en la entidad que lo certifica</li>
             </ul>
     </section>
+
+    <section class="slide">
+        <h2>Certificados digitales</h2>
+            <ul>
+                <li>La entidad emite un certificado digital</li>
+                <li>En un certificado digital la entidad firme mediante su clave privada la clave pública de un usuario</li>
+            </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Certificados digitales: X.509</h2>
+            <ul>
+                <li>Estándar <a href="https://www.itu.int/rec/T-REC-X.509">X.509</a> de International Telecommunication Union (ITU)</li>
+                <li>Contiene una identidad (Persona, entidad, ...) y una clave publica
+                </li>
+                <li>Firmado por un CA - el poseedor de la clave publica puede
+                    <ul>
+                        <li>Firmar con su clave privada</li>
+                        <li>Establecer comunicaciones seguras (SSL, HTTPS, ...)</li>
+                    </ul>
+                </li>
+            </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Certificados digitales: X.509</h2>
+            <ul>
+                <li>Certification path validation algorithm</li>
+                <li>Certificate Revocation List (CRL)</li>
+            </ul>
+    </section>
+
+
+
+
+
+    CRL cada vey mas en desuso, ahora Online Certificate Status Protocol
+
+    firmado por si mismo
+
+    Captura CRT izenpe
+
+    los sistemas operativos y navegadores incluyen root certificates, asumiendo confianza de facto (el usuario confie en el software)
+
+    firefox: query OCSP responder: izenpe aparece como CA en fireforx
+
+
+
+
 
     <section class="slide">
         <h2>Certificados digitales</h2>
