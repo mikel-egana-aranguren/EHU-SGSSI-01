@@ -47,18 +47,29 @@
     </section>
 
     <section class="slide">
-        <h2>Certificados digitales</h2>
+        <h2>Autoridad de Certificación</h2>
             <ul>
-                <li>Una entidad certifica que el usuario es quien dice ser</li>
-                <li>Depende de la confianza en la entidad que lo certifica</li>
+                <li>Una entidad certifica que el usuario es quien dice ser Depende de la confianza en la AC que lo certifica</li>
+                <li>Almacena las claves pùblicas por nosotros</li>
             </ul>
     </section>
+
+
 
     <section class="slide">
         <h2>Certificados digitales</h2>
             <ul>
                 <li>La entidad emite un certificado digital</li>
-                <li>En un certificado digital la entidad firme mediante su clave privada la clave pública de un usuario</li>
+                <li>En un certificado digital el CA firma mediante su clave privada la clave pública de un usuario/otra entidad</li>
+            </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Agencia de Registro</h2>
+            <ul>
+                <li>Independiente de AC</li>
+                <li>Comprobar la idnetida del usuario antes de emitir el certificado</li>
+                <li>Agencias tributarias, seguridad social, zuzenean, ...</li>
             </ul>
     </section>
 
@@ -74,148 +85,158 @@
                         <li>Establecer comunicaciones seguras (SSL, HTTPS, ...)</li>
                     </ul>
                 </li>
+                <li>el CA debe mantener una base de datos de nombres distinguidos (ND) y de CAs subordinadas</li>
             </ul>
     </section>
 
     <section class="slide">
         <h2>Certificados digitales: X.509</h2>
             <ul>
-                <li>Certification path validation algorithm</li>
+                <li>Cadena de confianza (Certification path validation algorithm)</li>
                 <li>Certificate Revocation List (CRL)</li>
             </ul>
     </section>
 
-
-
-
-
-    CRL cada vey mas en desuso, ahora Online Certificate Status Protocol
-
-    firmado por si mismo
-
-    Captura CRT izenpe
-
-    los sistemas operativos y navegadores incluyen root certificates, asumiendo confianza de facto (el usuario confie en el software)
-
-    firefox: query OCSP responder: izenpe aparece como CA en fireforx
-
-
-
-
-
     <section class="slide">
-        <h2>Certificados digitales</h2>
-            <ul>
-                <li>Siguen el estándar X.509</li>
-                <li>Validez != Confianza
-                    <ul>
-                        <li>Validez: cumple los requisitos de una firma (caducidad,
-                            etc.)</li>
-                        <li>Confianza: nos podemos fiar de esa firma</li>
-                    </ul>
-                </li>
-                <li>Una firma puede ser válida, pero no de confianza</li>
-                <li>Una firma de confianza que no sea válida no tiene
-                    sentido</li>
-            </ul>
+        <h2>Cadena de confianza</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/Chain_Of_Trust.svg" alt="Cadena de confianza: Root firmado por si mismo!" width="60%"></p>
+        <p style="text-align:left;font-size:30%;"><a href="https://upload.wikimedia.org/wikipedia/commons/0/02/Chain_Of_Trust.svg">https://upload.wikimedia.org/wikipedia/commons/0/02/Chain_Of_Trust.svg</a></p>
     </section>
 
     <section class="slide">
-        <h2>Certificados digitales</h2>
-        <p>Una autoridad de certificación (AC) certifica la validez
-            de una firma
-            <ul>
-                <li>Prestadores de Servicios de Certificación (PSC): Ley de Firma Electrónica (Ley 59/2003, LFE), Ley de Acceso Electrónico de los Ciudadanos a los Servicios Públicos (Ley 11/2007, LAESCP)</li>
-                <li>Los PSCs deben proporcionar un método de consulta de
-                    la vigencia de sus certificados: Sólo las Administraciones Públicas tienen la obligación de
-                    que sea gratuito</li>
-            </ul>
-        </p>
+        <h2>Certificate Revocation List (CRL)</h2>
+        <p>Una lista publica de certificados revocados</p>
+        <p>Reovocar: AC declara que ese certificado no es confiable</p>
+        <p>Definido en <a href="https://www.rfc-editor.org/rfc/rfc5280#section-5.3.1">RFC 5280</a></p>
+        <p>Posibles <a href="https://www.rfc-editor.org/rfc/rfc5280#section-5.3.1">razones para revocación</a>: unspecified, keyCompromise, cACompromise, affiliationChanged, superseded, cessationOfOperation, certificateHold, removeFromCRL, privilegeWithdrawn, aACompromise</p>
     </section>
 
     <section class="slide">
-        <h2>Certificados digitales</h2>
-        <p>Jerarquía de certificación (RFC 1422)
-        </p>
-        <p>Internet Policy Registration Authority (IPRA) >> Policy Certification Authorities (PCA) >> Certification Authorities (CA): Verisign, Thawte, GeoTrust, RapidSSL, DigiCertSSL</p>
-    </section>
-
-    <section class="slide">
-        <h2>Un AC debe</h2>
-        
+        <h2>OCSP (Online Certificate Status Protocol)</h2>
             <ul>
-                <li>Mantener una base de datos de nombres distinguidos
-                    (ND) y de ACs subordinadas</li>
-                <li>Permitir la revocación de certificados:
-                    <ul>
-                        <li>Clave privada del usuario comprometida</li>
-                        <li>AC ha emitido un certificado a quien no debía</li>
-                        <li>El usuario cambia de AC</li>
-                        <li>Violación de la seguridad de la AC</li>
-                    </ul>
-                </li>
-                <li>CRL, Certification
-                    Revocation List: ejemplo <a href="https://www.geotrust.com/resources/repository/crls/">GeoTrust</a></li>
-            </ul>
-        
-    </section>
-
-    <section class="slide">
-        <h2>Un AC debe</h2>
-        
-            <ul>
-                <li>El protocolo OCSP (Online Certificate Status Protocol RFC 2560) permite validar el estado de un
-certificado digital de manera online</li>
-                <li>Es más eficiente que la verificación mediante Listas de Revocación de Certificados (CRL)</li>
+                <li><a href="https://www.rfc-editor.org/rfc/rfc2560">RFC 2560</a></li>
+                <li>Permite validar el estado de un certificado digital de manera online</li>
+                <li>Es más eficiente que la verificación mediante CRLs: CRLs en desuso</li>
                 <li>Ventaja: su actualización constante</li>
                 <li>Desventaja: necesidad de conexión para la comprobación</li>
             </ul>
         
     </section>
 
+
     <section class="slide">
-        <h2>Certificados digitales</h2>
-        <p>Cada AC que proporciona el servicio, mantiene un
-            servidor OCSP
-        </p>
-        <p>Este servicio responde a las aplicaciones cliente que
-            remitan una petición estandarizada y sepan
-            interpretar la respuesta</p>
+        <h2>OCSP (Online Certificate Status Protocol)</h2>
+        <ul>
+            <li>Cada AC que proporciona el servicio mantiene un servidor OCSP</li>
+            <li>Este servicio responde a las aplicaciones cliente que remitan una petición estandarizada y sepan interpretar la respuesta</li>
+        </ul>
     </section>
 
     <section class="slide">
-        <h2>Certificados digitales</h2>
-        <p>Tipos de certificados de clave pública:
-            <ul>
-                <li>Certificado de autoridad</li>
-                <li>Certificado de servidor</li>
-                <li>Certificado personal</li>
-                <li>Certificado de productor de software</li>
-            </ul>
-        </p>
+        <h2>OCSP (Online Certificate Status Protocol)</h2>
+        <ul>
+            <li>Cada AC que proporciona el servicio mantiene un servidor OCSP</li>
+            <li>Este servicio responde a las aplicaciones cliente que remitan una petición estandarizada y sepan interpretar la respuesta</li>
+        </ul>
     </section>
 
     <section class="slide">
-        <h2>Certificados digitales</h2>
-        <p>Componentes de un certificado:
-            <ul>
-                <li>Versión</li>
-                <li>Número de serie</li>
-                <li>Identificador del algoritmo de firmado</li>
-                <li>Nombre del emisor</li>
-                <li>Periodo de validez</li>
-                <li>Nombre del sujeto</li>
-            </ul>
-        </p>
+        <h2>OCSP: Replay attack</h2>
+        <ul>
+            <li>El atacante retiene un certificado valido hasta despues de su revocacion, y entonces lo envia al cliente</li>
+            <li>Solucion: uso de nonce</li>
+        </ul>
     </section>
+
+    <section class="slide">
+        <h2>OCSP: uso de nonce</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/Nonce-cnonce-uml.svg" alt="Uso de nonce" width="60%"></p>
+        <p style="text-align:left;font-size:30%;"><a href="https://commons.wikimedia.org/wiki/File:Nonce-cnonce-uml.svg">https://commons.wikimedia.org/wiki/File:Nonce-cnonce-uml.svg</a></p>
+    </section>
+
+    <section class="slide">
+        <h2>Estructura de un certificado</h2>
+        <pre><code>Certificate
+            Version Number
+            Serial Number
+            Signature Algorithm ID
+            Issuer Name
+            Validity period
+            Subject name
+            Subject Public Key Info
+                Public Key Algorithm
+                Subject Public Key
+            ...
+            Certificate Signature Algorithm
+            Certificate Signature;
+        </code></pre>
+    </section>
+
+    <section class="slide">
+        <h2>Estructura de un certificado</h2>
+        <p>Distinguished Name</p>
+        C: country
+        SP: state or province
+        Locality: L 
+        Organization: O 
+        Organizational Unit: OU 
+        Common Name: CN 
+    </section>
+
+    <section class="slide">
+        <h2>Estructura de un certificado</h2>
+        <p><a href="https://www.izenpe.com/">IZENPE</a></p>
+        <p><a href="https://www.euskadi.eus/web01-sede/es/contenidos/informacion/cas_izenpe/es_cas/index.shtml">Descarga de certificados izenpe</a></p>
+        <p>https://www.izenpe.com/certification-practice-statement/webize01-cndocjuridica/es/ Politica de certificacion: Certification practice statemtne</p>
+    </section>
+
+    <section class="slide">
+        <h2>Estructura de un certificado</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/izenpe.png" alt="Certificado Izenpe" width="60%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Certificado raíz</h2>
+        <p>Subject Name == Issuer Name</p>
+        <p>Esta firmado por sí mismo: es el origen de la confianza (Nos fiamos de la entidad)</p>
+    </section>
+
+    <section class="slide">
+        <h2>Jerarquía de certificación (RFC 1422)</h2>
+        <p>Internet Policy Registration Authority (IPRA) >> Policy Certification Authorities (PCA) >> Certification Authorities (CA): Verisign, Thawte, GeoTrust, RapidSSL, DigiCertSSL</p>
+    </section>
+
+    
+    <section class="slide">
+        <h2>Tipos de certificados Certificados digitales</h2>
+            <ul>
+                <li>Certificado de usuario (persona juridica) final</li>
+                <li>Certificado de firma de software</li>
+                <li>Certificado de servidor SSL</li>
+            </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Implementacion</h2>
+            <ul>
+                <li>los sistemas operativos y navegadores incluyen root certificates, asumiendo confianza de facto (el usuario confie en el software)</li>
+                <li>Firefox OCSP query responder, Izenpe</li>
+
+            </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Estructura de un certificado</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/firefox.png" alt="Firefox" width="60%"></p>
+    </section>
+
 
     <section class="slide">
         <h2>Certificados digitales</h2>
         <p>Con un certificado digital conseguimos:
             <ul>
                 <li>Confidencialidad al poder encriptar la información</li>
-                <li>Integridad al poder realizar hash de la información y
-                    poder firmarla</li>
+                <li>Integridad al poder realizar hash de la información y poder firmarla</li>
                 <li>Autenticidad al venir firmada la información</li>
                 <li>No repudio al firmar la información</li>
             </ul>
@@ -223,9 +244,6 @@ certificado digital de manera online</li>
     </section>
     
     
-   
-
-
     
     <!-- FOOTER -->
 
