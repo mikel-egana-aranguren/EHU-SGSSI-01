@@ -39,28 +39,26 @@
 
     <section class="slide">
         <h2>Public Key Infraestructure (PKI)</h2>
+        Infraestructura que permite enlazar entidades/personas con sus claves públicas
             <ul>
-                <li>Infraestructura que permite enlazar entidades/personas con sus claves publicas</li>
                 <li>Web of Trust: PKI sin autoridad central, cualquiera puede certificar</li>
-                <li>Certificados: PKI con autoridad central, solo los CA pueden certificar</li>
+                <li>Certificados: PKI con autoridad central, solo los CA (Autoridad de Certificación) pueden certificar</li>
             </ul>
     </section>
 
     <section class="slide">
         <h2>Autoridad de Certificación</h2>
             <ul>
-                <li>Una entidad certifica que el usuario es quien dice ser Depende de la confianza en la AC que lo certifica</li>
-                <li>Almacena las claves pùblicas por nosotros</li>
+                <li>Una entidad certifica que el usuario/entidad (su clave pública) es quien dice ser (Depende de la confianza en la AC que lo certifica)</li>
+                <li>Almacena las claves públicas por nosotros</li>
             </ul>
     </section>
-
-
 
     <section class="slide">
         <h2>Certificados digitales</h2>
             <ul>
-                <li>La entidad emite un certificado digital</li>
-                <li>En un certificado digital el CA firma mediante su clave privada la clave pública de un usuario/otra entidad</li>
+                <li>La AC emite un certificado digital</li>
+                <li>En el certificado digital el CA firma mediante su clave privada la clave pública de un usuario/entidad</li>
             </ul>
     </section>
 
@@ -68,7 +66,7 @@
         <h2>Agencia de Registro</h2>
             <ul>
                 <li>Independiente de AC</li>
-                <li>Comprobar la idnetida del usuario antes de emitir el certificado</li>
+                <li>Comprobar la idetidad del usuario antes de emitir el certificado</li>
                 <li>Agencias tributarias, seguridad social, zuzenean, ...</li>
             </ul>
     </section>
@@ -77,15 +75,15 @@
         <h2>Certificados digitales: X.509</h2>
             <ul>
                 <li>Estándar <a href="https://www.itu.int/rec/T-REC-X.509">X.509</a> de International Telecommunication Union (ITU)</li>
-                <li>Contiene una identidad (Persona, entidad, ...) y una clave publica
+                <li>Contiene una identidad (Persona, entidad, ...) y una clave pública
                 </li>
-                <li>Firmado por un CA - el poseedor de la clave publica puede
+                <li>Firmado por un CA - el poseedor de la clave pública puede:
                     <ul>
                         <li>Firmar con su clave privada</li>
-                        <li>Establecer comunicaciones seguras (SSL, HTTPS, ...)</li>
+                        <li>Establecer comunicaciones seguras (SSL, ...)</li>
                     </ul>
                 </li>
-                <li>el CA debe mantener una base de datos de nombres distinguidos (ND) y de CAs subordinadas</li>
+                <li>El CA debe mantener una base de datos de nombres distinguidos (ND) y de CAs subordinadas</li>
             </ul>
     </section>
 
@@ -105,8 +103,12 @@
 
     <section class="slide">
         <h2>Certificate Revocation List (CRL)</h2>
-        <p>Una lista publica de certificados revocados</p>
-        <p>Reovocar: AC declara que ese certificado no es confiable</p>
+        <p>Una lista pública de certificados revocados, mantenida por el AC</p>
+        <p>Revocar: AC declara que ese certificado no es confiable</p>
+    </section>
+
+    <section class="slide">
+        <h2>Certificate Revocation List (CRL)</h2>
         <p>Definido en <a href="https://www.rfc-editor.org/rfc/rfc5280#section-5.3.1">RFC 5280</a></p>
         <p>Posibles <a href="https://www.rfc-editor.org/rfc/rfc5280#section-5.3.1">razones para revocación</a>: unspecified, keyCompromise, cACompromise, affiliationChanged, superseded, cessationOfOperation, certificateHold, removeFromCRL, privilegeWithdrawn, aACompromise</p>
     </section>
@@ -123,15 +125,6 @@
         
     </section>
 
-
-    <section class="slide">
-        <h2>OCSP (Online Certificate Status Protocol)</h2>
-        <ul>
-            <li>Cada AC que proporciona el servicio mantiene un servidor OCSP</li>
-            <li>Este servicio responde a las aplicaciones cliente que remitan una petición estandarizada y sepan interpretar la respuesta</li>
-        </ul>
-    </section>
-
     <section class="slide">
         <h2>OCSP (Online Certificate Status Protocol)</h2>
         <ul>
@@ -143,14 +136,14 @@
     <section class="slide">
         <h2>OCSP: Replay attack</h2>
         <ul>
-            <li>El atacante retiene un certificado valido hasta despues de su revocacion, y entonces lo envia al cliente</li>
-            <li>Solucion: uso de nonce</li>
+            <li>El atacante retiene un certificado válido hasta después de su revocación, y entonces lo envia al cliente</li>
+            <li>Solución: uso de <b>nonce</b></li>
         </ul>
     </section>
 
     <section class="slide">
         <h2>OCSP: uso de nonce</h2>
-        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/Nonce-cnonce-uml.svg" alt="Uso de nonce" width="60%"></p>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/Nonce-cnonce-uml.svg" alt="Uso de nonce" width="30%"></p>
         <p style="text-align:left;font-size:30%;"><a href="https://commons.wikimedia.org/wiki/File:Nonce-cnonce-uml.svg">https://commons.wikimedia.org/wiki/File:Nonce-cnonce-uml.svg</a></p>
     </section>
 
@@ -163,88 +156,86 @@
             Issuer Name
             Validity period
             Subject name
+        </code></pre>
+    </section>
+
+    <section class="slide">
+        <h2>Estructura de un certificado</h2>
+        <pre><code>
             Subject Public Key Info
                 Public Key Algorithm
                 Subject Public Key
             ...
             Certificate Signature Algorithm
-            Certificate Signature;
+            Certificate Signature
         </code></pre>
     </section>
 
     <section class="slide">
         <h2>Estructura de un certificado</h2>
         <p>Distinguished Name</p>
-        C: country
-        SP: state or province
-        Locality: L 
-        Organization: O 
-        Organizational Unit: OU 
-        Common Name: CN 
+        <ul>
+            <li>C: country</li>
+            <li>SP: state or province</li>
+            <li>Locality: L</li> 
+            <li>Organization: O</li> 
+            <li>Organizational Unit: OU</li> 
+            <li>Common Name: CN</li> 
+        </ul>
     </section>
 
     <section class="slide">
         <h2>Estructura de un certificado</h2>
         <p><a href="https://www.izenpe.com/">IZENPE</a></p>
         <p><a href="https://www.euskadi.eus/web01-sede/es/contenidos/informacion/cas_izenpe/es_cas/index.shtml">Descarga de certificados izenpe</a></p>
-        <p>https://www.izenpe.com/certification-practice-statement/webize01-cndocjuridica/es/ Politica de certificacion: Certification practice statemtne</p>
+        <p><a href="https://www.izenpe.com/certification-practice-statement/webize01-cndocjuridica/es/">Política de certificación: certification practice statement</a></p>
     </section>
 
     <section class="slide">
         <h2>Estructura de un certificado</h2>
-        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/izenpe.png" alt="Certificado Izenpe" width="60%"></p>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/izenpe.png" alt="Certificado Izenpe" width="40%"></p>
     </section>
 
     <section class="slide">
         <h2>Certificado raíz</h2>
         <p>Subject Name == Issuer Name</p>
-        <p>Esta firmado por sí mismo: es el origen de la confianza (Nos fiamos de la entidad)</p>
+        <p>Esta firmado por sí mismo: es el origen de la confianza (Nos fiamos de la entidad directamente, no hay una clave privada externa que firme su clave pública)</p>
     </section>
 
-    <section class="slide">
+    <!-- <section class="slide">
         <h2>Jerarquía de certificación (RFC 1422)</h2>
         <p>Internet Policy Registration Authority (IPRA) >> Policy Certification Authorities (PCA) >> Certification Authorities (CA): Verisign, Thawte, GeoTrust, RapidSSL, DigiCertSSL</p>
-    </section>
+    </section> -->
 
-    
     <section class="slide">
-        <h2>Tipos de certificados Certificados digitales</h2>
+        <h2>Tipos de certificados</h2>
             <ul>
-                <li>Certificado de usuario (persona juridica) final</li>
+                <li>Certificado de usuario final (persona jurídica) </li>
                 <li>Certificado de firma de software</li>
                 <li>Certificado de servidor SSL</li>
             </ul>
     </section>
 
     <section class="slide">
-        <h2>Implementacion</h2>
+        <h2>Implementación</h2>
             <ul>
-                <li>los sistemas operativos y navegadores incluyen root certificates, asumiendo confianza de facto (el usuario confie en el software)</li>
+                <li>Los sistemas operativos y navegadores incluyen certificados raíz, asumiendo confianza de facto</li>
                 <li>Firefox OCSP query responder, Izenpe</li>
 
             </ul>
     </section>
 
     <section class="slide">
-        <h2>Estructura de un certificado</h2>
+        <h2>Implementación</h2>
         <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/firefox.png" alt="Firefox" width="60%"></p>
     </section>
 
-
     <section class="slide">
-        <h2>Certificados digitales</h2>
-        <p>Con un certificado digital conseguimos:
-            <ul>
-                <li>Confidencialidad al poder encriptar la información</li>
-                <li>Integridad al poder realizar hash de la información y poder firmarla</li>
-                <li>Autenticidad al venir firmada la información</li>
-                <li>No repudio al firmar la información</li>
-            </ul>
-        </p>
+        <h2>Let's encrypt</h2>
+        <p>AC que emite certificados de forma gratuita para que todas las conexiones HTTP sean cifradas</p>
+        <p>https://letsencrypt.org/</p>
     </section>
-    
-    
-    
+
     <!-- FOOTER -->
 
     <footer class="badge">
