@@ -49,7 +49,7 @@
     <section class="slide">
         <h2>Autoridad de Certificación</h2>
             <ul>
-                <li>Una entidad certifica que el usuario/entidad (su clave pública) es quien dice ser (Depende de la confianza en la AC que lo certifica)</li>
+                <li>Una entidad (AC) certifica que el usuario/entidad (su clave pública) es quien dice ser (Depende de la confianza en la AC que lo certifica)</li>
                 <li>Almacena las claves públicas por nosotros</li>
             </ul>
     </section>
@@ -66,7 +66,7 @@
         <h2>Agencia de Registro</h2>
             <ul>
                 <li>Independiente de AC</li>
-                <li>Comprobar la idetidad del usuario antes de emitir el certificado</li>
+                <li>Comprobar la identidad del usuario/entidad antes de emitir el certificado</li>
                 <li>Agencias tributarias, seguridad social, zuzenean, ...</li>
             </ul>
     </section>
@@ -79,7 +79,7 @@
                 </li>
                 <li>Firmado por un CA - el poseedor de la clave pública puede:
                     <ul>
-                        <li>Firmar con su clave privada</li>
+                        <li>Firmar con su clave privada (Esa firma se puede comprobar con la clave publica firmada por el AC, y que por tanto es de confianza)</li>
                         <li>Establecer comunicaciones seguras (SSL, ...)</li>
                     </ul>
                 </li>
@@ -97,7 +97,7 @@
 
     <section class="slide">
         <h2>Cadena de confianza</h2>
-        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/Chain_Of_Trust.svg" alt="Cadena de confianza: Root firmado por si mismo!" width="60%"></p>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/Chain_Of_Trust.svg" alt="Cadena de confianza" width="60%"></p>
         <p style="text-align:left;font-size:30%;"><a href="https://upload.wikimedia.org/wikipedia/commons/0/02/Chain_Of_Trust.svg">https://upload.wikimedia.org/wikipedia/commons/0/02/Chain_Of_Trust.svg</a></p>
     </section>
 
@@ -122,7 +122,6 @@
                 <li>Ventaja: su actualización constante</li>
                 <li>Desventaja: necesidad de conexión para la comprobación</li>
             </ul>
-        
     </section>
 
     <section class="slide">
@@ -233,7 +232,7 @@
     <section class="slide">
         <h2>Let's encrypt</h2>
         <p>AC que emite certificados de forma gratuita para que todas las conexiones HTTP sean cifradas</p>
-        <p>https://letsencrypt.org/</p>
+        <p><a href="https://letsencrypt.org/">https://letsencrypt.org/</a></p>
     </section>
 
     <!-- FOOTER -->
