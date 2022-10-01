@@ -4,6 +4,7 @@
 
 * Introducccion, introduccion al cifrado, esteganografia, algoritmos resumen, cifrado simetrico
 * Cifrado asimetrico, firma, certificados
+* Comunicaciones seguras, bitcoin
 
 ## 2021-2022 (Rama congelada)
 
