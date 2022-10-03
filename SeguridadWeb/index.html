@@ -54,57 +54,61 @@
     </section>
 
     <section class="slide">
-        <h2>A01:2021 - Rotura de control de acceso (Broken Access control)</h2>
-        <a href="https://owasp.org/Top10/A01_2021-Broken_Access_Control/">https://owasp.org/Top10/A01_2021-Broken_Access_Control/</a>
-        <ul>
-            <li>CWE-200: Exposure of Sensitive Information to an Unauthorized Actor</li>
-            <li>CWE-201: Insertion of Sensitive Information Into Sent Data</li>
-            <li>CWE-352: Cross-Site Request Forgery</li>
-            <li>...</li>
-        </ul>
+        <h2>Rotura de control de acceso</h2>
+         <a href="https://owasp.org/Top10/A01_2021-Broken_Access_Control/">Broken access control (A01:2021)</a>
     </section>
 
     <section class="slide">
-        <h2>A01:2021 - Rotura de control de acceso (Broken Access control)</h2>
+        <h2>Rotura de control de acceso</h2>
         <p>El control de acceso obliga al usuario a actuar solo dentro de los límites establecidos por los permisos definidos</p>
         <p>Fallar en el control de acceso resulta en consecuencias graves</p>
     </section>
 
     <section class="slide">
-        <h2>A01:2021 - Broken Access control - vulnerabilidades</h2>
+        <h2>Rotura de control de acceso: vulnerabilidades</h2>
         <p>Violación del principio de "denegación por defecto": el acceso solo debería ser garantizado a ciertas capacidades, roles, o usuarios, pero está al alcance de cualquiera</p>
         <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/GAUR-guias-docentes-rotura-control-acceso.png" alt="En el mantenimiento de las guias docentes de GAUR el primer profesor que acceda a la guia, aunque no tenga permisos, se queda con la guia y la puede modificar si quiere" title="En el mantenimiento de las guias docentes de GAUR el primer profesor que acceda a la guia, aunque no tenga permisos, se queda con la guia y la puede modificar si quiere" width="70%"></p>
     </section>
 
     <section class="slide">
-        <h2>A01:2021 - Broken Access control - vulnerabilidades</h2>
+        <h2>Rotura de control de acceso: vulnerabilidades</h2>
         <p>Burlar el control de acceso mediante parametros URL o las peticiones APIs</p>
         <p>Acceder a una cuenta personal e incluso modificar los datos con el identificador del usuario</p>
         <p>Acceso API sin control para los metodos HTTP POST, PUT, y DELETE</p>
     </section>
 
     <section class="slide">
-        <h2>A01:2021 - Broken Access control - vulnerabilidades</h2>
+        <h2>Rotura de control de acceso: vulnerabilidades</h2>
         <p><b>Elevación de privilegio:</b> acutar como administrador estando logeado como usuario</p>
         <p>Replaying o modificación de JSON Web Token (JWT) para elevar privilegios</p>
         <p>Mala configuración de CORS permite acceso API desde origenes no autorizados</p>
     </section>
 
     <section class="slide">
-        <h2>A01:2021 - Broken Access control - prevención</h2>
+        <h2>Rotura de control de acceso: vulnerabilidades</h2>
+        <ul>
+            <li><a href="https://cwe.mitre.org/data/definitions/200.html">CWE-200: Exposure of Sensitive Information to an Unauthorized Actor</a></li>
+            <li><a href="https://cwe.mitre.org/data/definitions/201.html">CWE-201: Insertion of Sensitive Information Into Sent Data</a></li>
+            <li><a href="https://cwe.mitre.org/data/definitions/352.html">CWE-352: Cross-Site Request Forgery (CSRF)</a></li>
+            <li>...</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Rotura de control de acceso: prevención</h2>
         <p>Denegación por defecto para todos los recursos, excepto públicos</p>
         <p>Implementar mecanismos de acceso de control una sola vez y extenderlos a toda la aplicación, minimizando el uso de CORS</p>
         <p>No permitir listado de directorios y asegurarse de que no hay archivos de metadatos (ej. git) ni de backups en el nivel root de la aplicación</p>
     </section>
 
     <section class="slide">
-        <h2>A01:2021 - Broken Access control - prevención</h2>
+        <h2>Rotura de control de acceso: prevención</h2>
         <p>Logear todos los intentos de entrada, alertar a los administradores cuando sea necesario (ej. muchos accesos fallidos)</p>
         <p>Limitar la tasa de peticiones de API para evitar ataques mediante programas</p>
     </section>
 
     <section class="slide">
-        <h2>A01:2021 - Broken Access control - prevención</h2>
+        <h2>Rotura de control de acceso: prevención</h2>
         <p>Identificadores de sesión:
             <ul>
                 <li>De servidor (stateful): invalidar al deslogearse</li>
@@ -115,7 +119,7 @@
     </section>
 
     <section class="slide">
-        <h2>A01:2021 - Broken Access control - ejemplo</h2>
+        <h2>Rotura de control de acceso: ejemplo</h2>
         <p>Llamada a SQL para obtener información de cuenta, con datos sin verificar:</p>
         <pre>
             <code>pstmt.setString(1, request.getParameter("acct"));</code>
@@ -125,14 +129,58 @@
     </section>
 
     <section class="slide">
-        <h2>A02:2021 - Fallos criptográficos (https://owasp.org/Top10/A02_2021-Cryptographic_Failures/)</h2>
-        <a href="https://owasp.org/Top10/A02_2021-Cryptographic_Failures/">https://owasp.org/Top10/A02_2021-Cryptographic_Failures/</a>
+        <h2>Fallos criptográficos</h2>
+        <a href="https://owasp.org/Top10/A02_2021-Cryptographic_Failures/">Cryptographic_Failures (A02:2021)</a>
+    </section>
+
+    <section class="slide">
+        <h2>Fallos criptográficos: vulnerabilidades</h2>
         <ul>
-            <li>CWE-259: Use of Hard-coded Password</li>
-            <li>CWE-327: Broken or Risky Crypto Algorithm</li>
-            <li>CWE-331 Insufficient Entropy</li>
+            <li><a href="https://cwe.mitre.org/data/definitions/259.html">CWE-259: Use of Hard-coded Password</a></li>
+            <li><a href="https://cwe.mitre.org/data/definitions/327.html">CWE-327: Broken or Risky Crypto Algorithm</a></li>
+            <li><a href="https://cwe.mitre.org/data/definitions/331.html">CWE-331 Insufficient Entropy</a></li>
             <li>...</li>
         </ul>
+    </section>
+
+    <section class="slide">
+        <h2></h2>
+         <a href=""> (A03:2021)</a>
+    </section>
+
+    <section class="slide">
+        <h2></h2>
+         <a href=""> (A04:2021)</a>
+    </section>
+
+    <section class="slide">
+        <h2></h2>
+         <a href=""> (A05:2021)</a>
+    </section>
+
+    <section class="slide">
+        <h2></h2>
+         <a href=""> (A06:2021)</a>
+    </section>
+
+    <section class="slide">
+        <h2></h2>
+         <a href=""> (A07:2021)</a>
+    </section>
+
+    <section class="slide">
+        <h2></h2>
+         <a href=""> (A08:2021)</a>
+    </section>
+
+    <section class="slide">
+        <h2></h2>
+         <a href=""> (A09:2021)</a>
+    </section>
+
+    <section class="slide">
+        <h2></h2>
+         <a href=""> (A10:2021)</a>
     </section>
 
 
