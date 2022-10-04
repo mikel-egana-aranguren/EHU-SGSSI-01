@@ -14,10 +14,10 @@ Clases de la asignatura Sistemas de Gestión de Seguridad de Sistemas de la Info
   * Aplicaciones: [Comunicaciones seguras](Cifrado_comunicaciones/index.html)
   * Aplicaciones: [Bitcoin](Cifrado_bitcoin/index.html)
 * Bloque II: Sistemas
-  * [Seguridad en Sistemas Web](SeguridadWeb/index.html)
-  * Seguridad física
-  * [Backups](Backups/index.html)
-  * Seguridad en redes
+  * [Seguridad en Sistemas Web](Seguridad_web/index.html)
+  * [Seguridad física](Seguridad_fisica/index.html)
+  * [Copias de seguridad](Backups/index.html)
+  * [Seguridad en redes](Seguridad_redes/index.html)
 * Bloque III: Sociedad
   * El factor humano
   * Malware
