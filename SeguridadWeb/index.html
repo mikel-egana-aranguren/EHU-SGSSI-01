@@ -130,8 +130,112 @@
 
     <section class="slide">
         <h2>Fallos criptográficos</h2>
-        <a href="https://owasp.org/Top10/A02_2021-Cryptographic_Failures/">Cryptographic_Failures (A02:2021)</a>
+        <a href="https://owasp.org/Top10/A02_2021-Cryptographic_Failures/">Cryptographic Failures (A02:2021)</a>
     </section>
+
+    <section class="slide">
+        <h2>Fallos criptográficos</h2>
+        <p>Fallos en los métodos criptográficos usados que resultan en exposición de datos</p>
+        <p>Determinar las necesidades de protección de los datos tanto en transmisión como en almacenamiento (At rest): leyes de protecciones de datos</p>
+    </section>
+
+    <section class="slide">
+        <h2>Fallos criptográficos</h2>
+        <p>¿Los datos se transmiten como texto plano? Tanto en conexiones externas como internas (ej. servidores de balance de carga): HTTP, SMTP, FTP ...</p>
+        <p>¿Se usan algoritmos o protocolos obsoletos o débiles?</p>
+        <p>¿Se usan claves débiles o claves por defecto?</p>
+        <p>¿Se aplica una gestión de claves adecuada?</p>
+    </section>
+
+    <section class="slide">
+        <h2>Gestión de claves</h2>
+        Ciclo de vida de una clave:
+        <ol>
+            <li>Generación</li>
+            <li>Distribución</li>
+            <li>Uso</li>
+            <li>Almacenamiento</li>
+            <li>Rotación, recovación, destrucción</li>
+        </ol>
+    </section>
+
+    <section class="slide">
+        <h2>Gestión de claves: generación</h2>
+        <p>Evitar algoritmos débiles</p>
+        <p>Usar Key Generators o Random Number Generators de alta entropía </p>
+    </section>
+
+    <section class="slide">
+        <h2>Gestión de claves: distribución</h2>
+        <p>Usar conexiones seguras como SSL/TLS para evitar ataques Mand in the middle</p>
+    </section>
+
+    <section class="slide">
+        <h2>Gestión de claves: uso</h2>
+        <p>Asegurar que solo las personas autorizadas usan la clave</p>
+    </section>
+
+    <section class="slide">
+        <h2>Gestión de claves: almacenamiento</h2>
+        <p>Idealmente usar hardware dedicado: <a href="https://en.wikipedia.org/wiki/Hardware_security_module">Hardware Security Module</a>:
+            <ul>
+                <li>Dejan de funcionar cuando hay un acceso físico</li>
+                <li>Cumplen estándares rigurosos como <a href="https://csrc.nist.gov/publications/detail/fips/140/3/final">FIPS 140-2</a> (Nivel 4)</li>
+            </ul>
+        </p>
+        <p>También se pueden usar servicios en la nube: <a href="https://cloud.google.com/security-key-management">Google Cloud Key Management</a></p>
+    </section>
+
+    <section class="slide">
+        <h2>Gestión de claves: rotación</h2>
+        <p>Cuando una clave agota su periodo de validez, se retira, descifrando y volviendo a cifrar los datos con una clave nueva</p>
+        <p>Cuanto más tiempo esté una clave en circulación, más probable que sea comprometida</p>
+    </section>
+
+    <section class="slide">
+        <h2>Gestión de claves: revocación o destrucción</h2>
+        <p>Si una clave ha sido comprometida, hay que revocarla, aunque este dentro de su periodo de validez</p>
+        <p>Hay estándares que exigen guardar la clave revocada, por si hiciera falta en el futuro para descifrar datos (ej. en un juicio)</p>
+        <p>La destrucción completa de la clave implica no poder usarla en el futuro</p>
+    </section>
+
+    <section class="slide">
+        <h2>Gestión de claves: buenas prácticas</h2>
+        <p>No escribir valores de la clave en el código de software , aunque sea seguro</p>
+        <p>Principio del menor priviliegio: un usuario debería tener acceso sólo a las claves que realmente necesita</p>
+        <p>Usar HSMs</p>
+        <p>Automatizar la gestión de claves lo más posible</p>
+        <p>Dividir la generación, distribución etc entre diferentes personas</p>
+        <p>Dividir las claves en fragmentos</p>
+    </section>
+
+    <section class="slide">
+        <h2>Fallos criptográficos</h2>
+        <p>¿El certificado del servidor es válido y de confianza, garantizado por un AC?</p>
+        <p>¿Se usan las contraseñas de los usuarios directamente como claves, en vez de usar password-based key derivation functions (PBKDFs)?</p>
+        <p>¿Es la semilla de aleatoriedad usada lo suficientemente fuerte?</p>
+    </section>
+
+    <section class="slide">
+        <h2>Fallos criptográficos: prevención</h2>
+        <p>Clasificar los datos transmitidos, procesados y almacenados según su nivel de exigencia de privacidad</p>
+        <p>Almacenar la menor cantidad de datos sensibles posible, incluso usando métodos como <a href="https://www.securitymetrics.com/blog/what-tokenization-and-how-can-i-use-it-pci-dss-compliance">Tokenización</a></p>
+        <p>Cifrar todos los datos almacenados (Encription at rest)</p>
+        <p>Usar algoritmos actualizados (POr ejmplo no usar MD5, SHA1), claves fuertes, y gestión de claves</p>
+        <p>Cifrar todos los datos en transito con protocolos como TLS FS (TLS + Forwards Secrecy)</p>
+        <p>No permitir el uso de caches en el cliente para datos sensibles</p>
+        <p>Almacenar contraseñas con hashes + sal</p>
+        <p>Usar semillas con la mayor entropia posible</p>
+
+    </section>
+
+    <section class="slide">
+        <h2>Fallos criptográficos: ejemplos</h2>
+        <p>Una aplicación usa la función por defecto de la base de datos para encriptar datos. Sin embargo estos datos se desencriptan automáticamente al consultarlos, permitiendo el acceso si por ejemplo hay un ataque de Inyección SQL</p>
+        <p>Una web no obliga al uso de TLS. Si un atacante monitoriza el tráfico y "baja" una conexión de HTTPS a HTTP puede interceptar consultas y conseguir la cookie de sesión del usuario. El atacante reenvia la cookie (replay) secuestrando la sesión del usuario y obteniendo acceso a los datos de usuario</p>
+
+    </section>
+
 
     <section class="slide">
         <h2>Fallos criptográficos: vulnerabilidades</h2>
