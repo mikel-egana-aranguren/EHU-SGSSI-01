@@ -244,9 +244,9 @@
     <section class="slide">
         <h2>Fallos criptográficos: vulnerabilidades</h2>
         <ul>
-            <li><a href="https://cwe.mitre.org/data/definitions/79.html">CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')</a></li>
-            <li><a href="https://cwe.mitre.org/data/definitions/89.html">CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')</a></li>
-            <li><a href="https://cwe.mitre.org/data/definitions/73.html">CWE-73: External Control of File Name or Path</a></li>
+            <li><a href="https://cwe.mitre.org/data/definitions/259.html">CWE-259: Use of Hard-coded Password</a></li>
+            <li><a href="https://cwe.mitre.org/data/definitions/327.html">CWE-327: Broken or Risky Crypto Algorithm</a></li>
+            <li><a href="https://cwe.mitre.org/data/definitions/331.html">CWE-331: Insufficient Entropy</a></li>
             <li>...</li>
         </ul>
     </section>
@@ -264,7 +264,54 @@
             <li>El interpréte usa directamente consultas dinámicas o llamadas no parametrizadas sin "escaping"</li>
             <li>Datos hostiles introducidos por el usuario son usados directamente. La sentencia SQL o comando que se use contiene estructuras/datos maliciosos en consultas dinámicas, comandos, o procedimientos almacenados</li>
         </ul>
-        Inyecciones más comunes: SQL, NoSQL, comandos del sistema operativo, LDAP, ...
+
+    </section>
+
+    <section class="slide">
+        <h2>Inyección SQL</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/boy.png" alt="Bobby tables" width="30%"></p>
+        <p style="text-align:left;font-size:30%;"><a href="https://xkcd.com/327/">https://xkcd.com/327/</a></p>
+    </section>
+
+    <section class="slide">
+        <h2>Inyección SQL</h2>
+        <pre><code>txtUserId = getRequestString("UserId");
+            txtSQL = "SELECT * FROM Users WHERE UserId = " + txtUserId;
+        </code></pre> 
+        Input web: <code>105 OR 1=1</code>
+        <pre><code>SELECT * FROM Users WHERE UserId = 105 OR 1=1;
+        </code></pre>
+        OR 1=1 es siempre true, va a devolver todas las lineas de la columna Users 
+    </section>
+
+    <section class="slide">
+        <h2>Inyección SQL</h2>
+        Usar consultas parametrizadas
+
+        Los parametros son valores que se añaden a la consulta al ejecutarla, y son analizadas de forma literal (ej. si la variable hace referencia a nombres de columnas, el interprete se asegura de que los parametros son nombres de columnas antes de añadirlas a la consulta y ejecutars)
+        <pre><code>
+            $stmt = $dbh->prepare("INSERT INTO Customers (CustomerName,Address,City) VALUES (:nam, :add, :cit)");
+            $stmt->bindParam(':nam', $txtNam);
+            $stmt->bindParam(':add', $txtAdd);
+            $stmt->bindParam(':cit', $txtCit);
+            $stmt->execute();
+        </code></pre>    
+    </section>
+
+    <section class="slide">
+        <h2>Inyección SQL</h2>
+        Usar Object-Relational Mapping (ORM)
+        
+        Los frameworks ORM traducen el contenido de la base de datos a objetos
+
+
+        String sql = "SELECT ... FROM persons WHERE id = 10"
+        DbCommand cmd = new DbCommand(connection, sql);
+        Result res = cmd.Execute();
+        String name = res[0]["FIRST_NAME"];
+
+        Person p = repository.GetPerson(10);
+        String name = p.FirstName;
     </section>
 
     <section class="slide">
@@ -273,15 +320,24 @@
         <p>Testeo automatizado de inputs en forma de parametros, cabeceras HTTP, URLs, cookies, JSON, y XML</p>
         <p>Application Security Testing en pipelines de <a href="https://github.com/mikel-egana-aranguren/Transparent-Relations-Ontology/blob/main/.github/workflows/robot.yml">Integración Continua</a>/Despliegue Continuo</p>
         
+    </section>
 
+    <section class="slide">
+        <h2>Inyección: prevención</h2>
+        <p>Usar APIs seguras que no usen el intérprete. Si no es posible, usar llamadas parametrizadas u ORM</p>
+        <p>Validar los inputs</p>
+        <p>"Escapar" todos los caracteres especiales posibles</p>
+        <p>Usar controles como LIMIT en SQL para evitar perdida masiva de datos</p>
+
+        
     </section>
 
     <section class="slide">
         <h2>Inyección</h2>
         <ul>
-            <li><a href="https://cwe.mitre.org/data/definitions/259.html">CWE-259: Use of Hard-coded Password</a></li>
-            <li><a href="https://cwe.mitre.org/data/definitions/327.html">CWE-327: Broken or Risky Crypto Algorithm</a></li>
-            <li><a href="https://cwe.mitre.org/data/definitions/331.html">CWE-331 Insufficient Entropy</a></li>
+            <li><a href="https://cwe.mitre.org/data/definitions/79.html">CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')</a></li>
+            <li><a href="https://cwe.mitre.org/data/definitions/89.html">CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')</a></li>
+            <li><a href="https://cwe.mitre.org/data/definitions/73.html">CWE-73: External Control of File Name or Path</a></li>
             <li>...</li>
         </ul>
     </section>
