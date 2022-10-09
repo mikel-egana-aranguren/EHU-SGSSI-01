@@ -327,9 +327,7 @@
         <p>Usar APIs seguras que no usen el intérprete. Si no es posible, usar llamadas parametrizadas u ORM</p>
         <p>Validar los inputs</p>
         <p>"Escapar" todos los caracteres especiales posibles</p>
-        <p>Usar controles como LIMIT en SQL para evitar perdida masiva de datos</p>
-
-        
+        <p>Usar controles como LIMIT en SQL para evitar perdida masiva de datos</p>        
     </section>
 
     <section class="slide">
@@ -348,8 +346,53 @@
     </section>
 
     <section class="slide">
+        <h2>Diseño inseguro</h2>
+        <p>Fallos de arquitectura, antes de implementar código</p>
+    </section>
+
+    <section class="slide">
+        <h2>Software Assurance Maturity Model</h2>
+        <p><a href="https://owaspsamm.org/">https://owaspsamm.org/</a></p>
+        <p><a href="SAMM-v2-PDF.pdf">SAMM-v2-PDF.pdf</a></p>
+    </section>
+
+    <section class="slide">
+        <h2>Diseño inseguro: ejemplos</h2>
+        <p>Una cadena de e-commerce sin protección antibots puede recibir muchas peticiones de compradores a través de bots para vender los productos en otros sitios. Esto se puede evitar, por ejemplo, añadienod en la arquitectura componenentes que detecten bots (Muchas peticiones en poco tiempo, peticion al de pocos segundos de publicar un producto, etc.)</p>
+    </section>
+
+    <section class="slide">
+        <h2>Diseño inseguro</h2>
+        <ul>
+            <li><a href="https://cwe.mitre.org/data/definitions/209.html">CWE-209 Generation of Error Message Containing Sensitive Information</a></li>
+            <li><a href="https://cwe.mitre.org/data/definitions/256.html">CWE-256 Unprotected Storage of Credentials</a></li>
+            <li><a href="https://cwe.mitre.org/data/definitions/501.html">CWE-501 Trust Boundary Violation</a></li>
+            <li><a href="https://cwe.mitre.org/data/definitions/522.html">CWE-522 Insufficiently Protected Credentials</a></li>
+            <li>...</li>
+        </ul>
+    </section>
+
+    <section class="slide">
         <h2>Configuración de seguridad insuficiente</h2>
          <a href="https://owasp.org/Top10/A05_2021-Security_Misconfiguration/">Security Misconfiguration (A05:2021)</a>
+    </section>
+
+    <section class="slide">
+        <h2>Configuración de seguridad insuficiente</h2>
+        La aplicación podría ser vulnerable si:
+        <ul>
+            <li>Tiene permisos inadecuados en un servicio en la nube</li>
+            <li></li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Configuración de seguridad insuficiente</h2>
+        <ul>
+            <li><a href="https://cwe.mitre.org/data/definitions/16.html">CWE-16 Configuration</a></li>
+            <li><a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611 Improper Restriction of XML External Entity Reference</a></li>
+            <li>...</li>
+        </ul>
     </section>
 
     <section class="slide">
