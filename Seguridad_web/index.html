@@ -382,6 +382,20 @@
         La aplicación podría ser vulnerable si:
         <ul>
             <li>Tiene permisos inadecuados en un servicio en la nube</li>
+            <li>Hay funciones activas innecesarias (Puertos, servicios, páginas, cuentas, privilegios/permisos)</li>
+            <li>Las cuentas por defecto y sus contraseñas siguen activas</li>
+            <li>La gestión de los errores desvela información (ej. stack traces en excepciones Java) / los errores son demasiado informativos</li>
+            <li>Para sistemas actualizados, los últimos parches de seguridad no están activos y/o configurados adecuadamente</li>
+            <li>Las opciones de seguridad en frameworks (Struts, Spring, ASP.net, ...), librerías, bases de datos etc. no están activadas</li>
+            <li>El servidor no responde con <a href="https://web.dev/security-headers/">cabeceras HTTP de seguridad</a></li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Configuración de seguridad insuficiente: prevencion</h2>
+        <ul>
+            <li>Sistema de desarrollo automatizado en el que es sencillo desplegar un entorno mas seguro. Los entornos de desarrollo, calidad, y produccion deberian tener exactamente la misma configuracion, a diferencia solo de credenciales. Este proceso deberia estar lo mas automatizado posible para facilitar la creacion de un nuevo entorno seguro lo mas rapido posible</li>
+            <li>Un sistema minimalista sin componenentes o funciones innecesarias</li>
             <li></li>
         </ul>
     </section>
