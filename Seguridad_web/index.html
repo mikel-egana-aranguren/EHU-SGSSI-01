@@ -392,7 +392,7 @@
     </section>
 
     <section class="slide">
-        <h2>Configuración de seguridad insuficiente: prevencion</h2>
+        <h2>Configuración de seguridad insuficiente: prevención</h2>
         <ul>
             <li>Sistema de desarrollo automatizado en el que es sencillo desplegar un entorno mas seguro. Los entornos de desarrollo, calidad, y produccion deberian tener exactamente la misma configuracion, a diferencia solo de credenciales. Este proceso deberia estar lo mas automatizado posible para facilitar la creacion de un nuevo entorno seguro lo mas rapido posible</li>
             <li>Un sistema minimalista sin componenentes o funciones innecesarias</li>
@@ -418,13 +418,66 @@
         <h2>Componentes vulnerables y obsoletos</h2>
         La aplicación podría ser vulnerable si:
         <ul>
-            <li>No se saben exactamentetodas las versiones de los componentes (Siempre se usa "latest"). Esto incluye a las dependencias</li>
+            <li>No se saben exactamente todas las versiones de los componentes (Siempre se usa "latest"). Esto incluye componentes que se usan directamente y las dependencias indirectas</li>
+            <li>Si el software no tiene soporte, es vulnerable, u obsoleto. Esto incluye al sistema operativo, servidor web, sistema de gestion de bases de datos, APIs y sus componentes, entornos de ejecucions, y librerias</li>
+            <li>Si no escaneas tu sistema regularmente para buscar vulnerabilidades, y no estas suscrito a boletines de seguridad sobre los componentes que usas</li>
+            <li>Si no actualizas los componentes a una frecuencia basada en el riesgo. Esto esm muy comun en organizacione que tienen politicas de apliacione de parches una vez al mes, dejando al sistema vulnerable durante dias</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Componentes vulnerables y obsoletos: prevención</h2>
+        Debería haber un proceso de aplicacion de parches para:
+        <ul>
+            <li>Quitar dependenicas que no se usan, funcionalidades, componentes, archivos, innecesarios, etc</li>
+            <li>Tener un inventario actualizado de componentes en servidor y cliente, incluyendo sus dependencias, de manera automatizada. Visitar regularmente recursos como CVE para encontrar vulnerabilidades en esos componentes</li>
+            <li>Obtener componentes solo de fuentes oficiales, y solo obtener paquetes firmados</li>
+
         </ul>
     </section>
 
     <section class="slide">
         <h2>Fallos de identificación y autenticación</h2>
          <a href="https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/">Identification and Authentication Failures (A07:2021)</a>
+    </section>
+
+    <section class="slide">
+        <h2>Fallos de identificación y autenticación</h2>
+        <p>La confirmacion de identidad de usuarios, autenticacion, y la gestion de sesiones sonfunciones criticas apra proteger al sistema contra ataques basado en autenticacion</p>
+    </section>
+
+    <section class="slide">
+        <h2>Fallos de identificación y autenticación</h2>
+        Puede haber vulnerabilidaes relacionadas con la autenticación si:
+        <ul>
+            <li>Permite ataque automatizados en los que un atacante tiene una lista de usuarios y contraseñas válidos</li>
+            <li>Permite ataques de fuerza bruta</li>
+            <li>Permite contraseñas por defecto, débiles o muy conocidas (ej. admin test)</li>
+            <li>USa mecanismos débiles para la recuperación de contrseñas, como el responder ciertas preguntas</li>
+            <li>Almacena las contrseñas en texto plano, o con hashes débiles</li>
+            <li>No usa autenticacion multi-factor</li>
+            <li>Expone identificadores de sesion en la URL</li>
+            <li>No invlaida sesiones despues de logout o inactividad</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Fallos de identificación y autenticación: prevención</h2>
+        Puede haber vulnerabilidaes relacionadas con la autenticación si:
+        <ul>
+            <li></li>
+
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Fallos de identificación y autenticación</h2>
+        <ul>
+            <li><a href="https://cwe.mitre.org/data/definitions/297.html">CWE-297: Improper Validation of Certificate with Host Mismatch</a></li>
+            <li><a href="https://cwe.mitre.org/data/definitions/287.html">CWE-287: Improper Authentication</a></li>
+            <li><a href="https://cwe.mitre.org/data/definitions/384.html">CWE-384: Session Fixation</a></li>
+            <li>...</li>
+        </ul>
     </section>
 
     <section class="slide">
