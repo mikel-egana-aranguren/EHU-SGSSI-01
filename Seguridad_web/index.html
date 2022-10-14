@@ -50,13 +50,35 @@
 
     <section class="slide">
     <h2>Principales vulnerabilidades en Sistemas Web</h2>
-    <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/owasp-top-10.png" alt="OWASP Top 10 2017 2021" width="70%"></p>
+    <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/owasp-top-10.png" alt="OWASP Top 10 2017 2021" width="90%"></p>
     </section>
 
     <section class="slide">
         <h2>Common Weakness Enumerations (CWEs)</h2>
         <p><a href="https://cwe.mitre.org/">https://cwe.mitre.org/</a></p>
-        </section>
+    </section>
+
+    <section class="slide">
+        <h2>Principales vulnerabilidades en Sistemas Web</h2>
+        <ul>
+            <li>Rotura de control de acceso</li>
+            <li>Fallos criptográficos</li>
+            <li>Inyección</li>
+            <li>Diseño inseguro</li>
+            <li>Configuración de seguridad insuficiente</li>
+            <li>Componentes vulnerables y obsoletos</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Principales vulnerabilidades en Sistemas Web</h2>
+        <ul>
+            <li>Fallos de identificación y autenticación</li>
+            <li>Fallos en la integridad de datos y software</li>
+            <li>Fallos en la monitorización de la seguridad</li>
+            <li>Server-Side Request Forgery (SSRF)</li>
+        </ul>
+    </section>
 
     <section class="slide">
         <h2>Rotura de control de acceso</h2>
@@ -84,7 +106,7 @@
 
     <section class="slide">
         <h2>Rotura de control de acceso: vulnerabilidades</h2>
-        <p><b>Elevación de privilegio:</b> acutar como administrador estando logeado como usuario</p>
+        <p><b>Elevación de privilegio:</b> actuar como administrador estando logeado como usuario</p>
         <p>Replaying o modificación de JSON Web Token (JWT) para elevar privilegios</p>
         <p>Mala configuración de CORS permite acceso API desde origenes no autorizados</p>
     </section>
@@ -103,7 +125,7 @@
         <h2>Rotura de control de acceso: prevención</h2>
         <p>Denegación por defecto para todos los recursos, excepto públicos</p>
         <p>Implementar mecanismos de acceso de control una sola vez y extenderlos a toda la aplicación, minimizando el uso de CORS</p>
-        <p>No permitir listado de directorios y asegurarse de que no hay archivos de metadatos (ej. git) ni de backups en el nivel root de la aplicación</p>
+        <p>No permitir listado de directorios y asegurarse de que no hay archivos de metadatos (ej. Git) ni de backups en el nivel root de la aplicación</p>
     </section>
 
     <section class="slide">
@@ -172,7 +194,7 @@
 
     <section class="slide">
         <h2>Gestión de claves: distribución</h2>
-        <p>Usar conexiones seguras como SSL/TLS para evitar ataques Mand in the middle</p>
+        <p>Usar conexiones seguras como SSL/TLS para evitar ataques Man in the middle</p>
     </section>
 
     <section class="slide">
@@ -206,11 +228,15 @@
 
     <section class="slide">
         <h2>Gestión de claves: buenas prácticas</h2>
-        <p>No escribir valores de la clave en el código de software , aunque sea seguro</p>
-        <p>Principio del menor priviliegio: un usuario debería tener acceso sólo a las claves que realmente necesita</p>
+        <p>No escribir valores de la clave en el código de software, aunque sea seguro</p>
+        <p>Principio del menor privilegio: un usuario debería tener acceso sólo a las claves que realmente necesita</p>
         <p>Usar HSMs</p>
+    </section>
+
+    <section class="slide">
+        <h2>Gestión de claves: buenas prácticas</h2>
         <p>Automatizar la gestión de claves lo más posible</p>
-        <p>Dividir la generación, distribución etc entre diferentes personas</p>
+        <p>Dividir la generación, distribución etc. entre diferentes personas</p>
         <p>Dividir las claves en fragmentos</p>
     </section>
 
@@ -226,17 +252,28 @@
         <p>Clasificar los datos transmitidos, procesados y almacenados según su nivel de exigencia de privacidad</p>
         <p>Almacenar la menor cantidad de datos sensibles posible, incluso usando métodos como <a href="https://www.securitymetrics.com/blog/what-tokenization-and-how-can-i-use-it-pci-dss-compliance">Tokenización</a></p>
         <p>Cifrar todos los datos almacenados (Encription at rest)</p>
-        <p>Usar algoritmos actualizados (POr ejmplo no usar MD5, SHA1), claves fuertes, y gestión de claves</p>
-        <p>Cifrar todos los datos en transito con protocolos como TLS FS (TLS + Forwards Secrecy)</p>
+    </section>
+
+    <section class="slide">
+        <h2>Fallos criptográficos: prevención</h2>
+        <p>Usar algoritmos actualizados (No usar MD5, SHA1, ...), claves fuertes, y gestión de claves</p>
+        <p>Cifrar todos los datos en transito con protocolos como TLS FS (TLS + Forward Secrecy)</p>
         <p>No permitir el uso de caches en el cliente para datos sensibles</p>
+    </section>
+
+    <section class="slide">
+        <h2>Fallos criptográficos: prevención</h2>
         <p>Almacenar contraseñas con hashes + sal</p>
         <p>Usar semillas con la mayor entropia posible</p>
-
     </section>
 
     <section class="slide">
         <h2>Fallos criptográficos: ejemplos</h2>
-        <p>Una aplicación usa la función por defecto de la base de datos para encriptar datos. Sin embargo estos datos se desencriptan automáticamente al consultarlos, permitiendo el acceso si por ejemplo hay un ataque de Inyección SQL</p>
+        <p>Una aplicación usa la función por defecto de la base de datos para encriptar datos. Sin embargo estos datos se desencriptan automáticamente al consultarlos, permitiendo el acceso si por ejemplo hay un ataque de Inyección SQL</p> 
+    </section>
+
+    <section class="slide">
+        <h2>Fallos criptográficos: ejemplos</h2>
         <p>Una web no obliga al uso de TLS. Si un atacante monitoriza el tráfico y "baja" una conexión de HTTPS a HTTP puede interceptar consultas y conseguir la cookie de sesión del usuario. El atacante reenvia la cookie (replay) secuestrando la sesión del usuario y obteniendo acceso a los datos de usuario</p>
         <p>La base de datos usa hashes sin sal. Un atacante puede pre-calcular los hashes con <a href="https://en.wikipedia.org/wiki/Graphics_processing_unit">GPUs</a></p>  
     </section>
@@ -261,7 +298,7 @@
         Una aplicación es vulnerable si:
         <ul>
             <li>Los datos que provee el usuario no se validan, filtran, o limpian</li>
-            <li>El interpréte usa directamente consultas dinámicas o llamadas no parametrizadas sin "escaping"</li>
+            <li>El intérprete usa directamente consultas dinámicas o llamadas no parametrizadas sin "escaping"</li>
             <li>Datos hostiles introducidos por el usuario son usados directamente. La sentencia SQL o comando que se use contiene estructuras/datos maliciosos en consultas dinámicas, comandos, o procedimientos almacenados</li>
         </ul>
 
@@ -269,15 +306,21 @@
 
     <section class="slide">
         <h2>Inyección SQL</h2>
-        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/boy.png" alt="Bobby tables" width="30%"></p>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/boy.png" alt="Bobby tables" width="90%"></p>
         <p style="text-align:left;font-size:30%;"><a href="https://xkcd.com/327/">https://xkcd.com/327/</a></p>
     </section>
 
     <section class="slide">
         <h2>Inyección SQL</h2>
-        <pre><code>txtUserId = getRequestString("UserId");
-            txtSQL = "SELECT * FROM Users WHERE UserId = " + txtUserId;
+        <pre><code>
+txtUserId = getRequestString("UserId");
+txtSQL = "SELECT * FROM Users 
+WHERE UserId = " + txtUserId;
         </code></pre> 
+    </section>
+
+    <section class="slide">
+        <h2>Inyección SQL</h2>
         Input web: <code>105 OR 1=1</code>
         <pre><code>SELECT * FROM Users WHERE UserId = 105 OR 1=1;
         </code></pre>
@@ -285,33 +328,39 @@
     </section>
 
     <section class="slide">
-        <h2>Inyección SQL</h2>
-        Usar consultas parametrizadas
+        <h2>Consultas parametrizadas</h2>
+        <p>Parametros: valores que se añaden a la consulta al ejecutarla y son analizadas de forma literal (ej. si la variable hace referencia a nombres de columnas, el interprete se asegura de que los parametros son nombres de columnas antes de añadirlas a la consulta y ejecutarla) </p>   
+    </section>
 
-        Los parametros son valores que se añaden a la consulta al ejecutarla, y son analizadas de forma literal (ej. si la variable hace referencia a nombres de columnas, el interprete se asegura de que los parametros son nombres de columnas antes de añadirlas a la consulta y ejecutars)
+    <section class="slide">
+        <h2>Consultas parametrizadas</h2>
         <pre><code>
-            $stmt = $dbh->prepare("INSERT INTO Customers (CustomerName,Address,City) VALUES (:nam, :add, :cit)");
-            $stmt->bindParam(':nam', $txtNam);
-            $stmt->bindParam(':add', $txtAdd);
-            $stmt->bindParam(':cit', $txtCit);
-            $stmt->execute();
+$stmt = $dbh->prepare("INSERT INTO Customers 
+(CustomerName,Address,City) 
+VALUES (:nam, :add, :cit)");
+$stmt->bindParam(':nam', $txtNam);
+$stmt->bindParam(':add', $txtAdd);
+$stmt->bindParam(':cit', $txtCit);
+$stmt->execute();
         </code></pre>    
     </section>
 
     <section class="slide">
-        <h2>Inyección SQL</h2>
-        Usar Object-Relational Mapping (ORM)
-        
-        Los frameworks ORM traducen el contenido de la base de datos a objetos
+        <h2>Object-Relational Mapping (ORM)</h2>
+        <p>Frameworks que traducen el contenido de la base de datos a objetos</p>
+        <p>No hay una conexion directa con la base de datos</p>
+    </section>
 
-
-        String sql = "SELECT ... FROM persons WHERE id = 10"
-        DbCommand cmd = new DbCommand(connection, sql);
-        Result res = cmd.Execute();
-        String name = res[0]["FIRST_NAME"];
-
-        Person p = repository.GetPerson(10);
-        String name = p.FirstName;
+    <section class="slide">
+        <h2>Object-Relational Mapping (ORM)</h2>
+        <pre><code>
+String sql = "SELECT ... FROM persons WHERE id = 10"
+DbCommand cmd = new DbCommand(connection, sql);
+Result res = cmd.Execute();
+String name = res[0]["FIRST_NAME"];
+Person p = repository.GetPerson(10);
+String name = p.FirstName;
+        </code></pre>
     </section>
 
     <section class="slide">
