@@ -182,7 +182,7 @@
             <li>Distribución</li>
             <li>Uso</li>
             <li>Almacenamiento</li>
-            <li>Rotación, recovación, destrucción</li>
+            <li>Rotación, revocación, destrucción</li>
         </ol>
     </section>
 
@@ -492,30 +492,31 @@ String name = p.FirstName;
 
     <section class="slide">
         <h2>Fallos de identificación y autenticación</h2>
-        <p>La confirmacion de identidad de usuarios, autenticacion, y la gestion de sesiones sonfunciones criticas apra proteger al sistema contra ataques basado en autenticacion</p>
+        <p>La confirmacion de identidad de usuarios, autenticación, y la gestión de sesiones son funciones críticas para proteger al sistema contra ataques basado en autenticación</p>
     </section>
 
     <section class="slide">
         <h2>Fallos de identificación y autenticación</h2>
         Puede haber vulnerabilidaes relacionadas con la autenticación si:
         <ul>
-            <li>Permite ataque automatizados en los que un atacante tiene una lista de usuarios y contraseñas válidos</li>
+            <li>Permite ataque automatizados como el <a href="https://www.cloudflare.com/learning/bots/what-is-credential-stuffing/">Credential Stuffing</a> en los que un atacante tiene una lista de usuarios y contraseñas válidos</li>
             <li>Permite ataques de fuerza bruta</li>
             <li>Permite contraseñas por defecto, débiles o muy conocidas (ej. admin test)</li>
-            <li>USa mecanismos débiles para la recuperación de contrseñas, como el responder ciertas preguntas</li>
-            <li>Almacena las contrseñas en texto plano, o con hashes débiles</li>
+            <li>Usa mecanismos débiles para la recuperación de contraseñas, como el responder ciertas preguntas</li>
+            <li>Almacena las contraseñas en texto plano, o con hashes débiles</li>
             <li>No usa autenticacion multi-factor</li>
-            <li>Expone identificadores de sesion en la URL</li>
-            <li>No invlaida sesiones despues de logout o inactividad</li>
+            <li>Expone identificadores de sesión en la URL</li>
+            <li>No invalida sesiones despues de logout o inactividad</li>
         </ul>
     </section>
 
     <section class="slide">
         <h2>Fallos de identificación y autenticación: prevención</h2>
-        Puede haber vulnerabilidaes relacionadas con la autenticación si:
-        <ul>
-            <li></li>
 
+        <ul>
+            <li>Si es posible implementar autenticación multi-factor</li>
+            <li>No hacer despliegues con credenciales por defecto, especialmente para usuarios admin</li>
+            <li>Implementar validaciones "ligeras" de contraseñas, como buscar las contraseñas en la lista de las 10.peores contraseñas</li>
         </ul>
     </section>
 
