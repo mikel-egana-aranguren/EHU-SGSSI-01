@@ -516,7 +516,10 @@ String name = p.FirstName;
         <ul>
             <li>Si es posible implementar autenticación multi-factor</li>
             <li>No hacer despliegues con credenciales por defecto, especialmente para usuarios admin</li>
-            <li>Implementar validaciones "ligeras" de contraseñas, como buscar las contraseñas en la lista de las 10.peores contraseñas</li>
+            <li>Implementar validaciones "ligeras" de contraseñas, como buscar las contraseñas en la lista de las 10.000 peores contraseñas</li>
+            <li>Tener una buena política de tamaño de contraseñas, complejidad y rotación de contraseñas</li>
+            <li>Limitar o retrasar los intentos fallidos de login, pero sin crear una situación de denegación de servicio. Logear todos los intentos fallidos y alertar a los administradores si hay ataques de credential stuffing</li>
+            <li>Usar un gestor de sesiones en el lado de servidor que sea seguro y esté implementado junto con la aplicación. Este gestor de generar un identificador de sesión aleatorio de gtran entropia despues del login. Los identificadores de sesion no deberian estar en la URL, sino almacenados de manera segur. Los identificadores deberían ser invalidados inmediatamente despues del logout o inactividad</li>
         </ul>
     </section>
 
@@ -536,9 +539,81 @@ String name = p.FirstName;
     </section>
 
     <section class="slide">
+        <h2>Fallos en la integridad de datos y software</h2>
+        <p>Se dan cuando hay código e infraestructura que no protege contra violaciones de su integridad</p>
+        <p>Por ejemplo si una aplicación depende de librerías, plugins o módulos que han sido obtenidos de fuentes sin confianza, repositorios, o <a href="https://en.wikipedia.org/wiki/Content_delivery_network">CDNs (Content Delivery Networks)</a></p>
+        <p>Un pipeline de integración continua o despliegue continuo (IC/DC) puede introducir código malicioso</p>
+        <p>Muchas aplicaciones incluyen funciones de auto-actualización sin los debidos tests de integridad</p>
+        <p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Deserialization_Cheat_Sheet.html">Des-serialización insegura</a></p>
+    </section>
+
+    <section class="slide">
+        <h2>Fallos en la integridad de datos y software: prevención</h2>
+        <p>Usar firmas digitales o mecanismos similares para verificar que el software es de la fuente oficial y no ha sido alterado</p>
+        <p>Asegurarse de que las gestores de librerías como <a href="https://www.npmjs.com/">NPM</a> o <a href="https://maven.apache.org/">Apache Maven</a> usan fuentes de fiar. Valorar alojar repositorios propios con mayor seguridad (ej. <a href="https://www.sonatype.com/products/nexus-repository">Nexus</a>)</p>
+        <p>Asegurarse de que los pipelines IC/DC tienen una configuración y control de acceso adecuados para asegurar la integridad del codigo en todo el proceso</p>
+        <p>Asegurarse de que no se envia datos serializados sin firmar o cifrar a clientes sin confianza sin algun tipo de validación de integridad para detectar modificación o un replay de los datos des-serializados</p>
+    </section>
+
+    <section class="slide">
+        <h2>Fallos en la integridad de datos y software: ejemplos de escenarios de ataque</h2>
+        <p>Muchos routers para el hogar aplicacn actualizaciones de firmware sin verificar. Se espera que estos tipos de ataques aumenten en los proximos años</p>
+        <p><a href="https://www.cvedetails.com/cve/CVE-2020-10148/">Solar Winds Orion attack</a> (Alcanzo a unas 18.000 organizaciones en todo el mundo)</p>
+        <p></p>
+    </section>
+
+    <section class="slide">
+        <h2>Fallos en la integridad de datos y software</h2>
+        <ul>
+            <li><a href="https://cwe.mitre.org/data/definitions/829.html">
+                CWE-829: Inclusion of Functionality from Untrusted Control Sphere</a></li>
+            <li><a href="https://cwe.mitre.org/data/definitions/494.html">CWE-494: Download of Code Without Integrity Check</a></li>
+            <li><a href="https://cwe.mitre.org/data/definitions/502.html">CWE-502: Deserialization of Untrusted Data</a></li>
+            <li>...</li>
+        </ul>
+    </section>
+
+    <section class="slide">
         <h2>Fallos en la monitorización de la seguridad</h2>
          <a href="https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures/">Security Logging and Monitoring Failures (A09:2021)</a>
     </section>
+    
+    <section class="slide">
+        <h2>Fallos en la monitorización de la seguridad</h2>
+        <ul>
+            <li><a href="https://cwe.mitre.org/data/definitions/117.html">CWE-117: Improper Output Neutralization for Logs</a></li>
+            <li><a href="https://cwe.mitre.org/data/definitions/223.html">CWE-223: Omission of Security-relevant Information</a></li>
+            <li><a href="https://cwe.mitre.org/data/definitions/532.html">CWE-532: Insertion of Sensitive Information into Log File</a></li>
+            <li><a href="https://cwe.mitre.org/data/definitions/778.html">CWE-778: Insufficient Logging</a></li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Fallos en la monitorización de la seguridad</h2>
+        No hay una monitorización adecuada si:
+        <ul>
+            <li>Los eventos auditables tales como logins, logins fallidos, o transacciones de alto valor no son almacenados en un log (registro)</li>
+            <li>Los errores y advertencias generan mensajes inadecuados en los logs (O no los generan)</li>
+            <li>Los logs de las APIs y las aplicaciones no se monitorizan para detectar comportamiento sospechoso</li>
+            <li>Los logs solo se almacenan en local</li>
+            <li>No hay procesos de respuesta automaticos a partir de ciertos umbrales</li>
+            <li>El pen-testing con herramientas como OWASP ZAP no genera alertas</li>
+            <li>La aplicación no es capaz de detectar o alertar sobre ataques en marcha en tiempo real</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Fallos en la monitorización de la seguridad: prevención</h2>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </section>
+
 
     <section class="slide">
         <h2>Server-Side Request Forgery (SSRF)</h2>
