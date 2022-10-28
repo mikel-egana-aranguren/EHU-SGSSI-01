@@ -6,6 +6,7 @@
 * Cifrado asimetrico, firma, certificados
 * Comunicaciones seguras, bitcoin
 * Seguridad Web
+* Seguridad fisica, copias
 
 ## 2021-2022 (Rama congelada)
 
