@@ -16,7 +16,7 @@ Clases de la asignatura Sistemas de Gestión de Seguridad de Sistemas de la Info
 * Bloque II: Sistemas
   * [Seguridad en Sistemas Web](Seguridad_web/index.html)
   * [Seguridad física](Seguridad_fisica/index.html)
-  * [Copias de seguridad](Backups/index.html)
+  * [Copias de seguridad](Copias_seguridad/index.html)
   * [Seguridad en redes](Seguridad_redes/index.html)
 * Bloque III: Sociedad
   * El factor humano
