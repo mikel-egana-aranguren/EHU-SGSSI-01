@@ -69,6 +69,82 @@
         </ul>
     </section>
 
+    <section class="slide">
+        <h2>Proxy</h2>
+        Servidor que actua de intermediario<br>
+        El cliente hace las peticiones al proxy que se encarga de gestionarlas y enviarlas a los servidores remotos<br>
+        Proporciona mayor seguridad durante la navegación porque el servidor desconoce quién se ha conectado realmente<br>
+        Aísla a los clientes del mundo exterior<br>
+    </section>
+
+    <section class="slide">
+        <h2>Proxy</h2>
+        El servidor hace una traduccion de direcciones mediante el protocolo <a href="https://en.wikipedia.org/wiki/Network_address_translation">NAT (Network Address Translation)</a>, convirtiendo las IPs internas de los equipos en una unica IP externa.<br>
+        Se decide qué servicios de internet se podrán utilizar y por quién<br>
+        Bloquear acceso a determinadas IPs y dominios de internet<br>
+        Crear caches par acelerar la navegación<br>
+        Auditoria de uso de servicios y anchoi de banda por parte de usuarios<br>
+        Antivirus perimetral<br>
+    </section>
+
+    <section class="slide">
+        <h2>Proxy inverso</h2>
+        Acceso controlado desde el exterior a servidores de la empresa, por ejemplo servidores web<br>
+        Balanceo de carga<br>
+    </section>
+
+    <section class="slide">
+        <h2>Firewall</h2>
+        Elemento de red  (Hardware o software) donde se define la política de accesos, permitiendo o denegando el tráfico según se definan sus reglas<br>
+        Dos filosofías distintas de uso:
+        <ul>
+            <li>Política restrictiva (lista blanca): se deniega todo menos lo que se acepta explícitamente</li>
+            <li>Política permisiva (lista negra): se acepta todo menos lo que se deniega explícitamente</li>
+        </ul>
+    </section>
+
+    
+
+    <section class="slide">
+        <h2>Firewall: ¿Contra qué protege?</h2>
+        Contra accesos no autenticados del exterior<br>
+        Contra tráfico no autorizado desde el exterior<br>
+        Permite salida autorizada desde el interior<br>
+        Proporciona un único punto para implantar una política de seguridad y auditoría<br>
+    </section>
+
+    <section class="slide">
+        <h2>Firewall</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/cortafuegos.png" alt="Arquitectura cortafuegos" width="50%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Firewall: ¿Contra qué no protege?</h2>
+        Contra accesos externos que no pasen por el cortafuegos<br>
+        Contra ataques desde el interior<br>
+        Contra virus, troyanos, SPAM<br>
+        Contra salida de información por otro medio (USBs, correo electrónico, etc.)
+    </section>
+
+    <section class="slide">
+        <h2>Tipos Firewall</h2>
+        De nivel de pasarela: filtra aplicaciones concretas como FTP o Telnet <br>
+        De capa de red: filtra en función de la IP de origen/destino y del puerto origen/destino <br>
+        De capa de aplicación: filtra en función del protocolo de la comunicación <br> 
+        Personal: instalado en la propia máquina filtra las conexiones entrantes y salientes de la máquina <br>
+    </section>
+
+    <section class="slide">
+        <h2>Firewall</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/tabla-firewall.png" alt="Arquitectura cortafuegos" width="70%"></p>
+    </section>
+
+
+
+
+
+
+
 
 
 
@@ -139,50 +215,6 @@
     <section class="slide">
         <h2>Ejemplo de arquitectura sin seguridad</h2>
         <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/arquitectura-sin-seguridad.png" alt="Arquitectura sin seguridad" width="50%"></p>
-    </section>
-
-    <section class="slide">
-        <h2>Firewall</h2>
-        Elemento de red  (Hardware o software) donde se define la política de accesos, permitiendo o denegando el tráfico según se definan sus reglas<br>
-        Dos filosofías distintas de uso:
-        <ul>
-            <li>Política restrictiva (lista blanca): se deniega todo menos lo que se acepta explícitamente</li>
-            <li>Política permisiva (lista negra): se acepta todo menos lo que se deniega explícitamente</li>
-        </ul>
-    </section>
-
-    <section class="slide">
-        <h2>Firewall: ¿Contra qué protege?</h2>
-        Contra accesos no autenticados del exterior<br>
-        Contra tráfico no autorizado desde el exterior<br>
-        Permite salida autorizada desde el interior<br>
-        Proporciona un único punto para implantar una política de seguridad y auditoría<br>
-    </section>
-
-    <section class="slide">
-        <h2>Firewall</h2>
-        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/cortafuegos.png" alt="Arquitectura cortafuegos" width="50%"></p>
-    </section>
-
-    <section class="slide">
-        <h2>Firewall: ¿Contra qué no protege?</h2>
-        Contra accesos externos que no pasen por el cortafuegos<br>
-        Contra ataques desde el interior<br>
-        Contra virus, troyanos, SPAM<br>
-        Contra salida de información por otro medio (USBs, correo electrónico, etc.)
-    </section>
-
-    <section class="slide">
-        <h2>Tipos Firewall</h2>
-        De nivel de pasarela: filtra aplicaciones concretas como FTP o Telnet <br>
-        De capa de red: filtra en función de la IP de origen/destino y del puerto origen/destino <br>
-        De capa de aplicación: filtra en función del protocolo de la comunicación <br> 
-        Personal: instalado en la propia máquina filtra las conexiones entrantes y salientes de la máquina <br>
-    </section>
-
-    <section class="slide">
-        <h2>Firewall</h2>
-        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/tabla-firewall.png" alt="Arquitectura cortafuegos" width="70%"></p>
     </section>
 
     <section class="slide">
@@ -258,13 +290,6 @@
         </ul>
     </section>
 
-    <section class="slide">
-        <h2>Proxy</h2>
-        Programa o dispositivo que realiza las tareas de intermediario<br>
-        El cliente hace las peticiones al proxy que se encarga de gestionarlas<br>
-        El uso de un proxy proporciona mayor seguridad durante la navegación porque el servidor desconoce quién se ha conectado realmente<br>
-        Aísla a los clientes del mundo exterior<br>
-    </section>
 
     <section class="slide">
         <h2>Gestión Unificada de Amenazas (UTM)</h2>
