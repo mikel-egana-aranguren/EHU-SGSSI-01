@@ -39,7 +39,7 @@
     <section class="slide">
         <h2>Conexión a internet</h2>
         <p><b>Confidencialidad</b> e <b>integridad</b> de la información mediante protocolos criptográficos</p>
-        <p>Sistema autenticación para usuarios</p>
+        <p>Sistema de autenticación para usuarios</p>
         <p>Control de accesos</p>
         <p>Supervisión de la utilización de servicios</p>
     </section>
@@ -69,7 +69,7 @@
 
     <section class="slide">
         <h2>Proxy</h2>
-        <p>El servidor hace una traducción de direcciones mediante el protocolo <a href="https://en.wikipedia.org/wiki/Network_address_translation">NAT (Network Address Translation)</a>, convirtiendo las IPs internas de los equipos en una única IP externa.</p>
+        <p>El servidor hace una traducción de direcciones mediante el protocolo <a href="https://en.wikipedia.org/wiki/Network_address_translation">NAT (Network Address Translation)</a>, convirtiendo las IPs internas de los equipos en una única IP externa</p>
         <p>Se decide qué servicios de internet se podrán utilizar y por quién</p>
         <p>Bloquear acceso a determinadas IPs y dominios de internet</p>
     </section>
@@ -77,7 +77,7 @@
     <section class="slide">
         <h2>Proxy</h2>
         <p>Crear caches para acelerar la navegación</p>
-        <p>Auditoria de uso de servicios y anchoi de banda por parte de usuarios</p>
+        <p>Auditoría de uso de servicios y ancho de banda por parte de usuarios</p>
         <p>Antivirus perimetral</p>
     </section>
 
@@ -91,13 +91,14 @@
     <section class="slide">
         <h2>Firewall</h2>
         <p>Elemento de red (Hardware o software) que filtra paquetes segun una política definida previamente por el administrador, teniendo en cuenta la fuente y el destino</p>
-        <p>La diferencia con el proxy es que se pueden establecer conexiones directas (autorizadas) con máquinas exteriores</p>
+        <p>A diferencia del Proxy se pueden establecer conexiones directas (autorizadas) con máquinas externas</p>
     </section>
 
     <section class="slide">
         <h2>Firewall</h2>
-        <p>Bloqueo del tráfico no autorizado: servicios de internet, determinadasa direcciones, etc.</p>
-        <p>Ocultación de los equipos internos de la organización ante posibles ataques. Ocultar información sobre la topología de la red interna</p>
+        <p>Bloqueo del tráfico no autorizado: servicios de internet, determinadas direcciones, etc.</p>
+        <p>Ocultación de los equipos internos de la organización ante posibles ataques</p> 
+        <p>Ocultar información sobre la topología de la red interna</p>
         <p>Registro de todo el tráfico entrante y saliente</p>
         <p>Redirección del tráfico entrante hacia DMZ (DeMilitarized Zone)</p>
     </section>
@@ -105,16 +106,15 @@
     <section class="slide">
         <h2>Firewall</h2>
         <p>Limitación de ancho de banda utilizado por tipo de tráfico o protocolo</p>
-        <p>Cifrado extremo a extremo apra crear tuneles seguros</p>
         <p>Estadísticas sobre ancho de banda usado por distintos servicios</p>
         <p>Monitorización de ataques o intentos de intrusión</p>
     </section>
 
     <section class="slide">
         <h2>DMZ</h2>
-        <p>Zona entre la intranet y la Internet donde se ubican los servicios públicos (correo, ftp, etc.) que quedan más expuestos a los problemas de seguridad</p>
+        <p>Zona entre la intranet e internet donde se ubican los servicios públicos (correo, ftp, etc.) que quedan más expuestos a los problemas de seguridad</p>
         <p>Se crea mediante el uso de uno o dos cortafuegos que limita el acceso entre las distintas redes</p>
-        <p>Desde la zona desmilitarizada no se puede acceder directamente a la intranet</p>
+        <p>Desde DMZ no se puede acceder directamente a la intranet</p>
     </section>
 
     <section class="slide">
@@ -130,22 +130,20 @@
 
     <section class="slide">
         <h2>Access Control List</h2>
-        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/tabla-firewall.png" alt="Access Control List" width="70%"></p>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/tabla-firewall.png" alt="Access Control List" width="90%"></p>
     </section>
 
 
     <section class="slide">
         <h2>Tipos de firewall</h2>
-        <p>A nivel de paquetes de datos: filtrado de paquetes por origen/destino, puertos etc</p>
-        <p>Dinámicos: además de paqueste de datos, tienen en cuenta la información sobre estados de sesion (Flags) (Statefull packet inspection).</p>
-        <p>Pasarelas de aplicacion: tienen en cuenta las reglas del protocolo y la sesion, no solo los datos de los paquetes individuales. Menos eficientes, centrados en protocolos como HTTP, SMTP, FTP, ect</p>
+        <p>A nivel de paquetes de datos: filtrado de paquetes por origen/destino, puertos etc.</p>
+        <p>Dinámicos (Statefull Packet Inspection): además de paquetes de datos, tienen en cuenta la información sobre estados de sesión (Flags)</p>
+        <p>Pasarelas de aplicación: tienen en cuenta las reglas del protocolo y la sesión, no solo los datos de los paquetes individuales</p>
     </section>
 
 
     <section class="slide">
         <h2>Firewall</h2>
-
-        Dos filosofías distintas de uso:
         <ul>
             <li><b>Política restrictiva (lista blanca)</b>: se deniega todo menos lo que se acepta explícitamente</li>
             <li>Política permisiva (lista negra): se acepta todo menos lo que se deniega explícitamente</li>
@@ -154,18 +152,23 @@
 
     <section class="slide">
         <h2>Firewall: reglas filtrado generales</h2>
-        <p>Bloquear paquetes que incluyan dirección de difusion (Broadcast) por ataques DoS</p>
+        <p>Bloquear paquetes que incluyan dirección de difusión (Broadcast) por ataques DoS</p>
         <p>Bloquear paquetes de entrada con direccion fuente correspondiente a direcciones internas por suplantación de identidad (Spoofing)</p>
         <p>Bloquear todos los paquetes de entrada con direcciones privadas referenciadas en <a href="https://www.rfc-editor.org/rfc/rfc1918">RFC 1918 (Address Allocation for Private Internets)</a></p>
-        <p>Bloquear los paquetes de entrada con direcciones fuente 127.0.0.1</p>
+        
     </section>
 
     <section class="slide">
         <h2>Firewall: reglas filtrado generales</h2>
-        <p>Bloquear los paquetes del protocolo de control, ICMP que en respuestas a peticiones Ping o Traceroute pueden dar informacion sobre la topologia de la red interna</p>
+        <p>Bloquear los paquetes de entrada con direcciones fuente 127.0.0.1</p>
+        <p>Bloquear los paquetes del protocolo de control ICMP que en respuestas a peticiones Ping o Traceroute pueden dar información sobre la topología de la red interna</p>
+    </section>
+
+    <section class="slide">
+        <h2>Firewall: reglas filtrado generales</h2>
         <p>Bloquear los paquetes ICMP Redirect que permiten modificar las tabals de enrutamiento de los routers</p>
         <p>Bloquear todos los paquetes con un tamaño inferior al mínimo permitido o con valores invalidso en la cabecera</p>
-        <p></p>
+        <p>
     </section>
 
     <section class="slide">
@@ -179,29 +182,37 @@
     <section class="slide">
         <h2>Firewall: limitaciones</h2>
         <p>Ataques basados en ingenieria social</p>
-        <p>Ataques fisicos: USB</p>
+        <p>Ataques físicos: ej. USB</p>
         <p>Ataques a nivel de protocolo, ej. HTTP</p>
-        <p>Virus introducidos por portatiles que se han infectado en el exterior</p>
-    </section>
-
-
-    <section class="slide">
-        <h2>Firewall: kerberos?</h2>
+        <p>Virus introducidos por portátiles que se han infectado en el exterior</p>
     </section>
 
     <section class="slide">
         <h2>Análisis de logs: Common Log Format</h2>
         <p>
             <pre>
-                <code>127.0.0.1 user-identifier frank [10/Oct/2000:13:55:36 -0700] "GET /apache_pb.gif HTTP/1.0" 200 2326</code>
+                <code>127.0.0.1 user-identifier frank [10/Oct/2000:13:55:36 -0700] 
+                    "GET /apache_pb.gif HTTP/1.0" 200 2326</code>
             </pre>
         </p>
         <ul>
             <li>IP cliente</li>
-            <li>Identificacion cliente</li>
-            <li>Nombre autenticacion usuario</li>
-            <li>Fecha/hora conexion</li>
-            <li>Peticion cliente</li>
+            <li>Identificación cliente</li>
+            <li>Nombre autenticación usuario</li>
+            <li>Fecha/hora conexión</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Análisis de logs: Common Log Format</h2>
+        <p>
+            <pre>
+                <code>127.0.0.1 user-identifier frank [10/Oct/2000:13:55:36 -0700] 
+                    "GET /apache_pb.gif HTTP/1.0" 200 2326</code>
+            </pre>
+        </p>
+        <ul>
+            <li>Petición cliente</li>
             <li>Estado HTTP devuelto</li>
             <li>Bytes enviados</li>
         </ul>
@@ -210,151 +221,72 @@
     <section class="slide">
         <h2>Intrusion Prevention System (IPS)</h2>
         <p>Sistemas encargados de detectar y reaccionar de forma automatizada ante los incidentes de seguridad en redes</p>
-        Fuente de eventos de la red o sistema
-        BBDD de compoartamientos normales 
-        Motor de analisis: analiza la fuente de eventos basandose en la BBDD
-        Modulo de respuesta: alarmas e informes
+
+    </section>
+
+    <section class="slide">
+        <h2>Intrusion Prevention System (IPS)</h2>
+        <p>Fuente de eventos de la red o sistema</p>
+        <p>BBDD de comportamientos normales/anormales</p> 
+        <p>Motor de análisis: analiza la fuente de eventos basándose en la BBDD</p>
+        <p>Módulo de respuesta: alarmas e informes</p>
+    </section>
+
+    <section class="slide">
+        <h2>Intrusion Prevention System (IPS)</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/FIREWAL-DMZ-IDS.png" alt="DMZ" width="90%"></p>
     </section>
 
     <section class="slide">
         <h2>Intrusion Prevention System (IPS)</h2>
         <p>Respuestas pasivas: registrar las posibles intrusiones, generar informes</p>
-        <p>Respuestas activas:
-            Anular las conexiones TCP inyectando paquetes de reinicio en la conexiones
-            Reconfigurtar cortafuegos para filtrar trafico anomalo
-            Desconexion automatica de servidores
-            Bloqueo de cuentas / privilegios
-            Localizacion de origen de ataque y notificacion a os ISP
+        <p>Respuestas activas: anular las conexiones TCP inyectando paquetes de reinicio en la conexiones; reconfigurtar cortafuegos para filtrar tráfico anómalo, desconexión automática de servidores, bloqueo de cuentas / privilegios, localización de origen de ataque y notificación a los ISP
         </p>
     </section>
 
     <section class="slide">
-        <h2>HIDS Host IDS</h2>
-        Intrusiones en un host, en un sistema concreto
-        Analisis de losgs del kernel
-        Verificacion de la integridad de los ejecutabels
-        Auditoria periodica de permissos asignados a los recursos
-        Revision detallada del proceso de instalacion de nuevas aplciaciones
+        <h2>HIDS (Host IDS)</h2>
+        <p>Intrusiones en un host, en una máquina concreta</p>
+        <p>Análisis de logs del kernel</p>
+        <p>Verificación de la integridad de los ejecutabels</p>
+        <p>Auditoría periódica de permissos asignados a los recursos</p>
+        <p>Revisión detallada del proceso de instalación de nuevas aplicaciones</p>
     </section>
 
     <section class="slide">
         <h2>Network IDS</h2>
-        Monitorizan el trafico de red para buscar actividad sospechosa
+        <p>Monitorizan el tráfico de red para buscar actividad sospechosa:</p>
+        <p>Enrutamiento anormal de paquetes</p>
+        <p>IP spoofing: usar una IP no válida o en desuso de los tramos internos</p>
+        <p>DNS spoffing: afluencia de paquetes DNS</p>
+    </section>
+
+    <section class="slide">
+        <h2>Network IDS</h2>
+        <p>Monitorizan el tráfico de red para buscar actividad sospechosa:</p>
+        <p>SYN flooding: invasión de paquetes TCP SYN</p>
+        <p>Falsa correspondencia entre las direcciones MAC conocidas y las direcciones IP de los equipos</p>
     </section>
 
 
     <section class="slide">
         <h2>Intrusion Prevention System (IPS)</h2>
-        https://www.snort.org/
-    </section>
-
-
-
-    
-
-<!-- 
-
-
-    <section class="slide">
-        <h2>Riesgos y protección de las redes</h2>
-        <p>Autenticación de entidades: garantiza que una entidad comunicante es quien dice ser</p>
-        <p>Confidencialidad de datos: Proporciona protección de los datos para evitar que sean revelados accidental o deliberadamente a un usuario no autorizado</p>
+        <p><a href="https://www.snort.org/">SNORT</a></p>
+        <p>Permite descargar nuevas reglas de deteccion de intrusos</p>
     </section>
 
     <section class="slide">
-        <h2>Riesgos y protección de las redes</h2>
-        <p>Integridad de datos: Permite al receptor de la información comprobar que la información recibida es exactamente la enviada por el emisor y conocer si esta ha sido modificada</p>
-        <p>Control de acceso: Evita el uso de los servicios/información por personas no autorizadas</p>
+        <h2>Honeypots</h2>
+        <p>Sistema "señuelo" para que sea atacado</p>
+        <p>Honeynet: red de honeypots</p>
+        <p>Desviar los ataques</p>
+        <p>Obtener conocimiento de métodos de ataque</p>
+        <p>Obtener muestras de malware</p>
     </section>
 
     <section class="slide">
-        <h2>Riesgos y protección de las redes</h2>
-        No repudio:<br>
-        <ul>
-            <li>Con prueba de origen: El receptor de la información puede probar quién es el emisor</li>
-            <li>Con prueba de envío: El receptor/emisor dispone de una prueba de la fecha y hora del envío</li>
-            <li>Con prueba de entrega: El emisor puede probar que la información ha sido recibida por el receptor</li>
-        </ul>
-    </section>
-
-    <section class="slide">
-        <h2>Ejemplo de no repudio</h2>
-        Sistema de cifrado de whatsapp<br>
-        Doble click al recibir, en azul leído<br>
-        No podemos negar haberlo enviado<br>
-        No pueden negar que lo han recibido<br>
-    </section>
-
-    <section class="slide">
-        <h2>Riesgos y protección de las redes</h2>
-        Disponibilidad: Asegura que la información/recursos van a estar disponibles (van a poder ser accedidos/consultados/usados) cuando sea necesario<br>
-    </section>
-
-    <section class="slide">
-        <h2>Riesgos y protección de las redes</h2>
-        Anonimato: Oculta la identidad de la persona que usa un determinado servicio<br><br>
-        Imprescindible en algunos servicios: encuestas, voto electronico, algunas transacciones economicas
-    </section>
-
-    <section class="slide">
-        <h2>Ataques más comunes</h2>
-        Sobre autenticación: interceptación, suplantación<br>
-        Sobre información: revelación, reenvio, manipulación, repudio<br>
-        Sobre servicios: denegación, apropiación<br>
-    </section>
-
-
-
-
-
-
-    <section class="slide">
-        <h2>Ejemplo de arquitectura sin seguridad</h2>
-        No se filtra el tráfico<br>
-        Publicación de servicios internos (BD)<br>
-        No se verifica malware o SPAM<br>
-        Cliente remoto accede directamente a los servicios<br>
-    </section>
-
-    <section class="slide">
-        <h2>Ejemplo de arquitectura sin seguridad</h2>
-        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/arquitectura-sin-seguridad.png" alt="Arquitectura sin seguridad" width="50%"></p>
-    </section>
-
-
-
-
-    <section class="slide">
-        <h2>Sistemas de Detección y Prevención de Intrusos (IDS/IPS)</h2>
-        Detecta accesos no autorizados / usos indebidos en la red o en una máquina<br>
-        Los IDS avisan al administrador (reactivos)<br>
-        Los IPS los bloquean para que no tengan efecto (proactivos)<br>
-
-    </section>
-
-    <section class="slide">
-        <h2>Tipos IDS/IPS</h2>
-        HIDPS (Host IDPS): se instala en la máquina y detecta cambios en el sistema operativo y en las aplicaciones<br>
-        NIDPS (Network IDPS): monitoriza el tráfico de la red local<br>
-        WIDPS (Wi-Fi IDPS): monitoriza el tráfico inalámbrico<br>
-        NBA (Network Behaviour Analysis): examina el comportamiento del tráfico de la red<br>
-    </section>
-
-    <section class="slide">
-        <h2>Funcionamiento de un IDS/IPS</h2>
-        Heurística: analiza comportamientos "extraños" y cuando los detecta da la alarma<br><br>
-        Firmas: detecta patrones de ataques conocidos (Problema ante ataques nuevos)
-    </section>
-
-    <section class="slide">
-        <h2>IDS/IPS</h2>
-        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/ips-ids.png" alt="IPS DPS" width="70%"></p>
-    </section>
-
-    <section class="slide">
-        <h2>Pasarelas antivirus y antispam</h2>
-        <p>Analizan el tráfico y filtran los contenidos maliciosos hacia la red interna</p>
-        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/pasarela.png" alt="Pasarela" width="70%"></p>
+        <h2>Honeypots</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/FIREWAL-DMZ-IDS-HONEY.png" alt="DMZ" width="90%"></p>
     </section>
 
     <section class="slide">
@@ -374,62 +306,6 @@
             <li>Confidencialidad puesto que la información viaja cifrada mediante algún algoritmo de encriptación</li>
             <li>No repudio porque los datos se transmiten firmados</li>
         </ul>
-    </section>
-
-
-    <section class="slide">
-        <h2>Gestión Unificada de Amenazas (UTM)</h2>
-        Dispositivo que aúna múltiples aspectos relacionados con la seguridad de las comunicaciones:
-        <ul>
-            <li>Cortafuegos</li>
-            <li>IDS / IPS</li>
-            <li>Pasarela antimalware/antispam</li>
-            <li>VPN</li>
-        </ul>
-    </section>
-
-    <section class="slide">
-        <h2>Honeypots</h2>
-
-        Sistema configurado para recibir ataques y estudiar nuevas técnicas<br><br>
-        También se usan para recoger muestras de virus y spam<br><br>
-        Deben estar especialmente controlados y ajenos a cualquier red interna<br><br>
-
-    </section>
-
-    <section class="slide">
-        <h2>Honeypots</h2>
-
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/FihkG72z7MQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-    </section>
-
-    <section class="slide">
-        <h2>Ejemplo arquitectura con seguridad</h2>
-        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/EjemploArquitecturaSeguridad.png" alt="Ejemplo Arquitectura Seguridad" width="70%"></p>
-
-
-    </section>
-
-    <section class="slide">
-        <h2>Ejemplo arquitectura con seguridad</h2>
-        Instalación de cortafuegos:
-        <ul>
-            <li>DMZ y Red Interna</li>
-            <li>Política restrictiva</li>
-        </ul>
-        Instalación de antispam y antivirus<br>
-        Instalación de NIDS en las tres interfaces<br>
-    </section>
-
-    <section class="slide">
-        <h2>Ejemplo arquitectura con seguridad</h2>
-        Segmentación:
-        <ul>
-            <li>Público: Web, pasarela antispam/antivirus</li>
-            <li>Privado: Base de datos, servidor de correo</li>
-        </ul>
-        Los clientes remotos usan VPN<br>
     </section>
 
     <section class="slide">
@@ -469,7 +345,7 @@
             <li>Una de ellas ejerce de master y coordina a las demás</li>
         </ul>
         <a href="https://therecord.media/gitlab-servers-are-being-exploited-in-ddos-attacks-in-excess-of-1-tbps/">GitLab servers are being exploited in DDoS attacks in excess of 1 Tbps</a>
-    </section> -->
+    </section> 
 
     <!-- FOOTER -->
 
