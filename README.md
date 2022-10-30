@@ -19,11 +19,11 @@ Clases de la asignatura Sistemas de Gestión de Seguridad de Sistemas de la Info
   * [Copias de seguridad](Copias_seguridad/index.html)
   * [Seguridad en redes](Seguridad_redes/index.html)
 * Bloque III: Sociedad
-  * El factor humano
-  * Malware
-  * Informatica forense
-  * Deep web, Snowden etc
-  * Legislacion
-  * Charlas
+  * [El factor humano](FactorHumano/index.html)
+  * [Malware](Malware)
+  * [Informatica forense](InformaticaForense/index.html)
+  * [Deep web](DeepWeb/index.html)
+  * [Legislacion](Legislacion/index.html)
+  * [Conferencias](Conferencias/index.html)
 
 [![DOI](https://zenodo.org/badge/334955028.svg)](https://zenodo.org/badge/latestdoi/334955028)

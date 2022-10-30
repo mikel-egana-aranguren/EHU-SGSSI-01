@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Deep Web</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../ShowerTemplate/shower/themes/ribbon/styles/styles.css">
+    <style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<body class="shower list">
+    <header class="caption">
+        <h1>Deep Web</h1>
+        <p>Mikel Egaña Aranguren</p>
+    </header>
+
+    <section class="slide" id="cover">
+        <h2>Deep Web</h2>
+        <p>Mikel Egaña Aranguren</p>
+        <p><a href="https://mikel-egana-aranguren.github.io/">mikel-egana-aranguren.github.io</a></p>
+        <p><a href="mailto:mikel.egana@ehu.eus">mikel.egana@ehu.eus</a></p>
+        <img src="../ShowerTemplate/pictures/ehu.png" alt="UPV/EHU ingenieros San Mames" height="25%" border="1px solid #555">
+    </section>
+
+    <section class="slide">
+        <h2>Deep Web</h2>
+        <p><a href="https://doi.org/10.5281/zenodo.4302267">https://doi.org/10.5281/zenodo.4302267</a></p>
+        <p><a href="https://github.com/mikel-egana-aranguren/EHU-SGSSI-01">https://github.com/mikel-egana-aranguren/EHU-SGSSI-01</a></p>
+        <img src="../ShowerTemplate/pictures/by.png" alt="Creative Commons BY" height="10%">
+    </section>
+
+    <section class="slide">
+        <h2>Indice</h2>
+        <ul>
+            <li>¿Qué es la Deep Web?</li>
+            <li>Formas de acceso
+            <ul>
+                <li>TOR</li>
+                <li>I2P</li>
+                <li>Freenet</li>
+                <li>Zeronet</li>
+            </ul></li>
+            <li>Consejos de navegación</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>¿Qué es la Deep Web?</h2>
+        La red habitual y conocida (Clearnet):
+        <ul>
+            <li>Está formada por direcciones conocidas (Ej: www.ehu.eus)</li>
+            <li>Con contenidos en HTML que están indexados y permiten realizar búsquedas para encontrar lo que nos interese</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>¿Qué es la Deep Web?</h2>
+        La Deep Web (internet profunda) está formada por todos aquellos contenidos que no son directamente accesibles a través de internet<br>
+        Se estima que de todo el contenido que existe:
+        <ul>
+            <li>El 10% está en Clearnet (el internet que conocemos)</li>
+            <li>El 90% está en la Deep Web</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>¿Qué es la Deep Web?</h2>
+        Contenido de la Deep Web
+        <ul>
+            <li>Información confidencial o protegida (No suelen estar indexados por buscadores ni se puede acceder directamente a ellos):
+                <ul>
+                    <li>Registros sanitarios</li>
+                    <li>Registros académicos</li>
+                    <li>Datos bancarios</li>
+                    <li>...</li>
+                </ul>
+            </li>
+            
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>¿Qué es la Deep Web?</h2>
+        Contenido de la Deep Web
+        <ul>
+            <li>Información "suelta": por ejemplor un archivo HTML que no esté enlazado desde ningún otro</li>
+            <li>Información en formatos no HTML que un navegador no puede leer</li>
+            <li>Contenido no publicable (Censura): Contenidos que no pueden publicarse libremente porque pueden
+                acarrear consecuencias</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>¿Qué es la Deep Web?</h2>
+        Contenido de la Deep Web
+        <ul>
+
+            <li>Contenido ilegal y/o desagradable (Darknet)
+                <ul>
+                    <li>Tráfico de armas, drogas, personas</li>
+                    <li>Material pedófilo</li>
+                    <li>Malware</li>
+                    <li>Alquiler de hackers, matones, etc.</li>
+                    <li>Películas snuff</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>¿Qué es la Deep Web?</h2>
+        Niveles de la Web
+        <ul>
+            <li>Nivel 1: Sitios web ampliamente conocidos y para todos los
+                públicos</li>
+            <li>Nivel 2: Sitios web desconocidos y sitios pornográficos</li>
+            <li>Nivel 3 (Aquí empieza Deep Web): Necesita privacidad y anonimato (contenidos sensibles)</li>
+            <li>Nivel 4: Necesita un proxy. Nivel peligroso (contenidos ilegales)</li>
+            <li>Nivel 5: Secretos gubernamentales y militares</li>
+            <li>???</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Formas de acceso</h2>
+        Para acceder a la Deep Web hace falta un software especial que proporcione privacidad, anonimato y ejerza de proxy<br><br>
+        Existen varias alternativas que darán acceso a distintos contenidos de la Deep Web: TOR, I2P, Freenet, Zeronet
+    </section>
+
+    <section class="slide">
+        <h2>TOR</h2>
+        The Onion Router (TOR)<br><br>
+        Red de navegación anónima<br><br>
+        Oculta el origen y el destino de los paquetes que navegan por la red (Aunque hay formas de acabar identificando el origen)
+    </section>
+
+    <section class="slide">
+        <h2>TOR</h2>
+        Para acceder a TOR se necesita un software específico:
+        <ul>
+            <li>TOR Browser: navegador web</li>
+            <li>Tails (The Amnesic Incognito Live System): Sistema operativo que se ejecuta desde un USB</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>TOR</h2>
+        Cada vez que hay que hacer una conexión, se calcula un camino
+aleatorio basado en los nodos de la red<br><br>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/tor.png" alt="TOR" width="40%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>TOR</h2>
+        La información se cifra a capas (como una cebolla) con las claves públicas de los distintos nodos, de modo que cada nodo sólo puede ver cuál es el siguiente<br><br>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/capas.png" alt="capas" width="40%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>TOR</h2>
+        Utilizando la red TOR se puede acceder a URLs que son
+        inaccesibles de otro modo:
+        <ul>
+            <li>Dominio .onion</li>
+            <li>URLs alfanuméricas: http://3g2upl4pq6kufc4m.onion/</li>
+        </ul>
+
+    </section>
+
+    <section class="slide">
+        <h2>TOR</h2>
+
+        Para encontrar contenidos hay que usar buscadores específicos o sitios donde se recopilen las URLs:
+        <ul>
+            <li>Buscador Torch (http://xmh57jrzrnw6insl.onion/)</li>
+            <li>The Hidden Wiki (http://kpvz7ki2v5agwt35.onion )</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>I2P (Invisible Internet Project)</h2>
+        Es otra red para navegar de forma anónima<br><br>
+        Para usarla es necesario instalar su router (https://geti2p.net/es/download)<br><br>
+        Utiliza una base de datos distribuida con los distintos nodos de
+la red
+    </section>
+
+    <section class="slide">
+        <h2>I2P (Invisible Internet Project)</h2>
+Se decide el camino en base a la base de datos distribuida<br><br>
+
+<p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/I2p.png" alt="capas" width="50%"></p>
+
+</section>
+
+<section class="slide">
+    <h2>I2P (Invisible Internet Project)</h2>
+    Utiliza el protocolo de enrutado Garlic<br>
+    La información se cifra a capas indicando el camino a seguir<br>
+    Se pueden agrupar varios mensajes (como los dientes de un ajo)
+que se cifran y descifran juntos (el ajo entero)<br>
+
+<p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/garlic.png" alt="capas" width="50%"></p>
+        
+    </section>
+
+    <section class="slide">
+        <h2>I2P (Invisible Internet Project)</h2>
+        Utilizando la red I2P se puede acceder a URLs que son
+        inaccesibles de otro modo (Llamados eepsites):
+        <ul>
+            <li>Dominio .i2p</li>
+            <li>URLs alfanuméricas pero “entendibles”: http://lawiki.i2p</li>
+        </ul>
+
+
+            
+        </section>
+
+        <section class="slide">
+            <h2>I2P (Invisible Internet Project)</h2>
+    
+            Se usa un fichero de nombres local llamado addressbook<br>
+            Se pueden incluir nuevas direcciones, acceder a repositorios de
+    direcciones, etc. <br>
+    Buscador: http://eepsites.i2p<br>
+    Recopilación de URLs: I2P Name Registry (http://inr.i2p)<br>
+                
+            </section>
+
+        <section class="slide">
+            <h2>Freenet</h2>
+            Es una red distribuida de almacenamiento de información que
+proporciona anonimato<br>
+Es una red P2P no estructurada. Los nodos no tienen jerarquía:
+            <ul>
+                <li>Pueden tener el contenido que se busca</li>
+                <li>Pueden redireccionar a otro nodo para encontrarlo</li>
+            </ul>
+            
+            </section>
+
+
+        <section class="slide">
+            <h2>Freenet</h2>
+            Para usarla hay que descargar un software especial
+(https://freenetproject.org/)<br>
+Hay que configurar el ancho de banda que se quiere compartir <br>
+</section>
+
+            <section class="slide">
+                <h2>Freenet</h2>
+                Se puede elegir a qué nodos conectarse:
+            <ul>
+                <li>Todos / amigos</li>
+                <li>En función de a qué nodos nos conectemos el contenido al que
+                    tendremos acceso será mayor o menor</li>
+            </ul>   
+                </section>
+
+                <section class="slide">
+                    <h2>Freenet</h2>
+                    Al publicar un contenido en Freenet, se replica por los nodos<br><br>
+                    Existen sitios recopilatorios de contenidos:
+                <ul>
+                    <li>Enzo’s index (organizados por categorías)</li>
+                    <li>The Filtered Index (no contenido sensible)</li>
+                </ul>   
+                    </section>
+
+                    <section class="slide">
+                        <h2>Zeronet</h2>
+                        Es una red distribuida de almacenamiento de información SIN
+anonimato (Se recomienda usar Tor para conseguir anonimato)<br><br>
+Es una red P2P no estructurada. Los nodos no tienen jerarquía:
+<ul>
+    <li>Pueden tener el contenido que se busca</li>
+    <li>Pueden redireccionar a otro nodo para encontrarlo</li>
+</ul>
+Para usarla hay que descargar un software especial
+(https://zeronet.io/)
+                        </section>
+
+                        <section class="slide">
+                            <h2>Zeronet</h2>
+                            
+                            Las URLS son direcciones Bitcoin:
+    <ul>
+        <li>Dominio .bit</li>
+        <li>Son llamados zites</li>
+    </ul>
+
+                            </section>
+
+                            <section class="slide">
+                                <h2>Consejos de navegación</h2>
+                                No usar Windows<br>
+                                Usar maquinas virtuales o live USB<br>
+                                No descargar nada que no sea 100% seguro<br>
+                                No subir documentos (cuidado con los metadatos)<br>
+                                No conectarse a servicios habituales (Redes sociales, correo, ...)<br>
+                                No hacer nada ilegal
+    
+                                </section>
+
+    
+    
+    <!-- FOOTER -->
+
+    <footer class="badge">
+        <a href="https://github.com/mikel-egana-aranguren/EHU-SGSSI-01">Fork me on GitHub</a>
+    </footer>
+
+    <div class="progress"></div>
+
+    <script src="../ShowerTemplate/shower/shower.js"></script>
+    <!-- Copyright © 3000 Yours Truly, Famous Inc. -->
+
+</body>
+</html>
