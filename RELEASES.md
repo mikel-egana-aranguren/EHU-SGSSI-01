@@ -7,6 +7,7 @@
 * Comunicaciones seguras, bitcoin
 * Seguridad Web
 * Seguridad fisica, copias
+* Seguridad redes
 
 ## 2021-2022 (Rama congelada)
 
