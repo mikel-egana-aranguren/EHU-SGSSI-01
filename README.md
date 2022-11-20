@@ -24,6 +24,5 @@ Clases de la asignatura Sistemas de Gestión de Seguridad de Sistemas de la Info
   * [Informatica forense](InformaticaForense/index.html)
   * [Deep web](DeepWeb/index.html)
   * [Legislación](Legislacion/index.html)
-  * [Conferencias](Conferencias/index.html)
 
 [![DOI](https://zenodo.org/badge/334955028.svg)](https://zenodo.org/badge/latestdoi/334955028)
