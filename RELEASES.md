@@ -8,6 +8,7 @@
 * Seguridad Web
 * Seguridad fisica, copias
 * Seguridad redes
+* El factor humano, Malware, Informática forense, Deep web
 
 ## 2021-2022 (Rama congelada)
 
