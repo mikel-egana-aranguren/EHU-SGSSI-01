@@ -9,6 +9,7 @@
 * Seguridad fisica, copias
 * Seguridad redes
 * El factor humano, Malware, Informática forense, Deep web
+* Leyes
 
 ## 2021-2022 (Rama congelada)
 
