@@ -1,6 +1,6 @@
 # Releases
 
-## 2022-2023
+## 2022-2023 (Rama congelada)
 
 * Introducccion, introduccion al cifrado, esteganografia, algoritmos resumen, cifrado simetrico
 * Cifrado asimetrico, firma, certificados
