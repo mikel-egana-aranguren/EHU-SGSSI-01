@@ -1,5 +1,9 @@
 # Releases
 
+## 2023-2024-1
+
+* Cambios en introduccion para comprobar gitflow correcto (rama release_*)
+
 ## 2022-2023 (Rama congelada)
 
 * Introducccion, introduccion al cifrado, esteganografia, algoritmos resumen, cifrado simetrico
