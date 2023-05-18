@@ -88,7 +88,7 @@ In case of confinement, classes and tutorials will be carried out telematically.
 
 ## CONVOCATORIA ORDINARIA: ORIENTACIONES Y RENUNCIA (INGLES)
 
-In the ordinary call, by default, the students are covered by the continuous evaluation system, although there is the option of taking advantage of the final evaluation indicating it by email. In the continuous evaluation system, the evaluation will be divided into three parts, each of them with a theoretical and a practical exam, whose grades will average. Each exam will deal with the subject seen in class and the laboratory reports made up to that date and since the previous exam.
+In the ordinary call, by default, the students are covered by the continuous evaluation system, although there is the option of taking advantage of the final evaluation indicating it by email, at the latest before the two weeks before the 3rd exam. In the continuous evaluation system, the evaluation will be divided into three parts, each of them with a theoretical and a practical exam, whose grades will average. Each exam will deal with the subject seen in class and the laboratory reports made up to that date and since the previous exam.
 
 In addition, throughout the semester a series of assignments will be carried out that will influence the final grade of the subject to different extents. In the final evaluation system there will be a single theoretical and a practical exam that will correspond to the entire syllabus of the subject. The final grade of the subject will be calculated using the arithmetic average of both exams.
 
@@ -99,7 +99,7 @@ COPY CASES:
 If a copy is detected between jobs from two different groups, both jobs will be evaluated with 0. In the case of exams, article 46.2 of the current regulations regarding the evaluation of students will apply.
 
 WAIVER OF THE CALL:
-To renounce the call and appear as "Not Presented" in the continuous evaluation mode, you must request it by email within the established deadlines. In the final assessment mode, it is enough not to sit for the final exam.
+To renounce the call and appear as "Not Presented" in the continuous evaluation mode, it is enough not to sit for the 3rd exam. In the final assessment mode, it is enough not to sit for the final exam.
 
 ## CONVOCATORIA EXTRAORDINARIA: ORIENTACIONES (INGLES)  
 

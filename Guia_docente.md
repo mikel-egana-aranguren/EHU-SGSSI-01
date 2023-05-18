@@ -93,26 +93,29 @@ Las clases de tipo PO que no se utilicen para la resolución de ejercicios, se e
 
 ## CONVOCATORIA ORDINARIA: ORIENTACIONES Y RENUNCIA  (CASTELLANO)
 
-En la convocatoria ordinaria, por defecto, el alumnado está acogido al sisde evaluación continua, aunque existe la opción de acogerse a la evaluación final indicándolo por email antes de la novena semana.
+En la convocatoria ordinaria, por defecto, el alumnado está acogido al sistema de evaluación continua, aunque existe la opción de acogerse a la evaluación final indicándolo por email en cualquier momento, con el límite de dos semanas antes de la fecha último parcial.
+
 En el sistema evaluación continua la evaluación se dividirá en tres partes, cada una de ellas con un examen teórico y otro práctico, cuyas calificaciones harán media. Cada examen tratará sobre la materia vista en clase y los informes de laboratorio realizados hasta esa fecha y desde el examen anterior.
 Además, a lo largo del cuatrimestre se realizarán una serie de trabajos que influirán en la calificación final de la asignatura en distinta medida.
+
 En el sisde evaluación final habrá un único examen teórico y otro práctico que se corresponderán con todo el temario de la asignatura. La calificación final de la asignatura se calculará mediante la media aritmética de ambos exámenes.
 
 EVALUACIÓN DE TRABAJOS:
+
 La detección de un plagio en cualquier parte de un trabajo supondrá una nota de 0 en dicho trabajo.
 Los trabajos tienen que estar escritos correctamente, por lo que en el momento que se detecte la tercera falta ortográfica grave se dejará de corregir dicho trabajo y su nota será la correspondiente a la parte del mismo que ha sido evaluada.
 
 CASOS DE COPIA:
-Si se detecta una copia entre trabajos de dos grupos distintos, ambos trabajos serán evaluados con 0.
-En el caso de los exámenes se aplicará el artículo 11.3 de la Normativa reguladora de la Evaluación del Alumnado en las titulaciones oficiales de Grado.
+
+Si se detecta una copia entre trabajos de dos grupos distintos, ambos trabajos serán evaluados con 0. En el caso de los exámenes se aplicará el artículo 11.3 de la Normativa reguladora de la Evaluación del Alumnado en las titulaciones oficiales de Grado.
 
 RENUNCIA A LA CONVOCATORIA:
-Para renunciar a la convocatoria y figurar como “No Presentado” en el modo de evaluación continua, hay que solicitarlo por email en los plazos establecidos. En el modo de evaluación final, es suficiente con no presentarse al examen final.
+
+Para renunciar a la convocatoria y figurar como “No Presentado” en el modo de evaluación continua basta con no presentarse al último parcial. En el modo de evaluación final, es suficiente con no presentarse al examen final.
 
 ## CONVOCATORIA EXTRAORDINARIA: ORIENTACIONES  (CASTELLANO)  
 
-El alumnado que no superen la asignatura en su convocatoria ordinaria tendrá que realizar un examen teórico y otro práctico en la convocatoria extraordinaria sobre el temario completo de la asignatura.
-El alumnado que hubiera seguido el sisde evaluación continua tendrá la posibilidad de indicar en el propio examen si desea que la calificación final de la asignatura se calcule usando únicamente las calificaciones de los exámenes o si quiere que se tenga en cuenta la nota de los trabajos realizados a lo largo del cuatrimestre.
+El alumnado que no superen la asignatura en su convocatoria ordinaria tendrá que realizar un examen teórico y otro práctico en la convocatoria extraordinaria sobre el temario completo de la asignatura. El alumnado que hubiera seguido el sisde evaluación continua tendrá la posibilidad de indicar en el propio examen si desea que la calificación final de la asignatura se calcule usando únicamente las calificaciones de los exámenes o si quiere que se tenga en cuenta la nota de los trabajos realizados a lo largo del cuatrimestre.
 
 RENUNCIA A LA CONVOCATORIA:
 En caso de no realizar el examen teórico o el práctico se obtendrá una valoración de "No Presentado".
