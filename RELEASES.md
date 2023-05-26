@@ -1,5 +1,9 @@
 # Releases
 
+## 2023-2024-2
+
+* Guias docentes actualizadas y en pdf
+
 ## 2023-2024-1
 
 * Cambios en introduccion para comprobar gitflow correcto (rama release_*)

@@ -87,7 +87,8 @@ Las clases de tipo PO que no se utilicen para la resolución de ejercicios, se e
 
 ## HERRAMIENTAS Y PORCENTAJES DE CALIFICACIÓN
 
-* Pruebas tipo test 30
+* Prueba escrita a desarrollar 10
+* Pruebas tipo test 20
 * Realizacion de prácticas 30
 * TRABAJOS EN EQUIPO (RESOLUCIÓN DE PROBLEMAS, DISEÑO DE PROYECTOS) 40
 
