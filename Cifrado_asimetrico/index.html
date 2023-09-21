@@ -64,14 +64,12 @@
     <section class="slide">
         <h2>Criptografía de clave pública</h2>
         <ul>
-            <li>Iker tiene su clave privada I<sub>privada</sub> y todos tienen la clave
-                pública de Iker, I<sub>pública</sub></li>
-            <li>Miren cifra su mensaje m usando la clave pública de
-                Iker: c = e ( m , I<sub>pública</sub> )</li>
-            <li>Miren manda el criptograma c a Iker</li>
-            <li>Iker recibe c</li>
-            <li>Iker descifra c usando su clave privada I privada: m = d ( c , I<sub>privada</sub> )</li>
-            <li><b>Confidencialidad</b>. Sólo Iker puede descifrar el mensaje</li>
+            <li>Iker tiene su clave privada <b>I<sub>privada</sub></b> y todos tienen la clave pública de Iker, <b>I<sub>pública</sub></b></li>
+            <li>Miren cifra su mensaje <b>m</b> usando la clave pública de Iker: <b>c = e ( m , I<sub>pública</sub> )</b></li>
+            <li>Miren manda el criptograma <b>c</b> a Iker</li>
+            <li>Iker recibe <b>c</b></li>
+            <li>Iker descifra <b>c</b> usando su clave privada <b>I<sub>privada</sub></b>: <b>m = d ( c , I<sub>privada</sub> )</b></li>
+            <li><b><u>Confidencialidad</u></b>: Sólo Iker puede descifrar el mensaje</li>
         </ul>
     </section>
 
@@ -117,11 +115,11 @@
     <section class="slide">
         <h2>Criptografía de clave pública</h2>
         <ul>
-            <li>Si Iker lo cifra con su clave privada lo puede descifrar cualquiera (Todo el mundo conoce I<sub>pública</sub>)</li>
+            <li>Si Iker lo cifra con su clave privada lo puede descifrar cualquiera (Todo el mundo conoce <b>I<sub>pública</sub></b>)</li>
             <li>Solución:
                 <ul>
-                    <li>Iker cifra el mensaje con su clave privada: C1 = e ( m, I<sub>privada</sub> )</li>
-                    <li>Luego lo vuelve a cifrar con la clave pública de Miren: C2 = e ( C1 , M <sub>pública</sub> ) </li>
+                    <li>Iker cifra el mensaje con su clave privada: <b>C1 = e ( m, I<sub>privada</sub> )</b></li>
+                    <li>Luego lo vuelve a cifrar con la clave pública de Miren: <b>C2 = e ( C1 , M <sub>pública</sub> )</b> </li>
                 </ul>
             </li>
         </ul>
@@ -134,8 +132,8 @@
         <ul>
             <li>Sólo Miren puede desencriptarlo con su clave privada:
                 <ul>
-                    <li><b>Confidencialidad</b>: Sólo Miren puede descifrar el mensaje: C1 = d ( C2 , M<sub>privada</sub> )</li>
-                    <li><b>Autenticidad</b> y <b>No Repudio</b>: Sólo Iker ha podido enviar el mensaje: m = d ( C1, I<sub>pública</sub> )</li>
+                    <li><b><u>Confidencialidad</u></b>: Sólo Miren puede descifrar el mensaje: C1 = d ( C2 , M<sub>privada</sub> )</li>
+                    <li><b><u>Autenticidad</u></b> y <b><u>No Repudio</u></b>: Sólo Iker ha podido enviar el mensaje: m = d ( C1, I<sub>pública</sub> )</li>
                 </ul>
             </li>
         </ul>
@@ -213,9 +211,9 @@
 
     <section class="slide">
         <h2>Cifrado híbrido</h2>
-        <p>Miren genera una clave secreta S y cifra su mensaje usándola: cm = e1 (m,S)</p>
-        <p>Miren cifra S usando la clave pública de Iker cs = e2 ( S , I<sub>pública</sub> )</p>
-        <p>Miren manda [ cm, cs ] a Iker</p>
+        <p>Miren genera una clave secreta S y cifra su mensaje usándola: <b>cm = e1 (m,S)</b></p>
+        <p>Miren cifra S usando la clave pública de Iker: <b>cs = e2 ( S , I<sub>pública</sub> )</b></p>
+        <p>Miren manda <b>[ cm, cs ]</b> a Iker</p>
     </section>
 
     <section class="slide">
@@ -225,9 +223,9 @@
 
     <section class="slide">
         <h2>Cifrado híbrido</h2>
-        <p>Iker recibe [ cm , cs ]</p>
-        <p>Iker descifra S usando su clave privada I<sub>privada</sub>: d2 ( cs , I<sub>privada</sub> ) = S</p>
-        <p>Iker descifra m usando S: d1 ( cm , S ) = m</p>
+        <p>Iker recibe <b>[ cm , cs ]</b></p>
+        <p>Iker descifra <b>S</b> usando su clave privada <b>I<sub>privada</sub></b>: <b>d2 ( cs , I<sub>privada</sub> ) = S</b></p>
+        <p>Iker descifra m usando <b>S</b>: <b>d1 ( cm , S ) = m</b></p>
     </section>
 
     <section class="slide">
