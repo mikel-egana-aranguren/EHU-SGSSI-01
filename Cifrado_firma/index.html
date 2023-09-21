@@ -56,8 +56,8 @@
 
     <section class="slide">
         <h2>Firma digital</h2>
-        <p>Miren obtiene un resumen criptográfico del mensaje: RC = hash (m)</p>
-        <p>Miren cifra el resumen criptográfico con su clave privada: Firma = e ( RC, M<sub>privada</sub> )</p>
+        <p>Miren obtiene un resumen criptográfico del mensaje: <b>RC = hash (m)</b></p>
+        <p>Miren cifra el resumen criptográfico con su clave privada: <b>Firma = e ( RC, M<sub>privada</sub> )</b></p>
         <p>Miren envía el mensaje (cifrado o sin cifrar) y su Firma</p>
     </section>
 
@@ -68,9 +68,9 @@
 
     <section class="slide">
         <h2>Firma digital</h2>
-        <p>Iker desencripta la Firma usando la clave pública de Miren: RC = ( Firma, M<sub>pública</sub>)</p>
-        <p>Iker obtiene el resumen criptográfico del mensaje: RC’ = hash (m)</p>
-        <p>Iker compara RC’ con m para asegurarse que no ha sido modificado</p>
+        <p>Iker desencripta la Firma usando la clave pública de Miren: <b>RC = ( Firma, M<sub>pública</sub>)</b></p>
+        <p>Iker obtiene el resumen criptográfico del mensaje: <b>RC' = hash (m)</b></p>
+        <p>Iker compara <b>RC'</b> con <b>m</b> para asegurarse que no ha sido modificado</p>
     </section>
 
     <section class="slide">
@@ -93,8 +93,8 @@
         <h2>Firma digital</h2>
         <p>Un sistema de criptografía asimétrica. Enviaría a Iker:
             <ul>
-                <li>Criptograma del mensaje cifrado con M<sub>privada</sub> y con I<sub>pública</sub></li>
-                <li>Su Firma digital (el resumen criptográfico cifrado con M<sub>privada</sub> )</li>
+                <li>Criptograma del mensaje cifrado con <b>M<sub>privada</sub></b> y con <b>I<sub>pública</sub></b></li>
+                <li>Su Firma digital (el resumen criptográfico cifrado con <b>M<sub>privada</sub></b> )</li>
             </ul>
         </p>
 
@@ -105,8 +105,8 @@
     <p>Un sistema de criptografía híbrido. Enviaría a Iker:
         <ul>
             <li>Criptograma del mensaje cifrado con la clave de sesión</li>
-            <li>Criptograma con la clave de sesión cifrada con I<sub>pública</sub></li>
-            <li>Su Firma digital (el resumen criptográfico cifrado con M<sub>privada</sub>)</li>
+            <li>Criptograma con la clave de sesión cifrada con <b>I<sub>pública</sub></b></li>
+            <li>Su Firma digital (el resumen criptográfico cifrado con <b>M<sub>privada</sub></b>)</li>
         </ul>
     </p>
     </section>
