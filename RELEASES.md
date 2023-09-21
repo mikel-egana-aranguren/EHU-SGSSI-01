@@ -1,5 +1,11 @@
 # Releases
 
+## 2023-2024-3
+
+* Intro cifrado, esteganografia, algoritmos resumen, cifrado simetrico
+* Introduccion
+* Guias docentes actualizadas y en pdf
+
 ## 2023-2024-2
 
 * Introduccion
