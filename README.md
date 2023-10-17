@@ -14,15 +14,16 @@ Clases de la asignatura Sistemas de Gestión de Seguridad de Sistemas de la Info
   * Aplicaciones: [Comunicaciones seguras](Cifrado_comunicaciones/index.html)
   * Aplicaciones: [Bitcoin](Cifrado_bitcoin/index.html)
 * Bloque II: Sistemas
+  * [Copias de seguridad](Copias_seguridad/index.html)
   * [Seguridad en Sistemas Web](Seguridad_web/index.html)
   * [Seguridad física](Seguridad_fisica/index.html)
-  * [Copias de seguridad](Copias_seguridad/index.html)
   * [Seguridad en redes](Seguridad_redes/index.html)
+  * [Malware](Malware/index.html)
 * Bloque III: Sociedad
   * [El factor humano](FactorHumano/index.html)
-  * [Malware](Malware/index.html)
   * [Informatica forense](InformaticaForense/index.html)
   * [Deep web](DeepWeb/index.html)
   * [Legislación](Legislacion/index.html)
+  * Charlas de expertos: Ikerlan, Opscura
 
 [![DOI](https://zenodo.org/badge/334955028.svg)](https://zenodo.org/badge/latestdoi/334955028)

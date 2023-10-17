@@ -100,7 +100,7 @@
         <h2>Rotura de control de acceso: vulnerabilidades</h2>
         <p>Burlar el control de acceso mediante parametros URL o las peticiones APIs</p>
         <p>Acceder a una cuenta personal e incluso modificar los datos con el identificador del usuario</p>
-        <p>Acceso API sin control para los metodos HTTP POST, PUT, y DELETE</p>
+        <p>Acceso API sin control para los métodos HTTP POST, PUT, y DELETE</p>
     </section>
 
     <section class="slide">
@@ -256,7 +256,7 @@
     <section class="slide">
         <h2>Fallos criptográficos: prevención</h2>
         <p>Usar algoritmos actualizados (No usar MD5, SHA1, ...), claves fuertes, y gestión de claves</p>
-        <p>Cifrar todos los datos en transito con protocolos como TLS FS (TLS + Forward Secrecy)</p>
+        <p>Cifrar todos los datos en tránsito con protocolos como TLS FS (TLS + Forward Secrecy)</p>
         <p>No permitir el uso de caches en el cliente para datos sensibles</p>
     </section>
 
@@ -310,6 +310,11 @@
     </section>
 
     <section class="slide">
+        <h2>(Inyección en LLMs)</h2>
+        <a href="https://simonwillison.net/2023/Oct/14/multi-modal-prompt-injection/">Multi-modal prompt injection image attacks against GPT-4V</a>
+    </section>
+
+    <section class="slide">
         <h2>Inyección SQL</h2>
         <pre><code>
 txtUserId = getRequestString("UserId");
@@ -328,7 +333,7 @@ WHERE UserId = " + txtUserId;
 
     <section class="slide">
         <h2>Consultas parametrizadas</h2>
-        <p>Parametros: valores que se añaden a la consulta al ejecutarla y son analizadas de forma literal (ej. si la variable hace referencia a nombres de columnas, el interprete se asegura de que los parametros son nombres de columnas antes de añadirlas a la consulta y ejecutarla) </p>   
+        <p>Parametros: valores que se añaden a la consulta al ejecutarla y son analizadas de forma literal (ej. si la variable hace referencia a nombres de columnas, el intérprete se asegura de que los parámetros son nombres de columnas antes de añadirlas a la consulta y ejecutarla) </p>   
     </section>
 
     <section class="slide">
@@ -347,7 +352,7 @@ $stmt->execute();
     <section class="slide">
         <h2>Object-Relational Mapping (ORM)</h2>
         <p>Frameworks que traducen el contenido de la base de datos a objetos</p>
-        <p>No hay una conexion directa con la base de datos</p>
+        <p>No hay una conexión directa con la base de datos</p>
     </section>
 
     <section class="slide">
@@ -375,7 +380,7 @@ String name = p.FirstName;
         <p>Usar APIs seguras que no usen el intérprete. Si no es posible, usar llamadas parametrizadas u ORM</p>
         <p>Validar los inputs</p>
         <p>"Escapar" todos los caracteres especiales posibles</p>
-        <p>Usar controles como LIMIT en SQL para evitar perdida masiva de datos</p>        
+        <p>Usar controles como LIMIT en SQL para evitar pérdida masiva de datos</p>        
     </section>
 
     <section class="slide">
@@ -525,7 +530,7 @@ String name = p.FirstName;
             <li>Almacena las contraseñas en texto plano, o con hashes débiles</li>
             <li>No usa autenticacion multi-factor</li>
             <li>Expone identificadores de sesión en la URL</li>
-            <li>No invalida sesiones despues de logout o inactividad</li>
+            <li>No invalida sesiones después de logout o inactividad</li>
         </ul>
     </section>
 
@@ -552,7 +557,7 @@ String name = p.FirstName;
         <h2>Fallos de identificación y autenticación: prevención</h2>
 
         <ul>
-            <li>Usar un gestor de sesiones en el lado de servidor que sea seguro y esté implementado junto con la aplicación. Debe generar un identificador de sesión aleatorio de gran entropia despues del login. Los identificadores de sesion no deberian estar en la URL, sino almacenados de manera segura. Los identificadores deberían ser invalidados inmediatamente despues del logout o inactividad</li>
+            <li>Usar un gestor de sesiones en el lado de servidor que sea seguro y esté implementado junto con la aplicación. Debe generar un identificador de sesión aleatorio de gran entropia despues del login. Los identificadores de sesión no deberían estar en la URL, sino almacenados de manera segura. Los identificadores deberían ser invalidados inmediatamente despues del logout o inactividad</li>
         </ul>
     </section>
 
@@ -592,8 +597,8 @@ String name = p.FirstName;
 
     <section class="slide">
         <h2>Fallos en la integridad de datos y software: prevención</h2>
-        <p>Asegurarse de que los pipelines IC/DC tienen una configuración y control de acceso adecuados para asegurar la integridad del codigo en todo el proceso</p>
-        <p>Asegurarse de que no se envia datos serializados sin firmar o cifrar a clientes sin confianza sin algun tipo de validación de integridad para detectar modificación o un replay de los datos des-serializados</p>
+        <p>Asegurarse de que los pipelines IC/DC tienen una configuración y control de acceso adecuados para asegurar la integridad del código en todo el proceso</p>
+        <p>Asegurarse de que no se envían datos serializados sin firmar o cifrar a clientes sin confianza sin algun tipo de validación de integridad para detectar modificación o un replay de los datos des-serializados</p>
     </section>
 
     <section class="slide">
@@ -644,7 +649,7 @@ String name = p.FirstName;
         <h2>Fallos en la monitorización de la seguridad: prevención</h2>
         <ul>
             <li>Asegurarse de que todos los fallos de login, control de acceso, o validación de inputs son registrados en el log con suficiente contexto de usuario para poder identificar cuentas sospechosas y almacenados con suficiente tiempo para hacer un análisis forense</li>
-            <li>Asegurarse de que los logs son generados de tal manera que las soluciones automatizadas pueden consumirlos facilmente</li>
+            <li>Asegurarse de que los logs son generados de tal manera que las soluciones automatizadas pueden consumirlos fácilmente</li>
         </ul>
     </section>
 
@@ -652,7 +657,7 @@ String name = p.FirstName;
         <h2>Fallos en la monitorización de la seguridad: prevención</h2>
         <ul>
             <li>Asegurarse de que las transacciones de gran valor tienen un adecuado registro de procedencia con controles de integridad para prevenir modificaciones </li>
-            <li>Establecer e implementar un plan de respuesta y recuperación, probándolo periodicamente</li>
+            <li>Establecer e implementar un plan de respuesta y recuperación, probándolo periódicamente</li>
         </ul>
     </section>
 
