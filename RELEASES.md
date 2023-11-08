@@ -1,5 +1,15 @@
 # Releases
 
+## 2023-2024-7
+
+* Malware
+* Seguridad fisica, seguridad redes
+* Backups, seguridad web
+* Cifrado asimetrico, firmas, certificados, comunicaciones seguras, Bitcoin
+* Intro cifrado, esteganografia, algoritmos resumen, cifrado simetrico
+* Introduccion
+* Guias docentes actualizadas y en pdf
+
 ## 2023-2024-6
 
 * Seguridad fisica, seguridad redes
