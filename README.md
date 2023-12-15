@@ -24,6 +24,8 @@ Clases de la asignatura Sistemas de Gestión de Seguridad de Sistemas de la Info
   * [Informatica forense](InformaticaForense/index.html)
   * [Deep web](DeepWeb/index.html)
   * [Legislación](Legislacion/index.html)
-  * Charlas de expertos: Ikerlan, Opscura
+  * Conferencia: Gorka Abad, Ikerlan, "Security and privacy in Deep Learning"
+  * Conferencia: Servio Paguada, Ikerlan, "Ciberseguridad en sistemas físicos: análisis de canal lateral"
+  * Conferencia: Carlos Tomás, Opscura, "Seguridad IoT y Quantum Safe"
 
 [![DOI](https://zenodo.org/badge/334955028.svg)](https://zenodo.org/badge/latestdoi/334955028)
