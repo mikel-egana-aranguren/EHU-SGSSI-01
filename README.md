@@ -7,10 +7,7 @@ Clases de la asignatura Sistemas de Gestión de Seguridad de Sistemas de la Info
   * [Introducción al cifrado, esteganografía y algoritmos resumen](Cifrado_intro/index.html)
   * [Cifrado simétrico](Cifrado_simetrico/index.html)
   * [Cifrado asimétrico](Cifrado_asimetrico/index.html)
-  * Aplicaciones: [Firma digital](Cifrado_firma/index.html)
-  * Aplicaciones: [Certificados](Cifrado_certificados/index.html)
-  * Aplicaciones: [Comunicaciones seguras](Cifrado_comunicaciones/index.html)
-  * Aplicaciones: [Bitcoin](Cifrado_bitcoin/index.html)
+  * [Aplicaciones del cifrado: Firma digital, Certificados, Comunicaciones seguras, Bitcoin](Cifrado_aplicaciones/index.html)
 * Bloque II: Sistemas
   * [Copias de seguridad](Copias_seguridad/index.html)
   * [Seguridad en Sistemas Web](Seguridad_web/index.html)
