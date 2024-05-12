@@ -13,14 +13,11 @@ Clases de la asignatura Sistemas de Gestión de Seguridad de Sistemas de la Info
   * [Seguridad en Sistemas Web](Seguridad_web/index.html)
   * [Seguridad física](Seguridad_fisica/index.html)
   * [Seguridad en redes](Seguridad_redes/index.html)
-  * [Malware](Malware/index.html)
 * Bloque III: Sociedad
   * [El factor humano](FactorHumano/index.html)
-  * [Informatica forense](InformaticaForense/index.html)
+  * [Malware](Malware/index.html)
   * [Deep web](DeepWeb/index.html)
-  * [Legislación](Legislacion/index.html)
-  * Conferencia: Gorka Abad, Ikerlan, "Security and privacy in Deep Learning"
-  * Conferencia: Servio Paguada, Ikerlan, "Ciberseguridad en sistemas físicos: análisis de canal lateral"
-  * Conferencia: Carlos Tomás, Opscura, "Seguridad IoT y Quantum Safe"
+  * [Legislación e informática forense](AspectosLegales/index.html)
+  * Conferencias a definir.
 
 [![DOI](https://zenodo.org/badge/334955028.svg)](https://zenodo.org/badge/latestdoi/334955028)
