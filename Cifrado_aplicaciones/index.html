@@ -1,0 +1,746 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Aplicaciones cifrado</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../ShowerTemplate/shower/themes/ribbon/styles/styles.css">
+    <style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<body class="shower list">
+    <header class="caption">
+        <h1>Aplicaciones cifrado</h1>
+        <p>Mikel Egaña Aranguren</p>
+    </header>
+
+    <section class="slide" id="cover">
+        <h2>Aplicaciones cifrado</h2>
+        <p>Mikel Egaña Aranguren</p>
+        <p><a href="https://mikel-egana-aranguren.github.io/">mikel-egana-aranguren.github.io</a></p>
+        <p><a href="mailto:mikel.egana@ehu.eus">mikel.egana@ehu.eus</a></p>
+        <img src="../ShowerTemplate/pictures/ehu.png" alt="UPV/EHU ingenieros San Mames" height="25%" border="1px solid #555">
+    </section>
+
+    <section class="slide">
+        <h2>Firma digital</h2>
+        <p>Miren le manda un mensaje a Iker usando un sistema de clave pública</p>
+        <p>Nadie puede leer el mensaje de Miren a Iker pero cualquiera podría haberlo mandado</p>
+        <p>¿Cómo sabe Iker que se lo ha mandado Miren o que nadie lo ha modificado?</p>
+        <p>Solución: Miren firma sus mensajes</p>
+    </section>
+
+    <section class="slide">
+        <h2>Firma digital</h2>
+        <p>Sólo el usuario legítimo puede firmar su documento</p>
+        <p>Nadie podrá falsificar una firma</p>
+        <p>Cualquiera puede verificar una firma digital</p>
+    </section>
+
+    <section class="slide">
+        <h2>Firma digital</h2>
+        <p>No se puede reutilizar una firma</p>
+        <p>No se puede modificar una firma</p>
+        <p>No se puede negar haber firmado un documento</p>
+        <p>No se puede alterar un documento después de haberlo firmado</p>
+        <p>Logramos <b>Autenticidad</b>, <b>Integridad</b> y <b>No repudio</b></p>
+    </section>
+
+    <section class="slide">
+        <h2>Firma digital</h2>
+        <p>Miren obtiene un resumen criptográfico del mensaje: <b>RC = hash (m)</b></p>
+        <p>Miren cifra el resumen criptográfico con su clave privada: <b>Firma = e ( RC, M<sub>privada</sub> )</b></p>
+        <p>Miren envía el mensaje (cifrado o sin cifrar) y su Firma</p>
+    </section>
+
+    <section class="slide">
+        <h2>Firma digital</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/FirmaMiren.png" alt="criptosistema clave privada" width="40%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Firma digital</h2>
+        <p>Iker desencripta la Firma usando la clave pública de Miren: <b>RC = ( Firma, M<sub>pública</sub>)</b></p>
+        <p>Iker obtiene el resumen criptográfico del mensaje: <b>RC' = hash (m)</b></p>
+        <p>Iker compara <b>RC'</b> con <b>m</b> para asegurarse que no ha sido modificado</p>
+    </section>
+
+    <section class="slide">
+        <h2>Firma digital</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/FirmaIker.png" alt="criptosistema clave privada" width="40%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Firma digital</h2>
+        <p>Si además de firmarlo, Miren encripta su mensaje sólo Iker podrá leerlo: Se logra <b>Confidencialidad</b>, <b>Autenticidad</b>, <b>Integridad</b> y <b>No Repudio</b></p>
+        <p>Puede hacerlo usando:
+            <ul>
+                <li>Un sistema de criptografía asimétrica</li>
+                <li>Un sistema de criptografía híbrido</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Firma digital</h2>
+        <p>Un sistema de criptografía asimétrica. Enviaría a Iker:
+            <ul>
+                <li>Criptograma del mensaje cifrado con <b>M<sub>privada</sub></b> y con <b>I<sub>pública</sub></b></li>
+                <li>Su Firma digital (el resumen criptográfico cifrado con <b>M<sub>privada</sub></b> )</li>
+            </ul>
+        </p>
+
+    </section>
+
+    <section class="slide">
+        <h2>Firma digital</h2>
+    <p>Un sistema de criptografía híbrido. Enviaría a Iker:
+        <ul>
+            <li>Criptograma del mensaje cifrado con la clave de sesión</li>
+            <li>Criptograma con la clave de sesión cifrada con <b>I<sub>pública</sub></b></li>
+            <li>Su Firma digital (el resumen criptográfico cifrado con <b>M<sub>privada</sub></b>)</li>
+        </ul>
+    </p>
+    </section>
+
+    <section class="slide">
+        <h2>Confianza de firmas</h2>
+        <p>Aunque utilicemos firmas digitales:
+            <ul>
+                <li>¿Cómo sabemos que la firma es de quien dice ser?</li>
+                <li>¿Cómo nos asegura una autoridad de certificación que una firma es de quien dice ser?</li>
+                <li>¿No podemos fiarnos de una firma que no esté avalada por una autoridad de certificación?</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Confianza de firmas (Web of trust)</h2>
+            <ul>
+                <li>Se usa en PGP, GnuPG y similares</li>
+                <li>Un usuario certifica (firmando con su clave privada) que la clave pública de otro usuario es de confianza</li>
+                <li>La confianza se propaga según la confianza que demos a los usuarios que firmen las claves</li>
+            </ul>    
+    </section>
+
+    <section class="slide">
+        <h2>Web of trust</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/Web_of_Trust-en.svg" alt="Web of trust" width="80%"></p>
+        <p style="text-align:left;font-size:30%;"><a href="https://commons.wikimedia.org/wiki/File:Web_of_Trust-en.svg">https://commons.wikimedia.org/wiki/File:Web_of_Trust-en.svg</a></p>
+    </section>
+
+    <section class="slide">
+        <h2>Niveles de confianza</h2>
+            <ul>
+                <li>Desconocido: no nos fiamos de nada que firme ese
+                    usuario (por desconocimiento)</li>
+                <li>Ninguno: no nos fiamos de nada que firme ese usuario
+                    (porque sabemos que lo hace mal)</li>
+                <li>Marginal: nos fiamos de las claves firmadas por dos
+                    usuarios con confianza marginal</li>
+                <li>Absoluto: nos fiamos de todo lo firmado por ese usuario</li>
+            </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Certificados</h2>
+        <p><a href="https://doi.org/10.5281/zenodo.4302267">https://doi.org/10.5281/zenodo.4302267</a></p>
+        <p><a href="https://github.com/mikel-egana-aranguren/EHU-SGSSI-01">https://github.com/mikel-egana-aranguren/EHU-SGSSI-01</a></p>
+        <img src="../ShowerTemplate/pictures/by.png" alt="Creative Commons BY" height="10%">
+    </section>
+
+    <section class="slide">
+        <h2>Public Key Infraestructure (PKI)</h2>
+        Infraestructura que permite enlazar entidades/personas con sus claves públicas
+            <ul>
+                <li>Web of Trust: PKI sin autoridad central, cualquiera puede certificar</li>
+                <li>Certificados: PKI con autoridad central, solo los CA (Autoridad de Certificación) pueden certificar</li>
+            </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Autoridad de Certificación</h2>
+            <ul>
+                <li>Una entidad (AC) certifica que el usuario/entidad (su clave pública) es quien dice ser (Depende de la confianza en la AC que lo certifica)</li>
+                <li>Almacena las claves públicas por nosotros</li>
+            </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Certificados digitales</h2>
+            <ul>
+                <li>La AC emite un certificado digital</li>
+                <li>En el certificado digital el CA firma mediante su clave privada la clave pública de un usuario/entidad</li>
+            </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Agencia de Registro</h2>
+            <ul>
+                <li>Independiente de AC</li>
+                <li>Comprobar la identidad del usuario/entidad antes de emitir el certificado</li>
+                <li>Agencias tributarias, seguridad social, zuzenean, ...</li>
+            </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Certificados digitales: X.509</h2>
+            <ul>
+                <li>Estándar <a href="https://www.itu.int/rec/T-REC-X.509">X.509</a> de International Telecommunication Union (ITU)</li>
+                <li>Contiene una identidad (Persona, entidad, ...) y una clave pública
+                </li>
+                <li>Firmado por un CA - el poseedor de la clave pública puede:
+                    <ul>
+                        <li>Firmar con su clave privada (Esa firma se puede comprobar con la clave publica firmada por el AC, y que por tanto es de confianza)</li>
+                        <li>Establecer comunicaciones seguras (SSL, ...)</li>
+                    </ul>
+                </li>
+                <li>El CA debe mantener una base de datos de nombres distinguidos (ND) y de CAs subordinadas</li>
+            </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Certificados digitales: X.509</h2>
+            <ul>
+                <li>Cadena de confianza (Certification path validation algorithm)</li>
+                <li>Certificate Revocation List (CRL)</li>
+            </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Cadena de confianza</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/Chain_Of_Trust.svg" alt="Cadena de confianza" width="60%"></p>
+        <p style="text-align:left;font-size:30%;"><a href="https://upload.wikimedia.org/wikipedia/commons/0/02/Chain_Of_Trust.svg">https://upload.wikimedia.org/wikipedia/commons/0/02/Chain_Of_Trust.svg</a></p>
+    </section>
+
+    <section class="slide">
+        <h2>Certificate Revocation List (CRL)</h2>
+        <p>Una lista pública de certificados revocados, mantenida por el AC</p>
+        <p>Revocar: AC declara que ese certificado no es confiable</p>
+    </section>
+
+    <section class="slide">
+        <h2>Certificate Revocation List (CRL)</h2>
+        <p>Definido en <a href="https://www.rfc-editor.org/rfc/rfc5280#section-5.3.1">RFC 5280</a></p>
+        <p>Posibles <a href="https://www.rfc-editor.org/rfc/rfc5280#section-5.3.1">razones para revocación</a>: unspecified, keyCompromise, cACompromise, affiliationChanged, superseded, cessationOfOperation, certificateHold, removeFromCRL, privilegeWithdrawn, aACompromise</p>
+    </section>
+
+    <section class="slide">
+        <h2>OCSP (Online Certificate Status Protocol)</h2>
+            <ul>
+                <li><a href="https://www.rfc-editor.org/rfc/rfc2560">RFC 2560</a></li>
+                <li>Permite validar el estado de un certificado digital de manera online</li>
+                <li>Es más eficiente que la verificación mediante CRLs: CRLs en desuso</li>
+                <li>Ventaja: su actualización constante</li>
+                <li>Desventaja: necesidad de conexión para la comprobación</li>
+            </ul>
+    </section>
+
+    <section class="slide">
+        <h2>OCSP (Online Certificate Status Protocol)</h2>
+        <ul>
+            <li>Cada AC que proporciona el servicio mantiene un servidor OCSP</li>
+            <li>Este servicio responde a las aplicaciones cliente que remitan una petición estandarizada y sepan interpretar la respuesta</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>OCSP: Replay attack</h2>
+        <ul>
+            <li>El atacante retiene un certificado válido hasta después de su revocación, y entonces lo envia al cliente</li>
+            <li>Solución: uso de <b>nonce</b></li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>OCSP: uso de nonce</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/Nonce-cnonce-uml.svg" alt="Uso de nonce" width="30%"></p>
+        <p style="text-align:left;font-size:30%;"><a href="https://commons.wikimedia.org/wiki/File:Nonce-cnonce-uml.svg">https://commons.wikimedia.org/wiki/File:Nonce-cnonce-uml.svg</a></p>
+    </section>
+
+    <section class="slide">
+        <h2>Estructura de un certificado</h2>
+        <pre><code>Certificate
+            Version Number
+            Serial Number
+            Signature Algorithm ID
+            Issuer Name
+            Validity period
+            Subject name
+        </code></pre>
+    </section>
+
+    <section class="slide">
+        <h2>Estructura de un certificado</h2>
+        <pre><code>
+            Subject Public Key Info
+                Public Key Algorithm
+                Subject Public Key
+            ...
+            Certificate Signature Algorithm
+            Certificate Signature
+        </code></pre>
+    </section>
+
+    <section class="slide">
+        <h2>Estructura de un certificado</h2>
+        <p>Distinguished Name</p>
+        <ul>
+            <li>C: country</li>
+            <li>SP: state or province</li>
+            <li>Locality: L</li> 
+            <li>Organization: O</li> 
+            <li>Organizational Unit: OU</li> 
+            <li>Common Name: CN</li> 
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Estructura de un certificado</h2>
+        <p><a href="https://www.izenpe.com/">IZENPE</a></p>
+        <p><a href="https://www.euskadi.eus/web01-sede/es/contenidos/informacion/cas_izenpe/es_cas/index.shtml">Descarga de certificados izenpe</a></p>
+        <p><a href="https://www.izenpe.com/certification-practice-statement/webize01-cndocjuridica/es/">Política de certificación: certification practice statement</a></p>
+    </section>
+
+    <section class="slide">
+        <h2>Estructura de un certificado</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/izenpe.png" alt="Certificado Izenpe" width="40%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Certificado raíz</h2>
+        <p>Subject Name == Issuer Name</p>
+        <p>Esta firmado por sí mismo: es el origen de la confianza (Nos fiamos de la entidad directamente, no hay una clave privada externa que firme su clave pública)</p>
+    </section>
+
+    <!-- <section class="slide">
+        <h2>Jerarquía de certificación (RFC 1422)</h2>
+        <p>Internet Policy Registration Authority (IPRA) >> Policy Certification Authorities (PCA) >> Certification Authorities (CA): Verisign, Thawte, GeoTrust, RapidSSL, DigiCertSSL</p>
+    </section> -->
+
+    <section class="slide">
+        <h2>Tipos de certificados</h2>
+            <ul>
+                <li>Certificado de usuario final (persona jurídica) </li>
+                <li>Certificado de firma de software</li>
+                <li>Certificado de servidor SSL</li>
+            </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Implementación</h2>
+            <ul>
+                <li>Los sistemas operativos y navegadores incluyen certificados raíz, asumiendo confianza de facto</li>
+                <li>Firefox OCSP query responder, Izenpe</li>
+
+            </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Implementación</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/firefox.png" alt="Firefox" width="60%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Let's encrypt</h2>
+        <p>AC que emite certificados de forma gratuita para que todas las conexiones HTTP sean cifradas</p>
+        <p><a href="https://letsencrypt.org/">https://letsencrypt.org/</a></p>
+    </section>
+
+    <section class="slide">
+        <h2>Comunicaciones seguras</h2>
+        Protocolos basados en TLS/SSL - X.509 (<a href="https://www.rfc-editor.org/rfc/rfc5280">RFC 5280</a>):  
+            <ul>
+                <li>HTTPS: web</li>
+                <li>S/MIME, SMTP, POP, IMAP: email</li>
+                <li>EAP-TLS: wifi</li>
+                <li>LDAP: autenticación</li>
+                <li>VPN (OpenVPN): redes seguras</li>
+            </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Transport Layer Security (TLS)</h2>
+        <ul>
+            <li>Estándar propuesto por <a href="https://www.ietf.org/">Internet Engineering Task Force (IETF)</a></li>
+            <li>Versión actual 1.3 (<a href="https://datatracker.ietf.org/doc/html/rfc8446">RFC 8446</a>)</li>
+            <li>Sustituto de SSL (Secure Sockets Layer)</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Transport Layer Security (TLS)</h2>
+        <ol>
+            <li>Comienzo TLS</li>
+            <li>TLS hand-shake</li>
+            <li>Conexión TLS propiamente dicha</li>
+        </ol>
+    </section>
+
+    <section class="slide">
+        <h2>Comienzo TLS</h2>
+        <ul>
+            <li>El cliente le pide al servidor usar TLS
+                <li>HTTP: cambiar de puerto 80 a 443</li>
+                <li>Email: comando <code>STARTTLS</code></li>
+            </li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>TLS hand-shake</h2>
+        <ul>
+            <li>El cliente presenta al servidor una lista de algoritmos de cifrado soportados (simétricos, asimétricos, resumen)</li>
+            <li>El servidor elige de esa lista los que soporta</li>
+            <li>El servidor presenta un certificado al cliente; el cliente valida el certificado (con un CA)</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>TLS hand-shake</h2>
+        <ul>
+            <li>El cliente genera una clave de sesión (Cifrado simétrico):
+                <ul>
+                    <li>El cliente genera un número aleatorio, lo cifra con la clave pública del servidor y se lo envia. En el cliente y el servidor generan una clave compartida a partir de ese número</li>
+                    <li>Usando el algoritmo Diffie-Hellman, se genera un clave secreta compartida</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Conexión TLS propiamente dicha</h2>
+        <ul>
+            <li>Solo si el hand-shake ha sido exitoso</li>
+            <li>Los datos transmitidos se cifran con la clave de sesión y su integridad se verifica con los algoritmos resumen consensuados</li>
+            <li>Es un conexión que mantiene el estado (<a href="https://www.interviewbit.com/blog/stateful-vs-stateless/">stateful</a>)</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>SSH (Secure Shell)</h2>
+        <ul>
+            <li>Protocolo criptográfico para conectarse a servidores remotos</li>
+            <li>Trust On First Use (TOFU): basta con poner nuestra clave pública en la máquina a la que nos queremos conectar</li>
+            <li>A partir de ahi, como TLS, se usa una clave de sesión para transmitir los datos</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>SSH: usos habituales</h2>
+        <ul>
+            <li>Logearse en una máquina remota y ejecutar comandos</li>
+            <li>Transferencia de archivos mediante SFTP</li>
+            <li>Copiar archivos mediante SCP</li>
+            <li>Tuneles</li>
+            <li>Port fowarding</li>
+            <li>Conexiones X11 (Gráficos)</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>¿Por qué Bitcoin en SGSSI?</h2>
+        <p>Es la criptomoneda más extendida, y muchos de sus conceptos también se usan en otras criptomonedas</p>
+        <p>Estas clases ...</p>
+        <p><b>... no son una apología de Bitcoin</b></p>
+
+        <p><b>... no son es una serie de consejos financieros</b></p>
+        
+    </section>
+
+    <section class="slide">
+        <h2>¿Por qúe Bitcoin en SGSSI?</h2>
+        Es una aplicación muy exitosa de:
+            <ul>
+                <li>Cifrado asimétrico</li>
+                <li>Algoritmos resumen</li>
+            </ul>
+        
+    </section>
+
+    <section class="slide">
+        <h2>¿Por qúe Bitcoin en SGSSI?</h2>
+        Asegura:
+            <ul>
+                <li>No repudio: no se puede<sup>1</sup> deshacer una transacción</li>
+                <li>Integridad: no se puede<sup>1</sup> modificar la historia del blockchain</li>
+                <li>Autenticidad</li>
+                <li>Pseudo-anonimato</li>
+                <li>...</li>
+            </ul>
+        [1] Es computacionalmente y socialmente muy caro e improbable
+    </section>
+
+    <section class="slide">
+        <h2>Introducción a Bitcoin</h2>
+        <a href="SatoshiNakamoto-bitcoin.pdf">Bitcoin: A Peer-to-Peer Electronic Cash System (Satoshi Nakamoto)</a>
+    </section>
+
+    <section class="slide">
+        <h2>Introducción a Bitcoin</h2>
+        Bitcoin es a la vez:
+        <ul>
+            <li>(Técnico) Un libro de contabilidad descentralizado y transparente</li>
+            <li>(Político) Un sistema monetario:
+                <ul>
+                    <li>Basado en el buen dinero ("sound money") según la <a href="https://es.wikipedia.org/wiki/Escuela_austriaca">Escuela Austriaca</a> de economía</li>
+                    <li>Que consume mucha energía eléctrica para emitir nueva moneda</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Introducción a Bitcoin</h2>
+        No hay una división clara entre lo político y lo técnico (No hay nada más político que lo técnico)<br><br>
+        Nos interesa más lo técnico pero no podemos obviar lo político
+    </section>
+
+    <section class="slide">
+        <h2>Introducción a Bitcoin</h2>
+        Bitcoin, como cualquier bien escaso, es susceptible de inversión (y especulación)<br>
+        Eso hace que en las noticias siempre se hable de cuando sube y baja, pero eso no es lo más importante de Bitcoin<br>
+        Lo más importante es cómo funciona para hacer transacciones monetarias, no como valor de inversión<br>
+    </section>
+
+    <section class="slide">
+        <h2>¿Qué es Bitcoin?</h2>
+
+        <div class="columns two">
+            <p>   Grokking bitcoin (Kalle Rosenbaum, 2019):<br>
+                <a href="https://github.com/kallerosenbaum/grokkingbitcoin">GitHub</a><br>
+                <a href="https://ehu.on.worldcat.org/search/detail/1294348662?queryString=grokking%20bitcoin&stickyFacetsChecked=on&clusterResults=false&groupVariantRecords=true">Biblioteca EHU</a><br>
+                    <a href="https://www.manning.com/books/grokking-bitcoin">Manning</a><br>
+            </p>
+            <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/cover.png" alt="Grokking Bitcoin cover" width="50%"></p>
+        </div>
+
+    </section>
+
+    <section class="slide">
+        <h2>¿Qué es Bitcoin?</h2>
+        <p>Un sistema de dinero digital</p>
+        <p>Basado en una red a la que cualquiera puede unirse a través de un nodo, y no gobernada por bancos ni gobiernos</p>
+        <p>Protocolo: Bitcoin (con B)</p>
+        <p>Moneda: bitcoin (con b). Símbolo: BTC o XTC. Satoshi: 0,00000001 BTC</p>
+    </section>
+
+    <section class="slide">
+        <h2>La red Bitcoin</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/01-01.svg" alt="Red Bitcoin" width="50%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>La red Bitcoin</h2>
+        <p>Procesar pagos</p>
+        <p>Asegurar que el libro de contabilidad compartido no se modifica</p>
+        <p>Poner bitcoins nuevos en circulación a una velocidad predeterminada</p>
+    </section>
+
+    <section class="slide">
+        <h2>La red Bitcoin</h2>
+        <p>Un libro de contabilidad compartido (Todos los nodos tienen una copia)</p>
+        <p>El libro de contabilidad tiene todas las transacciones que se han hecho</p>
+    </section>
+
+    <section class="slide">
+        <h2>Pago</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/01-02.svg" alt="Pago" width="70%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>(1) Transacciones</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/01-03.svg" alt="Transacciones" width="50%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>(2) Red</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/01-04.svg" alt="Red" width="50%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>(3) Blockchain</h2>
+        <div class="columns two">
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/01-05.svg" alt="Blockchain" width="100%"></p>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/01-06.svg" alt="Blockchain" width="100%"></p>
+    </div>
+    </section>
+
+    <section class="slide">
+        <h2>(4) Carteras</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/01-07.svg" alt="Carteras" width="50%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>¿Cómo se generan los Bitcoins?</h2>
+        <ul>
+            <li>Mediante un proceso denominado minería, basado en una
+                prueba de trabajo (PoW)</li>
+            <li>Prueba de trabajo: resolución de cierto problema
+                criptográfico por fuerza bruta</li>
+            <li>Nadie puede controlar ni manipular el proceso de generación
+                de la masa monetaria (No se puede "imprimir dinero")</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Minería</h2>
+        <ul>
+            <li>Dos funciones fundamentales:
+                <ul>
+                    <li>Oferta monetaria: los mineros crean la nueva moneda (de
+                forma matemáticamente controlada)</li>
+                    <li>Seguridad: Mantienen la integridad de la cadena de
+                bloques donde se incluyen las transacciones</li>
+            </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Minería</h2>
+        <ul>
+            <li>Los mineros reciben una recompensa, que es la forma de crearse
+                nuevos bitcoins
+            </li>
+            <li>Los mineros también se quedan con las pequeñas
+                comisiones de cada transacción</li>
+                <li>En total se crearán aproximadamente 21 millones de
+                    bitcoins</li>
+        </ul>
+    </section>
+    
+    <section class="slide">
+        <h2>Red Bitcoin</h2>
+        Cifrado resumen (Hash):
+        <ul>
+            <li><b>Para crear btcs, los mineros tienen que conseguir un hash</b></li>
+            <li>Resumir claves públicas </li>
+            <li>Resumir transacciones</li>
+            <li>Etc.</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Red Bitcoin (Blockchain)</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/blockchain.png" alt="Cadena bloques" width="50%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Red Bitcoin (Blockchain)</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/bloques.png" alt="Cadena bloques" width="50%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Red Bitcoin (Proof of work)</h2>
+        <p>Validar bloques >> Generar bitcoins</p>
+        <p>Validar: evitar doble gasto, timestamp adecuado, etc. >> generar hash</p>
+        <p>Ese hash tiene todos los anteriores</p>
+        <p>Pero hash debe ser un número menor que <b>target</b></p>
+        <p>Target va cambiando, para cambiar dificultad</p>
+    </section>
+
+    <section class="slide">
+        <h2>Red Bitcoin (Proof of work)</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/pow-1.png" alt="POW" width="50%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Red Bitcoin (Proof of work)</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/pow-2.png" alt="POW" width="50%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Problemas que Bitcoin soluciona</h2>
+        <ul>
+            <li>Falta de acceso a cuenta bancaria</li>
+            <li>Falta de privacidad</li>
+            <li>Transferencias entre países</li>
+            <li>Hiper-inflación (*)</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>(*) La falacia de la composición (JM Keynes)</h2>
+        <p><a href ="https://www.yanisvaroufakis.eu/2022/04/23/discussing-crypto-the-left-technofeudalism-with-evgeny-morozov-crypto-syllabus-long-interview/">Discussing Crypto, the Left & Technofeudalism with Evgeny Morozov - CRYPTO SYLLABUS long interview</a></p>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/Varoufakis-bitcoin.png" alt="Varoufakis-bitcoin" width="50%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Bitcoin vs instituciones financieras tradicionales</h2>
+        <ul>
+            <li>Descentralizado</li>
+            <li>Suministro limitado: 21 millones de bitcoins</li>
+            <li>Sin fronteras</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Suministro de bitcoins</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/01-10.svg" alt="Suministro" width="50%"></p>
+    </section>
+
+    <section class="slide">
+        <h2>Usos actuales de Bitcoin</h2>
+        <ul>
+            <li>Ahorro</li>
+            <li>Transferencias internacionales</li>
+            <li>Compras</li>
+            <li>Especulación financiera</li>
+            <li>Certificado de propiedad</li>
+            <li>Certificado de existencia</li>
+            <li>...</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Cómo no usar Bitcoin</h2>
+        <ul>
+            <li>Pagos pequeños (Lightning Network?)</li>
+            <li>Pagos instantáneos (Lightning Network?)</li>
+            <li>Inversión de todos nuestros ahorros (En realidad aplicable a cualquier actividad financiera)</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Bitcoin Core</h2>
+        <p><a href="https://bitcoincore.org/en/about/">https://bitcoincore.org/en/about/</a></p>
+        <p><a href="https://github.com/bitcoin/bitcoin/">https://github.com/bitcoin/bitcoin/</a></p>
+
+    </section>
+
+    <section class="slide">
+        <h2>BIPs</h2>
+        <p>BitCoin Improvement Proposal</p>
+        <p><a href="https://github.com/bitcoin/bips">https://github.com/bitcoin/bips</a></p>
+        <p><a href="https://en.bitcoin.it/wiki/Economic_majority">Economic majority</a></p>
+    </section>
+
+    <section class="slide">
+        <h2>Futuro de Bitcoin</h2>
+        <li>Reserva de valor que respalda sistemas de transacción más rápidos (Como las tarjetas de crédito)</li>
+        <li>Por ejemplo proyecto <a href="https://lightning.engineering/">lightning</a> "empaqueta" muchas transacciones que luego se dan a la vez</li>
+        <p>
+    </section>
+    
+    <!-- FOOTER -->
+
+    <footer class="badge">
+        <a href="https://github.com/mikel-egana-aranguren/EHU-SGSSI-01">Fork me on GitHub</a>
+    </footer>
+
+    <div class="progress"></div>
+
+    <script src="../ShowerTemplate/shower/shower.js"></script>
+    <!-- Copyright © 3000 Yours Truly, Famous Inc. -->
+
+</body>
+</html>
