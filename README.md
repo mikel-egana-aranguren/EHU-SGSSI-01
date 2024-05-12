@@ -4,9 +4,7 @@ Clases de la asignatura Sistemas de Gestión de Seguridad de Sistemas de la Info
 
 * [Introducción a la seguridad informática](Introduccion/index.html)
 * Bloque I: Cifrado
-  * [Introducción al cifrado](Cifrado_intro/index.html)
-  * [Esteganografía](Cifrado_esteganografia/index.html)
-  * [Algoritmos resumen](Cifrado_resumen/index.html)
+  * [Introducción al cifrado, esteganografía y algoritmos resumen](Cifrado_intro/index.html)
   * [Cifrado simétrico](Cifrado_simetrico/index.html)
   * [Cifrado asimétrico](Cifrado_asimetrico/index.html)
   * Aplicaciones: [Firma digital](Cifrado_firma/index.html)
