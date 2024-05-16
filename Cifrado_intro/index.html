@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Cifrado: introducción</title>
+    <title>Introducción al cifrado, esteganografía y algoritmos resumen</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../ShowerTemplate/shower/themes/ribbon/styles/styles.css">
@@ -18,12 +18,12 @@
 </head>
 <body class="shower list">
     <header class="caption">
-        <h1>Cifrado: introducción</h1>
+        <h1>Introducción al cifrado, esteganografía y algoritmos resumen</h1>
         <p>Mikel Egaña Aranguren</p>
     </header>
 
     <section class="slide" id="cover">
-        <h2>Cifrado: introducción</h2>
+        <h2>Introducción al cifrado, esteganografía y algoritmos resumen</h2>
         <p>Mikel Egaña Aranguren</p>
         <p><a href="https://mikel-egana-aranguren.github.io/">mikel-egana-aranguren.github.io</a></p>
         <p><a href="mailto:mikel.egana@ehu.eus">mikel.egana@ehu.eus</a></p>
@@ -31,27 +31,36 @@
     </section>
 
     <section class="slide">
-        <h2>Cifrado: introducción</h2>
+        <h2>Introducción al cifrado, esteganografía y algoritmos resumen</h2>
         <p><a href="https://doi.org/10.5281/zenodo.4302267">https://doi.org/10.5281/zenodo.4302267</a></p>
         <p><a href="https://github.com/mikel-egana-aranguren/EHU-SGSSI-01">https://github.com/mikel-egana-aranguren/EHU-SGSSI-01</a></p>
         <img src="../ShowerTemplate/pictures/by.png" alt="Creative Commons BY" height="10%">
     </section>
 
     <section class="slide">
-        <h2>Introducción</h2>
+        <h2>Introducción al cifrado, esteganografía y algoritmos resumen</h2>
+        <ul>
+            <li>Introducción al cifrado</li>
+            <li>Esteganografía</li>
+            <li>Algoritmos resumen</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Introducción al cifrado</h2>
         <p>Criptografía: cifrar la información</p>
         <p>Mecanismo de seguridad muy antiguo</p>
         <p>Asegura: <b>Confidencialidad</b>, <b>Integridad</b>, <b>Autenticidad</b></p>
     </section>
 
     <section class="slide">
-        <h2>Introducción</h2>
+        <h2>Introducción al cifrado</h2>
         <p>Criptoanálisis: técnicas para descifrar mensajes encriptados</p>
         <p><b>Criptología: Criptografía + Criptoanálisis</b></p>
     </section>
 
     <section class="slide">
-        <h2>Introducción</h2>
+        <h2>Introducción al cifrado</h2>
         <p>Criptoanálisis: 
             <ul>
                 <li>Sin conocer la clave</li>
@@ -62,29 +71,25 @@
     </section>
 
     <section class="slide">
-        <h2>Introducción</h2>
-        <p>Principios Kerckhoffs:
+        <h2>Principios Kerckhoffs</h2>
             <ul>
                 <li>Si el sistema no es teóricamente irrompible, al menos debe serlo en la práctica</li>
                 <li><b>La efectividad del sistema no debe depender de que su diseño permanezca en secreto</b></li>
                 <li>La clave debe ser fácilmente memorizable de manera que no haya que recurrir a notas escritas</li>
             </ul>
-        </p>
     </section>
 
     <section class="slide">
-        <h2>Introducción</h2>
-        <p>Principios Kerckhoffs:
+        <h2>Principios Kerckhoffs</h2>
             <ul>
                 <li>Los criptogramas deberán dar resultados alfanuméricos</li>
                 <li>El sistema debe ser operable por una única persona</li>
                 <li>El sistema debe ser fácil de utilizar</li>
             </ul>
-        </p>
     </section>
     
     <section class="slide">
-        <h2>Introducción</h2>
+        <h2>Criptosistema</h2>
         <p>Criptosistema: D<sub>K</sub> ( E<sub>K</sub> ( M ) ) = M
             <ul>
                 <li>M: Conjunto de todos los mensajes sin cifrar</li>
@@ -97,14 +102,14 @@
     </section>
 
     <section class="slide">
-        <h2>Introducción: Criptosistemas</h2>
+        <h2>Criptosistemas</h2>
         <b>Simétricos o de clave privada: </b> Una clave para encriptar y desencriptar<br><br>
         <b>Asimétricos o de clave pública: </b> Una clave para encriptar y otra para desencriptar (Lo que una encripta, la otra lo desencripta)
 
     </section>
 
     <section class="slide">
-        <h2>Introducción</h2>
+        <h2>Introducción al cifrado</h2>
         <p>Criptografía: <b>cifrar</b> la información</p>
         <p>Esteganografía: <b>ocultar</b> la información</p>
         <p>Algoritmos hash: <b>resumir</b> la información</p>
@@ -119,7 +124,7 @@
     </section>
 
     <section class="slide">
-        <h2>Esteganografía</h2>
+        <h2>Esteganografía (historia)</h2>
         <p>Histaiaeo (gobernador de Mileto) buscaba aliados para sublevarse contra el rey persa Dario I</p>
         <p>Necesitaba enviar mensajes que nadie detectara
             <ul>
@@ -132,13 +137,13 @@
     </section>
 
     <section class="slide">
-        <h2>Esteganografía</h2>
+        <h2>Esteganografía (historia)</h2>
         <p>Segunda Guerra Mundial</p>
         <p>Los alemanes utilizaban micro puntos para ocultar información en textos, haciéndolos pasar por signos de puntuación
         </p>   
     </section>
 
-    <section class="slide">
+    <!-- <section class="slide">
         <h2>Esteganografía</h2>
         <p>Usando una plantilla</p>
         <p>La clave es la forma de extraer la información</p>
@@ -156,7 +161,7 @@
         <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/esteganografia-asirios.png" alt="Esteganografía" width="40%"></p>   
         <p>Clave: primera letra de cada palabra no monosílaba </p>
         <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/esteganografia-asirios-2.png" alt="Esteganografía" width="40%"></p>
-    </section>
+    </section> -->
 
     <section class="slide">
         <h2>Esteganografía moderna</h2>
@@ -202,7 +207,7 @@
     </section>
 
     <section class="slide">
-        <h2>Algoritmos resumen (Digestión)</h2>
+        <h2>Algoritmos resumen</h2>
         <p>Generan un criptograma que representa el contenido original:
             <ul>
                 <li>De <b>tamaño constante</b>, independientemente del contenido original</li>
@@ -214,22 +219,20 @@
     </section>
 
     <section class="slide">
-        <h2>Algoritmos resumen</h2>
-        <p>Funciones hash:
+        <h2>Funciones hash</h2>
             <ul>
                 <li>No tienen inversa (one-way function): no se puede obtener el contenido desde el criptograma</li>
                 <li>No se puede descifrar, ya que no cifra (resume)</li>
             </ul>
-        </p>
     </section>
 
     <section class="slide">
-        <h2>Algoritmos resumen: funciones</h2>
+        <h2>Funciones de los algoritmos resumen</h2>
         <p>Certificar la integridad de la información</p>
         <p>Almacenar contraseñas</p>
         <p>Identificador de datos o archivos</p>
-        <p>Prueba de trabajo (<a href="../Cifrado_Bitcoin/index.html">Bitcoin</a>)</p>
-        <p>Implementar la firma digital (<a href="../Cifrado_asimetrico/index.html">Cifrado asimétrico: firma digital</a>)</p>
+        <p>Prueba de trabajo en <a href="../Cifrado_aplicaciones/index.html">Bitcoin</a></p>
+        <p>Integridad en <a href="../Cifrado_aplicaciones/index.html">firma digital</a></p>
     </section>
 
     <section class="slide">
@@ -356,7 +359,7 @@
     <section class="slide">
         <h2>RIPEMD</h2>
         <p>128, 160, 256, 320 bits</p>
-        <p><a href="../Cifrado_Bitcoin/index.html">Bitcoin</a> usa RIPEMD-160</p>
+        <p>Bitcoin usa RIPEMD-160</p>
     </section>
 
     <section class="slide">
