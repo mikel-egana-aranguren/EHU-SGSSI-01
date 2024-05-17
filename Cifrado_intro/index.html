@@ -50,7 +50,7 @@
         <h2>Introducción al cifrado</h2>
         <p>Criptografía: cifrar la información</p>
         <p>Mecanismo de seguridad muy antiguo</p>
-        <p>Asegura: <b>Confidencialidad</b>, <b>Integridad</b>, <b>Autenticidad</b></p>
+        <p>Asegura: <b>Confidencialidad</b>, <b>Integridad</b>, <b>Autenticidad</b>, (<b>No repudio</b>)</p>
     </section>
 
     <section class="slide">
@@ -125,7 +125,7 @@
 
     <section class="slide">
         <h2>Esteganografía (historia)</h2>
-        <p>Histaiaeo (gobernador de Mileto) buscaba aliados para sublevarse contra el rey persa Dario I</p>
+        <p>Histaiaeo (gobernador de Mileto) buscaba aliados para sublevarse contra el rey persa Dario I (V a.c.)</p>
         <p>Necesitaba enviar mensajes que nadie detectara
             <ul>
                 <li>Rapaba el pelo a los mensajeros</li>
@@ -283,7 +283,6 @@
                 <li>Dificulta los ataques por fuerza bruta</li>
             </ul>
         </p>
-        <p>Si roban la BBDD con las claves y la sal, no aporta nada</p>
     </section>
 
     <section class="slide">
@@ -331,9 +330,57 @@
 
     <section class="slide">
         <h2>Identificador de datos o archivos</h2>
-        <p>Sistemas de control de versiones como Git para identificar contenido mediante sha1sum</p>
-        <p>Magnet URIs en intercambio de archivos (Ej. Magnet Links en BitTorrent)</p>
-        <p>Hash table en muchos lenguajes de programación</p>
+        <p>Sistema de control de versiones Git para identificar:
+            <ul>
+                <li>Commits</li>
+                <li>Blobs (Binary Large Objects)</li>
+                <li>Arboles: directorios que referencian a blobs y otros directorios</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Identificador de datos o archivos</h2>
+        <p>Sistema de control de versiones Git para:
+            <ul>
+                <li>De-duplicación de contenido</li>
+                <li>Detección de cambios</li>
+                <li>Integridad frente a cambios maliciosos</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Identificador de datos o archivos</h2>
+        <p>En BitTorrent para identificar:
+            <ul>
+                <li>Fragmentos de archivos</li>
+                <li>Archivos .bittorrent</li>
+                <li>Magnet links</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Identificador de datos o archivos</h2>
+        <p>En estructuras de datos de lenguajes de programación para:
+            <ul>
+                <li>Búsqueda rápida</li>
+                <li>Verificación de integridad</li>
+                <li>Control de unicidad</li>
+            </ul>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Identificador de datos o archivos</h2>
+        <p>En estructuras de datos de lenguajes de programación:
+            <ul>
+                <li>Python: Dicts, Sets</li>
+                <li>Java: HashMap, HashSet</li>
+                <li>JavaScript: Object, Map</li>
+            </ul>
+        </p>
     </section>
 
     <section class="slide">
@@ -345,41 +392,38 @@
 
     <section class="slide">
         <h2>MD5</h2>
-        <p>Criptográficamente roto pero todavía en uso, sobretodo para integridad</p>
+        <p>Criptográficamente roto pero todavía en uso, sobretodo para integridad y en sistemas heredados no-críticos</p>
         <p>Hashes de 128 bits</p>
     </section>
 
     <section class="slide">
         <h2>SHA-3</h2>
-        <p>SHA-0..2 estaban basados en MD5, SHA-3 no</p>
-        <p>224...512 bits</p>
-        <p>Open SSL, Ethereum, ...</p>
+        <p>SHA-3 (Secure Hash Algorithm 3) desarrollado por NIST (National Institute for Standars and Technology)</p>
+        <p>SHA-0..2 estaban basados en MD5 (roto), SHA-3 es una estructura diferente</p>
+        <p>Firmas digitales: DSA (Digital Signature Algorithm) y ECDSA (Elliptic Curve Digital Signature Algorithm)</p>
+        <p>Certificados SSL/TLS: <a href="https://www.openssl.org/">Open SSL</a></p>
+        <p>Criptomonedas: <a href="https://ethereum.org/">Ethereum</a></p>
     </section>
 
     <section class="slide">
         <h2>RIPEMD</h2>
-        <p>128, 160, 256, 320 bits</p>
-        <p>Bitcoin usa RIPEMD-160</p>
+        <p>RIPEMD (RACE Integrity Primitives Evaluation Message Digest): alternativa a SHA y MD5</p>
+        <p>Muy seguro</p>
+        <p>Se usa, en combinación SHA-256, para crear <a href="https://bitcoinwiki.org/wiki/bitcoin-address">direcciones Bitcoin</a> a partir de claves públicas</p>
     </section>
 
     <section class="slide">
-        <h2>Algoritmos resumen: problemas</h2>
+        <h2>Ataques a algoritmos resumen</h2>
                 <ul>
-                    <li>Colisiones: dos textos distintos que generen el mismo resumen</li>
-                    <li>Ataques que debilitan el algoritmo</li>
+                    <li>Colisiones: dos connjuntos de datos diferentes generan el mismo resumen</li>
+                    <li>Mediante fuerza bruta (ej. paradoja del cumpleaños) o tecnicas mas refinadas como <a href="https://shattered.io/">shattered</a> contra SHA1</li>
+                    <li>Integridad: sustituir un documento por otro documento malicioso con el mismo hash</li>
+                    <li>Certificados TLS/SSL: suplantar identidad de un servicio creando un certificado falso</li>
                 </ul>
             
     </section>
 
-    <section class="slide">
-        <h2>Algoritmos resumen: soluciones</h2>
 
-                <ul>
-                    <li>Usar otros algoritmos que generan resúmenes criptográficos más largos</li>
-                    <li>Nuevos algoritmos</li>
-                </ul>
-            
-    </section>
 
     <!-- FOOTER -->
 
