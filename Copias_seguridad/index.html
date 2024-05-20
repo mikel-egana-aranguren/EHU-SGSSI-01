@@ -23,7 +23,7 @@
     </header>
 
     <section class="slide" id="cover">
-        <h2>Copias de seguridad y restauración de la información</h2>
+        <h2>Copias de seguridad</h2>
         <p>Mikel Egaña Aranguren</p>
         <p><a href="https://mikel-egana-aranguren.github.io/">mikel-egana-aranguren.github.io</a></p>
         <p><a href="mailto:mikel.egana@ehu.eus">mikel.egana@ehu.eus</a></p>
@@ -31,10 +31,22 @@
     </section>
 
     <section class="slide">
-        <h2>Copias de seguridad y restauración de la información</h2>
+        <h2>Copias de seguridad</h2>
         <p><a href="https://zenodo.org/badge/latestdoi/334955028"><img src="https://zenodo.org/badge/334955028.svg" alt="DOI"></a></p>
         <p><a href="https://github.com/mikel-egana-aranguren/EHU-SGSSI-01">https://github.com/mikel-egana-aranguren/EHU-SGSSI-01</a></p>
         <img src="../ShowerTemplate/pictures/by.png" alt="Creative Commons BY" height="10%">
+    </section>
+
+    <section class="slide">
+        <h2>Copias de seguridad</h2>
+        <ul>
+            <li>Introducción</li>
+            <li>Planificación de las copias</li>
+            <li>Tipos de copias</li>
+            <li>Restauración de copias</li>
+            <li>Frecuencia de copias</li>
+            <li>Protección/Comprobación de copias</li>
+        </ul>
     </section>
 
     <section class="slide">
@@ -117,16 +129,21 @@
 
     <section class="slide">
         <h2>Introducción</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/DisneyToyStory2.png" alt="Disney Just Laid Off The Pixar Employee Who 'Saved' Toy Story 2" width="60%"></p>
+        <p style="text-align:left;font-size:30%;"><a href="https://kotaku.com/pixar-disney-toy-story-2-saved-susman-laid-off-backups-1850505001">https://kotaku.com/pixar-disney-toy-story-2-saved-susman-laid-off-backups-1850505001</a></p>
+    </section>
+
+    <section class="slide">
+        <h2>Introducción</h2>
         <p><a href="https://archiveprogram.github.com/arctic-vault/">GitHub Arctic Code Vault</a> (<a href="https://github.com/mikel-egana-aranguren">¡Mi código también!</a>)</p>
         <p><iframe width="560" height="315" src="https://www.youtube.com/embed/fzI9FNjXQ0o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
     </section>
 
     <section class="slide">
-        <h2>Definiciones</h2>
-        <p>Copias de seguridad (Backup): duplicar la información como medida preventiva para ante posibles pérdidas poder recuperarla lo antes posible</p>
-        <p>Para:
+        <h2>Introducción</h2>
+        <p>Copias de seguridad (Backup): duplicar la información como medida preventiva para: </p>
             <ul>
-                <li>Recuperar información perdida</li>
+                <li>Recuperar información perdida lo antes posible</li>
                 <li>Tener un histórico de la evolución de la información</li>
                 <li>Auditorías</li> 
                 <li>Informática forense</li>
@@ -135,7 +152,7 @@
     </section>
 
     <section class="slide">
-        <h2>Normativa</h2>
+        <h2>Introducción</h2>
         <p>ISO 27002:2013 estándar para seguridad de la información:
             <ul>
             <li>Apartado 12.3: Information Backup</li>
@@ -150,11 +167,11 @@
 
     <section class="slide">
         <h2>Planificación de las copias</h2>
-        <p>Regla 3/2/1:
+        <p>Regla 3-2-1:
             <ul>
-            <li>Por los menos 3 copias de un registro</li>
+            <li>Por los menos 3 copias de un registro (2 copias + original)</li>
             <li>2 copias en diferentes soportes, uno de ellos <a href="https://www.xataka.com/pro/larga-vida-a-cintas-almacenamiento-ibm-fujifilm-consiguen-almacenar-580-tb-solo-cartucho-cinta">offline</a></li>
-            <li>1 copia en otro sitio</li>
+            <li>1 copia en un lugar fisico diferente al de las otras 2 (Fallas tectonicas?)</li>
         </ul>
         </p>
     </section>
@@ -308,8 +325,23 @@
     <section class="slide">
         <h2>Frecuencia de copias (Ciclos)</h2>
         <p>Ejemplo ciclo semanal:
-            <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/ciclo.png" alt="diferencial" width="60%"></p>
+            <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/ciclo.png" alt="Ciclo de copias" width="60%">
         </p>
+    </section>
+
+    <section class="slide">
+        <h2>Frecuencia de copias (Cron)</h2>
+        <p>Cron: servicio UNIX para ejecutar comandos de manera periodica:
+            <ul>
+                <li>Crontab: archivo de configuracion para definir los procesos a lanzar </li>
+                <li>Daemon (crond): verifica periodicamente los archivos de configuracion y lanza los procesos necesarios</li>
+        </ul>
+    </p>
+    </section>
+
+    <section class="slide">
+        <h2>Frecuencia de copias (Crontab)</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/crontab.png" alt="diferencial" width="60%"></p>
     </section>
 
     <section class="slide">
