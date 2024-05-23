@@ -37,30 +37,9 @@
     </section>
 
     <section class="slide">
-        <h2>Pen-testing</h2>
-        Penetration testing: intentar penetrar en un sistema utilizando las mismas herramientas que un potencial atacante, para descubrir vulnerabilidades  y arreglarlas<br><br>
-    </section>
-
-
-    <section class="slide">
-        <h2>Principales vulnerabilidades en Sistemas Web</h2>
-        La <a href="https://owasp.org/">Open Web Application Security Project (OWASP)</a> analiza las vulnerabilidades más comunes<br><br>
-        Informe periódico: OWASP Top Ten (<del>2017</del>, <a href="https://owasp.org/Top10/">2021</a>)
-    </section>
-
-    <section class="slide">
-    <h2>Principales vulnerabilidades en Sistemas Web</h2>
-    <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/owasp-top-10.png" alt="OWASP Top 10 2017 2021" width="90%"></p>
-    </section>
-
-    <section class="slide">
-        <h2>Common Weakness Enumerations (CWEs)</h2>
-        <p><a href="https://cwe.mitre.org/">https://cwe.mitre.org/</a></p>
-    </section>
-
-    <section class="slide">
-        <h2>Principales vulnerabilidades en Sistemas Web</h2>
+        <h2>Seguridad en Sistemas Web</h2>
         <ul>
+            <li>Fuentes de información en seguridad</li>
             <li>Rotura de control de acceso</li>
             <li>Fallos criptográficos</li>
             <li>Inyección</li>
@@ -71,12 +50,36 @@
     </section>
 
     <section class="slide">
-        <h2>Principales vulnerabilidades en Sistemas Web</h2>
+        <h2>Seguridad en Sistemas Web</h2>
+        <ul>
+            <li>Fuentes de información en seguridad</li>
+            <li>Rotura de control de acceso</li>
+            <li>Fallos criptográficos</li>
+            <li>Inyección</li>
+            <li>Diseño inseguro</li>
+            <li>Configuración de seguridad insuficiente</li>
+            <li>Componentes vulnerables y obsoletos</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Seguridad en Sistemas Web</h2>
         <ul>
             <li>Fallos de identificación y autenticación</li>
             <li>Fallos en la integridad de datos y software</li>
             <li>Fallos en la monitorización de la seguridad</li>
         </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Fuentes de información en seguridad</h2>
+        <p><a href="https://cwe.mitre.org/">CWE</a> (Common Weakness Enumeration), <a href="https://www.mitre.org/">MITRE</a>: lista de debilidades de software y hardware que pueden llevar a debilidades específicas (Ej. <a href="https://cwe.mitre.org/data/definitions/352.html">CWE-352: Cross-Site Request Forgery (CSRF)</a>).</p>
+        <p><a href="https://www.cve.org/">CVE</a> (Common Vulnerabilities and Exposures), <a href="https://www.mitre.org/">MITRE</a>: lista de vulnerabilidades specíficas (Ej. <a href="https://www.cve.org/CVERecord?id=CVE-2021-44228">CVE-2021-44228</a>).</p>
+    </section>
+
+    <section class="slide">
+        <h2>Fuentes de información en seguridad</h2>
+        <p>OWASP Top Ten (<a href="https://owasp.org/Top10/">2021</a>), <a href="https://owasp.org/">Open Web Application Security Project</a>: expone en un ranking las vulnerabilidades Web más comúnes, enlazando con CWEs y CVEs.</p>
     </section>
 
     <section class="slide">
@@ -98,7 +101,7 @@
 
     <section class="slide">
         <h2>Rotura de control de acceso: vulnerabilidades</h2>
-        <p>Burlar el control de acceso mediante parametros URL o las peticiones APIs</p>
+        <p>Burlar el control de acceso mediante parámetros URL o las peticiones APIs</p>
         <p>Acceder a una cuenta personal e incluso modificar los datos con el identificador del usuario</p>
         <p>Acceso API sin control para los métodos HTTP POST, PUT, y DELETE</p>
     </section>
@@ -257,13 +260,13 @@
         <h2>Fallos criptográficos: prevención</h2>
         <p>Usar algoritmos actualizados (No usar MD5, SHA1, ...), claves fuertes, y gestión de claves</p>
         <p>Cifrar todos los datos en tránsito con protocolos como TLS FS (TLS + Forward Secrecy)</p>
-        <p>No permitir el uso de caches en el cliente para datos sensibles</p>
+        <p>No permitir el uso de cachés en el cliente para datos sensibles</p>
     </section>
 
     <section class="slide">
         <h2>Fallos criptográficos: prevención</h2>
         <p>Almacenar contraseñas con hashes + sal</p>
-        <p>Usar semillas con la mayor entropia posible</p>
+        <p>Usar semillas con la mayor entropía posible</p>
     </section>
 
     <section class="slide">
@@ -333,7 +336,7 @@ WHERE UserId = " + txtUserId;
 
     <section class="slide">
         <h2>Consultas parametrizadas</h2>
-        <p>Parametros: valores que se añaden a la consulta al ejecutarla y son analizadas de forma literal (ej. si la variable hace referencia a nombres de columnas, el intérprete se asegura de que los parámetros son nombres de columnas antes de añadirlas a la consulta y ejecutarla) </p>   
+        <p>Parámetros: valores que se añaden a la consulta al ejecutarla y son analizadas de forma literal (ej. si la variable hace referencia a nombres de columnas, el intérprete se asegura de que los parámetros son nombres de columnas antes de añadirlas a la consulta y ejecutarla) </p>   
     </section>
 
     <section class="slide">
@@ -370,7 +373,7 @@ String name = p.FirstName;
     <section class="slide">
         <h2>Inyección: detección de vulnerabilidad</h2>
         <p>Revisión del código fuente</p>
-        <p>Testeo automatizado de inputs en forma de parametros, cabeceras HTTP, URLs, cookies, JSON, y XML</p>
+        <p>Testeo automatizado de inputs en forma de parámetros, cabeceras HTTP, URLs, cookies, JSON, y XML</p>
         <p>Application Security Testing en pipelines de <a href="https://github.com/mikel-egana-aranguren/Transparent-Relations-Ontology/blob/main/.github/workflows/robot.yml">Integración Continua</a>/Despliegue Continuo</p>
         
     </section>
@@ -403,11 +406,11 @@ String name = p.FirstName;
         <p>Fallos de arquitectura, antes de implementar código</p>
     </section>
 
-    <section class="slide">
+    <!-- <section class="slide">
         <h2>Software Assurance Maturity Model</h2>
         <p><a href="https://owaspsamm.org/">https://owaspsamm.org/</a></p>
         <p><a href="SAMM-v2-PDF.pdf">SAMM-v2-PDF.pdf</a></p>
-    </section>
+    </section> -->
 
     <section class="slide">
         <h2>Diseño inseguro: ejemplos</h2>
@@ -454,8 +457,8 @@ String name = p.FirstName;
     <section class="slide">
         <h2>Configuración de seguridad insuficiente: prevención</h2>
         <ul>
-            <li>Sistema de desarrollo automatizado en el que es sencillo desplegar un entorno más seguro. Los entornos de desarrollo, calidad, y producción deberían tener exactamente la misma configuración, a diferencia solo de credenciales. Este proceso debería estar lo mas automatizado posible para facilitar la creación de un nuevo entorno seguro lo más rápido posible</li>
-            <li>Un sistema minimalista sin componenentes o funciones innecesarias</li>
+            <li>Sistema de desarrollo automatizado en el que es sencillo desplegar un entorno más seguro. Los entornos de desarrollo, pruebas, y producción deberían tener exactamente la misma configuración, a diferencia solo de credenciales. Este proceso debería estar lo mas automatizado posible para facilitar la creación de un nuevo entorno seguro lo más rápido posible</li>
+            <li>Un sistema minimalista sin componentes o funciones innecesarias</li>
         </ul>
     </section>
 
@@ -486,8 +489,8 @@ String name = p.FirstName;
         <h2>Componentes vulnerables y obsoletos</h2>
         La aplicación podría ser vulnerable si:
         <ul>
-            <li>Si no escaneas tu sistema regularmente para buscar vulnerabilidades, y no estás suscrito a boletines de seguridad sobre los componentes que usas</li>
-            <li>Si no actualizas los componentes con una frecuencia basada en el riesgo. Esto es muy comun en grandes organizaciones que tienen políticas de apliaciones de parches una vez al mes, dejando al sistema vulnerable durante días</li>
+            <li>Si no se escanea el sistema regularmente para buscar vulnerabilidades, y el administrador no está suscrito a boletines de seguridad sobre los componentes en uso</li>
+            <li>Si no se actualizan los componentes con una frecuencia basada en el riesgo. Esto es muy común en grandes organizaciones que tienen políticas de aplicaciones de parches una vez al mes, dejando al sistema vulnerable durante días</li>
         </ul>
     </section>
 
@@ -495,10 +498,9 @@ String name = p.FirstName;
         <h2>Componentes vulnerables y obsoletos: prevención</h2>
         Debería haber un proceso de aplicacion de parches para:
         <ul>
-            <li>Quitar dependencias que no se usan, funcionalidades, componentes, archivos innecesarios, etc</li>
+            <li>Quitar dependencias que no se usan, funcionalidades, componentes, archivos innecesarios, etc.</li>
             <li>Tener un inventario actualizado de componentes en servidor y cliente, incluyendo sus dependencias, de manera automatizada. Visitar regularmente recursos como CVE para encontrar vulnerabilidades en esos componentes</li>
             <li>Obtener componentes solo de fuentes oficiales y firmados</li>
-
         </ul>
     </section>
 
@@ -557,7 +559,7 @@ String name = p.FirstName;
         <h2>Fallos de identificación y autenticación: prevención</h2>
 
         <ul>
-            <li>Usar un gestor de sesiones en el lado de servidor que sea seguro y esté implementado junto con la aplicación. Debe generar un identificador de sesión aleatorio de gran entropia despues del login. Los identificadores de sesión no deberían estar en la URL, sino almacenados de manera segura. Los identificadores deberían ser invalidados inmediatamente despues del logout o inactividad</li>
+            <li>Usar un gestor de sesiones en el lado de servidor que sea seguro y esté implementado junto con la aplicación. Debe generar un identificador de sesión aleatorio de gran entropía después del login. Los identificadores de sesión no deberían estar en la URL, sino almacenados de manera segura. Los identificadores deberían ser invalidados inmediatamente después del logout o inactividad</li>
         </ul>
     </section>
 
@@ -598,7 +600,7 @@ String name = p.FirstName;
     <section class="slide">
         <h2>Fallos en la integridad de datos y software: prevención</h2>
         <p>Asegurarse de que los pipelines IC/DC tienen una configuración y control de acceso adecuados para asegurar la integridad del código en todo el proceso</p>
-        <p>Asegurarse de que no se envían datos serializados sin firmar o cifrar a clientes sin confianza sin algun tipo de validación de integridad para detectar modificación o un replay de los datos des-serializados</p>
+        <p>Asegurarse de que no se envían datos serializados sin firmar o cifrar a clientes sin confianza sin algún tipo de validación de integridad para detectar modificación o un replay de los datos des-serializados</p>
     </section>
 
     <section class="slide">
