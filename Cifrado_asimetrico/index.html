@@ -38,6 +38,15 @@
     </section>
 
     <section class="slide">
+        <h2>Cifrado asimétrico</h2>
+        <ul>
+            <li>Criptografía de clave pública</li>
+            <li>Cifrado híbrido</li>
+            <li>Algoritmos de clave pública</li>
+        </ul>
+    </section>
+
+    <section class="slide">
         <h2>Criptografía de clave pública</h2>
         <p>A principios de los 70 surgen los sistemas criptográficos asimétricos como solución al problema de compartir la clave en sistemas simétricos</p>
         <p>Usa algoritmos de clave asimétrica: la clave que cifra no es la que descifra</p>
@@ -79,17 +88,20 @@
     </section>
 
     <section class="slide">
-        <h2>Criptografía de clave pública: Ventajas</h2>
+        <h2>Criptografía de clave pública</h2>
+        <p>Ventajas:
             <ul>
                 <li>Sólo el destinatario puede leer el mensaje</li>
                 <li>Sólo hay que almacenar una clave</li>
                 <li>Cualquiera puede usar la clave pública para enviar un mensaje confidencial a Iker</li>
                 <li>No son necesarios canales seguros para comunicar la clave pública</li>
             </ul>
+        </p>
     </section>
 
     <section class="slide">
-        <h2>Criptografía de clave pública: Problemas</h2>
+        <h2>Criptografía de clave pública</h2>
+        <p>Problemas:
             <ul>
                 <li>La clave privada debe mantenerse privada</li>
                 <li>Debería ser (prácticamente) imposible deducir la clave privada a partir de la clave pública</li>
@@ -97,6 +109,7 @@
                 <li>Miren debe estar segura de que está usando la clave pública de Iker</li>
                 <li>Debe ser fácil obtener las claves públicas</li>
             </ul>
+        </p>
     </section>
 
     <section class="slide">
@@ -105,11 +118,13 @@
     </section>
 
     <section class="slide">
-        <h2>Criptografía de clave pública: Más problemas</h2>
+        <h2>Criptografía de clave pública</h2>
+        <p>Más problemas:
             <ul>
                 <li>¿Cómo sabe Iker si el mensaje es realmente de Miren?</li>
                 <li>Cuando Iker conteste ¿Cómo sabe Miren que el mensaje es realmente de Iker?</li>
             </ul>
+            </p>
     </section>
 
     <section class="slide">
@@ -256,8 +271,7 @@
 
     <section class="slide">
         <h2>Diffie-Hellman</h2>
-        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/DiffieHellmanAliceBob.png" alt="Diffie Hellman Alice Bob" width="80%"></p>
-        <p style="text-align:left;font-size:30%;"><a href="https://www.garykessler.net/library/crypto.html#dhmath">https://www.garykessler.net/library/crypto.html#dhmath</a></p>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/DiffieHellmanAliceBob.png" alt="Diffie Hellman Alice Bob" width="60%"></p>
     </section>
 
     <section class="slide">
@@ -265,12 +279,11 @@
         <p>1977 - Rivest–Shamir–Adleman</p>
         <p>A diferencia de Diffie-Hellman, válido para cifrar, descifrar, y firmar, pero debido a su lentitud sobre todo usado en sistemas híbridos</p>
         <p>RSA security: Verisign (Dominios, Infraestructura de Clave Pública, SSL, ...)</p>
-        <p>Factorización del producto de números primos</p>
     </section>
 
     <section class="slide">
         <h2>RSA</h2>
-        <p><iframe width="560" height="315" src="https://www.youtube.com/embed/M7kEpw1tn50" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/RSA.png" alt="RSA" width="60%"></p>
     </section>
 
     <section class="slide">
@@ -294,10 +307,10 @@
         <p>Elliptic Curve Digital Signature Algorithm (ECDSA)</p>
     </section>
     
-    <section class="slide">
+    <!-- <section class="slide">
         <h2>Curva elíptica</h2>
         <p><iframe width="560" height="315" src="https://www.youtube.com/embed/yDXiDOJgxmg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
-    </section>
+    </section> -->
 
     <section class="slide">
         <h2>Algoritmos de clave pública: usos</h2>
