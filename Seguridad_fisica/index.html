@@ -37,19 +37,23 @@
     </section>
 
     <section class="slide">
-        <h2>Google Data Center security</h2>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/kd33UVZhnAA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <h2>Seguridad física</h2>
+        <ul>
+            <li>Introducción</li>
+            <li>Estándares</li>
+            <li>SGSI (PDCA)</li>
+            <li>Amenazas</li>
+            <li>Google Data Center security</li>
+        </ul>
     </section>
 
     <section class="slide">
-        <h2>¿Qué es la seguridad física?</h2>
-        Mecanismos de detección y prevención<br>
-        Orientados a proteger físicamente los recursos del sistema <br>
-        Aplicación de barreras físicas y procedimientos de control contra las amenazas a los recursos <br>
-        ¿De qué sirve tener el software protegido contra hackers si cualquiera puede llevarse el ordenador? <br>
+        <h2>Introducción</h2>
+        <p>Parte de la seguridad de la información que se centra en la protección de los activos físicos, incluidos los data centers, equipos de hardware y otros dispositivos críticos</p>
+        <p>Prevenir accesos no autorizados, daños y robos que puedan comprometer la integridad, disponibilidad y confidencialidad de los datos</p>
     </section>
 
-    <section class="slide">
+    <!-- <section class="slide">
         <h2>¿Qué es la seguridad física?</h2>
         Cámara acorazada en la CIA: Acceso por escáner de retina, Acceso con huella dactilar, Acceso con sensor de voz, Sensor de movimiento, Sensor de sonido, Sensor de temperatura, Sensor de presión en el suelo
     </section>
@@ -71,10 +75,10 @@
     <section class="slide">
         <h2>¿Qué es la seguridad física?</h2>
         <p>El PC tiene un simple password!</p>
-    </section>
+    </section> -->
 
     <section class="slide">
-        <h2>¿Qué es la seguridad física?</h2>
+        <h2>Introducción</h2>
         La seguridad física es tan importante como la lógica:<br><br>
         <ul>
             <li>Debe ser <u>coherente</u> con el valor de la información a proteger</li>
@@ -84,33 +88,38 @@
     </section>
 
     <section class="slide">
-        <h2>Estándares y normas de seguridad</h2>
-        <p><b>ISO (International Organization for Standardization, 1947)</b>: organización para la creación de estándares internacionales compuesta por diversas organizaciones nacionales de estandarización</p>
-        <p><b>AENOR (Asociación Española de Normalización y Certificación, 1986)</b>: desarrolla actividades de normalización y certificación (N+C), para mejorar los productos y servicios</p>
+        <h2>Estándares: EN 50600</h2>
+        <p>European Norm for Data Centers: enfoque integral para el diseño, construcción y operación de data centers en Europa</p>
+        <p>Seguridad física, resiliencia, y sostenibilidad de la infraestructura</p>
     </section>
 
     <section class="slide">
-        <h2>Estándares y normas de seguridad</h2>
-        <b>ISO 27002</b><br><br>
-        Define las medidas para gestionar la seguridad de los sistemas de información<br><br>
-        <b>Capítulo  9 - Control de accesos:</b> Define todo lo relativo a controlar los accesos de los usuarios a los recursos / servicios de la empresa <br><br>
-        <b>Capítulo 11 - Seguridad física y ambiental:</b> Define los aspectos relativos a la seguridad física y ambiental de los recursos de la empresa <br><br>
+        <h2>Estándares: ISO 27001</h2>
+        <p>Estándar internacional para la gestión de la seguridad de la información</p>
+        <p>Controles de acceso físico, protección contra desastres naturales, y procedimientos para el mantenimiento de equipos</p>
     </section>
 
     <section class="slide">
-        <h2>Estándares y normas de seguridad</h2>
-        <b>ISO 27003</b><br><br>
-        Describe los pasos a seguir para diseñar un SGSI<br><br>
-        Como resultado de su aplicación se obtiene un plan de implementación del SGSI <br><br>
+        <h2>Estándares: ISO 27002</h2>
+        <p>Cómo implementar los controles de seguridad definidos en ISO 27001</p>
+        <p>Seguridad de áreas y equipos, controles de acceso físico, y protección contra interrupciones ambientales</p>
     </section>
 
     <section class="slide">
-        <h2>Estándares y normas de seguridad</h2>
-        <b>ISO 27004</b>: Define cómo medir la efectividad de un SGSI que ya esté implementado<br><br>
-        <b>ISO 27005</b>: Define cómo elaborar un plan de riesgos
+        <h2>Estándares: ISO 27003</h2>
+        <p>Describe los pasos a seguir para diseñar un SGSI</p>
+        <p>Como resultado de su aplicación se obtiene un plan de implementación del SGSI (Sistema de Gestión de Seguridad de la Información)</p>
     </section>
 
+    <section class="slide">
+        <h2>Estándares: ISO 27004</h2>
+        <p>Evaluar la efectividad de un SGSI que ya esté implementado</p>
+    </section>
 
+    <section class="slide">
+        <h2>Estándares: 27005</h2>
+        <p>Identificación, evaluación y tratamiento de riesgos relacionados con la seguridad de la información</p>
+    </section>
 
     <section class="slide">
         <h2>SGSI</h2>
@@ -227,14 +236,14 @@
     <section class="slide">
         <h2>Hacer (2)</h2>
         Se implementan las contramedidas que se hayan estimado oportunas para proteger los bienes<br><br>
-        Contramedidas de varios tipos: Atenuar los riesgos, Minimizar las pérdidas, Asegurar una rápida recuperación<br><br>
+        Contramedidas de varios tipos: atenuar los riesgos, minimizar las pérdidas, asegurar una rápida recuperación<br><br>
         Fundamental: formación e información al personal afectado
  
     </section>
 
     <section class="slide">
         <h2>Comprobar (3)</h2>
-        Revisiones periódicas (auditorías) <br><br>
+        Revisiones periódicas (Auditorías) <br><br>
         Especialmente tras la materialización de una amenaza <br><br>
         Asegura:
         <ul>
@@ -260,6 +269,11 @@
         Acceso a información en soporte físico <br><br>
     </section>
 
+    <!-- <section class="slide">
+        <h2>Amenazas (Humanos)</h2>
+        Canal lateral<br><br>
+    </section>
+
     <section class="slide">
         <h2>Amenazas (Humanos)</h2>
         ¿Podría un ciberatacante acceder a sistemas informáticos cerrados y sin tocar directamente los equipos?<br><br>
@@ -282,14 +296,14 @@
     <section class="slide">
         <h2>Amenazas (Humanos)</h2>
         Las emanaciones electromagnéticas podrían ser un vector de ataque <br><br>
-        ¿Cómo captar las emanaciones electromagnéticas? Todos los aparatos electrónicos emiten radiaciones y emanaciones en forma de señales electromagnéticas y acústicas. 
+        ¿Cómo captar las emanaciones electromagnéticas? Todos los aparatos electrónicos emiten radiaciones y emanaciones en forma de señales electromagnéticas y acústicas. 
     </section>
 
     <section class="slide">
         <h2>Amenazas (Humanos)</h2>
         <p>Dependiendo de diversos factores como la distancia y los obstáculos, se pueden captar las señales de los componentes a través de antenas o micrófonos de alta sensibilidad (en el caso de señales acústicas) y procesarlas para obtener información </p>
-        <p>Entre estos aparatos también se encuentran los <b>monitores</b> y <b>teclados</b>, por lo que estas técnicas pueden ser también empleadas por ciberatacantes</p>
-    </section>
+        <p>Entre estos aparatos también se encuentran los <b>monitores</b> y <b>teclados</b>, por lo que estas técnicas pueden ser también empleadas por ciberatacantes</p>
+    </section> -->
 
     <section class="slide">
         <h2>Amenazas (Humanos)</h2>
@@ -303,7 +317,7 @@
 
     <section class="slide">
         <h2>Amenazas (Humanos)</h2>
-        Control de acceso a un área protegida: Personal de seguridad, Llaves, Tarjetas de acceso, PIN , Sistema biométrico, ...
+        Control de acceso a un área protegida: personal de seguridad, llaves, tarjetas de acceso, PIN , sistema biométrico, ...
     </section>
 
     <section class="slide">
@@ -354,7 +368,7 @@
 
     <section class="slide">
         <h2>Amenazas (Desastres naturales)</h2>
-        Terremotos, Fuego, Tormentas eléctricas, Inundaciones<br><br>
+        Terremotos, fuego, tormentas eléctricas, inundaciones<br><br>
         Hay que contemplarlos en la política de seguridad de la empresa<br><br>
     </section>
 
@@ -399,20 +413,20 @@ Despacho de abogados Garrigues
     <section class="slide">
         <h2>Amenazas (Desastres naturales)</h2>
         Consultora Deloitte: <br><br>
-        Estos backups se gestionan en localizaciones distintas a las de la propia empresa, cumpliendo así con las normativas de seguridad, con la Ley de Protección de Datos (LOPD) y con la autoprotección de las propias empresas<br><br>
+        Estos backups se gestionan en localizaciones distintas a las de la propia empresa, cumpliendo así con las normativas de seguridad, con la Ley de Protección de Datos (LOPD) y con la autoprotección de las propias empresas<br><br>
     </section>
 
     <section class="slide">
         <h2>Amenazas (Desastres naturales)</h2>
 
-        Según el Disaster Recovery Institute International, el 90% de empresas que experimentan pérdidas significativas de datos, quiebran en un plazo de 3 años <br><br>
-Las medidas de contingencia ante desastres, la salvaguarda de datos, es una tarea imprescindible para que una empresa tenga continuidad en el desarrollo de su negocio
+        Según el Disaster Recovery Institute International, el 90% de empresas que experimentan pérdidas significativas de datos, quiebran en un plazo de 3 años <br><br>
+Las medidas de contingencia ante desastres, la salvaguarda de datos, es una tarea imprescindible para que una empresa tenga continuidad en el desarrollo de su negocio
     </section>
 
     <section class="slide">
         <h2>Amenazas (Desastres naturales)</h2>
 
-        Según un estudio de la Universidad de Texas, sólo el 6% de empresas con pérdida catastrófica de datos sobrevivirá, frente a un 43% que nunca reabrirá su negocio y un 51% que tendrá que cerrar en un plazo de 2 años
+        Según un estudio de la Universidad de Texas, sólo el 6% de empresas con pérdida catastrófica de datos sobrevivirá, frente a un 43% que nunca reabrirá su negocio y un 51% que tendrá que cerrar en un plazo de 2 años
     </section>
 
     <section class="slide">
@@ -486,7 +500,6 @@ Las medidas de contingencia ante desastres, la salvaguarda de datos, es una tar
         <ul>
             <li>Inundaciones por causas propias de la empresa</li>
             <li>Inundaciones por causas ajenas</li>
-            <li>Pequeños incidentes personales (botella de agua, taza con café)</li>
         </ul>
     </section>
 
@@ -500,7 +513,7 @@ Las medidas de contingencia ante desastres, la salvaguarda de datos, es una tar
             <li>Revisar conductos del agua</li>
             <li>Localización del equipamiento
             <ul>
-                <li>A nivel general (NO en un sótano al lado de un rio)</li>
+                <li>A nivel general (NO en un sótano al lado de un río)</li>
                 <li>A nivel del edificio (NO en una sala con grifos)</li>
             </ul></li>
         </ul>
@@ -541,6 +554,11 @@ Las medidas de contingencia ante desastres, la salvaguarda de datos, es una tar
             <li>Imprimir sólo en presencia del usuario (tarjetas inteligentes)</li>
             <li>Revisión de los empleados al abandonar el área de seguridad</li>
         </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Google Data Center security</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/kd33UVZhnAA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </section>
 
     <!-- FOOTER -->
