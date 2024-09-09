@@ -1,8 +1,8 @@
 # EHU-SGSSI-01
 
-Clases de la asignatura Sistemas de Gestión de Seguridad de Sistemas de la Información (SGSSI) de tercero del [Grado en Ingeniería Informática de Gestión y Sistemas de Información](https://www.ehu.eus/es/grado-ingenieria-informatica-de-gestion-y-sistemas-de-informacion-bizkaia).
+Clases de la asignatura Sistemas de Gestión de Seguridad de Sistemas de la Información (SGSSI) de tercero del [Grado en Ingeniería Informática de Gestión y Sistemas de Información](https://www.ehu.eus/es/web/graduak/grado-ingenieria-informatica-de-gestion-y-sistemas-de-informacion-bizkaia/creditos-y-asignaturas). Se recomienda acceder al archivo PDF de cada carpeta.
 
-* [Introducción a la seguridad informática](Introduccion/index.html)
+* [Introducción a la seguridad informática](Introduccion/)
 * Bloque I: Cifrado
   * [Introducción al cifrado, esteganografía y algoritmos resumen](Cifrado_intro/index.html)
   * [Cifrado simétrico](Cifrado_simetrico/index.html)
