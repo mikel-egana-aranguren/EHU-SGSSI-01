@@ -4,20 +4,20 @@ Clases de la asignatura Sistemas de Gestión de Seguridad de Sistemas de la Info
 
 * [Introducción a la seguridad informática](Introduccion/)
 * Bloque I: Cifrado
-  * [Introducción al cifrado, esteganografía y algoritmos resumen](Cifrado_intro/index.html)
-  * [Cifrado simétrico](Cifrado_simetrico/index.html)
-  * [Cifrado asimétrico](Cifrado_asimetrico/index.html)
-  * [Aplicaciones del cifrado: Firma digital, Certificados, Comunicaciones seguras, Bitcoin](Cifrado_aplicaciones/index.html)
+  * [Introducción al cifrado, esteganografía y algoritmos resumen](Cifrado_intro/)
+  * [Cifrado simétrico](Cifrado_simetrico/)
+  * [Cifrado asimétrico](Cifrado_asimetrico/)
+  * [Aplicaciones del cifrado: Firma digital, Certificados, Comunicaciones seguras, Bitcoin](Cifrado_aplicaciones/)
 * Bloque II: Sistemas
-  * [Copias de seguridad](Copias_seguridad/index.html)
-  * [Seguridad en Sistemas Web](Seguridad_web/index.html)
-  * [Seguridad física](Seguridad_fisica/index.html)
-  * [Seguridad en redes](Seguridad_redes/index.html)
+  * [Copias de seguridad](Copias_seguridad/)
+  * [Seguridad en Sistemas Web](Seguridad_web/)
+  * [Seguridad física](Seguridad_fisica/)
+  * [Seguridad en redes](Seguridad_redes/)
 * Bloque III: Sociedad
-  * [El factor humano](FactorHumano/index.html)
-  * [Malware](Malware/index.html)
-  * [Deep web](DeepWeb/index.html)
-  * [Legislación e informática forense](AspectosLegales/index.html)
+  * [El factor humano](FactorHumano/)
+  * [Malware](Malware/)
+  * [Deep web](DeepWeb/)
+  * [Legislación e informática forense](AspectosLegales/)
   * Conferencias a definir.
 
 [![DOI](https://zenodo.org/badge/334955028.svg)](https://zenodo.org/badge/latestdoi/334955028)
