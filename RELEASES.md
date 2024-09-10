@@ -1,7 +1,8 @@
 # Releases
 
-## 2024-2025-?
+## 2024-2025-1
 
+* Introduccion, Intro cifrado, esteganografia, algoritmos resumen, cifrado simetrico
 * Mejora README
 
 ## 2023-2024-OPE
