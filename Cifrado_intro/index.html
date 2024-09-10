@@ -398,7 +398,7 @@
 
     <section class="slide">
         <h2>SHA-3</h2>
-        <p>SHA-3 (Secure Hash Algorithm 3) desarrollado por NIST (National Institute for Standars and Technology)</p>
+        <p>SHA-3 (Secure Hash Algorithm 3) desarrollado por <a href="https://www.nist.gov/">NIST</a> (National Institute for Standars and Technology)</p>
         <p>SHA-0..2 estaban basados en MD5 (roto), SHA-3 es una estructura diferente</p>
         <p>Firmas digitales: DSA (Digital Signature Algorithm) y ECDSA (Elliptic Curve Digital Signature Algorithm)</p>
         <p>Certificados SSL/TLS: <a href="https://www.openssl.org/">Open SSL</a></p>
@@ -409,14 +409,14 @@
         <h2>RIPEMD</h2>
         <p>RIPEMD (RACE Integrity Primitives Evaluation Message Digest): alternativa a SHA y MD5</p>
         <p>Muy seguro</p>
-        <p>Se usa, en combinación SHA-256, para crear <a href="https://bitcoinwiki.org/wiki/bitcoin-address">direcciones Bitcoin</a> a partir de claves públicas</p>
+        <p>Se usa, en combinación con SHA-256, para crear <a href="https://bitcoinwiki.org/wiki/bitcoin-address">direcciones Bitcoin</a> a partir de claves públicas</p>
     </section>
 
     <section class="slide">
         <h2>Ataques a algoritmos resumen</h2>
                 <ul>
                     <li>Colisiones: dos connjuntos de datos diferentes generan el mismo resumen</li>
-                    <li>Mediante fuerza bruta (ej. paradoja del cumpleaños) o tecnicas mas refinadas como <a href="https://shattered.io/">shattered</a> contra SHA1</li>
+                    <li>Mediante fuerza bruta (ej. <a href="https://es.wikipedia.org/wiki/Paradoja_del_cumplea%C3%B1os">paradoja del cumpleaños</a>) o técnicas mas refinadas como <a href="https://shattered.io/">shattered</a> contra SHA1</li>
                     <li>Integridad: sustituir un documento por otro documento malicioso con el mismo hash</li>
                     <li>Certificados TLS/SSL: suplantar identidad de un servicio creando un certificado falso</li>
                 </ul>
