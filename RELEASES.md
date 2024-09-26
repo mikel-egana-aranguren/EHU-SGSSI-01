@@ -2,6 +2,7 @@
 
 ## 2024-2025-1
 
+* Cifrado asimetrico, aplicaciones cifrado
 * Introduccion, Intro cifrado, esteganografia, algoritmos resumen, cifrado simetrico
 * Mejora README
 
