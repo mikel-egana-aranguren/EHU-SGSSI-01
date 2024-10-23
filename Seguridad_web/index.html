@@ -42,20 +42,7 @@
             <li>Fuentes de información en seguridad</li>
             <li>Rotura de control de acceso</li>
             <li>Fallos criptográficos</li>
-            <li>Inyección</li>
-            <li>Diseño inseguro</li>
-            <li>Configuración de seguridad insuficiente</li>
-            <li>Componentes vulnerables y obsoletos</li>
-        </ul>
-    </section>
-
-    <section class="slide">
-        <h2>Seguridad en Sistemas Web</h2>
-        <ul>
-            <li>Fuentes de información en seguridad</li>
-            <li>Rotura de control de acceso</li>
-            <li>Fallos criptográficos</li>
-            <li>Inyección</li>
+            <li>Injección</li>
             <li>Diseño inseguro</li>
             <li>Configuración de seguridad insuficiente</li>
             <li>Componentes vulnerables y obsoletos</li>
@@ -73,13 +60,13 @@
 
     <section class="slide">
         <h2>Fuentes de información en seguridad</h2>
-        <p><a href="https://cwe.mitre.org/">CWE</a> (Common Weakness Enumeration), <a href="https://www.mitre.org/">MITRE</a>: lista de debilidades de software y hardware que pueden llevar a debilidades específicas (Ej. <a href="https://cwe.mitre.org/data/definitions/352.html">CWE-352: Cross-Site Request Forgery (CSRF)</a>).</p>
-        <p><a href="https://www.cve.org/">CVE</a> (Common Vulnerabilities and Exposures), <a href="https://www.mitre.org/">MITRE</a>: lista de vulnerabilidades specíficas (Ej. <a href="https://www.cve.org/CVERecord?id=CVE-2021-44228">CVE-2021-44228</a>).</p>
+        <p><a href="https://cwe.mitre.org/">CWE</a> (Common Weakness Enumeration), <a href="https://www.mitre.org/">MITRE</a>: lista de debilidades de software y hardware que pueden llevar a debilidades específicas (Ej. <a href="https://cwe.mitre.org/data/definitions/352.html">CWE-352: Cross-Site Request Forgery (CSRF)</a>)</p>
+        <p><a href="https://www.cve.org/">CVE</a> (Common Vulnerabilities and Exposures), <a href="https://www.mitre.org/">MITRE</a>: lista de vulnerabilidades specíficas (Ej. <a href="https://www.cve.org/CVERecord?id=CVE-2021-44228">CVE-2021-44228</a>)</p>
     </section>
 
     <section class="slide">
         <h2>Fuentes de información en seguridad</h2>
-        <p>OWASP Top Ten (<a href="https://owasp.org/Top10/">2021</a>), <a href="https://owasp.org/">Open Web Application Security Project</a>: expone en un ranking las vulnerabilidades Web más comúnes, enlazando con CWEs y CVEs.</p>
+        <p>OWASP Top Ten (<a href="https://owasp.org/Top10/">2021</a>), <a href="https://owasp.org/">Open Web Application Security Project</a>: expone en un ranking las vulnerabilidades Web más comúnes, enlazando con CWEs y CVEs</p>
     </section>
 
     <section class="slide">
@@ -271,7 +258,7 @@
 
     <section class="slide">
         <h2>Fallos criptográficos: ejemplos</h2>
-        <p>Una aplicación usa la función por defecto de la base de datos para encriptar datos. Sin embargo estos datos se desencriptan automáticamente al consultarlos, permitiendo el acceso si por ejemplo hay un ataque de Inyección SQL</p> 
+        <p>Una aplicación usa la función por defecto de la base de datos para encriptar datos. Sin embargo estos datos se desencriptan automáticamente al consultarlos, permitiendo el acceso si por ejemplo hay un ataque de Injección SQL</p> 
     </section>
 
     <section class="slide">
@@ -291,12 +278,12 @@
     </section>
 
     <section class="slide">
-        <h2>Inyección</h2>
+        <h2>Injección</h2>
          <a href="https://owasp.org/Top10/A03_2021-Injection/">Injection (A03:2021)</a>
     </section>
 
     <section class="slide">
-        <h2>Inyección</h2>
+        <h2>Injección</h2>
         Una aplicación es vulnerable si:
         <ul>
             <li>Los datos que provee el usuario no se validan, filtran, o limpian</li>
@@ -307,18 +294,18 @@
     </section>
 
     <section class="slide">
-        <h2>Inyección SQL</h2>
+        <h2>Injección SQL</h2>
         <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/boy.png" alt="Bobby tables" width="90%"></p>
         <p style="text-align:left;font-size:30%;"><a href="https://xkcd.com/327/">https://xkcd.com/327/</a></p>
     </section>
 
     <section class="slide">
-        <h2>(Inyección en LLMs)</h2>
+        <h2>(Injección en LLMs)</h2>
         <a href="https://simonwillison.net/2023/Oct/14/multi-modal-prompt-injection/">Multi-modal prompt injection image attacks against GPT-4V</a>
     </section>
 
     <section class="slide">
-        <h2>Inyección SQL</h2>
+        <h2>Injección SQL</h2>
         <pre><code>
 txtUserId = getRequestString("UserId");
 txtSQL = "SELECT * FROM Users 
@@ -327,7 +314,7 @@ WHERE UserId = " + txtUserId;
     </section>
 
     <section class="slide">
-        <h2>Inyección SQL</h2>
+        <h2>Injección SQL</h2>
         Input web: <code>105 OR 1=1</code>
         <pre><code>SELECT * FROM Users WHERE UserId = 105 OR 1=1;
         </code></pre>
@@ -371,7 +358,7 @@ String name = p.FirstName;
     </section>
 
     <section class="slide">
-        <h2>Inyección: detección de vulnerabilidad</h2>
+        <h2>Injección: detección de vulnerabilidad</h2>
         <p>Revisión del código fuente</p>
         <p>Testeo automatizado de inputs en forma de parámetros, cabeceras HTTP, URLs, cookies, JSON, y XML</p>
         <p>Application Security Testing en pipelines de <a href="https://github.com/mikel-egana-aranguren/Transparent-Relations-Ontology/blob/main/.github/workflows/robot.yml">Integración Continua</a>/Despliegue Continuo</p>
@@ -379,7 +366,7 @@ String name = p.FirstName;
     </section>
 
     <section class="slide">
-        <h2>Inyección: prevención</h2>
+        <h2>Injección: prevención</h2>
         <p>Usar APIs seguras que no usen el intérprete. Si no es posible, usar llamadas parametrizadas u ORM</p>
         <p>Validar los inputs</p>
         <p>"Escapar" todos los caracteres especiales posibles</p>
@@ -387,7 +374,7 @@ String name = p.FirstName;
     </section>
 
     <section class="slide">
-        <h2>Inyección</h2>
+        <h2>Injección</h2>
         <ul>
             <li><a href="https://cwe.mitre.org/data/definitions/79.html">CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')</a></li>
             <li><a href="https://cwe.mitre.org/data/definitions/89.html">CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')</a></li>
@@ -481,7 +468,7 @@ String name = p.FirstName;
         La aplicación podría ser vulnerable si:
         <ul>
             <li>No se saben exactamente todas las versiones de los componentes (Siempre se usa "latest"). Esto incluye componentes que se usan directamente y las dependencias indirectas</li>
-            <li>Si el software no tiene soporte, es vulnerable, u obsoleto. Esto incluye al sistema operativo, servidor web, sistema de gestión de bases de datos, APIs y sus componentes, entornos de ejecución, y librerías</li>
+            <li>El software no tiene soporte, es vulnerable, u obsoleto. Esto incluye al sistema operativo, servidor web, sistema de gestión de bases de datos, APIs y sus componentes, entornos de ejecución, y librerías</li>
         </ul>
     </section>
 
@@ -489,8 +476,8 @@ String name = p.FirstName;
         <h2>Componentes vulnerables y obsoletos</h2>
         La aplicación podría ser vulnerable si:
         <ul>
-            <li>Si no se escanea el sistema regularmente para buscar vulnerabilidades, y el administrador no está suscrito a boletines de seguridad sobre los componentes en uso</li>
-            <li>Si no se actualizan los componentes con una frecuencia basada en el riesgo. Esto es muy común en grandes organizaciones que tienen políticas de aplicaciones de parches una vez al mes, dejando al sistema vulnerable durante días</li>
+            <li>No se escanea el sistema regularmente para buscar vulnerabilidades, y el administrador no está suscrito a boletines de seguridad sobre los componentes en uso</li>
+            <li>No se actualizan los componentes con una frecuencia basada en el riesgo. Esto es muy común en grandes organizaciones que tienen políticas de aplicaciones de parches una vez al mes, dejando al sistema vulnerable durante días</li>
         </ul>
     </section>
 
