@@ -14,7 +14,6 @@ Clases de la asignatura Sistemas de Gestión de Seguridad de Sistemas de la Info
   * [Seguridad física](Seguridad_fisica/)
   * [Seguridad en redes](Seguridad_redes/)
 * Bloque III: Sociedad
-  * [El factor humano](FactorHumano/)
   * [Malware](Malware/)
   * [Deep web](DeepWeb/)
   * [Legislación e informática forense](AspectosLegales/)

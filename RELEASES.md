@@ -1,5 +1,13 @@
 # Releases
 
+## 2024-2025-4
+
+* Aspectos legales e informatica forense, deep web, malware
+* Copias seguridad, seguridad web, seguridad redes, seguridad fisica
+* Cifrado asimetrico, aplicaciones cifrado
+* Introduccion, Intro cifrado, esteganografia, algoritmos resumen, cifrado simetrico
+* Mejora README
+
 ## 2024-2025-3
 
 * Copias seguridad, seguridad web, seguridad redes, seguridad fisica
