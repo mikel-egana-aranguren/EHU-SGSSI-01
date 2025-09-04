@@ -1,1 +1,1 @@
-/home/mikel/EHU-LSI/Docencia/Utils/ShowerTemplate/generate_pdf.sh
+../Utils/ShowerTemplate/generate_pdf.sh
