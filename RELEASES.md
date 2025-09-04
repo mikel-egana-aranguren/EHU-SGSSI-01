@@ -2,6 +2,7 @@
 
 ## ???
 
+* Introduccion, Intro cifrado, esteganografia, algoritmos resumen
 * Mejora README: 2 parciales + proyecto
 
 ## 2024-2025-4
