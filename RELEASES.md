@@ -1,5 +1,10 @@
 # Releases
 
+## 2025-2026-1
+
+* Introduccion, Intro cifrado, esteganografia, algoritmos resumen
+* Mejora README: 2 parciales + proyecto
+
 ## 2024-2025-4
 
 * Aspectos legales e informatica forense, deep web, malware
