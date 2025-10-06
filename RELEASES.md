@@ -1,5 +1,11 @@
 # Releases
 
+## 2025-2026-2
+
+* Cifrado simetrico, cifrado asimetrico, aplicaciones cifrado, Bitcoin
+* Introduccion, Intro cifrado, esteganografia, algoritmos resumen
+* Mejora README: 2 parciales + proyecto
+
 ## 2025-2026-1
 
 * Introduccion, Intro cifrado, esteganografia, algoritmos resumen
