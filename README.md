@@ -9,14 +9,12 @@ Clases de la asignatura Sistemas de Gestión de Seguridad de Sistemas de la Info
   * [Cifrado asimétrico](Cifrado_asimetrico/)
   * [Aplicaciones del cifrado: Firma digital, Certificados, Comunicaciones seguras, Bitcoin](Cifrado_aplicaciones/)
 * Proyecto en grupo de pen-testing contra sistema Web.
+  * [Seguridad en Sistemas Web](Seguridad_web/)
 * Bloque II: Sistemas
   * [Copias de seguridad](Copias_seguridad/)
-  * [Seguridad en Sistemas Web](Seguridad_web/)
-  * [Seguridad física](Seguridad_fisica/)
   * [Seguridad en redes](Seguridad_redes/)
-  * [Malware](Malware/)
+  * [Seguridad física](Seguridad_fisica/)
   * [Deep web](DeepWeb/)
   * [Legislación e informática forense](AspectosLegales/)
-  * Conferencias a definir.
 
 [![DOI](https://zenodo.org/badge/334955028.svg)](https://zenodo.org/badge/latestdoi/334955028)
