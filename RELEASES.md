@@ -1,5 +1,13 @@
 # Releases
 
+## ???
+
+* Backups, seguridad redes, seguridad física, Deep web, aspectos legales
+* Mejora README: quitar malware, ordenar
+* Cifrado simetrico, cifrado asimetrico, aplicaciones cifrado, Bitcoin
+* Introduccion, Intro cifrado, esteganografia, algoritmos resumen
+* Mejora README: 2 parciales + proyecto
+
 ## 2025-2026-2
 
 * Cifrado simetrico, cifrado asimetrico, aplicaciones cifrado, Bitcoin
