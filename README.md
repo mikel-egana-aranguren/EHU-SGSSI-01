@@ -2,7 +2,14 @@
 
 Clases de la asignatura Sistemas de Gestión de Seguridad de Sistemas de la Información (SGSSI) de tercero del [Grado en Ingeniería Informática de Gestión y Sistemas de Información](https://www.ehu.eus/es/web/graduak/grado-ingenieria-informatica-de-gestion-y-sistemas-de-informacion-bizkaia/creditos-y-asignaturas). Se recomienda acceder al archivo PDF de cada carpeta.
 
-* [Introducción a la seguridad informática](Introduccion/)
+* [Introducción](Introduccion/)
+* Cifrado:
+  * Introducción al cifrado, esteganografía, algoritmos resumen.
+* Seguridad redes
+* Seguridad web
+* Seguridad de sistemas (Copias, fisica, ...)
+* Legislacion, normativas, informatica forense
+* Deep Web (Libro Rojo)
 
 ???
 
@@ -16,10 +23,6 @@ Clases de la asignatura Sistemas de Gestión de Seguridad de Sistemas de la Info
 * [Seguridad en redes](Seguridad_redes/)
 * [Seguridad en Sistemas Web y pentesting](Seguridad_web/)
 * [Deep web](DeepWeb/)
-
-??? 
-
-
 * [Copias de seguridad](Copias_seguridad/)
 * [Seguridad física](Seguridad_fisica/)
 * [Legislación e informática forense](AspectosLegales/)
