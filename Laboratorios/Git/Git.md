@@ -5,13 +5,9 @@
 - Máquina GNU/Linux: portátil, máquina virtual, o PC laboratorio (Entrar con credencial LDAP).
 - Herramientas disponibles: `git`.
 
-## Introducción
-
-En este laboratorio haremos un repaso a git, ya que lo usaremos en diferentes partes de la asignatura. 
-
 ## Git
 
-Git es un sistema distribuido de control de versiones desarrollado por el creador de Linux, Linus Torvalds, muy extendido. Sus elementos básicos son:
+Git es un sistema distribuido de control de versiones desarrollado por el creador de Linux, Linus Torvalds, muy extendido, y que usaremos en diferentes partes de la asignatura. Sus elementos básicos son:
 
 - Repositorio: el almacen de contenido (Normalmente archivos de código). Es una carpeta con un carpeta oculta llamada `.git`. 
 - Fork: una copia independiente de un repositorio completo.
