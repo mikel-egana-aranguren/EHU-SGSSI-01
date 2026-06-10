@@ -3,7 +3,7 @@
 ## Requisitos previos
 
 - Máquina GNU/Linux: portátil, máquina virtual, o PC laboratorio (Entrar con credencial LDAP).
-- Herramientas disponibles: `git`.
+- Herramientas necesarias: `git`.
 
 ## Git
 
@@ -25,7 +25,7 @@ Hay dos maneras de acceder a los repositorios en Github: mediante HTTP(S) o SSH.
 
 Crear un repositorio **público** en GitHub siguiendo el patrón "sgssi-26-27-nombre-estudiante" (El nombre debe estar normalizado, por ejemplo "Mikel Egaña Aranguren" pasaría a "mikel-egana-aranguren", es decir "sgssi-26-27-mikel-egana-aranguren"). Este repositorio se usará para algunos ejercicios de laboratorio y el examen. 
 
-Clonar el repositorio mediante `git clone git@github.com:...` usando SSH. Cambiar la terminal al directorio del repositorio recién clonado. 
+Clonar el repositorio recién creado mediante `git clone git@github.com:...` (Usando SSH). Cambiar la terminal al directorio del repositorio recién clonado. 
 
 Realizar cambios. Añadirlos al Staging area:
 
@@ -33,7 +33,7 @@ Realizar cambios. Añadirlos al Staging area:
 $ git add ...
 ```
 
-Crear un commit (Añadirlos al repositorio local):
+Crear un commit (Añadir los cambios  al repositorio local):
 
 ```bash
 $ git commit ...
@@ -54,7 +54,7 @@ $ git checkout rama
 Cambiar a rama nueva (Crear rama):
 
 ```bash
-$ git checkout -b entrega_1
+$ git checkout -b rama_nueva
 ```
 
 Fusionar ramas (En rama target, es decir la rama que va a recibir los cambios):
@@ -72,7 +72,7 @@ $ git clone git@github.com:mikel-egana-aranguren/EHU-SGSSI-01.git
 ```
 (El contenido esta dentro de cada carpeta, en PDF o HTML).
 
-Para actualizar el contenido (Cambian con frecuencia):
+Para actualizar el contenido (Cambia con frecuencia):
 
 ```bash
 $ cd EHU-SGSSI-01
@@ -85,11 +85,18 @@ Para corregir un error:
 - En la Web de GitHub, obtener un fork a partir del [repositorio de apuntes](https://github.com/mikel-egana-aranguren/EHU-SGSSI-01).
 - Clonar el fork (No el original).
 - Hacer la corrección en la rama **develop** y subirlo al fork. 
-- Crear un [pull request](https://github.com/mikel-egana-aranguren/EHU-SGSSI-01/pulls?q=is%3Apr+is%3Aclosed)
+- Crear un [pull request](https://github.com/mikel-egana-aranguren/EHU-SGSSI-01/pulls?q=is%3Apr+is%3Aclosed).
 
-## La he liado parda
+## Más información
 
-[La he liado parda](https://www.youtube.com/watch?v=QNTZbJSQVis)
-[La he liado parda - versión Git](https://vimeo.com/82408340)
+"La he liado parda" describe una situación bastante común:
+- [La he liado parda](https://www.youtube.com/watch?v=QNTZbJSQVis).
+- [La he liado parda - versión Git](https://vimeo.com/82408340).
+
+Software carpentry - [Version Control with Git](https://swcarpentry.github.io/git-novice/).
+
+[Git](https://git-scm.com/).
+
+[GitFlow](https://nvie.com/posts/a-successful-git-branching-model/).
 
 

@@ -11,7 +11,7 @@
 
 
 
-- Herramientas disponibles: `openssl`, `sha256sum`, `md5sum`, `git`.
+- Herramientas necesarias: `openssl`, `sha256sum`, `md5sum`, `git`.
 - Opcional para esteganografia: `steghide`.
 
 Comprobacion rapida:
