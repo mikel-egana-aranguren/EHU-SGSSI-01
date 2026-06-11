@@ -199,4 +199,8 @@ Pregunta opcional:
 - Que identifica el hash del commit?
 - Por que Git detecta cambios de contenido de forma eficiente?
 
+HASH docker
+
+HASH apuntes
+
 
