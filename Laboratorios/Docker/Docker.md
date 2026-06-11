@@ -154,9 +154,8 @@ Pregunta:
 
 - Cuando ejecutemos un contenedor a partir de esta imagen, ¿Qué output vamos a obtener? ¿Por qué?
 
-Vamos a construir una imagen a partir del Dockerfile que se encuentra en eGela:
+Vamos a construir una imagen a partir del [Dockerfile de este repositorio](Dockerfile):
 
-- Baja el Dockerfile de eGela, junto al archivo `msg` que contiene un mensaje.
 - Ejecuta en el mismo directorio (El nombre puede ser cualquiera):
 
 ```bash
