@@ -199,8 +199,17 @@ Pregunta opcional:
 - Que identifica el hash del commit?
 - Por que Git detecta cambios de contenido de forma eficiente?
 
+
+Git como en apuntes
+
+BitTorrent como en apuntes (margnet links)
+
 HASH docker
 
 HASH apuntes
+
+Java HashMap
+
+Reproducir Shattered
 
 
