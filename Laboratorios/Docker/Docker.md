@@ -3,8 +3,8 @@
 ## Requisitos previos
 
 - Máquina GNU/Linux: portátil, máquina virtual, o PC laboratorio (Entrar con credencial LDAP).
-- Archivos Docker disponibles en eGela.
-- Proyecto basico docker-compose disponible en GitHub.
+- Archivos Docker.
+- Proyecto básico docker-compose disponible en GitHub.
 
 ## 1. Introduccion
 
