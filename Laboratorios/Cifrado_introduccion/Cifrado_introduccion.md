@@ -4,23 +4,11 @@
 
 - Máquina GNU/Linux: portátil, máquina virtual, o PC laboratorio (Entrar con credencial LDAP).
 - Editor de código. En Visual Studio Code, pulsando ctrl+mayus+v renderiza este archivo de manera amigable (Sobre todo para imágenes).
+- Herramientas necesarias: `openssl`, `sha512sum`, `git`, `steghide`.
 
+## Esteganografía práctica
 
-
-
-
-
-
-- Herramientas necesarias: `openssl`, `sha256sum`, `md5sum`, `git`.
-- Opcional para esteganografia: `steghide`.
-
-Comprobacion rapida:
-
-```bash
-openssl version
-sha256sum --version
-git --version
-```
+En este bloque ocultaremos un mensaje dentro de una imagen contenedora.
 
 Si `steghide` no esta instalado:
 
@@ -29,187 +17,95 @@ sudo apt update
 sudo apt install steghide -y
 ```
 
-
-
-## Esteganografía práctica
-
-En este bloque ocultaremos un mensaje dentro de una imagen contenedora.
-
-### 2.1 Preparacion de ficheros
+Preparar mensaje:
 
 ```bash
-mkdir -p labo_cifrado_intro/estego
-cd labo_cifrado_intro/estego
-echo "SGSSI-26-27: mensaje oculto de prueba" > secreto.txt
+echo "SGSSI-26-27 Software is like sex: it's better when it's free" > msg_linus
 ```
 
-Descarga o copia una imagen JPEG de prueba como `portada.jpg`.
-
-### 2.2 Insercion de mensaje con contrasena
+Insertar mensaje con contraseña en imagen `linus.jpg`:
 
 ```bash
-steghide embed -cf portada.jpg -ef secreto.txt -sf portada_stego.jpg
+steghide embed -cf linus.jpg -ef msg_linus -sf linus_steg.jpg
 ```
 
-El comando solicitara una contrasena.
-
-### 2.3 Extraccion del mensaje oculto
+Extraccion del mensaje oculto (Primero renombrar archivo original mensaje a `msg_linus_old`):
 
 ```bash
-steghide extract -sf portada_stego.jpg
-cat secreto.txt
+steghide extract -sf linus_steg.jpg
+less msg_linus
 ```
 
-Pregunta 3:
-
-- Que ocurre si introduces una contrasena incorrecta?
-- Por que combinar cifrado + esteganografia mejora la robustez?
-
-### 2.4 Tamano e integridad del contenedor
+Tamaño del contenedor:
 
 ```bash
-ls -lh portada.jpg portada_stego.jpg
-sha256sum portada.jpg portada_stego.jpg
+ls -lh linus.jpg linus_steg.jpg
 ```
 
-Pregunta 4:
+## Integridad con funciones hash
 
-- Compara tamano y hash de ambos ficheros.
-- Razona por que una transformacion de formato (ejemplo: JPEG -> PNG -> JPEG) puede destruir el mensaje oculto.
-
----
-
-## 3) Integridad con funciones hash
-
-### 3.1 Calculo de resumenes
-
-En `labo_cifrado_intro`:
+Cálculo de resúmenes:
 
 ```bash
-cd ..
 echo "Este fichero verifica integridad" > integridad.txt
 md5sum integridad.txt
 sha256sum integridad.txt
-sha3sum -a 256 integridad.txt 2>/dev/null || echo "sha3sum no disponible"
 ```
 
-### 3.2 Efecto avalancha
+Modifica un solo caracter y vuelve a calcular los resúmenes. ¿Cómo han cambiado?
 
-Modifica un solo caracter:
+## Integridad y esteganografia
+
+Compara los hashes de los mensajes usados en la esteganografía: 
 
 ```bash
-echo "Este fichero verifica integridad." > integridad.txt
-md5sum integridad.txt
-sha256sum integridad.txt
+sha256sum msg_linus
+sha256sum msg_linus_old
 ```
 
-Pregunta 5:
+¿Coinciden? 
 
-- Copia los hashes antes y despues.
-- Explica el efecto avalancha en 2-3 lineas.
-
-### 3.3 Verificacion de integridad tipo distribucion de software
+Compara los hashes de los ficheros contenedor:
 
 ```bash
-echo "abc123  integridad.txt" > checksum_incorrecto.txt
-sha256sum -c checksum_incorrecto.txt || true
-sha256sum integridad.txt > checksum_correcto.txt
-sha256sum -c checksum_correcto.txt
+sha256sum linus.jpg
+sha256sum linus_steg.jpg
 ```
 
-Pregunta 6:
+¿Coinciden? 
 
-- Que riesgo existe si una web publica un fichero y su hash en un canal no autenticado?
+Hay un mensaje importante de Buenaventura Durruti para vosotros en una de las imagenes del directorio `durruti`. El mensaje ha sido introducido mediante el programa steghide, con contraseña "durruti". La imagen que contiene el mensaje se corresponde con el Hash (SHA256) `7d573924d70a604cb56122aed9bded3f40d3083d8adc353a97c0b816c0e573bb`. ¿Qué archivo es? ¿Qué dice la frase? ¿Como automatizarías la búsqueda si tuvieses muchos archivos en carpetas y subcarpetas?
 
----
+## Contraseñas y sal
 
-## 4) Contrasenas y sal
-
-### 4.1 Problema sin sal
+Ejecuta:
 
 ```bash
 echo -n "ContrasenaSegura" | sha256sum
 echo -n "ContrasenaSegura" | sha256sum
 ```
 
-Observa que el resultado es identico.
+Observa que el resultado es idéntico.
 
-### 4.2 Uso de sal con OpenSSL
+Uso de sal con OpenSSL:
 
 ```bash
 openssl passwd -6 -salt SAL001 ContrasenaSegura
 openssl passwd -6 -salt SAL002 ContrasenaSegura
 ```
 
-Pregunta 7:
+¿Cambian los Hashes?
 
-- Explica por que la misma contrasena genera hashes distintos al cambiar la sal.
-- Relaciona este resultado con ataques de tablas precalculadas.
+## Hashes y Git
 
-### 4.3 Formato de almacenamiento en Linux
-
-Muestra un ejemplo sintetico del formato de `/etc/shadow`:
-
-`usuario:$6$SAL$HASH:...`
-
-Pregunta 8:
-
-- Que representa el `6`?
-- Que parte corresponde a la sal?
-
----
-
-## 5) Colisiones y riesgos criptograficos
-
-### 5.1 MD5 en contexto actual
-
-Pregunta 9:
-
-- Investiga y resume brevemente por que MD5 esta roto criptograficamente.
-- Indica en que casos podria seguir apareciendo (contextos heredados, control no critico de duplicados, etc.).
-
-### 5.2 Caso de ataque por colision
-
-Consulta un caso historico de colisiones practicas (por ejemplo, SHA-1 SHAttered).
-
-Pregunta 10:
-
-- Describe el impacto potencial sobre:
-	- Integridad de documentos
-	- Certificados o identidad digital
-
----
-
-## Actividad opcional (ampliacion)
-
-Relacion entre hashes y Git:
+Clona, si no lo has hecho ya, el repositorio de la asignatura (Usando SSH):
 
 ```bash
-mkdir -p git_hash_demo
-cd git_hash_demo
-git init
-echo "version 1" > ejemplo.txt
-git add ejemplo.txt
-git commit -m "primer commit"
-git log --oneline -1
+git clone git@github.com:mikel-egana-aranguren/EHU-SGSSI-01.git
+cd cd EHU-SGSSI-01/
+git log
 ```
 
-Pregunta opcional:
-
-- Que identifica el hash del commit?
-- Por que Git detecta cambios de contenido de forma eficiente?
-
-
-Git como en apuntes
-
-BitTorrent como en apuntes (margnet links)
-
-HASH docker
-
-HASH apuntes
-
-Java HashMap
-
-Reproducir Shattered
+¿Qué identifica el hash del commit?¿Por qué Git detecta cambios de contenido de forma eficiente?
 
 
