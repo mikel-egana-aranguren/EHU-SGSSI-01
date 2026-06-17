@@ -4,9 +4,10 @@ Clases y laboratorios de la asignatura Sistemas de Gestión de Seguridad de Sist
 
 Teoría (Se recomienda acceder al archivo PDF de cada carpeta):
 
-* [Introducción](Introduccion/)
+* [Introducción](Introduccion/index.pdf)
 * Cifrado:
-  * Introducción al cifrado, esteganografía, algoritmos resumen.
+  * [Introducción al cifrado, esteganografía, algoritmos resumen](Cifrado_intro/index.pdf)
+  * [Cifrado simétrico](Cifrado_simetrico/index.pdf)
 * Seguridad redes
 * Seguridad web
 * Seguridad de sistemas (Copias, fisica, ...)
