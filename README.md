@@ -28,6 +28,9 @@ Teoría (Se recomienda acceder al archivo PDF de cada carpeta):
 Laboratorios (En Visual Studio Code, pulsando ctrl+mayus+v renderiza el MarkDown de manera amigable, sobre todo para imágenes):
 
 * [Git](Laboratorios/Git/Git.md)
+* [Docker](Laboratorios/Docker/Docker.md)
+* [Introducción al cifrado, esteganografía, algoritmos resumen](Laboratorios/Cifrado_introduccion/Cifrado_introduccion.md)
+* [Cifrado simétrico](Laboratorios/Cifrado_simetrico/Cifrado_simetrico.md)
 
 
 
