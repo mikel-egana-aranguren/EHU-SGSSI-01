@@ -2,6 +2,7 @@
 
 ## Requisitos previos
 
+- Editor de código. En Visual Studio Code, pulsando ctrl+mayus+v renderiza este archivo de manera amigable (Sobre todo para imágenes).
 - Máquina GNU/Linux: portátil, máquina virtual, o PC laboratorio (Entrar con credencial LDAP).
 - Herramientas necesarias: `git`.
 

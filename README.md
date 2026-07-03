@@ -25,14 +25,17 @@ Teoría (Se recomienda acceder al archivo PDF de cada carpeta):
 * [Seguridad física](Seguridad_fisica/)
 * [Legislación e informática forense](AspectosLegales/)
 
-Laboratorios (En Visual Studio Code, pulsando ctrl+mayus+v renderiza el MarkDown de manera amigable, sobre todo para imágenes):
+Laboratorios básicos (No entran en examen pero son necesarios para desarrollar la asignatura):
 
 * [Git](Laboratorios/Git/Git.md)
 * [Docker](Laboratorios/Docker/Docker.md)
+* [Servidor remoto Google Cloud](Laboratorios/Servidor_remoto_Google_Cloud/Servidor_remoto_Google_Cloud.md)
+
+Laboratorios de contenido de clase (Entran en examen):
+
 * [Introducción al cifrado, esteganografía, algoritmos resumen](Laboratorios/Cifrado_introduccion/Cifrado_introduccion.md)
 * [Cifrado simétrico](Laboratorios/Cifrado_simetrico/Cifrado_simetrico.md)
 
-
-
 Actualizar release?
+
 [![DOI](https://zenodo.org/badge/334955028.svg)](https://zenodo.org/badge/latestdoi/334955028)
