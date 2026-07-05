@@ -28,6 +28,24 @@ Crear un proyecto, por ejemplo "SGSSI-26-27" y seleccionarlo; pinchar en `Select
 
 ![Google Cloud Console select project SGSSI-26-27](GoogleCloudConsole_select_project_sgssi_26_27.png)
 
+Abrir una pestaña más y pegar la URL disponible en eGela en `Créditos Google Cloud - Servidor remoto` (Bajo la sección `Laboratorios básicos`), debería aparecer la siguiente:
+
+![Google Cloud Console credits](GoogleCloudConsole_credits.png)
+
+En ella incluye nombre y apellidos y tú dirección de correo UPV/EHU (no Gmail ni ninguna otra). **IMPORTANTE**: una vez hayas pinchado en `Submit`, no volver a pinchar, puede tardar un tiempo. En el correo UPV/EHU recibirás una confirmación con los siguientes pasos. Una vez conseguidos los créditos, en `Google Cloud`; Menu burger (Tres líneas); `Billing`; `Credits` debería aparecer algo así (Probablemente con 50 en vez de 100):
+
+![Google Cloud Console credits 100](GoogleCloudConsole_credits_100.png)
+
+**IMPORTANTE**: puede que tengas que enlazar el proyecto creado con la cuenta de créditos recién obtenida.
+
+
+## Crear servidor
+
+Una vez en la página principal, pulsa en `Compute Engine` y luego `Instancias de VM` (Habilitar Compute Engine API si fuera necesario).
+
+![Google Cloud Console Compute Engine API](GoogleCloudConsole_compute_engine_API.png)
+
+
 
 
 
@@ -42,3 +60,7 @@ Añadir clave SSH profesor en usuario nuevo
 En el servidor, crear usuario bgpegarm, en el grupo sudoer y con contraseña "lsi".
 Añadir la clave pública del profesor en el directorio home de ese usuario, en .ssh/authorized_keys.
 Enviar IP (Sólo IP) en entrega.
+
+Ver documento ODT
+
+
