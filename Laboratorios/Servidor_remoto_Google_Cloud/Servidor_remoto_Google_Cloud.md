@@ -12,6 +12,10 @@
 
 [Google Cloud](https://cloud.google.com/) es la plataforma de Google para computación en la nube. Ofrece créditos gratuitos para [educación](https://cloud.google.com/billing/docs/how-to/edu-grants) que usaremos para crear un servidor y trabajar con él, conectándonos al mismo mediante SSH.
 
+
+DIAGRAMA TOFU etc
+
+
 ## Obtener el crédito y crear un proyecto
 
 Entrar en Gmail en la cuenta creada para el curso (**IMPORTANTE**: no tiene que haber ninguna otra pestaña abierta con otra cuenta Gmail abierta). En otra pestaña nueva, entrar en [Google Cloud Console](https://console.cloud.google.com):
