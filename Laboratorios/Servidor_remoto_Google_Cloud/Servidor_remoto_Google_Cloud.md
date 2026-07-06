@@ -42,12 +42,44 @@ En ella incluye nombre y apellidos y tú dirección de correo UPV/EHU (no Gmail 
 
 **IMPORTANTE**: puede que tengas que enlazar el proyecto creado con la cuenta de créditos recién obtenida.
 
-
 ## Crear servidor
 
 Una vez en la página principal, pulsa en `Compute Engine` y luego `Instancias de VM` (Habilitar Compute Engine API si fuera necesario).
 
 ![Google Cloud Console Compute Engine API](GoogleCloudConsole_compute_engine_API.png)
+
+Pulsar `Create instance` y aparecerá una pantalla parecida a esta:
+
+![Compute Engine Machine Configuration](ComputeEngine_MachineConfiguration.png)
+
+Opciones importantes:
+
+- Nombre: cualquiera pero debe ser fácilmente reconocible, por ejemplo “sgssi-labo”.
+- Elegid una región dentro de Europa.
+- De uso general.
+- Serie: E2.
+- Tipo de máquina: e2-small.
+
+Pasar a `OS and storage`:
+
+![Compute Engine OS and Storage](ComputeEngine_OS.png)
+
+Elegir `Ubuntu 26.04 LTS Minimal` y `Standard persistent disk`.
+
+Pasar a `Data protection` y elegir `No backup`:
+
+![Compute Engine Data Protection](ComputeEngine_data_protection.png)
+
+Pasar a `Networking` y activar el tráfico HTTP, HTTPS y del balanceador de carga:
+
+![Compute Engine http-server](ComputeEngine_http-server.png)
+
+
+
+
+
+
+
 
 
 
@@ -66,5 +98,10 @@ Añadir la clave pública del profesor en el directorio home de ese usuario, en 
 Enviar IP (Sólo IP) en entrega.
 
 Ver documento ODT
+
+**IMPORTANTE**: apagar servidor.
+
+**IMPORTANTE**: la clave SSH para examen.
+
 
 
