@@ -36,7 +36,7 @@ Abrir una pestaña más y pegar la URL disponible en eGela en `Créditos Google 
 
 <img src="GoogleCloudConsole_credits.png" alt="Google Cloud Console credits" width="600">
 
-En ella incluye nombre y apellidos y tú dirección de correo UPV/EHU (no Gmail ni ninguna otra). **IMPORTANTE**: una vez hayas pinchado en `Submit`, no volver a pinchar, puede tardar un tiempo. En el correo UPV/EHU recibirás una confirmación con los siguientes pasos. Una vez conseguidos los créditos, en `Google Cloud`; Menu burger (Tres líneas); `Billing`; `Credits` debería aparecer algo así (Probablemente con 50 en vez de 100):
+En ella incluye nombre y apellidos y tu dirección de correo UPV/EHU (no Gmail ni ninguna otra). **IMPORTANTE**: una vez hayas pinchado en `Submit`, no volver a pinchar, puede tardar un tiempo. En el correo UPV/EHU recibirás una confirmación con los siguientes pasos. Una vez conseguidos los créditos, en `Google Cloud`; Menu burger (Tres líneas); `Billing`; `Credits` debería aparecer algo así (Probablemente con 50 en vez de 100):
 
 <img src="GoogleCloudConsole_credits_100.png" alt="Google Cloud Console credits 100" width="600">
 
@@ -103,11 +103,11 @@ Para asegurar el acceso, hacer SSH desde el ordenador local a la IP externa, en 
 ```bash
 $ ssh IP_EXTERNA_GOOGLE_CLOUD
 ```
-**IMPORTANTE**: SSH funciona sin usario siempre y cuando el usuario añadido sea el mismo de la terminal actual.
+**IMPORTANTE**: SSH funciona sin usuario siempre y cuando el usuario añadido sea el mismo de la terminal actual.
 
-Al mirar en `.ssh/authorized_keys`, vereis que aparece vuestra clave pública, añadida por Google.
+Al mirar en `.ssh/authorized_keys`, veréis que aparece vuestra clave pública, añadida por Google.
 
-Para dar acceso al profesor, crea el usuario `bgpegarm`, en el grupo sudoer y con la contraseña disponible en eGela. Añade la clave pública del profesor disponible en eGela en el directorio `home` de ese usuario, en `.ssh/authorized_keys`. Envía la IP externa (Sólo la IP en texto plano) en la entrega de eGela para que el profesor compruebe que se puede conectar.
+Para dar acceso al profesor, crea el usuario `bgpegarm`, en el grupo `sudoer` y con la contraseña disponible en eGela. Añade la clave pública del profesor disponible en eGela en el directorio `home` de ese usuario, en `.ssh/authorized_keys`. Envía la IP externa (Sólo la IP en texto plano) en la entrega de eGela para que el profesor compruebe que se puede conectar.
 
 **IMPORTANTE**: en el examen no se puede usar el portátil privado, y se usará un ordenador cualquiera del laboratorio, de modo que en el examen el estudiante tiene que ser capaz de generar claves SSH nuevas o reusar claves SSH guardadas.
 
