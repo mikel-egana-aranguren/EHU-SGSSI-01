@@ -11,10 +11,6 @@
             --slide-ratio: calc(16 / 9);
         }
     </style>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async
-            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-    </script>
 </head>
 <body class="shower list">
     <header class="caption">
@@ -48,7 +44,7 @@
 
     <section class="slide">
         <h2>Introducción al cifrado</h2>
-        <p>Criptografía: cifrar la información</p>
+        <p>"cripto": secreto; "graphos": escritura</p>
         <p>Mecanismo de seguridad muy antiguo</p>
         <p>Asegura: <b>Confidencialidad</b>, <b>Integridad</b>, <b>Autenticidad</b>, (<b>No repudio</b>)</p>
     </section>
@@ -59,35 +55,6 @@
         <p><b>Criptología: Criptografía + Criptoanálisis</b></p>
     </section>
 
-    <section class="slide">
-        <h2>Introducción al cifrado</h2>
-        <p>Criptoanálisis: 
-            <ul>
-                <li>Sin conocer la clave</li>
-                <li>Obteniendo la clave a partir de uno o varios mensajes encriptados</li>
-                <li>El algoritmo es público - <a href="https://es.wikipedia.org/wiki/Principios_de_Kerckhoffs">Principio de Kerckhoffs (1883)</a></li>
-            </ul>
-        </p>
-    </section>
-
-    <section class="slide">
-        <h2>Principios Kerckhoffs</h2>
-            <ul>
-                <li>Si el sistema no es teóricamente irrompible, al menos debe serlo en la práctica</li>
-                <li><b>La efectividad del sistema no debe depender de que su diseño permanezca en secreto</b></li>
-                <li>La clave debe ser fácilmente memorizable de manera que no haya que recurrir a notas escritas</li>
-            </ul>
-    </section>
-
-    <section class="slide">
-        <h2>Principios Kerckhoffs</h2>
-            <ul>
-                <li>Los criptogramas deberán dar resultados alfanuméricos</li>
-                <li>El sistema debe ser operable por una única persona</li>
-                <li>El sistema debe ser fácil de utilizar</li>
-            </ul>
-    </section>
-    
     <section class="slide">
         <h2>Criptosistema</h2>
         <p>Criptosistema: D<sub>K</sub> ( E<sub>K</sub> ( M ) ) = M
@@ -137,33 +104,6 @@
     </section>
 
     <section class="slide">
-        <h2>Esteganografía (historia)</h2>
-        <p>Segunda Guerra Mundial</p>
-        <p>Los alemanes utilizaban micro puntos para ocultar información en textos, haciéndolos pasar por signos de puntuación
-        </p>   
-    </section>
-
-    <!-- <section class="slide">
-        <h2>Esteganografía</h2>
-        <p>Usando una plantilla</p>
-        <p>La clave es la forma de extraer la información</p>
-        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/esteganografia.png" alt="Esteganografía" width="40%"></p>   
-    </section>
-
-    <section class="slide">
-        <h2>Esteganografía</h2>
-        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/esteganografia-2.png" alt="Esteganografía" width="40%"></p>   
-    </section>
-
-    <section class="slide">
-        <h2>Esteganografía</h2>
-        <p>Seleccionando unos caracteres determinados</p>
-        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/esteganografia-asirios.png" alt="Esteganografía" width="40%"></p>   
-        <p>Clave: primera letra de cada palabra no monosílaba </p>
-        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/esteganografia-asirios-2.png" alt="Esteganografía" width="40%"></p>
-    </section> -->
-
-    <section class="slide">
         <h2>Esteganografía moderna</h2>
         <p>Insertar información sensible dentro del <b>fichero contenedor</b></p>
         <p>
@@ -185,7 +125,7 @@
     <section class="slide">
         <h2>Sustitución de bits</h2>
         <p>Por ejemplo, para ocultar texto, insertamos el código ASCII del carácter deseado</p>
-        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/LSB.png" alt="Esteganografía" width="40%"></p>
+        <p><img    src="pictures-sgssi-01/LSB.png" alt="Esteganografía" width="40%"></p>
     </section>
 
     <section class="slide">
@@ -200,7 +140,7 @@
     <section class="slide">
         <h2>Esteganografía moderna: problemas</h2>
         <ul>
-            <li>Si el fichero contenedor es manipulado se puede perder la información (ej. JPEG --> BMP --> JPEG)</li>
+            <li>Si el fichero contenedor es manipulado se puede perder la información (ej. JPEG ; BMP ; JPEG)</li>
             <li>No garantiza <b>Autenticidad</b> ni <b>Integridad</b> (Pero si <b>Confidencialidad</b>)</li>
 
         </ul>
@@ -212,7 +152,7 @@
             <ul>
                 <li>De <b>tamaño constante</b>, independientemente del contenido original</li>
                 <li>Representa <b>todo el contenido original</b></li>
-                <li>Si el contenido cambia lo más minimo <b>cambia completamente</b></li>
+                <li>Si el contenido cambia lo más mínimo <b>cambia completamente</b></li>
                 <li>Para el mismo contenido, siempre genera el <b>mismo</b></li>
             </ul>
         </p>
@@ -237,24 +177,25 @@
 
     <section class="slide">
         <h2>Certificar la integridad de la información</h2>
-        <p><a href="http://ftp.mozilla.org/pub/mozilla.org/xulrunner/releases/2.0/MD5SUMS">http://ftp.mozilla.org/pub/mozilla.org/xulrunner/releases/2.0/MD5SUMS</a></p>
-        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/md5-mozilla.png" alt="MD5SUMS mozilla" width="60%"></p>
+        <p><a href="https://www.eclipse.org/downloads/packages/">https://www.eclipse.org/downloads/packages/</a></p>
+        <p><img src="pictures-sgssi-01/hash-eclipse.png" alt="Hash eclipse" width="40%"></p>
         <p>¿Cómo verificar la integridad?</p>
     </section>
 
     <section class="slide">
         <h2>Certificar la integridad de la información</h2>
-        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/hash-integridad.png" alt="Hash integridad" width="60%"></p>
+        <p><img  src="pictures-sgssi-01/hash-integridad.svg" alt="Hash integridad" width="60%"></p>
+        <p style="font-size:10px;font-family: monospace">[sha512sum]</p>
     </section>
 
     <section class="slide">
         <h2>Almacenar contraseñas</h2>
-        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/hash-clave.png" alt="Hash clave" width="60%"></p>
+        <p><img    src="pictures-sgssi-01/hash-clave.svg" alt="Hash clave" width="60%"></p>
     </section>
 
     <section class="slide">
         <h2>Almacenar contraseñas: identificación</h2>
-        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/hash-clave-identificacion.png" alt="Hash clave identificacion" width="80%"></p>
+        <p><img    src="pictures-sgssi-01/hash-clave-identificacion.svg" alt="Hash clave identificacion" width="80%"></p>
     </section>
 
     <section class="slide">
@@ -266,13 +207,13 @@
     <section class="slide">
         <h2>Almacenar contraseñas: problemas</h2>
         <p>Solución: usar "sal" (Salt), o semilla</p>
-        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/hash-clave-identificacion-semilla.png" alt="Hash clave identificacion sal" width="80%"></p>
+        <p><img    src="pictures-sgssi-01/hash-clave-identificacion-semilla.svg" alt="Hash clave identificacion sal" width="80%"></p>
     </section>
 
     <section class="slide">
         <h2>Almacenar contraseñas: problemas</h2>
         <p>Identificación con sal</p>
-        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/hash-clave-identificacion-sal.png" alt="Hash clave identificacion sal" width="80%"></p>
+        <p><img    src="pictures-sgssi-01/hash-clave-identificacion-sal.svg" alt="Hash clave identificacion sal" width="80%"></p>
     </section>
 
     <section class="slide">
@@ -352,11 +293,11 @@
 
     <section class="slide">
         <h2>Identificador de datos o archivos</h2>
-        <p>En BitTorrent para identificar:
+        <p>En BitTorrent para:
             <ul>
-                <li>Fragmentos de archivos</li>
-                <li>Archivos .bittorrent</li>
-                <li>Magnet links</li>
+                <li>Identificar archivos en <a href="https://es.wikipedia.org/wiki/Magnet_URI">Magnet links</a>: URNs (URIs) que identifican un recurso por su contenido, no por su localización (No URLs!)</li>
+                <li>Verificar la integridad de los archivos descargados</li>
+                <li>Encontrar peers que tengan los archivos necesarios (<a href="https://es.wikipedia.org/wiki/Distributed_Hash_Table">DHT</a>, Distributed Hash Table)</li>
             </ul>
         </p>
     </section>
@@ -415,7 +356,7 @@
     <section class="slide">
         <h2>Ataques a algoritmos resumen</h2>
                 <ul>
-                    <li>Colisiones: dos connjuntos de datos diferentes generan el mismo resumen</li>
+                    <li>Colisiones: dos conjuntos de datos diferentes generan el mismo resumen</li>
                     <li>Mediante fuerza bruta (ej. <a href="https://es.wikipedia.org/wiki/Paradoja_del_cumplea%C3%B1os">paradoja del cumpleaños</a>) o técnicas mas refinadas como <a href="https://shattered.io/">shattered</a> contra SHA1</li>
                     <li>Integridad: sustituir un documento por otro documento malicioso con el mismo hash</li>
                     <li>Certificados TLS/SSL: suplantar identidad de un servicio creando un certificado falso</li>

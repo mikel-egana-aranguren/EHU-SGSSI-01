@@ -1,5 +1,10 @@
 # Releases
 
+## 2026-2027-1
+
+* Laboratorios básicos: Git, Google Cloud, Docker
+* Mejora README
+
 ## 2025-2026-3
 
 * Backups, seguridad redes, seguridad física, Deep web, aspectos legales
