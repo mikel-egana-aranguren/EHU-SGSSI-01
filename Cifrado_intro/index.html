@@ -171,8 +171,8 @@
         <p>Certificar la integridad de la información</p>
         <p>Almacenar contraseñas</p>
         <p>Identificador de datos o archivos</p>
-        <p>Prueba de trabajo en <a href="../Cifrado_aplicaciones/index.html">Bitcoin</a></p>
-        <p>Integridad en <a href="../Cifrado_aplicaciones/index.html">firma digital</a></p>
+        <p>Prueba de trabajo en Bitcoin</p>
+        <p>Integridad enfirma digital</p>
     </section>
 
     <section class="slide">
@@ -278,6 +278,7 @@
                 <li>Arboles: directorios que referencian a blobs y otros directorios</li>
             </ul>
         </p>
+        <p style="font-size:10px;font-family: monospace">[git log]</p>
     </section>
 
     <section class="slide">
@@ -364,6 +365,48 @@
             
     </section>
 
+        <section class="slide">
+        <h2>Checksums</h2>
+        <p>Un checksum es un resumen corto de un fichero o bloque de datos</p>
+        <ul>
+            <li>Se usa para detectar errores accidentales</li>
+            <li>Muy útil en transferencia, descarga o validación de archivos</li>
+            <li>Ejemplos: CRC32</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Checksums y hashes</h2>
+        <p>Ambos generan una salida de tamaño fijo, pero no tienen el mismo objetivo</p>
+        <ul>
+            <li><b>Checksum</b>: detectar corrupción accidental o cambios involuntarios</li>
+            <li><b>Hash criptográfico</b>: asegurar integridad frente a un atacante</li>
+            <li>Los checksums no están diseñados para resistir colisiones ni ataques dirigidos</li>
+            <li>Los checksums se computan de forma sencilla y rápida</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Error Correcting Codes (ECC)</h2>
+        <p>No son hashes ni checksums</p>
+        <ul>
+            <li>Se usan para detectar y, en muchos casos, corregir errores de transmisión</li>
+            <li>Ejemplos: parity bits, Hamming, Reed-Solomon</li>
+            <li>Su objetivo es reconstruir datos dañados por ruido o interferencias</li>
+            <li>Los hashes buscan identificar cambios; los ECC buscan recuperar información corrupta</li>
+
+        </ul>
+    </section>
+
+        <section class="slide">
+        <h2>Error Correcting Codes (ECC)</h2>
+        <p>No son hashes ni checksums</p>
+        <ul>
+            <li>Necesitan más recursos computacionales que los hashes o checksums</li>
+            <li>Incluyen información de redundancia para la corrección de errores</li>
+            <li>Transmision en medios de comunicación inestables</li>
+        </ul>
+    </section>
 
 
     <!-- FOOTER -->
