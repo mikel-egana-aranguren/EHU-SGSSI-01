@@ -2,6 +2,7 @@
 
 ## 2026-2027-1
 
+* Introduccion, Cifrado introduccion (+labo)
 * Laboratorios básicos: Git, Google Cloud, Docker
 * Mejora README
 

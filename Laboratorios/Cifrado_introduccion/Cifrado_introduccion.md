@@ -1,10 +1,10 @@
-# Laboratorio: Introduccion al cifrado, esteganografia y algoritmos resumen
+# Laboratorio: Introducción al cifrado, esteganografía y algoritmos resumen
 
 ## Requisitos previos
 
 - Máquina GNU/Linux: portátil, máquina virtual, o PC laboratorio (Entrar con credencial LDAP).
 - Editor de código. En Visual Studio Code, pulsando ctrl+mayus+v renderiza este archivo de manera amigable (Sobre todo para imágenes).
-- Herramientas necesarias: `openssl`, `sha512sum`, `git`, `steghide`.
+- Herramientas necesarias: `openssl`, `sha512sum`, `git`, `steghide`, `docker`, `docker compose`.
 
 ## Esteganografía práctica
 
@@ -95,6 +95,33 @@ openssl passwd -6 -salt SAL002 ContrasenaSegura
 ```
 
 ¿Cambian los Hashes?
+
+En la carpeta `password_hash_demo` tienes una pequeña aplicación web con tres versiones de la misma funcionalidad:
+
+- `plain`: almacena la contraseña en texto plano.
+- `hashed`: almacena un hash SHA-256 de la contraseña.
+- `salted`: almacena unq sal aleatoria y un hash PBKDF2-HMAC-SHA256.
+
+Para ejecutarla:
+
+```bash
+cd password_hash_demo
+docker compose up --build
+```
+
+Después abre:
+
+- http://localhost:5001/ -> versión insegura (texto plano)
+- http://localhost:5002/ -> versión con hash
+- http://localhost:5003/ -> versión con sal
+
+Registra el mismo usuario y la misma contraseña en las tres versiones y compara la base de datos o la información mostrada por cada servicio. Fíjate en que:
+
+- En texto plano se ve la contraseña original;
+- Con hash, la misma contraseña produce el mismo valor hash para todos los usuarios;
+- Con sal, cada usuario tiene una sal distinta, por lo que iguales contraseñas no generan el mismo valor almacenado.
+
+Despliega el proyecto en tu servidor Google Cloud y comprueba que funciona correctamente, y que puedes cambiar la sal a un número definido por tí.
 
 ## Hashes y Git
 
