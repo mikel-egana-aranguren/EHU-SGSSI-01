@@ -1,0 +1,53 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: password-demo-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: demo
+      POSTGRES_USER: demo
+      POSTGRES_PASSWORD: demo123
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+
+  plain:
+    build:
+      context: ./app_plain
+    container_name: password-demo-plain
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgresql://demo:demo123@db:5432/demo
+      APP_MODE: plain
+    ports:
+      - "5001:5000"
+
+  hashed:
+    build:
+      context: ./app_hashed
+    container_name: password-demo-hashed
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgresql://demo:demo123@db:5432/demo
+      APP_MODE: hashed
+    ports:
+      - "5002:5000"
+
+  salted:
+    build:
+      context: ./app_salted
+    container_name: password-demo-salted
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgresql://demo:demo123@db:5432/demo
+      APP_MODE: salted
+    ports:
+      - "5003:5000"
+
+volumes:
+  db_data:

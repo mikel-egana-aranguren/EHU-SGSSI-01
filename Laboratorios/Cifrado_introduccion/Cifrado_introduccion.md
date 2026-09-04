@@ -96,6 +96,33 @@ openssl passwd -6 -salt SAL002 ContrasenaSegura
 
 ¿Cambian los Hashes?
 
+En la carpeta `password_hash_demo` tienes una pequeña aplicación web con tres versiones de la misma funcionalidad:
+
+- `plain`: almacena la contraseña en texto plano.
+- `hashed`: almacena un hash SHA-256 de la contraseña.
+- `salted`: almacena un salt aleatorio y un hash PBKDF2-HMAC-SHA256.
+
+Para ejecutarla:
+
+```bash
+cd password_hash_demo
+docker compose up --build
+```
+
+Después abre:
+
+- http://localhost:5001/ -> versión insegura (texto plano)
+- http://localhost:5002/ -> versión con hash
+- http://localhost:5003/ -> versión con sal
+
+Registra el mismo usuario y la misma contraseña en las tres versiones y compara la base de datos o la información mostrada por cada servicio. Fíjate en que:
+
+- En texto plano se ve la contraseña original;
+- Con hash, la misma contraseña produce el mismo valor hash para todos los usuarios;
+- Con sal, cada usuario tiene un salt distinto, por lo que iguales contraseñas no generan el mismo valor almacenado.
+
+Despliega el proyecto en tu servidor Google Cloud y comprueba que funciona correctamente, y que puedes cambiar la sal a "457897821372183721".
+
 ## Hashes y Git
 
 Clona, si no lo has hecho ya, el repositorio de la asignatura (Usando SSH):
