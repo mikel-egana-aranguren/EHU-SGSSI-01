@@ -5,6 +5,7 @@
 - Máquina GNU/Linux: portátil, máquina virtual, o PC laboratorio (Entrar con credencial LDAP).
 - Editor de código. En Visual Studio Code, pulsando ctrl+mayus+v renderiza este archivo de manera amigable (Sobre todo para imágenes).
 - Herramientas necesarias: `openssl`, `sha512sum`, `git`, `steghide`, `docker`, `docker compose`.
+- Repositorio GitHub de asignatura: puedes subir los programa desarrollados en el laboratorio.
 
 ## Esteganografía práctica
 
