@@ -37,8 +37,8 @@
         <h2>Criptosistemas</h2>
         <p>Clave privada (simétricos), clave pública (asimétricos)</p>
         <p>Monoalfabéticos, polialfabéticos</p>
-        <p>Transposición, sustitución, bloques, stream</p>
-        <p>Confidencialidad, integridad, autenticación, no repudio</p>
+        <p>Sustitución, transposición</p>
+        <p>Stream ciphers, block ciphers</p>
     </section>
 
     <section class="slide">
@@ -77,7 +77,7 @@
         <h2>Cifrado simple por sustitución</h2>
         <p>Se sustituye cada letra del mensaje original por otra letra de un alfabeto reordenado</p>
         <p><img  src="pictures-sgssi-01/sustitucion_simple.png" alt="Sustitución simple" width="40%"></p>
-        <p>Simétrico, Monoalfabético, Sustitución, Confidencialidad</p>
+        <p>Monoalfabético</p>
     </section>
 
     <section class="slide">
@@ -112,221 +112,123 @@
         <p>Evitar la correspondencia 1-1 usando el mismo carácter en más de una ocasión (Sistemas polialfabéticos)</p>
     </section>
 
-
     <section class="slide">
         <h2>Cifrado playfair</h2>
-        <p>Simetrico, ...<b>polialfabetico</b> <b>bloques</b></p>
-        <p></p>
-    </section>
-
-    <section class="slide">
-        <h2>Cifrado playfair</h2>
+        <p>Polialfabético</p>
+        <p><a title="Davidtheterp, CC0, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Playfair_Cipher_01_HI_to_BM_(cropped).png"><img width="150" alt="Playfair Cipher 01 HI to BM" src="https://upload.wikimedia.org/wikipedia/commons/a/af/Playfair_Cipher_01_HI_to_BM_%28cropped%29.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail_unscaled"></a></p>
         <p>Espacio de claves: 25!</p>
         <p>Analisis de frecuencias sobre bigramas</p>
     </section>
 
 
-
-    <section class="slide">
-        <h2>Hemen</h2>
-
-    </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <section class="slide">
-        <h2>Criptosistemas de clave privada</h2>
-        <p><b>Cifrado en flujo:</b> cifrar un flujo continuo de bits</p>
-        <p><b>Cifrado en bloque:</b> dividir el mensaje en bloques del mismo tamaño y aplicar el algoritmo a cada uno</p>  
-    </section>
-
-
-
-    
-    
-
-
-
-
-    <section class="slide">
-        <h2>El disco de Alberti</h2>
-        <p>Primer sistema polialfabético</p>
-        <p>Dos discos concéntricos, el interior móvil</p>
-        <p>Durante el cifrado, se va moviendo, por lo que en el cifrado se usan X alfabetos (correspondencias) distintas</p>
-        <p>La clave es la posición inicial, cada cuántos caracteres se gira el disco, cuánto se gira y en qué dirección</p>
-    </section>
-
-    <section class="slide">
-        <h2>El disco de Alberti</h2>
-        <p><iframe width="560" height="315" src="https://www.youtube.com/embed/GaQVO039M8k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+<section class="slide">
+        <h2>La máquina Enigma</h2>
+        <p>Dispositivo de cifrado electromecánico utilizado principalmente durante la Segunda Guerra Mundial por los alemanes</p>
+        <p>Clave: configuración de los rotores</p>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/Enigma_(crittografia)_-_Museo_scienza_e_tecnologia_Milano.jpg" alt="Enigma" width="20%"></p>
     </section>
 
     <section class="slide">
         <h2>La máquina Enigma</h2>
-        <p>Es probablemente el elemento criptográfico más conocido de la historia</p>
-        <p>Originalmente diseñada para uso civil</p>
-        <p>Modificada para uso militar y usada por los nazis</p>
-    </section>
-
-    <section class="slide">
-        <h2>La máquina Enigma</h2>
-        <p><iframe width="560" height="315" src="https://www.youtube.com/embed/G2_Q9FoD-oQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
-    </section>
-
-    <section class="slide">
-        <h2>La máquina Enigma</h2>
-        <p>El matemático polaco Marian Rejewski estableció las bases para desencriptar Enigma
-            <ul>
-                <li>Crearon máquinas electromecánicas llamadas "bombas"</li>
-                <li>Los nazis añadieron 2 nuevos rotores y las "bombas" polacas no daban abasto con el nuevo número de posibilidades</li>
-            </ul>
-        </p>
+        <p>Alan Turing principal criptoanalista: máquina electromecánica diseñada para buscar automáticamente las configuraciones posibles de Enigma (Bomba). Fundamental para ganar la guerra</p>
+        <p>Turing fundamental para informática: maquinas de Turing, algoritmos de computación, inteligencia artificial, ... ???</p>
+        <p>Turing se suicido en 1954, después de ser perseguido por su homosexualidad. Icono Apple, gobierno UK</p>
 
     </section>
 
     <section class="slide">
-        <h2>La máquina Enigma</h2>
-
-        <p>El equipo de <a href="https://en.wikipedia.org/wiki/Alan_Turing">Alan Turing</a> partió de esta información para crear su propia "bomba" más eficiente y resistente a cambios de configuración</p>
-            <p><iframe width="400" height="250" src="https://www.youtube.com/embed/V4V2bpZlqx8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+        <h2>Criptosistemas simétricos modernos</h2>
+        <p>Cifran bits en vez de texto</p>
+        <p><b>Cifrado en flujo (Stream ciphers):</b> cifrar un flujo continuo de bits</p>
+        <p><b>Cifrado en bloque (Block ciphers):</b> dividir el mensaje en bloques del mismo tamaño y aplicar el algoritmo a cada uno</p>  
     </section>
 
     <section class="slide">
-        <h2>Métodos de sustitución polialfabéticos</h2>
-
-        <p>Criptoanálisis
-            <ul>
-                <li>Usando métodos estadísticos</li>
-                <li>Se buscan patrones para deducir tamaños de las claves,
-                    orden de los distintos trozos, etc.</li>
-                    <li>Hace falta más texto encriptado que en los sistemas
-                        monoalfabéticos</li>
-            </ul>
-        </p>
-    </section>
-
-    <section class="slide">
-        <h2>Métodos de cifrado de flujo</h2>
-
-        <p>En vez de cifrar un mensaje, cifran bit a bit</p>
+        <h2>Stream ciphers</h2>
+        <p>Cifran un flujo  bit a bit</p>
         <p>Usado para comunicaciones en tiempo real (No se puede esperar a tener el mensaje completo para
             cifrarlo y transmitirlo)</p>
 
     </section>
 
     <section class="slide">
-        <h2>Métodos de cifrado de flujo</h2>
-
-        <p>A partir de la clave, se usa un generador
-            "pseudoaleatorio" que genera el flujo de clave</p>
-            <p>La operación XOR entre el bit a cifrar y el flujo de
-                clave, genera el criptograma</p>
+        <h2>Stream ciphers</h2>
+        <p>A partir de la clave, se usa un generador pseudoaleatorio que genera el flujo de clave (de manera determinista, pero parece aleatoria) de igual tamaño que el mensaje</p>
+        <p>La operación XOR entre el bit a cifrar y el flujo de clave genera el criptograma</p>
     </section>
 
     <section class="slide">
-        <h2>Métodos de cifrado de flujo</h2>
-        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/cifrado-flujo.png" alt="Frecuencias" width="80%"></p>
+        <h2>Stream ciphers</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/cifrado-flujo.svg" alt="Cifrado de flujo" width="50%"></p>
     </section>
 
     <section class="slide">
-        <h2>Método de Vernam</h2>
-        <p>Realiza el <a href="https://es.wikipedia.org/wiki/Cifrado_XOR">cifrado XOR</a> entre el texto y una clave aleatoria de
-            la misma longitud</p>
-        <p>El generador es realmente aleatorio</p>
+        <h2>Stream ciphers: XOR</h2>
+        <p>Reversible</p>
+        <p>No pierde información</p>
+        <p>Muy eficiente</p>
+        <p>Clave aleatoria, salida parece aleatoria</p>
+        <p>One time pad irrompible: C = P XOR K (K totalmente aleatoria, tan largo como mensaje, usada una sola vez)</p>
     </section>
 
     <section class="slide">
-        <h2>Método de Vernam</h2>
-        <p>La clave (el flujo de clave) es lo denominado "libreta
-            de un solo uso":
-            <ul>
-                <li>Sólo se usa una vez</li>
-                <li>Hay que enviársela al receptor del mensaje</li>
-                <li>Está demostrado matemáticamente que es irrompible</li>
-            </ul>
+        <h2>Stream ciphers</h2>
+        <p>No reutilizar la misma clave para cifrar múltiples mensajes</p>
+        <p>Keystream = F(clave, nonce)</p>
+        <ul>
+            <li>Clave: secreta y fija</li>
+            <li>Nonce: público y diferente para cada mensaje</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Stream ciphers: RC4</h2>
+        <p>1995-2015 (TLS/SSL, WEP)</p>
+        <ul>
+            <li><a href="https://www.rc4nomore.com/">https://www.rc4nomore.com/</a></li>
+            <li>Ataque de recuperación de la clave: Fluhrer, S., Mantin, I., & Shamir, A. (2001). Weaknesses in the Key Scheduling Algorithm of RC4</li>
+            <li>Ataque de sesgo estadístico: Paul, G., & Preneel, B. (2004). A New Weakness in the RC4 Keystream Generator and an Approach to Improve the Security of the Cipher</li>
+        </ul>
+    </section>
+
+        <section class="slide">
+        <h2>Stream ciphers: ChaCha20</h2>
+        <p>2008 (IETF, Google, etc.)</p>
+        <p><a href="https://tools.ietf.org/html/rfc7539">https://tools.ietf.org/html/rfc7539</a></p>
+        <p>TLS, OpenSSH, HTTP/3</p>
+
+    </section>
+    
+
+    <section class="slide">
+        <h2>Block ciphers</h2>
+        <p>Partir el mensaje original en bloques de tamaño fijo
         </p>
-        <p>No es práctico</p>
-    </section>
-
-    <section class="slide">
-        <h2>Otros métodos de cifrado de flujo</h2>
-        <p>Basados en el método de Vernam</p>
-        <p>Usar claves pseudoaleatorias generadas a partir de
-            una semilla y un algoritmo de generación</p>
-            <p>Con la semilla y el algoritmo de generación se podría
-                reconstruir la clave pseudoaleatoria (Depende del número de
-                posibles semillas distintas)</p>
-
-    </section>
-
-    <section class="slide">
-        <h2>Otros métodos de cifrado de flujo</h2>
-        <p>No son matemáticamente irrompibles</p>
-        <p>Ejemplos:
-            <ul>
-                <li>RC4 (ARC4) usado en TLS/SSL , WEP y WPA entre otros (Roto)</li>
-                <li>A5/1 (y distintas versiones) usado en comunicaciones GSM (A5/1 y A5/2 rotos)</li>
-            </ul>
-        </p>
-    </section>
-
-    <section class="slide">
-        <h2>Métodos de cifrado por bloques</h2>
-        <p>Partir el mensaje original en bloques de
-            tamaño fijo: 
-            <ul>
-                <li>Si el tamaño es suficientemente pequeño, puede
-                    considerarse cifrado de flujo</li>
-                <li>Existen algoritmos de rellenado para aquellos casos en
-                    los que el tamaño del mensaje no sea múltiplo del
-                    tamaño del bloque</li>    
-            </ul>
-        </p>
-    </section>
-
-    <section class="slide">
-        <h2>Métodos de cifrado por bloques</h2>
     <p>Cada bloque de mensaje original genera un bloque de
         mensaje cifrado</p>
         <p>Se pueden añadir iteraciones, permutaciones y
             operaciones entre los distintos bloques</p>
+            <p>Propagación de errores (!Stream ciphers)</p>
+            <p>Padding</p>
         </section>
 
         <section class="slide">
-            <h2>Métodos de cifrado por bloques</h2>
+            <h2>Block ciphers</h2>
                 <ul>
                     <li>DES</li>
                     <li>Triple DES</li>
                     <li>AES</li>
                     <li>IDEA</li>
-                    <li>KASUMI</li>
                 </ul>
         </section>
 
         <section class="slide">
             <h2>DES (Data Encryption Standard)</h2>
                 <ul>
-                    <li>1975</li>
-                    <li>Primer estándar</li>
+                    <li>1975, Primer estándar</li>
                     <li>Bloques de 64 bits</li>
                     <li>Clave de 56 bits (64 - 8 como propuesta de la NSA para asegurarse de que podian romperlo -???-)</li>
-                    <li>16 rondas</li>
-                    <li>Se puede romper en menos de 24 horas</li>
+                    <li>Se considera inseguro actualmente: ej. ataque fuerza bruta: Wiener, M. J. (1999). "Efficient DES Key Search". Practical Cryptography for Data Internetworks. Indiana University: Research Institute for Advanced Computer Science. ISBN 0-8186-8828-1.</li>
                 </ul>
         </section>
 
@@ -335,8 +237,7 @@
         <section class="slide">
             <h2>Triple DES</h2>
             <ul>
-                <li>Concebido como sucesor de DES, pero en desuso</li>
-                <li>Todavía se usa en tarjetas de crédito</li>
+                <li>Concebido como sucesor de DES, todavia en uso pero no recomendado desde 2023 (<a href="https://www.incibe.es/en/incibe-cert/early-warning/vulnerabilities/cve-2016-2183">CVE-2016-2183</a>)</li>
                 <li>Basado en realizar 3 ejecuciones de DES (Cifrar -
                     Descifrar - Cifrar)</li>
                 <li>Bloques de 64 bits</li>
@@ -353,9 +254,7 @@
                 <li>Sustituto de (Triple) DES</li>
                 <li>Muy usado en todo tipo de comunicaciones y transacciones</li>
                 <li>Bloques de 128 bits</li>
-                <li>Claves de 128, 192 ó 256 bits</li>
-                <li>8 rondas (claves de 128) , 12 rondas (claves de 192), 14
-rondas (claves de 256)</li>
+                <li>Claves de 128, 192 o 256 bits</li>
             
             </ul>
         </section>
@@ -372,19 +271,7 @@ rondas (claves de 256)</li>
                 </ul>
         </section>
 
-        <section class="slide">
-            <h2>KASUMI (A5/3)</h2>
 
-                <ul>
-                    <li>Bloques de 64 bits</li>
-                    <li>Clave de 128 bits</li>
-                    <li>8 rondas</li>
-                    <li>Usado en las redes 3G (con alguna variación)</li>
-                    <li>El original se puede <a href="https://www.engadget.com/2010/01/15/3g-gsm-encryption-cracked-in-less-than-two-hours/">romper fácilmente</a> (probado en
-                2010)</li>
-                </ul>
-
-        </section>
 
 
   

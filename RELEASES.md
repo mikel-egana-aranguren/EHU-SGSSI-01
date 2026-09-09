@@ -1,8 +1,20 @@
 # Releases
 
-## 2026-2027-1
+## 2026-2027-3
+
+* Cifrado simetrico (+labo)
+* Introduccion, Cifrado introduccion (+labo)
+* Laboratorios básicos: Git, Google Cloud, Docker
+* Mejora README
+
+## 2026-2027-2
 
 * Introduccion, Cifrado introduccion (+labo)
+* Laboratorios básicos: Git, Google Cloud, Docker
+* Mejora README
+
+## 2026-2027-1
+
 * Laboratorios básicos: Git, Google Cloud, Docker
 * Mejora README
 
