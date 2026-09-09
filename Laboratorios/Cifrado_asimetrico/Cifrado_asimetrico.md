@@ -7,15 +7,7 @@
 - Herramientas necesarias: OpenSSL (`sudo apt install openssl`), gpg (`sudo apt install gpg`).
 - Repositorio GitHub de asignatura: puedes subir los programas desarrollados en el laboratorio.
 
-## RSA
-
-Generar claves RSA con OpenSSL:
-
-```bash
-openssl genpkey -algorithm RSA -out clave_privada.pem
-```
-
-## Asegurando las comunicaciones mediante GPG
+## Generar claves GPG
 
 [GnuPG (GPG)](https://gnupg.org/) es un programa libre que nos permite cifrar, descifrar y firmar información cumpliendo el estándar [OpenPGP](https://www.openpgp.org/) y así asegurar nuestras comunicaciones. GPG ofrece muchas posibilidades. Es conveniente familiarizarse con ellas:
 
@@ -45,13 +37,13 @@ gpg --list-keys
 
 Es importante que la clave pública esté accesible. Se puede publicar en una página [web personal](https://mikel-egana-aranguren.github.io/contact/), se puede enviar adjunta en un email, o se puede publicar en servidores específicos como **keys.openpgp.org** (Ver más adelante).
 
-GPG puede ser usado integrado en clientes de correo como Thunderbird, o directamente en la línea de comandos. Para enviar archivos que han sido cifrados en la línea de comandos mediante GPG simplemente basta con adjuntarlos en el email.
+Para enviar archivos que han sido cifrados en la línea de comandos mediante GPG simplemente basta con adjuntarlos en el email.
 
-- Cifrad este archivo PDF y enviároslo entre vosotros de forma que consigáis los principios de **Confidencialidad**, **Integridad**, **Autenticidad** y **No Repudio**.
+- Cifrad este archivo y enviároslo entre vosotros de forma que consigáis los principios de **Confidencialidad**, **Integridad**, **Autenticidad** y **No Repudio**.
 
 > Razonad qué habéis tenido que hacer para conseguir cada uno de ellos.
 
-## Confianza sobre las claves
+## Confianza sobre las claves GPG
 
 Como habéis podido comprobar, es muy fácil crear un par de claves y poner cualquier nombre. No se realiza ningún tipo de comprobación. Por lo que si recibimos un archivo firmado y/o cifrado por una persona, no podemos estar seguros de que realmente sea esa persona a no ser que tengamos alguna manera de preguntarle si esa es realmente su clave. Sin embargo, existen mecanismos para que podamos confiar en las claves de una persona aun sin necesidad de conocerla o haber hablado previamente con ella para comprobar si esa es su clave.
 
@@ -59,7 +51,7 @@ Como habéis podido comprobar, es muy fácil crear un par de claves y poner cual
 
 > Razonad qué habéis tenido que hacer para conseguirlo.
 
-## Anillos públicos de claves
+## Anillos públicos de claves GPG
 
 Lo más sencillo para publicar y buscar claves es usar un servicio como [Keys OpenPGP](https://keys.openpgp.org/). Para usarlo hay que añadir la siguiente linea al archivo `/home/{usuario}/.gnupg/gpg.conf`:
 
@@ -72,9 +64,9 @@ keyserver hkps://keys.openpgp.org
 - Busca las claves de los otros estudiantes y la del profesor usando GPG en la terminal.
 - Recrea el ejercicio de la sección anterior, **Confianza sobre las claves**, pero esta vez usa el servidor de claves a través de la terminal en vez de enviar las claves al profesor (Notifica al profesor para que busque las claves de confianza).
 
-## Anillo de claves de la clase SGSSI
+## Anillo de claves GPG de la clase SGSSI
 
-Vamos a recrear el anillo de claves de la sección anterior, pero sólo con las claves de los estudiantes de clase y usando eGela. Para ello, el profesor designará una cadena de confianza designando a ciertos estudiantes, y el resto de estudiantes subirán sus claves públicas asegurando la confianza de manera transitiva (Empezando en los estudiantes de confianza). El profesor comprobará la confianza de la cadena importando todas las claves, pero dándole confianza sólo a la última (Al importarlas, todas deberían aparecer como de confianza en el ordenador del profesor).
+Vamos a recrear el anillo de claves de la sección anterior, pero sólo con las claves de los estudiantes de clase y usando eGela. Para ello, el profesor definirá una cadena de confianza designando a ciertos estudiantes, y el resto de estudiantes subirán sus claves públicas asegurando la confianza de manera transitiva (Empezando en los estudiantes de confianza). El profesor comprobará la confianza de la cadena importando todas las claves, pero dándole confianza sólo a la primera (Al importarlas, todas deberían aparecer como de confianza en el ordenador del profesor).
 
 ## Firmas GPG
 
@@ -106,7 +98,7 @@ El commit aparece como verificado en GitHub (“Verified”). ¿Esto qué quiere
 
 > Verifica ese mismo commit en tu ordenador local. ¿Qué pasos tienes que seguir?
 
-> Usa tus claves GPG para firmar un commit en uno de tus repositorios GitHub públicos, de modo que aparezca como “Verified” al verlo en GitHub. Verifica los commits firmados por otros estudiantes.
+> Usa tus claves GPG para firmar un commit en el repositorio GitHub de la asignatura, de modo que aparezca como “Verified” al verlo en GitHub. Verifica los commits firmados por otros estudiantes.
 
 ## Otras funcionalidades GPG
 
@@ -120,6 +112,27 @@ Puede pasar que una clave quede comprometida.
 
 Aunque su función principal es el cifrado asimétrico, GPG también se puede usar para cifrado simétrico.
 
-> ¿Como cifrarías este documento de manera simétrica, y qué pasos seguirias para que el receptor lo descifre?
+> ¿Como cifrarías este documento de manera simétrica, y qué pasos seguirías para que el receptor lo descifre?
 
+## RSA
 
+Genera un par de claves RSA con OpenSSL:
+
+```bash
+openssl genpkey -algorithm RSA -out clave.pem
+```
+El archivo `clave.pem` tiene ambas claves, para poder ver su estructura interna: 
+
+```bash
+openssl rsa -text -in clave.pem
+```
+
+Para extraer la clave pública:
+
+```bash
+openssl rsa -pubout -in clave.pem -out clave_publica.pem
+```
+
+Encripta un mensaje con la clave publica mediante `openssl pkeyutl -encrypt`. Descífralo con la clave privada y comprueba que el mensaje coincide. 
+
+> RSA sirve para archivos pequeños. ¿Cómo implementarías un cifrado híbrido, usando AES para cifrar el archivo de manera simétrica y RSA para cifrar la clave AES? 
