@@ -61,7 +61,7 @@ openssl enc -d -aes-256-cbc -pbkdf2 -iter 100000 \
 cmp mensaje.txt mensaje.aes.descifrado
 ```
 
-Repite la práctica con Triple DES y DES. En OpenSSL 3 pueden necesitarse los algoritmos heredados:
+Repite la práctica con Triple DES y DES:
 
 ```bash
 openssl enc -des-ede3-cbc -provider default -provider legacy -pbkdf2 \
