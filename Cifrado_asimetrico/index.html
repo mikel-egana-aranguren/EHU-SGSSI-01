@@ -44,19 +44,20 @@
 
     <section class="slide">
         <h2>Criptografía de clave pública</h2>
+        <p>Cifrado simétrico: la misma clave asegura la confidencialidad, la autenticidad y el no repudio, y hay que compartirla de forma segura entre los comunicantes</p>
         <p>A principios de los 70 surgen los sistemas criptográficos asimétricos como solución al problema de compartir la clave en sistemas simétricos</p>
-        <p>Usa algoritmos de clave asimétrica: la clave que cifra no es la que descifra</p>
+        <p>Cifrado asimétrico: dos claves diferentes para confidencialidad y la autenticidad</p>
     </section>
 
     <section class="slide">
         <h2>Criptografía de clave pública</h2>
         <p>Dos claves por usuario:
             <ul>
-                <li>La clave pública que conoce todo el mundo</li>
-                <li>La clave privada que sólo conoce el usuario</li>
+                <li>La clave pública que conoce todo el mundo (Confidencialidad)</li>
+                <li>La clave privada que sólo conoce el usuario (Autenticidad, No Repudio)</li>
             </ul>
         </p>
-        <p>Están relacionadas matemáticamente</p>
+        <p>La clave pública se deriva de la privada, pero no se puede derivar la privada de la pública*</p>
         <p>Lo que una clave cifra sólo lo puede descifrar la otra</p>
     </section>
 
@@ -267,7 +268,7 @@
 
     <section class="slide">
         <h2>Diffie-Hellman</h2>
-        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/DiffieHellmanAliceBob.png" alt="Diffie Hellman Alice Bob" width="60%"></p>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/DiffieHellmanAliceBob.svg" alt="Diffie Hellman Alice Bob" width="60%"></p>
     </section>
 
     <section class="slide">
@@ -279,7 +280,7 @@
 
     <section class="slide">
         <h2>RSA</h2>
-        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/RSA.png" alt="RSA" width="60%"></p>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/RSA.svg" alt="RSA" width="60%"></p>
     </section>
 
     <section class="slide">
