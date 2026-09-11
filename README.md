@@ -7,7 +7,8 @@ Clases y laboratorios de la asignatura Sistemas de Gestión de Seguridad de Sist
 (Acceder al archivo `index.pdf` de cada carpeta)
 
 * [Introducción](Introduccion/index.pdf)
-* Cifrado:
+* 
+:
   * [Introducción al cifrado, esteganografía, algoritmos resumen](Cifrado_intro/index.pdf)
   * [Cifrado simétrico](Cifrado_simetrico/index.pdf)
   * Cifrado asimétrico
