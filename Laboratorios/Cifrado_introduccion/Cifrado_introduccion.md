@@ -130,7 +130,7 @@ Clona, si no lo has hecho ya, el repositorio de la asignatura (Usando SSH):
 
 ```bash
 git clone git@github.com:mikel-egana-aranguren/EHU-SGSSI-01.git
-cd cd EHU-SGSSI-01/
+cd EHU-SGSSI-01/
 git log
 ```
 
