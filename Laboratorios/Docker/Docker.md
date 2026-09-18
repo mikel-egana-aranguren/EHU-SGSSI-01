@@ -45,6 +45,37 @@ docker run hello-world
 
 ![Terminal Docker](docker_terminal.png)
 
+Para instalar docker compose solo en tu usuario:
+
+- Descargar la última version de docker en el directorio $HOME
+
+```bash
+DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}
+mkdir -p $DOCKER_CONFIG/cli-plugins
+curl -SL https://github.com/docker/compose/releases/download/v5.5.0/docker-compose-linux-x86_64 -o $DOCKER_CONFIG/cli-plugins/docker-compose
+```
+
+Si quieres instalar docker compose en todo el sistema, sustituye `~/.docker/cli-plugin` por `/usr/local/lib/docker/cli-plugins`
+
+Si quieres descargarlo para una arquitectura diferente, sustituye `x86_64` por la arquitectura deseada.
+
+- Dar permisos de ejecución
+
+```bash
+chmod +x $DOCKER_CONFIG/cli-plugins/docker-compose
+```
+
+O, si lo has instalado par todo el sistema:
+
+```bash
+sudo chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
+```
+
+- Comporbar que se ha instalado correctamente
+
+```bash
+docker compose version
+```
 
 ## 3. Gestionar imagenes
 
@@ -257,10 +288,10 @@ docker build -t="web" .
 docker-compose up
 ```
 
-- Visita la web en http://localhost:81
-- Para añadir los datos necesarios, visita http://localhost:8890/ (tal y como lo hemos definido en `docker-compose.yml`, usuario "admin", password "test").
+- Visita la web en <http://localhost:81>
+- Para añadir los datos necesarios, visita <http://localhost:8890/> (tal y como lo hemos definido en `docker-compose.yml`, usuario "admin", password "test").
 - Pincha en `database` y luego en `import`, desde donde eliges el archivo `docker-lamp/database.sql`.
-- Vuelve a http://localhost:81, debería tener más información.
+- Vuelve a <http://localhost:81>, debería tener más información.
 
 ![Docker localhost](docker_localhost.png)
 ![Docker admin](docker_admin.png)
@@ -272,5 +303,3 @@ Para parar los servicios `ctrl+c` o abrir otra terminal en el mismo directorio y
 ```bash
 docker-compose down
 ```
-
-
