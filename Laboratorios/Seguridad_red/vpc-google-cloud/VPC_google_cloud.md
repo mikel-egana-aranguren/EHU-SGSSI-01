@@ -1,4 +1,4 @@
-# Laboratorio: Aplicación web de agenda telefónica en Google Cloud
+# Laboratorio: Subredes en Google Cloud
 
 ## Requisitos previos
 
@@ -9,7 +9,7 @@
 
 Este laboratorio despliega una pequeña aplicación web de agenda telefónica con dos niveles de red separados:
 
-- **Nivel web**: una instancia Compute Engine con Apache/PHP, accesible desde internet por SSH y HTTP.
+- **Nivel web**: una instancia Compute Engine con una aplicación Web Python, accesible desde internet por SSH y HTTP.
 - **Nivel de base de datos**: una instancia Cloud SQL (MySQL), accesible únicamente desde el nivel web.
 
 El objetivo es practicar la segmentación de red mediante subredes VPC y reglas de firewall.
@@ -65,7 +65,6 @@ Ir a `Compute Engine` > `VM instances` > `Create instance`.
   - Activar el tráfico HTTP (`Allow HTTP traffic`).
   - En `Network interfaces`, seleccionar la red `phonebook-vpc` y la subred `web-subnet`.
   - Reservar una IP externa estática (`External IPv4 address` > `Reserve static external IP address`).
-  - !!!!!!!!!!!! En `Network tags`, añadir la etiqueta `web-tier`.
 - `Security` > `Manage access`: añadir la clave pública SSH (`Add manually generated SSH keys`).
 - `Advanced options` > `Management` > `Automation`: pegar el siguiente script de arranque para instalar y configurar automáticamente la aplicación:
 
@@ -80,7 +79,7 @@ sudo chmod +x index.py
 sudo chown www-data:www-data index.py
 ```
 
-Crear la instancia. Visitar `http://IP_EXTERNA_SERVIDOR_WEB/cgi-bin/index.py` y deberia aparecer el siguiente error, ya que no se puede conectar a la BBDD: `Database error: (2003, "Can't connect to MySQL server on 'DB_PRIVATE_IP' ([Errno -3] Temporary failure in name resolution)")`
+Crear la instancia. Visitar `http://IP_EXTERNA_SERVIDOR_WEB/cgi-bin/index.py` y debería aparecer el siguiente error, ya que no se puede conectar a la BBDD: `Database error: (2003, "Can't connect to MySQL server on 'DB_PRIVATE_IP' ([Errno -3] Temporary failure in name resolution)")`
 
 
 ## Crear la base de datos (Cloud SQL)
@@ -98,7 +97,7 @@ Editar la instancia:
   - Desactivar `Public IP`.
   - Activar `Private IP` y seleccionar la red `phonebook-vpc`. Si se solicita, seguir el asistente para reservar un rango de IP y habilitar el acceso a servicios privados (`Service Networking API`).
 
-Guardar. :
+Guardar. 
 
 - Pestaña `Databases` > `Create database`: nombre `mydb`.
 - Pestaña `Users` > `Add user account`: usuario `admin` con una contraseña.
@@ -116,7 +115,7 @@ DATABASE = "mydb"
 
 ## Probar la aplicación
 
-Visitar `http://IP_EXTERNA_SERVIDOR_WEB/cgi-bin/index.py`. Debería aparecer datos de la agenda.
+Visitar `http://IP_EXTERNA_SERVIDOR_WEB/cgi-bin/index.py`. Deberían aparecer datos de la agenda.
 
 
 
