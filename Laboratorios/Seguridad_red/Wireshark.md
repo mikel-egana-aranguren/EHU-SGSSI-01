@@ -1,4 +1,4 @@
-# Laboratorio: Wireshark
+# Laboratorio: Seguridad red
 
 ## Requisitos previos
 
@@ -32,4 +32,8 @@ Localizar la interfaz de red:
 ip -br a
 ```
 
-`lo` es el interfaz de loopback, es decir el localhost conectandose a si mismo. Normalmente las interfaces activas aparecen como `UP`. Elegir interfaz en Wireshark y pinchar en capturar. 
+`lo` es el interfaz de loopback, es decir el localhost conectandose a si mismo. Normalmente las interfaces activas aparecen como `UP`. Elegir interfaz en Wirewhark y pinchar en capturar. 
+
+Abrir una web en el navegador, por ejemplo `https://phrack.org/issues/72/linenoise_md#article`. Parar la captura y filtrar por HTTP para buscar la primera peticion GET.
+
+> ¿Qué protocolos se usan? ¿Que bits del mensaje se corresponden con cada uno?
