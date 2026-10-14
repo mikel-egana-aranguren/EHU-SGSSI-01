@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Seguridad red</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../ShowerTemplate/shower/themes/ribbon/styles/styles.css">
+    <style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+</head>
+<body class="shower list">
+    <header class="caption">
+        <h1>Seguridad red</h1>
+        <p>Mikel Egaña Aranguren</p>
+    </header>
+
+    <section class="slide" id="cover">
+        <h2>Seguridad red</h2>
+        <p>Mikel Egaña Aranguren</p>
+        <p><a href="https://mikel-egana-aranguren.github.io/">mikel-egana-aranguren.github.io</a></p>
+        <p><a href="mailto:mikel.egana@ehu.eus">mikel.egana@ehu.eus</a></p>
+        <img src="../ShowerTemplate/pictures/ehu.png" alt="UPV/EHU ingenieros San Mames" height="25%" border="1px solid #555">
+    </section>
+
+    <section class="slide">
+        <h2>Seguridad red</h2>
+        <p><a href="https://doi.org/10.5281/zenodo.4302267">https://doi.org/10.5281/zenodo.4302267</a></p>
+        <p><a href="https://github.com/mikel-egana-aranguren/EHU-SGSSI-01">https://github.com/mikel-egana-aranguren/EHU-SGSSI-01</a></p>
+        <img src="../ShowerTemplate/pictures/by.png" alt="Creative Commons BY" height="10%">
+    </section>
+
+    <section class="slide">
+        <h2>Modelo OSI (Open Systems Interconnection)</h2>
+        <p><img src="pictures-sgssi-01/OSI.png" alt="OSI" width="90%"></p>
+        <p style="text-align:left;font-size:30%;"><a href="https://en.wikipedia.org/wiki/OSI_model">https://en.wikipedia.org/wiki/OSI_model</a></p>
+    </section>
+
+    <section class="slide">
+        <h2>TCP/IP</h2>
+        <p><img src="pictures-sgssi-01/tcp-ip.png" alt="TCP/IP" width="75%"></p>
+        <p style="text-align:left;font-size:30%;"><a href="https://www.cdebyte.com/news/889">https://www.cdebyte.com/news/889</a></p>
+    </section>
+
+    <section class="slide">
+        <h2>CIDR (Classless Inter-Domain Routing)</h2>
+        <p>Asignar direcciones IP y enrutamiento en redes</p>
+        <p>Ejemplo: 192.168.1.0/24</p>
+        <p>red: 192.168.1.0 - 192.168.1.255 / host o subred 192.168.1.1 - 192.168.1.254</p>
+        <p>Mascara de red (Routers de una red a otra): 255.255.255.0</p>
+    </section>
+
+    <section class="slide">
+        <h2>Captura de trafico de red</h2>
+        <a href="../Laboratorios/Seguridad_red/Wireshark.md">Laboratorio Wireshark</a>
+    </section>
+
+    <section class="slide">
+        <h2>Segmentación de red</h2>
+        <p>Segmentacion física</p>
+        <p>Segmentacion lógica mediante VLAN (Capa 2 OSI): agrupar dispositivos por funcionalidad</p>
+        <p>Segmentacion lógica mediante subredes (Capa 3 OSI): dividir una red en subredes más pequeñas (Rango de direcciones IP)</p>
+    </section>
+
+    <section class="slide">
+        <h2>VPC (Virtual Private Cloud)</h2>
+        <ul>
+            <li>Aislamiento: la red está lógicamente separada de otros usuarios de la nube</li>
+            <li>Control de IPs: elegir los rangos de direcciones IP, subredes y tablas de rutas</li>
+            <li>Gateways: gateways de internet y NAT controlan el tráfico entrante y saliente</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>VPC Google Cloud</h2>
+        <p>Los objetivos de las reglas de firewall se definen mediante tags (ej. http-server, https-server) en vez de bloques CIDR</p>    
+    </section>
+
+    <section class="slide">
+        <h2>VPC Google Cloud</h2>
+        <img src="pictures-sgssi-01/VPC-GC.svg" alt="VPC Google Cloud" width="90%">
+    </section>
+
+        <section class="slide">
+        <h2>VPC Google Cloud</h2>
+        <a href="../Laboratorios/Seguridad_red/vpc-google-cloud/VPC_google_cloud.md
+        ">Laboratorio VPC Google Cloud</a>
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer class="badge">
+        <a href="https://github.com/mikel-egana-aranguren/EHU-SGSSI-01">Fork me on GitHub</a>
+    </footer>
+
+    <div class="progress"></div>
+
+    <script src="../ShowerTemplate/shower/shower.js"></script>
+    <!-- Copyright © 3000 Yours Truly, Famous Inc. -->
+
+</body>
+</html>
