@@ -83,12 +83,76 @@
         <img src="pictures-sgssi-01/VPC-GC.svg" alt="VPC Google Cloud" width="90%">
     </section>
 
-        <section class="slide">
+    <section class="slide">
         <h2>VPC Google Cloud</h2>
         <a href="../Laboratorios/Seguridad_red/vpc-google-cloud/VPC_google_cloud.md
         ">Laboratorio VPC Google Cloud</a>
     </section>
 
+    <section class="slide">
+        <h2>Firewall</h2>
+        <p>Dispositivo/Software que controla el tráfico de entrada y salida  de la red según reglas predefinidas</p>
+        <p>Las reglas se basan en diferentes criterios de seguridad</p>
+    </section>
+
+    <section class="slide">
+        <h2>Firewall: funciones</h2>
+        <p>Filtrado de paquetes: inspecciona cada paquete y lo compara con la reglas</p>
+        <p>Control de acceso: permite o deniega el acceso a servicios o protocolos</p>
+        <p>Registro y auditoria</p>
+        <p>NAT (Network Address Translation): multiples dispositivos comparten una única dirección IP pública</p>
+        <p>VPN (Virtual Private Network)*</p>
+        <p>IDS/IPS</p>
+    </section>
+
+    <section class="slide">
+        <h2>Firewall: tipos</h2>
+        <p>Packet Filtering Firewalls: Analizan solo los headers de los paquetes
+de red y permiten o bloquean el tráfico: IP de origen y destino, los puertos y los protocolos utilizados </p>
+        <p>Stateful Inspection Firewalls: Además de analizar los headers de los paquetes, realizan
+un seguimiento del estado de las conexiones de red. Pueden examinar el contenido de los paquetes
+y tomar decisiones basadas en el estado de la conexión</p>
+        <p>         
+<p>Application Firewalls (Proxy Firewalls): Examinan el tráfico incluyendo protocolos de aplicación
+específicos, como HTTP, FTP o SMTP. Inspeccionan el contenido de los mensajes y aplican reglas de
+seguridad más avanzadas para detectar y bloquear amenazas específicas de las aplicaciones</p>
+
+    </section>
+
+
+    <section class="slide">
+        <h2>Firewall: reglas filtrado generales</h2>
+        <p>Bloquear paquetes que incluyan dirección de difusión (Broadcast) por ataques DoS</p>
+        <p>Bloquear paquetes de entrada con direccion fuente correspondiente a direcciones internas por suplantación de identidad (Spoofing)</p>
+        <p>Bloquear todos los paquetes de entrada con direcciones privadas referenciadas en <a href="https://www.rfc-editor.org/rfc/rfc1918">RFC 1918 (Address Allocation for Private Internets)</a></p>
+        
+    </section>
+
+    <section class="slide">
+        <h2>Firewall: reglas filtrado generales</h2>
+        <p>Bloquear los paquetes de entrada con direcciones fuente 127.0.0.1</p>
+        <p>Bloquear los paquetes del protocolo de control ICMP que en respuestas a peticiones Ping o Traceroute pueden dar información sobre la topología de la red interna</p>
+    </section>
+
+    <section class="slide">
+        <h2>Firewall: reglas filtrado generales</h2>
+        <p>Bloquear los paquetes ICMP Redirect que permiten modificar las tablas de enrutamiento de los routers</p>
+        <p>Bloquear todos los paquetes con un tamaño inferior al mínimo permitido o con valores inválidos en la cabecera</p>
+        <p>
+    </section>
+
+    <section class="slide">
+        <h2>Firewall: puertos a bloquear</h2>
+        <p>Conexion remota: Telnet (23), SSH (22), FTP (21)</p>
+        <p>RPC (Remote Procedure Call) y servicio NFS (Network File System) en Redes UNIX</p>
+        <p>HTTP, SSL, SMTP, POP, IMAP, DNS, LDAP en máquinas que no actúan como servidores</p>
+    </section>
+
+
+    <section class="slide">
+        <h2>Firewall</h2>
+        <a href="../Laboratorios/Seguridad_red/Firewall.md">Laboratorio Firewall</a>
+    </section>
     <!-- FOOTER -->
 
     <footer class="badge">
