@@ -148,11 +148,147 @@ seguridad más avanzadas para detectar y bloquear amenazas específicas de las a
         <p>HTTP, SSL, SMTP, POP, IMAP, DNS, LDAP en máquinas que no actúan como servidores</p>
     </section>
 
+    <section class="slide">
+        <h2>DMZ (Zona desmilitarizada)</h2>
+        <p>Subred entre la intranet e internet donde se ubican los servicios públicos (correo, ftp, etc.) que quedan más expuestos a los problemas de seguridad</p>
+        <p>Se crea mediante el uso de uno o dos cortafuegos</p>
+        <p>Desde DMZ no se puede acceder directamente a la intranet</p>
+    </section>
+
+    <section class="slide">
+        <h2>DMZ</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/FIREWAL-DMZ.png" alt="DMZ" width="90%"></p>
+    </section>
 
     <section class="slide">
         <h2>Firewall</h2>
         <a href="../Laboratorios/Seguridad_red/Firewall.md">Laboratorio Firewall</a>
     </section>
+
+    <section class="slide">
+        <h2>Balanceador de carga</h2>
+        <p>Distribuir el tráfico de red entre varios servidores para mejorar el rendimiento y la disponibilidad de los servicios</p>
+        <p>Intermediario entre los clientes y los servidores</p>
+        <p>Nivel aplicacion (HTTP) o nivel transporte (TCP/UDP)</p>
+    </section>
+
+    <section class="slide">
+        <h2>Balanceador de carga</h2>
+        <p>Distribucion de carga</p>
+        <p>Tolerancia a fallos</p>
+        <p>Escalabilidad</p>
+        <p>Control de sesiones</p>
+        <p>Optimización rendimiento</p>
+    </section>
+
+    <section class="slide">
+        <h2>Balanceador de carga</h2>
+        <a href="../Laboratorios/Seguridad_red/load-balancer/LoadBalancer.md">Laboratorio Balanceador de carga</a>
+    </section>
+
+    <section class="slide">
+        <h2>Proxy</h2>
+        <p>Aplicacion que actua de intermediario</p>
+        <p>El cliente hace las peticiones al proxy que se encarga de gestionarlas y enviarlas a los servidores remotos</p>
+        <p>Proporciona mayor seguridad durante la navegación porque el servidor desconoce quién se ha conectado realmente</p>
+        <p>Almacenar en caché las respuestas del servidor</p>
+        <p>Filtrar el tráfico de red para contenido no deseado</p>
+    </section>
+
+    <section class="slide">
+        <h2>Proxy HTTP(S)</h2>
+        <p>Acceso a sitios web</p>
+        <p>Filtrado de contenido</p>
+        <p>Almacenamiento en caché</p>
+    </section>
+
+    <section class="slide">
+        <h2>Proxy SOCKS</h2>
+        <p>Proxy de nivel de transporte</p>
+        <p>Permite la conexión a través de un proxy SOCKS</p>
+        <p>Enrutamiento de tráfico de red</p>
+        <p>Anonimato</p>
+    </section>
+
+    <section class="slide">
+        <h2>Proxy inverso</h2>
+        <p>Lado servidor</p>
+        <p>Balanceo de carga</p>
+        <p>Proteccion de infraestructura</p>
+    </section>
+
+    <section class="slide">
+        <h2>Proxy inverso</h2>
+        <a href="../Laboratorios/Seguridad_red/ReverseProxy.md">Laboratorio Proxy inverso</a>
+    </section>
+
+
+    <section class="slide">
+        <h2>IDS/IPS</h2>
+        <p>IDS (Intrusion Detection System): sistema de detección de intrusos</p>
+        <p>IPS (Intrusion Prevention System): sistema de prevención de intrusos</p>
+        <p>Host (HIPS, HIDS) o Network (NIPS, NIDS)</p>
+
+    </section>
+
+
+    <section class="slide">
+        <h2>IDS/IPS</h2>
+        <p>Heurística (Reglas): solo ataques conocidos. Algunos falsos positivos.</p>
+        <p>Anomalías: perfil de comportamiento. Ataques nuevos. Más falsos positivos.</p>
+
+    </section>
+
+        <section class="slide">
+        <h2>Intrusion Prevention System (IPS)</h2>
+        <p><img  style="border: 1px solid #555;"  src="pictures-sgssi-01/FIREWAL-DMZ-IDS.png" alt="DMZ" width="90%"></p>
+    </section>
+
+
+        <section class="slide">
+        <h2>Honeypot</h2>
+
+    </section>
+
+        <section class="slide">
+        <h2>VPN</h2>
+
+    </section>
+
+        <section class="slide">
+        <h2>Análisis de logs: Common Log Format</h2>
+        <p>
+            <pre>
+                <code>127.0.0.1 user-identifier frank [10/Oct/2000:13:55:36 -0700] 
+                    "GET /apache_pb.gif HTTP/1.0" 200 2326</code>
+            </pre>
+        </p>
+        <ul>
+            <li>IP cliente</li>
+            <li>Identificación cliente</li>
+            <li>Nombre autenticación usuario</li>
+            <li>Fecha/hora conexión</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Análisis de logs: Common Log Format</h2>
+        <p>
+            <pre>
+                <code>127.0.0.1 user-identifier frank [10/Oct/2000:13:55:36 -0700] 
+                    "GET /apache_pb.gif HTTP/1.0" 200 2326</code>
+            </pre>
+        </p>
+        <ul>
+            <li>Petición cliente</li>
+            <li>Estado HTTP devuelto</li>
+            <li>Bytes enviados</li>
+        </ul>
+    </section>
+
+
+
+
     <!-- FOOTER -->
 
     <footer class="badge">
