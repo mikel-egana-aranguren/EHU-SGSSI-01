@@ -37,5 +37,9 @@ Clases y laboratorios de la asignatura Sistemas de Gestión de Seguridad de Sist
 * [TOR](Laboratorios/TOR-ONION/TOR-ONION.md)
 * [Wireshark](Laboratorios/Seguridad_red/Wireshark.md)
 * [VPC Google Cloud](Laboratorios/Seguridad_red/vpc-google-cloud/VPC_google_cloud.md)
+* [Firewall](Laboratorios/Seguridad_red/firewall/firewall.md)
+* [Load balancer](Laboratorios/Seguridad_red/load-balancer/load-balancer.md)
+* [Reverse Proxy](Laboratorios/Seguridad_red/reverse-proxy/reverse-proxy.md)
+* [Suricata](Laboratorios/Seguridad_red/suricata/suricata.md)
 
 
