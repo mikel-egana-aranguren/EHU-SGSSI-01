@@ -41,5 +41,6 @@ Clases y laboratorios de la asignatura Sistemas de Gestión de Seguridad de Sist
 * [Load balancer](Laboratorios/Seguridad_red/load-balancer/load-balancer.md)
 * [Reverse Proxy](Laboratorios/Seguridad_red/reverse-proxy/reverse-proxy.md)
 * [Suricata](Laboratorios/Seguridad_red/suricata/suricata.md)
+* [NMap](Laboratorios/Seguridad_red/nmap/nmap.md)
 
 
