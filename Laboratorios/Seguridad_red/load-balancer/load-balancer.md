@@ -23,9 +23,9 @@ En el menú de navegación, ir a `VPC network` > `VPC networks` > `Create VPC ne
 - Añadir una subred:
   - Nombre: `lb-subnet`.
   - Región: una región dentro de Europa.
-  - Rango de direcciones IPv4: `10.0.1.0/24`.
+  - Rango de direcciones IPv4: `10.0.5.0/24`.
 
-Pulsar `Create`.
+Pulsar `Done` en la sección `lb-subnet` y `Create` en la principal.
 
 Ir a `VPC network` > `Firewall` > `Create firewall rule`.
 
@@ -35,7 +35,7 @@ Regla para el tráfico de usuarios y del balanceador:
 - Red: `lb-vpc`.
 - Dirección de tráfico: `Ingress`.
 - Destinos: `Specified target tags`, etiqueta `lb-backend`.
-- Filtro de origen: `IPv4 ranges`, rangos `130.211.0.0/22` y `35.191.0.0/16` (balanceador y comprobaciones de salud de Google).
+- Filtro de origen: `IPv4 ranges`, rangos `130.211.0.0/22` y `35.191.0.0/16` [balanceador y comprobaciones de salud de Google](https://docs.cloud.google.com/load-balancing/docs/firewall-rules#health-checks).
 - Protocolos y puertos: `TCP`, puerto `80`.
 
 Regla para la administración:
@@ -52,13 +52,15 @@ Regla para la administración:
 Ir a `Compute Engine` > `Instance templates` > `Create instance template`.
 
 - Nombre: `lb-template`.
+- Región: `europe-central2`.
 - Serie: `E2`, tipo de máquina: `e2-micro`.
-- `OS and storage`: `Ubuntu 26.04 LTS Minimal` como sistema operativo.
-- `Networking`:
-  - Etiqueta de red: `lb-backend`.
+- `Boot disk`: `Ubuntu 26.04 LTS Minimal` como sistema operativo.
+- `Firewall`: `Allow HTTP traffic`, `Allow HTTPS traffic`, `Allow load balancer health checks`.
+- En `Advanced options` > `Networking`:
+  - Etiqueta de red: añadir `lb-backend`.
   - En `Network interfaces`, seleccionar la red `lb-vpc` y la subred `lb-subnet`.
-- `Security` > `Manage access`: añadir la clave pública SSH (`Add manually generated SSH keys`).
-- `Advanced options` > `Management` > `Automation`: pegar el siguiente script de arranque, que instala Apache y publica una página con el nombre de la instancia:
+- En `Advanced options` > `Security` > `Manage access`: añadir la clave pública SSH (`Add manually generated SSH keys`).
+- En `Advanced options` > `Management` > `Automation`: pegar el siguiente script de arranque, que instala Apache y publica una página con el nombre de la instancia:
 
 ```bash
 sudo apt-get update
@@ -71,11 +73,11 @@ Pulsar `Create`.
 
 ## Crear el grupo de instancias gestionado
 
-Ir a `Compute Engine` > `Instance groups` > `Create instance group` > `New managed instance group (stateless)`:
+En la lista de `instance templates`, pulsar `Actions` en `lb-template` y `Create instance group` (`New managed instance group (stateless)`):
 
 - Nombre: `lb-mig`.
 - Plantilla de instancia: `lb-template`.
-- Ubicación: `Multiple zones` en la región de `lb-subnet`.
+- Ubicación: `Europe central` (La misma que `lb-template`).
 - Número de instancias: `2` (autoescalado desactivado).
 - `Port mapping`: nombre `http`, puerto `80`.
 - `Autohealing` > `Create a health check`:
@@ -89,7 +91,8 @@ Pulsar `Create`. Esperar a que las dos instancias estén en ejecución.
 Ir a `Network services` > `Load balancing` > `Create load balancer`:
 
 - Tipo: `Application Load Balancer (HTTP/HTTPS)`.
-- Público (`Internet facing`), global.
+- Público (`Public facing`)
+- Global.
 - Nombre: `lb-http`.
 
 Configuración:
@@ -97,7 +100,7 @@ Configuración:
 - `Frontend configuration`:
   - Nombre: `lb-frontend`.
   - Protocolo: `HTTP`, puerto `80`.
-  - IP: `Create IP address`, nombre `lb-ip` (IP externa estática).
+  - IP address: `Create IP address`, nombre `lb-ip` (IP externa estática).
 - `Backend configuration` > `Create a backend service`:
   - Nombre: `lb-backend-service`.
   - Tipo de backend: `Instance group`.
