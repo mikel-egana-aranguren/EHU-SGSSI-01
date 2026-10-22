@@ -73,7 +73,7 @@ Pulsar `Create`.
 
 ## Crear el grupo de instancias gestionado
 
-En la lista de `instance templates`, pulsar `Actions` en `lb-template` y `Create instance group`:
+En la lista de `instance templates`, pulsar `Actions` en `lb-template` y `Create instance group` (`New managed instance group (stateless)`):
 
 - Nombre: `lb-mig`.
 - Plantilla de instancia: `lb-template`.
