@@ -5,13 +5,13 @@
 - Máquina GNU/Linux: portátil, máquina virtual, o PC laboratorio (Entrar con credencial LDAP).
 - Editor de código. En Visual Studio Code, pulsando ctrl+mayus+v renderiza este archivo de manera amigable (Sobre todo para imágenes).
 - Herramientas necesarias: `openssl`, `sha512sum`, `git`, `steghide`, `docker`, `docker compose`.
-- Repositorio GitHub de asignatura: puedes subir los programa desarrollados en el laboratorio.
+- Repositorio GitHub de asignatura: puedes subir los programas desarrollados en el laboratorio.
 
 ## Esteganografía práctica
 
 En este bloque ocultaremos un mensaje dentro de una imagen contenedora.
 
-Si `steghide` no esta instalado:
+Si `steghide` no está instalado:
 
 ```bash
 sudo apt update
@@ -30,7 +30,7 @@ Insertar mensaje con contraseña en imagen `linus.jpg`:
 steghide embed -cf linus.jpg -ef msg_linus -sf linus_steg.jpg
 ```
 
-Extraccion del mensaje oculto (Primero renombrar archivo original mensaje a `msg_linus_old`):
+Extracción del mensaje oculto (Primero renombrar archivo original mensaje a `msg_linus_old`):
 
 ```bash
 steghide extract -sf linus_steg.jpg
@@ -53,9 +53,9 @@ md5sum integridad.txt
 sha256sum integridad.txt
 ```
 
-Modifica un solo caracter y vuelve a calcular los resúmenes. ¿Cómo han cambiado?
+Modifica un solo carácter y vuelve a calcular los resúmenes. ¿Cómo han cambiado?
 
-## Integridad y esteganografia
+## Integridad y esteganografía
 
 Compara los hashes de los mensajes usados en la esteganografía: 
 
@@ -75,7 +75,7 @@ sha256sum linus_steg.jpg
 
 ¿Coinciden? 
 
-Hay un mensaje importante de Buenaventura Durruti para vosotros en una de las imagenes del directorio `durruti`. El mensaje ha sido introducido mediante el programa steghide, con contraseña "durruti". La imagen que contiene el mensaje se corresponde con el Hash (SHA256) `7d573924d70a604cb56122aed9bded3f40d3083d8adc353a97c0b816c0e573bb`. ¿Qué archivo es? ¿Qué dice la frase? ¿Como automatizarías la búsqueda si tuvieses muchos archivos en carpetas y subcarpetas?
+Hay un mensaje importante de Buenaventura Durruti para vosotros en una de las imágenes del directorio `durruti`. El mensaje ha sido introducido mediante el programa steghide, con contraseña "durruti". La imagen que contiene el mensaje se corresponde con el Hash (SHA256) `7d573924d70a604cb56122aed9bded3f40d3083d8adc353a97c0b816c0e573bb`. ¿Qué archivo es? ¿Qué dice la frase? ¿Cómo automatizarías la búsqueda si tuvieses muchos archivos en carpetas y subcarpetas?
 
 ## Contraseñas y sal
 
@@ -101,7 +101,7 @@ En la carpeta `password_hash_demo` tienes una pequeña aplicación web con tres 
 
 - `plain`: almacena la contraseña en texto plano.
 - `hashed`: almacena un hash SHA-256 de la contraseña.
-- `salted`: almacena unq sal aleatoria y un hash PBKDF2-HMAC-SHA256.
+- `salted`: almacena una sal aleatoria y un hash PBKDF2-HMAC-SHA256.
 
 Para ejecutarla:
 
@@ -120,9 +120,9 @@ Registra el mismo usuario y la misma contraseña en las tres versiones y compara
 
 - En texto plano se ve la contraseña original;
 - Con hash, la misma contraseña produce el mismo valor hash para todos los usuarios;
-- Con sal, cada usuario tiene una sal distinta, por lo que iguales contraseñas no generan el mismo valor almacenado.
+- Con sal, cada usuario tiene una sal distinta, por lo que contraseñas iguales no generan el mismo valor almacenado.
 
-Despliega el proyecto en tu servidor Google Cloud y comprueba que funciona correctamente, y que puedes cambiar la sal a un número definido por tí.
+Despliega el proyecto en tu servidor Google Cloud y comprueba que funciona correctamente, y que puedes cambiar la sal a un número definido por ti.
 
 ## Hashes y Git
 
