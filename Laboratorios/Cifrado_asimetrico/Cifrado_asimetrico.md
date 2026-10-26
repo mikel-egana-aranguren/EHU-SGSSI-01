@@ -53,7 +53,7 @@ Como habéis podido comprobar, es muy fácil crear un par de claves y poner cual
 
 ## Anillos públicos de claves GPG
 
-Lo más sencillo para publicar y buscar claves es usar un servicio como [Keys OpenPGP](https://keys.openpgp.org/). Para usarlo hay que añadir la siguiente linea al archivo `/home/{usuario}/.gnupg/gpg.conf`:
+Lo más sencillo para publicar y buscar claves es usar un servicio como [Keys OpenPGP](https://keys.openpgp.org/). Para usarlo hay que añadir la siguiente línea al archivo `/home/{usuario}/.gnupg/gpg.conf`:
 
 ```bash
 keyserver hkps://keys.openpgp.org
@@ -112,7 +112,7 @@ Puede pasar que una clave quede comprometida.
 
 Aunque su función principal es el cifrado asimétrico, GPG también se puede usar para cifrado simétrico.
 
-> ¿Como cifrarías este documento de manera simétrica, y qué pasos seguirías para que el receptor lo descifre?
+> ¿Cómo cifrarías este documento de manera simétrica, y qué pasos seguirías para que el receptor lo descifre?
 
 ## RSA
 
@@ -133,6 +133,6 @@ Para extraer la clave pública:
 openssl rsa -pubout -in clave.pem -out clave_publica.pem
 ```
 
-Encripta un mensaje con la clave publica mediante `openssl pkeyutl -encrypt`. Descífralo con la clave privada y comprueba que el mensaje coincide. 
+Encripta un mensaje con la clave pública mediante `openssl pkeyutl -encrypt`. Descífralo con la clave privada y comprueba que el mensaje coincide. 
 
 > RSA sirve para archivos pequeños. ¿Cómo implementarías un cifrado híbrido, usando AES para cifrar el archivo de manera simétrica y RSA para cifrar la clave AES? 
