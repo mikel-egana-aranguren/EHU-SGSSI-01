@@ -102,6 +102,8 @@ Guardar.
 - Pestaña `Databases` > `Create database`: nombre `mydb`.
 - Pestaña `Users` > `Add user account`: usuario `admin` con una contraseña.
 
+Añadir los datos de `addressbook.sql`.
+
 ## Conectar el servidor web con la base de datos
 
 Conectarse por SSH a `phonebook-web` y editar el archivo de configuración de la aplicación con los datos de conexión a la base de datos (IP privada de la instancia Cloud SQL, nombre de la base de datos, usuario y contraseña creados en el paso anterior):

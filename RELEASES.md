@@ -1,5 +1,17 @@
 # Releases
 
+## 2026-2027-8
+
+* Seguridad web, labo pen-testing
+* Seguridad red II, Labo firewall, Labo load balancer, Labo reverse proxy, Labo suricata
+* Seguridad red I, Labo Wireshark, Labo VPC Google Cloud
+* Cifrado aplicaciones (+labo)
+* Cifrado asimetrico (+labo)
+* Cifrado simetrico (+labo)
+* Introduccion, Cifrado introduccion (+labo)
+* Laboratorios básicos: Git, Google Cloud, Docker
+* Mejora README
+
 ## 2026-2027-7
 
 * Seguridad red II, Labo firewall, Labo load balancer, Labo reverse proxy, Labo suricata
