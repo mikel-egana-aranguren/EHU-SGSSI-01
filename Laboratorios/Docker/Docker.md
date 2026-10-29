@@ -47,7 +47,7 @@ docker run hello-world
 
 Para instalar docker compose solo en tu usuario:
 
-- Descargar la última version de docker en el directorio $HOME
+- Descargar la última version de docker compose en el directorio $HOME
 
 ```bash
 DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}
@@ -71,7 +71,7 @@ O, si lo has instalado par todo el sistema:
 sudo chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
 ```
 
-- Comporbar que se ha instalado correctamente
+- Comprobar que se ha instalado correctamente
 
 ```bash
 docker compose version
