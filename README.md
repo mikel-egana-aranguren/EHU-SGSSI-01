@@ -13,6 +13,7 @@ Clases y laboratorios de la asignatura Sistemas de Gestión de Seguridad de Sist
   * [Cifrado asimétrico](Cifrado_asimetrico/index.pdf)
   * [Aplicaciones cifrado](Cifrado_aplicaciones/index.pdf)
 * [Seguridad red](Seguridad_red/index.pdf)
+* [Seguridad web](Seguridad_web/index.pdf)
 
 ## Laboratorios
 
@@ -42,5 +43,7 @@ Clases y laboratorios de la asignatura Sistemas de Gestión de Seguridad de Sist
 * [Reverse Proxy](Laboratorios/Seguridad_red/reverse-proxy/reverse-proxy.md)
 * [Suricata](Laboratorios/Seguridad_red/suricata/suricata.md)
 * [NMap](Laboratorios/Seguridad_red/nmap/nmap.md)
+* [ZAP Mutillidae](Laboratorios/Seguridad_web/ZAP-mutilidae/ZAP-mutilidae.md)
+* [Burp suite](Laboratorios/Seguridad_web/Burp-suite/Burp-suite.md)
 
 
