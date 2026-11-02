@@ -1,4 +1,4 @@
-# Laboratorio: Ataque a Web vulnerable
+# Laboratorio: SQL injection
 
 ## Requisitos previos
 
@@ -70,8 +70,6 @@ SELECT * FROM usuarios WHERE nombre = 'mikel'
 ```
 
 Que nos daría la información sobre el usuario `mikel`. Poner `#` también funciona, y hay muchas maneras de hacerlo, dependiendo de la Base de Datos. 
-
-(Si pasa mucho tiempo entre peticiones hay que volver a empezar el laboratorio y capturar una petición Login nueva)
 
 Repetimos la petición con `'-- -` al final del parametro `username`, para que la consulta SQL quede comentada:
 
