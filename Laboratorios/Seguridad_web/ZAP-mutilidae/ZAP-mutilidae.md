@@ -1,4 +1,4 @@
-# Laboratorio: pen-testing 
+# Laboratorio: Pen-testing con ZAP y Mutillidae
 
 ## Requisitos previos
 
@@ -6,7 +6,7 @@
 - Editor de código. En Visual Studio Code, pulsando ctrl+mayus+v renderiza este archivo de manera amigable (Sobre todo para imágenes).
 - Repositorio GitHub de asignatura: puedes subir los programas desarrollados en el laboratorio.
 
-## Pen-testing con ZAP y Multillidae
+## Pen-testing con ZAP y Mutillidae
 
 El pen-testing consiste en buscar vulnerabilidades en sistemas Web. Para hacerlo vamos a usar un proyecto web vulnerable (Mutillidae) y un scaner de vulnerabilidades (ZAP).
 
