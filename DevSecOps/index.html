@@ -33,11 +33,11 @@
     </section>
 
     <section class="slide">
-        <h2>¿Qué es DevSecOps?</h2>
+        <h2>DevSecOps</h2>
         <ul>
-            <li>Integra la seguridad en el ciclo de vida del software y en las operaciones</li>
+            <li>Integra la seguridad (Sec) en el ciclo de vida del software (Dev) y en las operaciones (Ops)</li>
             <li>Desarrolladores, operaciones y seguridad comparten la responsabilidad</li>
-            <li>Automatiza comprobaciones para obtener feedback temprano y continuo</li>
+            <li>Automatiza comprobaciones para obtener feedback explícito, temprano y continuo</li>
         </ul>
     </section>
 
@@ -85,8 +85,8 @@
         <h2>Seguridad del código</h2>
         <ul>
             <li>Revisión de código y criterios de aprobación compartidos</li>
-            <li>SAST: analizar el código fuente sin ejecutar la aplicación</li>
-            <li>DAST: evaluar la aplicación mientras está en ejecución</li>
+            <li>SAST (Static Application Security Testing): analizar el código fuente sin ejecutar la aplicación</li>
+            <li>DAST (Dynamic Application Security Testing): evaluar la aplicación mientras está en ejecución</li>
             <li>Escaneo de secretos para evitar publicar credenciales</li>
         </ul>
     </section>
@@ -102,8 +102,27 @@
     </section>
 
     <section class="slide">
+        <h2>SBOM: Software Bill of Materials</h2>
+        <ul>
+            <li>Documentar todos los componentes de software utilizados en un proyecto</li>
+            <li>Facilitar la trazabilidad y el control de vulnerabilidades</li>
+            <li>Mejorar la transparencia y la gestión del riesgo</li>
+            <li>Facilitar la auditoría y el cumplimiento normativo</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>SBOM: Software Bill of Materials</h2>
+        <ul>
+            <li>CycloneDX: formato estándar para la representación de SBOM (OWASP)</li>
+            <li>Mikel Egaña Aranguren, Jesualdo Tomás Fernández-Breis, Bidane Leon Balentzia, Markus Rompe, Alexander García Castro. A comprehensive view of software vulnerability risks through enterprise knowledge graphs. <a href="https://doi.org/10.1016/j.cose.2025.104815">Computers & Security 2026: 163 (104815)</a></li>
+        </ul>
+    </section>
+
+    <section class="slide">
         <h2>Seguridad en CI/CD</h2>
         <ul>
+            <li>CI/CD: Continous Integration / Continuous Delivery</li>
             <li>Proteger ramas, revisiones y permisos de ejecución</li>
             <li>Limitar los permisos de cada tarea al mínimo necesario</li>
             <li>Evitar credenciales persistentes y no incluir secretos en el código</li>
@@ -114,6 +133,7 @@
     <section class="slide">
         <h2>Contenedores e infraestructura como código</h2>
         <ul>
+            <li>Definir la infraestructura como código y versionarla (<a href="https://github.com/ansible/ansible-examples">Ansible examples</a>)</li>
             <li>Usar imágenes base mantenidas y reducir componentes innecesarios</li>
             <li>Ejecutar servicios con permisos mínimos y configuración explícita</li>
             <li>Analizar imágenes y revisar cambios de infraestructura antes del despliegue</li>

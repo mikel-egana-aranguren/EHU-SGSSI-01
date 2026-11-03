@@ -174,9 +174,9 @@ trivy image devsecops-demo
 
 Revisa el resumen y las recomendaciones. Un escáner ayuda a priorizar riesgos, pero no sustituye la revisión de la imagen base ni garantiza que no existan vulnerabilidades.
 
-## Automatizar los controles con GitHub Actions
+## Automatizar los controles con GitHub Actions (DevSecOps)
 
-Crea el directorio `.github/workflows` y el archivo `.github/workflows/security.yml` en la raiz del repositorio:
+En esta sección vamos a automatizar el trabajo anterior en un workflow de GitHub Actions, implementando una solución DevSecOps propiamente dicha. Crea el directorio oculto `.github/workflows` y el archivo `.github/workflows/security.yml` en la raíz del repositorio:
 
 ```yaml
 name: Pruebas y seguridad
@@ -221,7 +221,7 @@ jobs:
 Guarda y sube los archivos al repositorio:
 
 ```bash
-git add .github/ Dockerfile app.py requirements.txt tests/test_app.py
+git add .github/ Dockerfile app.py requirements.txt test_app.py
 git commit -m "Añadir laboratorio DevSecOps"
 git push
 ```
@@ -230,7 +230,7 @@ Consulta la pestaña **Actions** del repositorio y comprueba el resultado de cad
 
 > ¿En qué eventos se ejecuta este flujo de trabajo?
 
-> ¿Qué sucede con el flujo si una prueba o un análisis falla?
+> ¿Qué sucede con el flujo si una prueba o un análisis falla? (Prueba cambiando el test)
 
 >  ¿Por qué el workflow declara `contents: read` en vez de conceder permisos amplios?
 
