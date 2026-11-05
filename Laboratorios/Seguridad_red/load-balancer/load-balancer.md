@@ -77,12 +77,13 @@ En la lista de `instance templates`, pulsar `Actions` en `lb-template` y `Create
 
 - Nombre: `lb-mig`.
 - Plantilla de instancia: `lb-template`.
-- Ubicación: `Europe central` (La misma que `lb-template`).
 - Número de instancias: `2` (autoescalado desactivado).
-- `Port mapping`: nombre `http`, puerto `80`.
+- Ubicación: `Europe central` (La misma que `lb-template`).
 - `Autohealing` > `Create a health check`:
   - Nombre: `lb-health-check`.
   - Protocolo: `HTTP`, puerto `80`, ruta `/`.
+- `Port mapping`: nombre `http`, puerto `80`.
+
 
 Pulsar `Create`. Esperar a que las dos instancias estén en ejecución.
 

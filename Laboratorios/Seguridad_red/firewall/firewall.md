@@ -73,4 +73,4 @@ Definid las reglas necesarias para conseguir lo siguiente:
 
 > Que vuestro servidor de Google Cloud no acepte conexiones HTTP (solo HTTPS).
 
-> Que en vuestra máquina local no se puedan hacer conexiones salientes a Twitter, Facebook ni YouTube.
+> Que en vuestra máquina local no se puedan hacer conexiones salientes a X, Facebook ni YouTube.
