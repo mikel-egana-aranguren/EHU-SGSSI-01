@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DevSecOps</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../ShowerTemplate/shower/themes/ribbon/styles/styles.css">
+    <style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+</head>
+<body class="shower list">
+    <header class="caption">
+        <h1>DevSecOps</h1>
+        <p>Mikel Egaña Aranguren</p>
+    </header>
+
+    <section class="slide" id="cover">
+        <h2>DevSecOps</h2>
+        <p>Mikel Egaña Aranguren</p>
+        <p><a href="https://mikel-egana-aranguren.github.io/">mikel-egana-aranguren.github.io</a></p>
+        <p><a href="mailto:mikel.egana@ehu.eus">mikel.egana@ehu.eus</a></p>
+        <img src="../ShowerTemplate/pictures/ehu.png" alt="UPV/EHU ingenieros San Mames" height="25%" border="1px solid #555">
+    </section>
+
+    <section class="slide">
+        <h2>DevSecOps</h2>
+        <p><a href="https://doi.org/10.5281/zenodo.4302267">https://doi.org/10.5281/zenodo.4302267</a></p>
+        <p><a href="https://github.com/mikel-egana-aranguren/EHU-SGSSI-01">https://github.com/mikel-egana-aranguren/EHU-SGSSI-01</a></p>
+        <img src="../ShowerTemplate/pictures/by.png" alt="Creative Commons BY" height="10%">
+    </section>
+
+    <section class="slide">
+        <h2>DevSecOps</h2>
+        <ul>
+            <li>Integra la seguridad (Sec) en el ciclo de vida del software (Dev) y en las operaciones (Ops)</li>
+            <li>Desarrolladores, operaciones y seguridad comparten la responsabilidad</li>
+            <li>Automatiza comprobaciones para obtener feedback explícito, temprano y continuo</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Objetivos y principios</h2>
+        <ul>
+            <li>Incorporar seguridad desde el diseño, no solo antes de publicar</li>
+            <li>Automatizar controles repetibles dentro del flujo de trabajo</li>
+            <li>Aplicar mínimo privilegio y proteger datos y credenciales</li>
+            <li>Tratar los hallazgos como feedback para mejorar continuamente</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Seguridad en el ciclo de vida</h2>
+        <ul>
+            <li>Planificación: requisitos de seguridad y análisis de amenazas</li>
+            <li>Desarrollo: revisión de código y análisis automatizados</li>
+            <li>Integración y entrega: validación de dependencias y artefactos</li>
+            <li>Despliegue y operación: configuración segura, monitorización y respuesta</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Shift left y feedback continuo</h2>
+        <p>Detectar problemas cerca del momento en que se introduce el cambio reduce el coste de corregirlos.</p>
+        <ul>
+            <li>Ejecutar comprobaciones en el entorno de desarrollo y en cada cambio</li>
+            <li>Mostrar resultados claros y priorizados dentro del flujo de trabajo</li>
+            <li>Mantener controles también en producción: la seguridad no termina al desplegar</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Requisitos y modelado de amenazas</h2>
+        <ul>
+            <li>Identificar activos, usuarios, servicios y límites de confianza</li>
+            <li>Describir amenazas y riesgos relevantes para el sistema</li>
+            <li>Definir medidas de mitigación y convertirlas en requisitos comprobables</li>
+            <li>Revisar el análisis cuando cambian la arquitectura o las dependencias</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Seguridad del código</h2>
+        <ul>
+            <li>Revisión de código y criterios de aprobación compartidos</li>
+            <li>SAST (Static Application Security Testing): analizar el código fuente sin ejecutar la aplicación</li>
+            <li>DAST (Dynamic Application Security Testing): evaluar la aplicación mientras está en ejecución</li>
+            <li>Escaneo de secretos para evitar publicar credenciales</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Dependencias y cadena de suministro</h2>
+        <ul>
+            <li>Mantener un inventario de componentes y versiones (SBOM)</li>
+            <li>Analizar dependencias y priorizar vulnerabilidades según el riesgo</li>
+            <li>Actualizar componentes y verificar el origen de los artefactos</li>
+            <li>Usar repositorios y procesos de construcción controlados</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>SBOM: Software Bill of Materials</h2>
+        <ul>
+            <li>Documentar todos los componentes de software utilizados en un proyecto</li>
+            <li>Facilitar la trazabilidad y el control de vulnerabilidades</li>
+            <li>Mejorar la transparencia y la gestión del riesgo</li>
+            <li>Facilitar la auditoría y el cumplimiento normativo</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>SBOM: Software Bill of Materials</h2>
+        <ul>
+            <li>CycloneDX: formato estándar para la representación de SBOM (OWASP)</li>
+            <li>Mikel Egaña Aranguren, Jesualdo Tomás Fernández-Breis, Bidane Leon Balentzia, Markus Rompe, Alexander García Castro. A comprehensive view of software vulnerability risks through enterprise knowledge graphs. <a href="https://doi.org/10.1016/j.cose.2025.104815">Computers & Security 2026: 163 (104815)</a></li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Seguridad en CI/CD</h2>
+        <ul>
+            <li>CI/CD: Continous Integration / Continuous Delivery</li>
+            <li>Proteger ramas, revisiones y permisos de ejecución</li>
+            <li>Limitar los permisos de cada tarea al mínimo necesario</li>
+            <li>Evitar credenciales persistentes y no incluir secretos en el código</li>
+            <li>Validar y conservar la procedencia de los artefactos publicados</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Contenedores e infraestructura como código</h2>
+        <ul>
+            <li>Definir la infraestructura como código y versionarla (<a href="https://github.com/ansible/ansible-examples">Ansible examples</a>)</li>
+            <li>Usar imágenes base mantenidas y reducir componentes innecesarios</li>
+            <li>Ejecutar servicios con permisos mínimos y configuración explícita</li>
+            <li>Analizar imágenes y revisar cambios de infraestructura antes del despliegue</li>
+            <li>Gestionar secretos fuera de imágenes y ficheros versionados</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Despliegue y operación</h2>
+        <ul>
+            <li>Aplicar configuraciones seguras y controlar los cambios en producción</li>
+            <li>Registrar eventos relevantes y proteger los registros</li>
+            <li>Monitorizar servicios y definir procedimientos de respuesta a incidentes</li>
+            <li>Corregir vulnerabilidades y aprender de los incidentes</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Medición y mejora continua</h2>
+        <ul>
+            <li>Medir tiempos de detección y corrección, además de hallazgos pendientes</li>
+            <li>Revisar falsos positivos y ajustar los controles</li>
+            <li>Usar los resultados para priorizar mejoras, no solo para bloquear entregas</li>
+            <li>Compartir responsabilidades y aprendizajes entre los equipos</li>
+        </ul>
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer class="badge">
+        <a href="https://github.com/mikel-egana-aranguren/EHU-SGSSI-01">Fork me on GitHub</a>
+    </footer>
+
+    <div class="progress"></div>
+
+    <script src="../ShowerTemplate/shower/shower.js"></script>
+    <!-- Copyright © 3000 Yours Truly, Famous Inc. -->
+
+</body>
+</html>
