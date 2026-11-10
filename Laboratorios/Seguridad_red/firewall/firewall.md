@@ -9,7 +9,7 @@
 
 ## Firewall Google Cloud
 
-En este laboratorio desplegaréis vuestro sistema web en el servidor remoto de Google Cloud para aprender a configurar el acceso al mismo a través del firewall que provee Google Cloud por defecto. Para desplegar el proyecto web en el servidor remoto hay que instalar Docker y Docker Compose. Clonad el proyecto web en el servidor de Google Cloud (una vez establecida la conexión SSH): 
+En este laboratorio desplegaréis un sistema web en el servidor remoto de Google Cloud para aprender a configurar el acceso al mismo a través del firewall que provee Google Cloud por defecto. Para desplegar el proyecto web en el servidor remoto hay que instalar Docker y Docker Compose. Clonad el proyecto web en el servidor de Google Cloud (una vez establecida la conexión SSH): 
 
 ```bash
 git clone https://github.com/mikel-egana-aranguren/docker-lamp.git

@@ -115,7 +115,7 @@ Si una herramienta informa de hallazgos, lee el detalle, identifica el archivo o
 
 > ¿Qué información necesitas para decidir cómo responder a una vulnerabilidad de una dependencia?
 
-## 5. Construir y ejecutar un contenedor
+## Construir y ejecutar un contenedor
 
 Crea un archivo `Dockerfile` en el directorio del proyecto:
 
