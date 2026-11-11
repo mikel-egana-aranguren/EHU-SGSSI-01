@@ -37,7 +37,7 @@ Implementa un programa que cifre y descifre mensajes mediante un cifrado de fluj
 
 Utiliza los siguientes datos de prueba:
 
-- Mensaje: `ATAQUE AL AMANECER`
+- Mensaje: `ATAQUEALAMANECER`
 - Clave: `CLAVE12345678901`
 
 ## Cifrado y descifrado con OpenSSL
