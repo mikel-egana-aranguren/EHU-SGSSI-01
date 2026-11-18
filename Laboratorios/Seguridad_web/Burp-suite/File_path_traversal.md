@@ -9,68 +9,63 @@
 
 ## File path traversal with superfluous URL-encode
 
-El path traversal, también conocido como directory traversal, es un tipo de vulnerabilidad que permite a un atacante leer archivos en el servidor que ejecuta una aplicación, como por ejemplo código y datos de la aplicación, credenciales de sistemas backend, o archivos sensibles del sistema operativo. Esto se hace explotando los paths que maneja la aplicación atacada.
+El path traversal es una vulnerabilidad que permite a un atacante leer archivos en el servidor que ejecuta una aplicación, como por ejemplo código y datos de la aplicación, credenciales de sistemas backend, o archivos sensibles del sistema operativo. Esto se hace explotando los paths que maneja la aplicación atacada.
 
+Para practicar este ataque vamos a usar el laboratorio de PortSwigger [File path traversal, traversal sequences stripped with superfluous URL-decode](https://portswigger.net/web-security/file-path-traversal/lab-superfluous-url-decode). Para resolver el laboratorio, hay que leer el archivo `/etc/passwd`. Arrancar Firefox con FoxyProxy y Burp Suite.
 
-burp 
+Acceder al laboratorio:
 
-firefox con foxy proxy
+![File Path Traversal lab](Filepath_traversal_1.png)
 
-logearse en portswigger
+Con `Ctrl+u`, podemos ver el código fuente de la página:
 
+![File Path Traversal fuente](Filepath_traversal_2.png)
 
- La aplicación elimina las secuencias de path traversal del nombre de archivo proporcionado por el usuario antes de utilizarlo.
-
-Para resolver el laboratorio, hay que leer el archivo `/etc/passwd`.
-
-https://portswigger.net/web-security/file-path-traversal/lab-sequences-stripped-non-recursively
-
-Acceder al labo
-
-IMG
-
-Con `Ctrl+u`, podemos ver el codiog fuente de la pagina:
-
-IMG
-
-Hay veremos que esta el codigo HTML para las imagenes, por ejemplo:
+Ahí veremos que está el código HTML para las imagenes, por ejemplo:
 
 ```html
 <div>
-                            <img src="/image?filename=27.jpg">
-                            <h3>The Trolley-ON</h3>
-                            <img src="/resources/images/rating1.png">
-                            $16.16
-                            <a class="button" href="/product?productId=1">View details</a>
-                        </div>
-                        ```
+    <img src="/image?filename=27.jpg">
+    <h3>The Trolley-ON</h3>
+    <img src="/resources/images/rating1.png">
+    $16.16
+    <a class="button" href="/product?productId=1">View details</a>
+</div>
+```
 
-De vuelta la web, si abrimos una imagen en otra pestaña
+De vuelta en la web, si abrimos una imagen en otra pestaña, por ejemplo <https://....web-security-academy.net/image?filename=27.jpg>:
 
-Hay que activar las imagens en Burp Proxy HTTP history filter settings
+![File Path Traversal imagen](Filepath_traversal_3.png)
 
-IMG
+Hay que buscar esa peticion en Burp suite, en Proxy; HTTP history, pero para ello hay que activar las imagenes en HTTP history; filter settings:
 
-IMG
+![File Path Traversal filtrar imagenes](Filepath_traversal_4.png)
+
+Enviamos la petición al repetidor y vemos que nos devuelve un 200 OK con l aimagen propiamente dicha:
+
+![File Path Traversal GET imagen](Filepath_traversal_5.png)
+
+Cambiamos la petición e intentamos acceder al archivo usando otro path:
+
+![File Path Traversal /etc/passwd](Filepath_traversal_6.png)
+
+Ocurre lo mismo con `../../../etc/passwd`:
+
+![File Path Traversal](Filepath_traversal_7.png)
+
+Seleccionar las barras ("/"), vemos que se codifican (encode) como `2f`:
+
+![File Path Traversal slash encode](Filepath_traversal_8.png)
+
+La peticion `.%2f..%2f..%2fetc/passwd` sigue fallando, por que el servidor se asegura de aplicar los filtros de codificacion. Sin embargo, podemos codificar el simbolo mismo "%":
+
+![File Path Traversal % encode](Filepath_traversal_9.png)
+
+Vemos que se codifica con "25". Aplicándolo (`..%252f..%252f..%252fetc/passwd`) obtenemos acceso al archivo, ya que el servidor lo interpreta como `../../../fetc/passwd`
+
+![File Path Traversal Solved](Filepath_traversal_10.png)
+
+El ataque tiene éxito por un desajuste entre el momento en que la aplicación filtra las secuencias de path traversal y el momento en que decodifica la URL. Normalmente, el servidor decodifica una vez el parámetro recibido: `%2f` se traduce a `/`, por lo que una secuencia como `../` enviada directamente, o como `%2e%2e%2f`, es detectada y eliminada por el filtro antes de usarse para acceder al archivo. Sin embargo, en este laboratorio la aplicación decodifica la URL **dos veces**: primero aplica el filtro que busca y elimina secuencias `../` (u otros patrones de traversal) en la cadena tal y como llega, y después realiza una segunda decodificación. Si en lugar de `%2f` codificamos el propio carácter `%` (que se codifica como `%25`), obtenemos `%252f`. Tras la primera decodificación, `%252f` se convierte en `%2f`, una cadena que el filtro no reconoce como un separador de directorio y por tanto no modifica ni bloquea. Es en la segunda decodificación, que la aplicación realiza antes de acceder al sistema de ficheros, cuando `%2f` se traduce finalmente a `/`, reconstruyendo la secuencia `../../../etc/passwd` que el filtro debería haber bloqueado. De ahí el nombre del laboratorio, "superfluous URL-decode" (decodificación de URL superflua): es esa decodificación adicional, posterior al filtrado, la que permite que la secuencia maliciosa pase desapercibida y acabe siendo interpretada por el servidor.
 
 
-
-https://....web-security-academy.net/image?filename=27.jpg
-
-
-Buscar la peticion en Burp y enviarla al repeater
-
-Podemos probar a poner `/etc/passwd` en la peticion del filename, no deja:
-
-IMG
-
-lo mismo con ../../../etc/passwd
-
-Explicar ENCODING DECODING
-
-..%252f..%252f..%252fetc/passwd
-
-
-
-DIAGRAMA resumen
 
