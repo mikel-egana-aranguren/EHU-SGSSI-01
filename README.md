@@ -35,6 +35,7 @@ Clases y laboratorios de la asignatura Sistemas de Gestión de Seguridad de Sist
 * [Cifrado simétrico](Laboratorios/Cifrado_simetrico/Cifrado_simetrico.md)
 * [Cifrado asimétrico](Laboratorios/Cifrado_asimetrico/Cifrado_asimetrico.md)
 * [Aplicaciones cifrado](Laboratorios/Cifrado_aplicaciones/Cifrado_aplicaciones.md)
+* [Bitcoin](Laboratorios/Bitcoin/Bitcoin.md)
 * [TOR](Laboratorios/TOR-ONION/TOR-ONION.md)
 * [Wireshark](Laboratorios/Seguridad_red/Wireshark.md)
 * [VPC Google Cloud](Laboratorios/Seguridad_red/vpc-google-cloud/VPC_google_cloud.md)
