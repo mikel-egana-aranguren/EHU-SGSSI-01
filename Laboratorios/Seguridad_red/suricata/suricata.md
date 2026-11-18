@@ -110,11 +110,11 @@ sudo tail -n 5 /var/log/suricata/eve.json | jq 'select(.event_type=="alert")'
 
 > ¿Qué campos aparecen en el evento de tipo `alert` del fichero `eve.json`? ¿Qué información aportan `signature`, `severity` y `src_ip`/`dest_ip` frente al mensaje de `fast.log`?
 
-Probar ahora con un escaneo de puertos, instalando `nmap` si no está disponible:
+Probar ahora con un escaneo de puertos agresivo, instalando `nmap` si no está disponible:
 
 ```bash
 sudo apt install -y nmap
-nmap -sS localhost
+nmap -A <IP_PÚBLICA>
 ```
 
 > Vuelve a consultar `fast.log` y `eve.json`. ¿Ha generado alertas el escaneo? ¿Qué firma(s) han saltado?
