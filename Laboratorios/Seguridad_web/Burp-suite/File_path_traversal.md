@@ -41,7 +41,7 @@ Hay que buscar esa peticion en Burp suite, en Proxy; HTTP history, pero para ell
 
 ![File Path Traversal filtrar imagenes](Filepath_traversal_4.png)
 
-Enviamos la petición al repetidor y vemos que nos devuelve un 200 OK con l aimagen propiamente dicha:
+Enviamos la petición al repetidor y vemos que nos devuelve un 200 OK con la imagen propiamente dicha:
 
 ![File Path Traversal GET imagen](Filepath_traversal_5.png)
 
