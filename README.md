@@ -14,6 +14,11 @@ Clases y laboratorios de la asignatura Sistemas de Gestión de Seguridad de Sist
   * [Aplicaciones cifrado](Cifrado_aplicaciones/index.pdf)
 * [Seguridad red](Seguridad_red/index.pdf)
 * [Seguridad web](Seguridad_web/index.pdf)
+* [DevSecOps](DevSecOps/index.pdf)
+* [Seguridad fisica](Seguridad_fisica/index.pdf)
+* [Aspectos legales](AspectosLegales/index.pdf)
+* [Copias seguridad](Copias_seguridad/index.pdf)
+* [Bitcoin](Bitcoin/index.pdf)
 
 ## Laboratorios
 
@@ -35,6 +40,7 @@ Clases y laboratorios de la asignatura Sistemas de Gestión de Seguridad de Sist
 * [Cifrado simétrico](Laboratorios/Cifrado_simetrico/Cifrado_simetrico.md)
 * [Cifrado asimétrico](Laboratorios/Cifrado_asimetrico/Cifrado_asimetrico.md)
 * [Aplicaciones cifrado](Laboratorios/Cifrado_aplicaciones/Cifrado_aplicaciones.md)
+* [Bitcoin](Laboratorios/Bitcoin/Bitcoin.md)
 * [TOR](Laboratorios/TOR-ONION/TOR-ONION.md)
 * [Wireshark](Laboratorios/Seguridad_red/Wireshark.md)
 * [VPC Google Cloud](Laboratorios/Seguridad_red/vpc-google-cloud/VPC_google_cloud.md)
@@ -44,6 +50,9 @@ Clases y laboratorios de la asignatura Sistemas de Gestión de Seguridad de Sist
 * [Suricata](Laboratorios/Seguridad_red/suricata/suricata.md)
 * [NMap](Laboratorios/Seguridad_red/nmap/nmap.md)
 * [ZAP Mutillidae](Laboratorios/Seguridad_web/ZAP-mutilidae/ZAP-mutilidae.md)
-* [Burp suite](Laboratorios/Seguridad_web/Burp-suite/Burp-suite.md)
+* [SQL injection](Laboratorios/Seguridad_web/Burp-suite/SQL_injection.md)
+* [Web shell](Laboratorios/Seguridad_web/Burp-suite/Web_shell.md)
+* [File path traversal](Laboratorios/Seguridad_web/Burp-suite/File_path_traversal.md)
+* [DevSecOps](Laboratorios/DevSecOps/DevSecOps.md)
 
 
