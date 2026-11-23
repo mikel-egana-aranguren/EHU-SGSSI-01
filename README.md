@@ -55,4 +55,5 @@ Clases y laboratorios de la asignatura Sistemas de Gestión de Seguridad de Sist
 * [File path traversal](Laboratorios/Seguridad_web/Burp-suite/File_path_traversal.md)
 * [DevSecOps](Laboratorios/DevSecOps/DevSecOps.md)
 * [Google Colab](Laboratorios/Colab/Colab.md)
+* [Backups](Laboratorios/)
 
