@@ -67,7 +67,7 @@ bitcoin-cli getblockchaininfo
 Crea un monedero (wallet) en el nodo:
 
 ```bash
-bitcoin-cli createwallet "laboratorio"
+bitcoin-cli createwallet "lab"
 ```
 
 Genera una dirección nueva dentro del monedero:
@@ -79,30 +79,27 @@ bitcoin-cli getnewaddress
 Guarda la dirección en una variable para reutilizarla:
 
 ```bash
-DIRECCION=$(bitcoin-cli getnewaddress)
-echo $DIRECCION
+ADDR=$(bitcoin-cli getnewaddress)
+echo $ADDR
 ```
 
 Cada dirección tiene detrás un par de claves. Para verlo:
 
 ```bash
-bitcoin-cli getaddressinfo $DIRECCION
+bitcoin-cli getaddressinfo $ADDR
 ```
 
-Preguntas:
+> ¿Qué campo contiene la clave pública?
 
-- ¿Qué campo contiene la clave pública (`pubkey`)?
-- ¿Qué campo contiene el resultado de aplicar funciones resumen a la clave pública (`witness_program`)?
+> ¿Qué campo contiene el resultado de aplicar funciones resumen a la clave pública?
 
-Vamos a comprobar manualmente que esa dirección realmente se obtiene aplicando SHA-256 y RIPEMD-160 (tal y como se ha visto en teoría) a la clave pública. Sustituye `PUBKEY` por el valor del campo `pubkey` obtenido arriba:
+Vamos a comprobar manualmente que esa dirección realmente se obtiene aplicando SHA-256 y RIPEMD-160 a la clave pública. Sustituye `PUBKEY` por el valor del campo `pubkey` obtenido arriba:
 
 ```bash
 echo -n "PUBKEY" | xxd -r -p | openssl dgst -sha256 -binary | openssl dgst -rmd160
 ```
 
-Pregunta:
-
-- ¿Coincide el resultado con el campo `witness_program` de `getaddressinfo`? ¿Qué pasaría con la dirección si cambiase un solo carácter de la clave pública?
+> ¿Coincide el resultado con el campo `witness_program` de `getaddressinfo`? ¿Qué pasaría con la dirección si cambiase un solo carácter de la clave pública?
 
 Tus claves privadas nunca deberían salir de tu monedero. Por defecto, un monedero de Bitcoin Core es un monedero "HD" (jerárquico determinista): a partir de una única clave privada maestra se derivan todas las direcciones. Para verla (**Sólo en este entorno de pruebas, nunca en un monedero real**):
 
@@ -110,16 +107,14 @@ Tus claves privadas nunca deberían salir de tu monedero. Por defecto, un monede
 bitcoin-cli listdescriptors true
 ```
 
-Pregunta:
-
-- En el campo `desc`, ¿qué parte corresponde a la clave privada maestra (empieza por `tprv`)? Si alguien obtiene esa clave, ¿Qué puede hacer con los fondos asociados a todas las direcciones del monedero?
+> En el campo `desc`, ¿qué parte corresponde a la clave privada maestra (empieza por `tprv`)? Si alguien obtiene esa clave, ¿Qué puede hacer con los fondos asociados a todas las direcciones del monedero?
 
 ## 4. Mineria y prueba de trabajo
 
 En `regtest` no hay otros mineros con los que competir, así que podemos pedirle directamente al nodo que mine bloques y que la recompensa de cada bloque vaya a una dirección concreta:
 
 ```bash
-bitcoin-cli generatetoaddress 101 $DIRECCION
+bitcoin-cli generatetoaddress 101 $ADDR
 ```
 
 Pregunta:
@@ -153,13 +148,13 @@ Preguntas:
 Genera una segunda dirección, que representará a otro usuario (Por ejemplo un compañero o compañera de clase):
 
 ```bash
-DIRECCION_DESTINO=$(bitcoin-cli getnewaddress "destino")
+ADDR_2=$(bitcoin-cli getnewaddress "destino")
 ```
 
 Envía una cantidad desde el monedero a la nueva dirección:
 
 ```bash
-TXID=$(bitcoin-cli sendtoaddress $DIRECCION_DESTINO 1.5)
+TXID=$(bitcoin-cli sendtoaddress $ADDR_2 1.5)
 echo $TXID
 ```
 
@@ -176,7 +171,7 @@ Pregunta:
 Mina un bloque para confirmar la transacción:
 
 ```bash
-bitcoin-cli generatetoaddress 1 $DIRECCION
+bitcoin-cli generatetoaddress 1 $ADDR
 ```
 
 Consulta la transacción ya confirmada:
@@ -216,8 +211,8 @@ services:
       - -server=1
       - -rpcallowip=0.0.0.0/0
       - -rpcbind=0.0.0.0
-      - -rpcuser=laboratorio
-      - -rpcpassword=laboratorio
+      - -rpcuser=lab
+      - -rpcpassword=lab
       - -fallbackfee=0.0002
 
   explorer:
@@ -228,8 +223,8 @@ services:
       BTCEXP_HOST: 0.0.0.0
       BTCEXP_BITCOIND_HOST: bitcoind
       BTCEXP_BITCOIND_PORT: 18443
-      BTCEXP_BITCOIND_USER: laboratorio
-      BTCEXP_BITCOIND_PASS: laboratorio
+      BTCEXP_BITCOIND_USER: lab
+      BTCEXP_BITCOIND_PASS: lab
       BTCEXP_NETWORK: regtest
     ports:
       - "3002:3002"
