@@ -67,7 +67,7 @@ bitcoin-cli getblockchaininfo
 Crea un monedero (wallet) en el nodo:
 
 ```bash
-bitcoin-cli createwallet "lab"
+bitcoin-cli createwallet "labw"
 ```
 
 Genera una dirección nueva dentro del monedero:
@@ -93,7 +93,7 @@ bitcoin-cli getaddressinfo $ADDR
 
 > ¿Qué campo contiene el resultado de aplicar funciones resumen a la clave pública?
 
-Vamos a comprobar manualmente que esa dirección realmente se obtiene aplicando SHA-256 y RIPEMD-160 a la clave pública. Sustituye `PUBKEY` por el valor del campo `pubkey` obtenido arriba:
+Vamos a comprobar manualmente que esa dirección realmente se obtiene aplicando un resumen hash a la clave pública. Sustituye `PUBKEY` por el valor del campo `pubkey` obtenido arriba:
 
 ```bash
 echo -n "PUBKEY" | xxd -r -p | openssl dgst -sha256 -binary | openssl dgst -rmd160
@@ -107,9 +107,9 @@ Tus claves privadas nunca deberían salir de tu monedero. Por defecto, un monede
 bitcoin-cli listdescriptors true
 ```
 
-> En el campo `desc`, ¿qué parte corresponde a la clave privada maestra (empieza por `tprv`)? Si alguien obtiene esa clave, ¿Qué puede hacer con los fondos asociados a todas las direcciones del monedero?
+> En el campo `desc`, ¿Qué parte corresponde a la clave privada maestra (empieza por `tprv`)? Si alguien obtiene esa clave, ¿Qué puede hacer con los fondos asociados a todas las direcciones del monedero?
 
-## 4. Mineria y prueba de trabajo
+## Mineria y prueba de trabajo
 
 En `regtest` no hay otros mineros con los que competir, así que podemos pedirle directamente al nodo que mine bloques y que la recompensa de cada bloque vaya a una dirección concreta:
 
@@ -117,9 +117,7 @@ En `regtest` no hay otros mineros con los que competir, así que podemos pedirle
 bitcoin-cli generatetoaddress 101 $ADDR
 ```
 
-Pregunta:
-
-- ¿Por qué pedimos 101 bloques en vez de 1 (Pista: `bitcoin-cli getbalance`, y busca información sobre el "periodo de madurez" de las recompensas de minado)?
+> ¿Por qué pedimos 101 bloques en vez de 1 (Pista: `bitcoin-cli getbalance`, y busca información sobre el "periodo de madurez" de las recompensas de minado)?
 
 Comprueba el saldo del monedero:
 
@@ -130,25 +128,24 @@ bitcoin-cli getbalance
 Inspecciona el último bloque minado:
 
 ```bash
-HASH_BLOQUE=$(bitcoin-cli getbestblockhash)
-bitcoin-cli getblock $HASH_BLOQUE
+HASH_BLOCK=$(bitcoin-cli getbestblockhash)
+bitcoin-cli getblock $HASH_BLOCK
 ```
 
-Preguntas:
+> ¿Qué campo contiene el hash del bloque anterior (`previousblockhash`)? ¿Para qué sirve este campo?
 
-- ¿Qué campo contiene el hash del bloque anterior (`previousblockhash`)? ¿Para qué sirve este campo?
-- ¿Qué campo contiene el `nonce`? ¿Para qué se usa en la prueba de trabajo?
-- ¿Qué campos reflejan la dificultad de minado (`bits`, `difficulty`)? ¿Por qué en `regtest` la dificultad es tan baja?
-- Siguiendo el campo `previousblockhash` de bloque en bloque, ¿A qué bloque se llega al final? Puedes automatizar el recorrido con un script, o hacerlo a mano varias veces.
+> ¿Qué campo contiene el `nonce`? ¿Para qué se usa en la prueba de trabajo?
 
-![Explorador Bitcoin, página de inicio](bitcoin_explorer_inicio.png)
+> ¿Qué campos reflejan la dificultad de minado (`bits`, `difficulty`)? ¿Por qué en `regtest` la dificultad es tan baja?
 
-## 5. Transacciones y UTXOs
+ Siguiendo el campo `previousblockhash` de bloque en bloque, ¿A qué bloque se llega al final? Puedes automatizar el recorrido con un script, o hacerlo a mano varias veces.
+
+## Transacciones y UTXOs
 
 Genera una segunda dirección, que representará a otro usuario (Por ejemplo un compañero o compañera de clase):
 
 ```bash
-ADDR_2=$(bitcoin-cli getnewaddress "destino")
+ADDR_2=$(bitcoin-cli getnewaddress "destiny")
 ```
 
 Envía una cantidad desde el monedero a la nueva dirección:
@@ -164,9 +161,7 @@ La transacción está ahora en la mempool, es decir, en espera de ser incluida e
 bitcoin-cli getmempoolentry $TXID
 ```
 
-Pregunta:
-
-- ¿Qué pasaría si, antes de confirmar esta transacción, intentásemos gastar las mismas monedas en otra transacción diferente (Doble gasto)? ¿Quién lo evita en una red real, donde sí hay varios mineros compitiendo?
+> ¿Qué pasaría si, antes de confirmar esta transacción, intentásemos gastar las mismas monedas en otra transacción diferente (Doble gasto)? ¿Quién lo evita en una red real, donde sí hay varios mineros compitiendo?
 
 Mina un bloque para confirmar la transacción:
 
@@ -183,21 +178,21 @@ bitcoin-cli gettransaction $TXID
 Para ver el detalle completo de entradas y salidas (modelo UTXO) necesitamos también el hash del bloque que la confirma:
 
 ```bash
-HASH_BLOQUE=$(bitcoin-cli getbestblockhash)
-bitcoin-cli getrawtransaction $TXID true $HASH_BLOQUE
+HASH_BLOCK=$(bitcoin-cli getbestblockhash)
+bitcoin-cli getrawtransaction $TXID true $HASH_BLOCK
 ```
 
-Preguntas:
+> ¿Cuántas entradas (`vin`) y cuántas salidas (`vout`) tiene la transacción?
 
-- ¿Cuántas entradas (`vin`) y cuántas salidas (`vout`) tiene la transacción?
-- Una de las salidas va a `$DIRECCION_DESTINO`. ¿A qué dirección va la otra salida, y qué representa?
-- Calcula la diferencia entre el valor total de las entradas y el valor total de las salidas. ¿A qué corresponde esa diferencia?
+> Una de las salidas va a `$ADDR_2`. ¿A qué dirección va la otra salida, y qué representa?
 
-![Explorador Bitcoin, detalle de una transacción](bitcoin_explorer_tx.png)
+> Calcula la diferencia entre el valor total de las entradas y el valor total de las salidas. ¿A qué corresponde esa diferencia?
 
-## 6. Explorando la red con un explorador de bloques
+Una UTXO (Unspent Transaction Output, o salida de transacción no gastada) es la cantidad de bitcoin que queda disponible tras una transacción y que aún no se ha gastado. El saldo de una billetera no es un número único en una cuenta, sino la suma de todas las UTXO asociadas a sus direcciones.
 
-Para visualizar la blockchain de manera más cómoda que con `bitcoin-cli`, vamos a desplegar un explorador de bloques web conectado a nuestro nodo, usando Docker Compose (Igual que hicimos con el proyecto LAMP en el [laboratorio Docker](../Docker/Docker.md)).
+## Explorando la red con un explorador de bloques
+
+Para visualizar la blockchain de manera más cómoda que con `bitcoin-cli`, vamos a desplegar un explorador de bloques web conectado a nuestro nodo, usando Docker Compose.
 
 Sitúa la terminal en un directorio nuevo y crea un archivo `docker-compose.yml` con el siguiente contenido:
 
@@ -211,8 +206,8 @@ services:
       - -server=1
       - -rpcallowip=0.0.0.0/0
       - -rpcbind=0.0.0.0
-      - -rpcuser=lab
-      - -rpcpassword=lab
+      - -rpcuser=labw
+      - -rpcpassword=labw
       - -fallbackfee=0.0002
 
   explorer:
@@ -223,8 +218,8 @@ services:
       BTCEXP_HOST: 0.0.0.0
       BTCEXP_BITCOIND_HOST: bitcoind
       BTCEXP_BITCOIND_PORT: 18443
-      BTCEXP_BITCOIND_USER: lab
-      BTCEXP_BITCOIND_PASS: lab
+      BTCEXP_BITCOIND_USER: labw
+      BTCEXP_BITCOIND_PASS: labw
       BTCEXP_NETWORK: regtest
     ports:
       - "3002:3002"
@@ -240,10 +235,9 @@ docker compose up -d
 
 Mina algunos bloques y realiza alguna transacción en este nuevo nodo (Repitiendo los pasos de los apartados 3, 4 y 5, sustituyendo `bitcoind-regtest` por `bitcoind-explorer` en los comandos `docker exec`), y después visita el explorador en <http://localhost:3002>.
 
-Preguntas:
+> Busca en el explorador un bloque y una transacción que hayas creado. ¿Coincide la información con la que obtenías mediante `bitcoin-cli`?
 
-- Busca en el explorador un bloque y una transacción que hayas creado. ¿Coincide la información con la que obtenías mediante `bitcoin-cli`?
-- Navega hacia atrás, bloque a bloque, hasta llegar al bloque de altura 0. ¿Cómo se llama ese bloque especial?
+> Navega hacia atrás, bloque a bloque, hasta llegar al bloque de altura 0. ¿Cómo se llama ese bloque especial?
 
 Para parar los servicios:
 
