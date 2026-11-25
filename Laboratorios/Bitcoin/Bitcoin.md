@@ -138,7 +138,7 @@ bitcoin-cli getblock $HASH_BLOCK
 
 > ¿Qué campos reflejan la dificultad de minado (`bits`, `difficulty`)? ¿Por qué en `regtest` la dificultad es tan baja?
 
- Siguiendo el campo `previousblockhash` de bloque en bloque, ¿A qué bloque se llega al final? Puedes automatizar el recorrido con un script, o hacerlo a mano varias veces.
+Siguiendo el campo `previousblockhash` de bloque en bloque, ¿A qué bloque se llega al final? Puedes automatizar el recorrido con un script, o hacerlo a mano varias veces.
 
 ## Transacciones y UTXOs
 
@@ -192,7 +192,7 @@ Una UTXO (Unspent Transaction Output, o salida de transacción no gastada) es la
 
 ## Explorando la red con un explorador de bloques
 
-Para visualizar la blockchain de manera más cómoda que con `bitcoin-cli`, vamos a desplegar un explorador de bloques web conectado a nuestro nodo, usando Docker Compose.
+Para visualizar la blockchain de manera más cómoda que con `bitcoin-cli`, vamos a desplegar un explorador de bloques web conectado a nuestro nodo, usando Docker Compose. Primero para los contenedores anteriores y borra todo lo necesario.
 
 Sitúa la terminal en un directorio nuevo y crea un archivo `docker-compose.yml` con el siguiente contenido:
 
@@ -233,11 +233,21 @@ Despliega los servicios:
 docker compose up -d
 ```
 
-Mina algunos bloques y realiza alguna transacción en este nuevo nodo (Repitiendo los pasos de los apartados 3, 4 y 5, sustituyendo `bitcoind-regtest` por `bitcoind-explorer` en los comandos `docker exec`), y después visita el explorador en <http://localhost:3002>.
+Mina algunos bloques y realiza alguna transacción en este nuevo nodo, repitiendo los pasos de los apartados 3, 4 y 5. Sustituye el comando principal:
+
+```bash
+alias bitcoin-cli="docker exec -u bitcoin bitcoind-explorer bitcoin-cli -regtest -rpcuser=labw -rpcpassword=labw"
+```
+
+Después visita el explorador en <http://localhost:3002>.
 
 > Busca en el explorador un bloque y una transacción que hayas creado. ¿Coincide la información con la que obtenías mediante `bitcoin-cli`?
 
 > Navega hacia atrás, bloque a bloque, hasta llegar al bloque de altura 0. ¿Cómo se llama ese bloque especial?
+
+![Bitcoin explorer](bitcoin_explorer_inicio.png)
+
+![Bitcoin explorer tx](bitcoin_explorer_tx.png)
 
 Para parar los servicios:
 

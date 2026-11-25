@@ -16,9 +16,9 @@ Clases y laboratorios de la asignatura Sistemas de Gestión de Seguridad de Sist
 * [Seguridad web](Seguridad_web/index.pdf)
 * [DevSecOps](DevSecOps/index.pdf)
 * [Seguridad fisica](Seguridad_fisica/index.pdf)
-* [Aspectos legales](AspectosLegales/index.pdf)
 * [Copias seguridad](Copias_seguridad/index.pdf)
 * [Bitcoin](Bitcoin/index.pdf)
+* [Aspectos legales](AspectosLegales/index.pdf)
 
 ## Laboratorios
 
