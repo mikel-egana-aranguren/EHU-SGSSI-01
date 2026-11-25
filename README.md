@@ -16,9 +16,9 @@ Clases y laboratorios de la asignatura Sistemas de Gestión de Seguridad de Sist
 * [Seguridad web](Seguridad_web/index.pdf)
 * [DevSecOps](DevSecOps/index.pdf)
 * [Seguridad fisica](Seguridad_fisica/index.pdf)
-* [Aspectos legales](AspectosLegales/index.pdf)
 * [Copias seguridad](Copias_seguridad/index.pdf)
 * [Bitcoin](Bitcoin/index.pdf)
+* [Aspectos legales](AspectosLegales/index.pdf)
 
 ## Laboratorios
 
@@ -54,5 +54,7 @@ Clases y laboratorios de la asignatura Sistemas de Gestión de Seguridad de Sist
 * [Web shell](Laboratorios/Seguridad_web/Burp-suite/Web_shell.md)
 * [File path traversal](Laboratorios/Seguridad_web/Burp-suite/File_path_traversal.md)
 * [DevSecOps](Laboratorios/DevSecOps/DevSecOps.md)
-
+* [Google Colab](Laboratorios/Colab/Colab.md)
+* [Backups](Laboratorios/Backups/Backups.md)
+* [Bitcoin](Laboratorios/Bitcoin/Bitcoin.md)
 

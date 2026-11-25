@@ -1,0 +1,26 @@
+services:
+  bitcoind:
+    image: ruimarinho/bitcoin-core
+    container_name: bitcoind-explorer
+    command:
+      - -regtest=1
+      - -server=1
+      - -rpcallowip=0.0.0.0/0
+      - -rpcbind=0.0.0.0
+      - -rpcuser=labw
+      - -rpcpassword=labw
+      - -fallbackfee=0.0002
+
+  explorer:
+    image: getumbrel/btc-rpc-explorer:v3.5.1
+    depends_on:
+      - bitcoind
+    environment:
+      BTCEXP_HOST: 0.0.0.0
+      BTCEXP_BITCOIND_HOST: bitcoind
+      BTCEXP_BITCOIND_PORT: 18443
+      BTCEXP_BITCOIND_USER: labw
+      BTCEXP_BITCOIND_PASS: labw
+      BTCEXP_NETWORK: regtest
+    ports:
+      - "3002:3002"
