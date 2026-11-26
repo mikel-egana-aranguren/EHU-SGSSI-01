@@ -4,21 +4,17 @@ Clases y laboratorios de la asignatura Sistemas de Gestión de Seguridad de Sist
 
 ## Teoría 
 
-(Acceder al archivo `index.pdf` de cada carpeta)
+(Acceder al archivo `*.pdf` o `*.md` de cada carpeta)
 
-* [Introducción](Introduccion/index.pdf)
-* Cifrado:
-  * [Introducción al cifrado, esteganografía, algoritmos resumen](Cifrado_intro/index.pdf)
-  * [Cifrado simétrico](Cifrado_simetrico/index.pdf)
-  * [Cifrado asimétrico](Cifrado_asimetrico/index.pdf)
-  * [Aplicaciones cifrado](Cifrado_aplicaciones/index.pdf)
-* [Seguridad red](Seguridad_red/index.pdf)
-* [Seguridad web](Seguridad_web/index.pdf)
-* [DevSecOps](DevSecOps/index.pdf)
-* [Seguridad fisica](Seguridad_fisica/index.pdf)
-* [Copias seguridad](Copias_seguridad/index.pdf)
-* [Bitcoin](Bitcoin/index.pdf)
-* [Aspectos legales](AspectosLegales/index.pdf)
+* [Introducción](Introduccion/Introduccion.pdf)
+* Cifrado
+* Seguridad redes
+* Seguridad web
+* DevSecOps
+* Copias seguridad
+* Bitcoin
+* Seguridad IA
+* IA para seguridad
 
 ## Laboratorios
 
@@ -26,15 +22,17 @@ Clases y laboratorios de la asignatura Sistemas de Gestión de Seguridad de Sist
 
 ### Laboratorios básicos 
 
-(No entran en examen pero son necesarios para desarrollar la asignatura)
+No entran en examen pero son necesarios para completar la asignatura, ya que desarrollan temas que no se han visto antes en el grado.
 
-* [Servidor remoto Google Cloud](Laboratorios/Servidor_remoto_Google_Cloud/Servidor_remoto_Google_Cloud.md)
 * [Git](Laboratorios/Git/Git.md)
 * [Docker](Laboratorios/Docker/Docker.md)
+* DevOps
+* Maven
+* [Servidor remoto Google Cloud](Laboratorios/Servidor_remoto_Google_Cloud/Servidor_remoto_Google_Cloud.md)
 
 ### Laboratorios de contenido 
 
-(Entran en el examen)
+Contienen material para el examen.
 
 * [Introducción al cifrado, esteganografía, algoritmos resumen](Laboratorios/Cifrado_introduccion/Cifrado_introduccion.md)
 * [Cifrado simétrico](Laboratorios/Cifrado_simetrico/Cifrado_simetrico.md)

@@ -6,6 +6,11 @@ style: |
   section {
     align-content: start;
   }
+  .columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
 ---
 
 # Introducción a SGSSI
@@ -82,22 +87,95 @@ No TODO: responsables
 
 # Ejemplos: Wannacry
 
+<div class="columns">
+  <div>
+
+##
+
 ![width:300px](pictures/wannacry-1.png)
 ![width:100px](pictures/eurohelp.png)
+
+</div>
+<div>
+
+##
+
 [«iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com»: cuando un dominio de 10 dólares frenó una pandemia digital](https://teknoplof.com/2026/06/02/iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea-com-cuando-un-dominio-de-10-dolares-freno-una-pandemia-digital/)
+
+</div>
+</div>
 
 ---
 
 # Ejemplos: Miau
 
+<div class="columns">
+  <div>
+
+##
+
 ![width:300px](pictures/miau.png)
 ![width:100px](pictures/eurohelp.png)
+
+</div>
+<div>
+
+##
+
 [Un ciberatacante destruye miles de bases de datos MongoDB y Elasticsearch y deja sólo una firma: "miau"](https://www.genbeta.com/seguridad/ciberatacante-destruye-miles-bases-datos-mongodb-elasticsearch-deja-solo-firma-miau)
+
+</div>
+</div>
 
 ---
 
-# Multi column
+# Ejemplos: Ransomware Navarra
 
-add to marp_snipets
+![width:500px](pictures/navarra.png) 
 
-https://github.com/orgs/marp-team/discussions/192
+[Los ayuntamientos navarros llevan 13 días caídos: un ransomware ha dejado a toda la administración como hace 20 años](https://www.genbeta.com/actualidad/ayuntamientos-navarros-llevan-13-dias-caidos-ransomware-ha-dejado-a-toda-administracion-como-hace-20-anos)
+
+---
+
+# Ejemplos: espionaje NSA
+
+<div class="columns">
+  <div>
+
+##
+
+![width:500px https://www.eldiario.es/turing/vigilancia_y_privacidad/nsa-programas-vigilancia-desvelados-snowden_1_4974573.html](pictures/nsa.png)
+
+</div>
+<div>
+
+##
+
+Vigilancia permanente. Edward Snowden. Grupo Planeta, 2019
+
+> "Quien renuncia a su libertad por seguridad, no merece ni libertad ni seguridad" B. Franklin
+
+</div>
+</div>
+
+---
+
+# Ejemplos: Lexnet
+
+![width:500px https://www.elconfidencial.com/tecnologia/2017-07-27/lexnet-justicia-sistema-telematico_1421771/](pictures/lexnet.png)
+
+---
+
+# Ejemplos: Salud
+
+![width:500px https://www.diariodenavarra.es/noticias/navarra/mas_navarra/salud_debe_pagar_125_000_euros_por_acceso_ilegitimo_historial_una_paciente_70815_2061.html](pictures/salud.png)
+
+---
+
+# Ejemplos: Tesla
+
+![width:500px https://www.businessinsider.es/movilidad/consiguen-abrir-arrancar-tesla-model-3-traves-movil-dueno-1062031](pictures/tesla.png)
+
+---
+
+TODO: fuentes de informacion, modelo seguridad, ...
