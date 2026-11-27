@@ -1,5 +1,6 @@
 ---
 marp: true
+paginate: true
 header: "**Introducción a SGSSI**" 
 footer: "![width:200px](../common_pictures/ehu.png)"
 style: |
