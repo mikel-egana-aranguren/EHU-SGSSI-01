@@ -178,4 +178,51 @@ Vigilancia permanente. Edward Snowden. Grupo Planeta, 2019
 
 ---
 
-TODO: fuentes de informacion, modelo seguridad, ...
+# Ejemplos: LOG4Shell
+
+![width:500px https://www.xataka.com/seguridad/log4shell-vulnerabilidad-critica-proporciones-catastroficas-que-amenaza-destrozar-internet](pictures/log4shell.png)
+
+---
+
+# Ejemplos: Polyfill Supply Chain Attack
+
+<div class="columns">
+  <div>
+
+##
+
+![width:500px ](pictures/polyfill.png)
+
+</div>
+<div>
+
+##
+
+![width:500px ](pictures/polyfill_sgssi.png)
+
+</div>
+</div>
+
+---
+
+# Ejemplos: (IA) PHP2Shell
+
+![width:500px https://www.php2shell.com](pictures/php2shell.png)
+
+---
+
+# Ejemplos: (IA) OpenAI Hugging face
+
+![width:500px https://openai.com/index/hugging-face-incident-and-the-road-ahead/](pictures/openai-huggingface.png)
+
+---
+
+# Ejemplos: (IA - Guerra hibrida) Supermercados Francia
+
+![width:500px https://www.xataka.com/seguridad/riesgo-ia-no-va-a-parecerse-a-terminator-se-parecera-a-que-acaba-pasar-500-supermercados-franceses](pictures/francia.png)
+
+---
+
+# TODO: 
+
+fuentes de informacion, modelo seguridad, ...
