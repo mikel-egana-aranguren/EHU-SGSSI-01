@@ -1,6 +1,8 @@
 # EHU-SGSSI-01
 
-Clases y laboratorios de la asignatura Sistemas de Gestión de Seguridad de Sistemas de la Información (SGSSI) de tercero del [Grado en Ingeniería Informática de Gestión y Sistemas de Información](https://www.ehu.eus/es/web/graduak/grado-ingenieria-informatica-de-gestion-y-sistemas-de-informacion-bizkaia/creditos-y-asignaturas). 
+Clases y laboratorios de la asignatura Sistemas de Gestión de Seguridad de Sistemas de la Información (SGSSI) de tercero del [Grado en Ingeniería Informática de Gestión y Sistemas de Información](https://www.ehu.eus/es/web/graduak/grado-ingenieria-informatica-de-gestion-y-sistemas-de-informacion-bizkaia/creditos-y-asignaturas).
+
+[Guia docente](guia-docente.pdf).
 
 ## Teoría 
 
@@ -16,9 +18,13 @@ Clases y laboratorios de la asignatura Sistemas de Gestión de Seguridad de Sist
 * Seguridad IA
 * IA para seguridad
 
+## Ejercicios
+
+(Acceder al archivo `*.md` en cada carpeta)
+
 ## Laboratorios
 
-(Acceder al archivo `*.md` con el mismo nombre que la carpeta)
+(Acceder al archivo `*.md` en cada carpeta)
 
 ### Laboratorios básicos 
 
